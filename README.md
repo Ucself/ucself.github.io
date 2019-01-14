@@ -1,4 +1,4 @@
-# Gcs-Vno-Jekyll
+# ucself-Jekyll
 
 基于 Jekyll 的个人博客主题。
 
@@ -28,10 +28,16 @@
 
 到 [多说官网](http://duoshuo.com/) 申请一个账号，之后将自动生成的代码复制到 `/_includes/comments.html` 文件中即可。
 
-注意修改自动生成代码中的url，多说中会有提示，示例写法：
+注意修改自动生成代码中的 url，多说中会有提示，示例写法：
 
-``` html
- <div id="comments" class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{site.url}}{{page.url}}"></div>
+```html
+<div
+  id="comments"
+  class="ds-thread"
+  data-thread-key="{{page.id}}"
+  data-title="{{page.title}}"
+  data-url="{{site.url}}{{page.url}}"
+></div>
 ```
 
 #### 3.博文置顶
@@ -44,7 +50,7 @@
 
 目录页面的站内搜索实际上是利用了 Google 搜索的一个特性，如果想要删除或者修改都可以，文件中有注释。
 
-不要问我为什么不用百度，因为百度收录速度太慢了，经常收录不全。 ╮ (￣ 3￣) ╭
+不要问我为什么不用百度，因为百度收录速度太慢了，经常收录不全。 ╮ (￣ 3 ￣) ╭
 
 #### 5.站点地图
 
@@ -54,27 +60,24 @@
 
 有时修改文章标题，分类会使原始链接丢失，可以使用 `redirect_from` 属性将原始链接重定向到新链接地址。
 
-``` yml
+```yml
 redirect_from:
   - /1970/01/about/
 ```
 
-#### 7.SEO优化
+#### 7.SEO 优化
 
 为了增加你博文被搜索到的概率，可以考虑使用 SEO 优化，我定义了两个属性，`keywords` 和 `excerpt` ：
 
-``` yml
+```yml
 keywords: GcsSloop, gcssloop
 excerpt: 我是 GcsSloop， 一名生活在2.5次元的魔法师，平时研究一下魔法，做一些魔法卷轴，也会把一些研究成果贡献出来，以帮助新入门的魔法师更快速的成长为高级魔法师。点击此处查看我公布的魔法研究成果。
 ```
 
 **关于文章开头常用的属性示例可以参考 `1970-01-01-about.md` 文件。**
 
-
 ## Licence
 
 本主题是基于 onevcat 大神的 [OneV-s-Den](https://github.com/onevcat/OneV-s-Den) 修改而来的，非常感谢 onevcat 以及之前作者作出的贡献。
 
 Great thanks to [Dale Anthony](https://github.com/daleanthony) and his [Uno](https://github.com/daleanthony/uno). Vno Jekyll is based on Uno, and contains a lot of modification on page layout, animation, font and some more things I can not remember. Vno Jekyll is followed with Uno and be licensed as [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/). See the link for more information.
-
-
