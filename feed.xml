@@ -1,56 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>一名来自2.5次元的魔法师</title>
-    <description>嗨，我是 GcsSloop，一名来自2.5次元的魔法师，Android自定义View系列文章作者，非著名程序员。</description>
+    <title>Vno Jekyll</title>
+    <description>Vno Jekyll is a port of my Ghost theme vno.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 11 Jan 2019 17:42:48 +0800</pubDate>
-    <lastBuildDate>Fri, 11 Jan 2019 17:42:48 +0800</lastBuildDate>
+    <pubDate>Mon, 11 Mar 2019 18:57:25 +0800</pubDate>
+    <lastBuildDate>Mon, 11 Mar 2019 18:57:25 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
-        <title>关于</title>
-        <description>&lt;p&gt;我是 GcsSloop， 一名生活在2.5次元的魔法师，&lt;strong&gt;我一直在致力于研究基础魔法，并且始终坚信利用这些基础魔法，可以创造出华丽而又强大的高级魔法&lt;/strong&gt;。我尝试用很多种方式去分析这些基础魔法，并从中提炼出魔法的结晶，以方便了解这些基础魔法的妙用。最终我制作了一些魔法卷轴，上面详细记述了一些基础魔法的特性和使用诀窍，并分类整理好存放在我的&lt;a href=&quot;http://www.gcssloop.com/#blog&quot;&gt;魔法储藏室中&lt;/a&gt;。更多的魔法卷轴正在制作当中，如果你觉得这些魔法卷轴不错的话，告诉其他的小伙伴，或者鼓励一下我。&lt;/p&gt;
+        <title>Hello World - Vno</title>
+        <description>&lt;h4 id=&quot;whats-this&quot;&gt;What’s this&lt;/h4&gt;
 
-&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/onevcat/vno-jekyll&quot;&gt;Vno Jekyll&lt;/a&gt; is a theme for &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;. It is a port of my Ghost theme &lt;a href=&quot;https://github.com/onevcat/vno&quot;&gt;vno&lt;/a&gt;, which is originally developed from &lt;a href=&quot;https://github.com/daleanthony/uno&quot;&gt;Dale Anthony’s Uno&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;为了不浪费大家的时间，我发布在这个网站上的所有文章会&lt;strong&gt;保持原创，并尽量保证文章的质量&lt;/strong&gt;，对于一些比较细碎的知识点和问题会保存在我的 &lt;a href=&quot;https://github.com/GcsSloop&quot;&gt;GitHub&lt;/a&gt; 上，分类放在Issues和不同的仓库文件夹中。&lt;/p&gt;
+&lt;h4 id=&quot;usage&quot;&gt;Usage&lt;/h4&gt;
 
-&lt;h3 id=&quot;联系我&quot;&gt;联系我&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/onevcat/vno-jekyll.git your_site
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;your_site
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundler &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundler &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;你可以通过以下几种方式联系到我。&lt;/p&gt;
+&lt;p&gt;Your site with &lt;code class=&quot;highlighter-rouge&quot;&gt;Vno Jekyll&lt;/code&gt; enabled should be accessible in http://127.0.0.1:4000.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://weibo.com/GcsSloop&quot;&gt;微博私信&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/GcsSloop/AndroidNote/issues&quot;&gt;提交Issues&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;mailto:GcsSloop@gmail.com&quot;&gt;发邮件&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;发评论&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;For more information about Jekyll, please visit &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll’s site&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;我活动的平台&quot;&gt;我活动的平台&lt;/h3&gt;
+&lt;h4 id=&quot;configuration&quot;&gt;Configuration&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;
-| &lt;a href=&quot;http://weibo.com/GcsSloop&quot;&gt;微博&lt;/a&gt;
-| &lt;a href=&quot;http://gold.xitu.io/#/user/56dd579a75c4cd4365aca918&quot;&gt;掘金&lt;/a&gt;
-| &lt;a href=&quot;https://github.com/GcsSloop&quot;&gt;GitHub&lt;/a&gt;
-| &lt;a href=&quot;http://www.jianshu.com/users/bc2fa21dbd1e/latest_articles&quot;&gt;简书&lt;/a&gt;
-| &lt;a href=&quot;https://www.zhihu.com/people/GcsSloop&quot;&gt;知乎&lt;/a&gt;
-| &lt;a href=&quot;http://blog.csdn.net/u013831257?viewmode=list&quot;&gt;CSDN&lt;/a&gt;
-| 
-&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;All configuration could be done in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;. Remember you need to restart to serve the page when after changing the config file. Everything in the config file should be self-explanatory.&lt;/p&gt;
+
+&lt;h4 id=&quot;background-image-and-avatar&quot;&gt;Background image and avatar&lt;/h4&gt;
+
+&lt;p&gt;You could replace the background and avatar image in &lt;code class=&quot;highlighter-rouge&quot;&gt;assets/images&lt;/code&gt; folder to change them.&lt;/p&gt;
+
+&lt;h4 id=&quot;sites-using-vno&quot;&gt;Sites using Vno&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://onevcat.com&quot;&gt;My blog&lt;/a&gt; is using &lt;code class=&quot;highlighter-rouge&quot;&gt;Vno Jekyll&lt;/code&gt; as well, you could see how it works in real. There are some other sites using the same theme. You can find them below:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Site Name&lt;/th&gt;
+      &lt;th&gt;URL&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;OneV’s Den&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://onevcat.com&quot;&gt;http://onevcat.com&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;July Tang&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://onevcat.com&quot;&gt;http://blog.julytang.xyz&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Harry Lee&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://qiuqi.li&quot;&gt;http://qiuqi.li&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you happen to be using this theme, welcome to &lt;a href=&quot;https://github.com/onevcat/vno-jekyll/pulls&quot;&gt;send me a pull request&lt;/a&gt; to add your site link here. :)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;license&quot;&gt;License&lt;/h4&gt;
+
+&lt;p&gt;Great thanks to &lt;a href=&quot;https://github.com/daleanthony&quot;&gt;Dale Anthony&lt;/a&gt; and his &lt;a href=&quot;https://github.com/daleanthony/uno&quot;&gt;Uno&lt;/a&gt;. Vno Jekyll is based on Uno, and contains a lot of modification on page layout, animation, font and some more things I can not remember. Vno Jekyll is followed with Uno and be licensed as &lt;a href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;Creative Commons Attribution 4.0 International&lt;/a&gt;. See the link for more information.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 16 Feb 2016 14:32:24 +0800</pubDate>
+        <link>http://localhost:4000/2016/02/hello-world-vno/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/02/hello-world-vno/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Sample Post</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;!-- 
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+ --&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def print_hi(name)
+  puts &quot;Hi, #{name}&quot;
+end
+print_hi('Tom')
+#=&amp;gt; prints 'Hi, Tom' to STDOUT.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 01 Jan 1970 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/info/about</link>
-        <guid isPermaLink="true">http://localhost:4000/info/about</guid>
+        <pubDate>Mon, 15 Feb 2016 14:32:24 +0800</pubDate>
+        <link>http://localhost:4000/2016/02/sample-post/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/02/sample-post/</guid>
         
-        <category>GcsSloop,</category>
-        
-        <category>info</category>
-        
-        
-        <category>Info</category>
         
       </item>
     
