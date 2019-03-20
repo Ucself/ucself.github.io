@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>MarkDown语法</title>
+  <meta name="description" content="MarkDown语法">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MarkDown语法">
+  <meta name="twitter:description" content="MarkDown语法">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MarkDown语法">
+  <meta property="og:description" content="MarkDown语法">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2016/09/Markdown%E8%AF%AD%E6%B3%95/">
+  <link rel="alternate" type="application/rss+xml" title="Ucself" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header
+  class="panel-cover panel-cover--collapsed"
+  style="background-image: url('/assets/images/background-cover.jpg')"
+>
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+        <a
+          href="/#blog"
+          title="前往 Ucself 的主页"
+          class="blog-button"
+          ><img
+            src="/assets/images/avatar.jpg"
+            width="80"
+            alt="Ucself logo"
+            class="panel-cover__logo logo"
+        /></a>
+        <h1 class="panel-cover__title panel-title">
+          <a
+            href="/#blog"
+            title="link to homepage for Ucself"
+            class="blog-button"
+            >Ucself</a
+          >
+        </h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">为人者，有大度成大器矣!</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是ucself，一名大前端开发工程师。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        
+        <p class="panel-cover__description">生活需要总结，记录下自己学习的点滴，在此搭建自我知识体系。</p>
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item">
+                  <a
+                    href="/#blog"
+                    title="Visit blog"
+                    class="blog-button"
+                    >博客</a
+                  >
+                </li>
+                 
+                <li class="navigation__item">
+                  <a href="/pages/swift" title="Swift">Swift</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/archive" title="归档">归档</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/about" title="关于">关于</a>
+                </li>
+                 
+              </ul>
+            </nav>
+          </div>
+
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="#"
+        title="添加 lbj147123 的微信"
+      >
+        <i class="social fa fa-weixin"></i>
+        <span class="label">Weixin</span>
+      </a>
+    </li>
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="http://weibo.com/lbj147123"
+        title="@lbj147123 的微博"
+        target="_blank"
+      >
+        <i class="social fa fa-weibo"></i>
+        <span class="label">Weibo</span>
+      </a>
+    </li>
+     
+    <!-- Github -->
+    <li class="navigation__item">
+      <a
+        href="https://github.com/Ucself"
+        title="@Ucself 的 Github"
+        target="_blank"
+      >
+        <i class="social fa fa-github"></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+      
+
+    <!-- RSS -->
+    <li class="navigation__item">
+      <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+        <i class="social fa fa-rss"></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+
+    
+    <!-- Email -->
+    <li class="navigation__item">
+      <a href="mailto:lbj147123@163.com" title="Contact me">
+        <i class="social fa fa-envelope"></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article
+  class="post-container post-container--single"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header">
+    <div class="post-meta">
+      <time
+        datetime="2016-09-29 00:00:00 +0800"
+        itemprop="datePublished"
+        class="post-meta__date date"
+        >2016-09-29</time
+      >
+      &#8226;
+      <span class="post-meta__tags tags">archive</span>
+    </div>
+    <h1 class="post-title">MarkDown语法</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="简介">简介</h2>
+
+<p>Markdown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p>
+
+<h2 id="语法">语法</h2>
+
+<h3 id="1标题">1、标题</h3>
+
+<p>示例：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 这是一级标题
+## 这是二级标题
+### 这是三级标题
+#### 这是四级标题
+##### 这是五级标题
+###### 这是六级标题
+</code></pre></div></div>
+<p>效果：</p>
+
+<h1 id="这是一级标题">这是一级标题</h1>
+<h2 id="这是二级标题">这是二级标题</h2>
+<h3 id="这是三级标题">这是三级标题</h3>
+<h4 id="这是四级标题">这是四级标题</h4>
+<h5 id="这是五级标题">这是五级标题</h5>
+<h6 id="这是六级标题">这是六级标题</h6>
+
+<h3 id="2字体">2、字体</h3>
+
+<p>加粗：要加粗的文字左右分别用两个<em>号包起来<br />
+斜体：要倾斜的文字左右分别用一个</em>号包起来<br />
+斜体加粗：要倾斜和加粗的文字左右分别用三个*号包起来<br />
+删除线：要加删除线的文字左右分别用两个~~号包起来</p>
+
+<p>示例：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**这是加粗的文字**
+*这是倾斜的文字*`
+***这是斜体加粗的文字***
+~~这是加删除线的文字~~
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p><strong>这是加粗的文字</strong><br />
+<em>这是倾斜的文字</em>`<br />
+<strong><em>这是斜体加粗的文字</em></strong><br />
+<del>这是加删除线的文字</del></p>
+
+<h3 id="3引用">3、引用</h3>
+
+<p>示例：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;这是引用的内容
+&gt;&gt;&gt;这是引用的内容
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;这是引用的内容
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<blockquote>
+  <p>这是引用的内容</p>
+  <blockquote>
+    <blockquote>
+      <p>这是引用的内容</p>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <blockquote>
+                <blockquote>
+                  <blockquote>
+                    <p>这是引用的内容</p>
+                  </blockquote>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<h3 id="4分割线">4、分割线</h3>
+
+<p>语法：三个或者三个以上的 - 或者 * 都可以</p>
+
+<p>示例：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+<span class="gd">----
+</span>***
+*****
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<hr />
+<hr />
+<hr />
+<hr />
+
+<h3 id="5图片">5、图片</h3>
+
+<p>语法：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![图片alt](图片地址 ''图片title'')
+</code></pre></div></div>
+<p>图片alt：是显示在图片下面的文字，相当于对图片内容的解释。   <br />
+图片title：是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加</p>
+
+<p>示例：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![清纯小美女](https://pan.baidu.com/s/1-uVVCZQPsAcz8C7aXZ5egA "美女")
+</code></pre></div></div>
+
+<p>效果:<br />
+<img src="https://thumbnail0.baidupcs.com/thumbnail/985381d0f3a52177d7a36e8a3f20844e?fid=218278091-250528-1822553445&amp;time=1553068800&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-X6vbmz3ZYKvM%2BjiqZGeA8HltPqE%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=1825044843093892748&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="清纯小美女" title="美女" /></p>
+
+<h3 id="6超链接">6、超链接</h3>
+
+<p>语法：<br />
+第一种:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[超链接名](超链接地址 "超链接title")
+</code></pre></div></div>
+<p>超链接title:可加可不加</p>
+
+<p>第二种:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a href="超链接地址" target="_blank"&gt;超链接名&lt;/a&gt;
+</code></pre></div></div>
+
+<p>示例：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[谷歌](http://google.com)
+[百度](http://baidu.com)
+
+&lt;a href="http://baidu.com" target="_blank"&gt;简书&lt;/a&gt;
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p><a href="http://google.com">谷歌</a>
+<a href="http://baidu.com">百度</a></p>
+
+<p><a href="http://baidu.com" target="_blank">简书</a></p>
+
+<h3 id="7超链接">7、超链接</h3>
+
+<p>语法：<br />
+无序列表：用 - + * 任何一种都可以<br />
+有序列表：数字加点方式
+列表嵌套：上一级和下一级之间敲三个空格即可</p>
+
+<p>示例：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 列表内容
++ 列表内容
+* 列表内容
+</code></pre></div></div>
+<p>注意：- + * 跟内容之间都要有一个空格</p>
+
+<p>效果：</p>
+<ul>
+  <li>列表内容</li>
+  <li>列表内容</li>
+  <li>列表内容</li>
+</ul>
+
+<p>示例：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 列表内容
+2. 列表内容
+3. 列表内容
+</code></pre></div></div>
+<p>注意：序号跟内容之间要有空格</p>
+
+<p>效果：</p>
+<ol>
+  <li>列表内容</li>
+  <li>列表内容</li>
+  <li>列表内容</li>
+</ol>
+
+<p>示例：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* 级无序列表内容 
+   * 二级无序列表内容
+   * 二级无序列表内容
+   * 二级无序列表内容
+* 一级无序列表内容
+   1. 二级有序列表内容
+   2. 二级有序列表内容
+   3. 二级有序列表内容
+1. 一级有序列表内容
+   - 二级无序列表内容
+   - 二级无序列表内容
+   - 二级无序列表内容
+2. 一级有序列表内容
+   1. 二级有序列表内容
+   2. 二级有序列表内容
+   3. 二级有序列表内容
+</code></pre></div></div>
+<p>效果：</p>
+<ul>
+  <li>级无序列表内容
+    <ul>
+      <li>二级无序列表内容</li>
+      <li>二级无序列表内容</li>
+      <li>二级无序列表内容</li>
+    </ul>
+  </li>
+  <li>一级无序列表内容
+    <ol>
+      <li>二级有序列表内容</li>
+      <li>二级有序列表内容</li>
+      <li>二级有序列表内容
+        <ol>
+          <li>一级有序列表内容
+    - 二级无序列表内容
+    - 二级无序列表内容
+    - 二级无序列表内容</li>
+          <li>一级有序列表内容</li>
+        </ol>
+      </li>
+      <li>二级有序列表内容</li>
+      <li>二级有序列表内容</li>
+      <li>二级有序列表内容</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="8表格">8、表格</h3>
+
+<p>语法：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>表头|表头|表头
+---|:--:|---:
+内容|内容|内容
+内容|内容|内容
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>第二行分割表头和内容。
+- 有一个就行，为了对齐，多加了几个文字默认居左
+- 两边加: 表示文字居中
+- 右边加: 表示文字居右
+注：原生的语法两边都要用 | 包起来。此处省略
+</code></pre></div></div>
+<p>效果：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>表头</th>
+      <th style="text-align: center">表头</th>
+      <th style="text-align: right">表头</th>
+      <th style="text-align: right">表头</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>内容</td>
+      <td style="text-align: center">内容</td>
+      <td style="text-align: right">内容</td>
+      <td style="text-align: right">内容</td>
+    </tr>
+    <tr>
+      <td>内容</td>
+      <td style="text-align: center">内容</td>
+      <td style="text-align: right">内容</td>
+      <td style="text-align: right">内容</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="9代码">9、代码</h3>
+
+<p>语法：<br />
+单行代码：代码之间分别用一个反引号包起来 <br />
+代码块：代码之间分别用三个反引号包起来，且两边的反引号单独占一行(示例中没换行)</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`import Foundation`
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```@IBAction func closeClick(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }```
+</code></pre></div></div>
+<p>效果：</p>
+
+<p><code class="highlighter-rouge">import Foundation</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@IBAction func closeClick(_ sender: Any) {
+   self.navigationController?.popViewController(animated: true)
+}
+</code></pre></div></div>
+<h3 id="10换行">10、换行</h3>
+
+<p>语法：<br />
+方式一：编辑好一行文字后敲两个空行，再按回车键编辑另一行文字<br />
+方式二：编辑一行文字后再加一行空行<br />
+方式三：编辑第一行的时候后面加上<br /></p>
+
+<p>示例：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>第一行  
+第二行
+
+第一行
+
+第二行
+
+第一行&lt;br /&gt;第二行
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p>第一行<br />
+第二行</p>
+
+<p>第一行</p>
+
+<p>第二行</p>
+
+<p>第一行<br />第二行</p>
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+</section>
+
+<!-- <section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2016/09/Markdown%E8%AF%AD%E6%B3%95/";
+        this.page.identifier = "/2016/09/Markdown%E8%AF%AD%E6%B3%95/";
+    };
+
+    var disqus_shortname = 'vno-jekyll';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+ -->
+
+            <section class="footer">
+    <footer>
+        <span class="footer__copyright">本站由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-03-20 生成。</span>
+        <span class="footer__copyright">  </span>
+        <span class="footer__copyright">本站由 <a href="http://ucself.cn">@ucself</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2019</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>
