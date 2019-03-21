@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Mac下cocoapods的配置安装</title>
+  <meta name="description" content="Mac下cocoapods的配置安装">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mac下cocoapods的配置安装">
+  <meta name="twitter:description" content="Mac下cocoapods的配置安装">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Mac下cocoapods的配置安装">
+  <meta property="og:description" content="Mac下cocoapods的配置安装">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2016/10/Mac%E4%B8%8Bcocoapods%E7%9A%84%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85/">
+  <link rel="alternate" type="application/rss+xml" title="Ucself" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header
+  class="panel-cover panel-cover--collapsed"
+  style="background-image: url('/assets/images/background-cover.jpg')"
+>
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+        <a
+          href="/#blog"
+          title="前往 Ucself 的主页"
+          class="blog-button"
+          ><img
+            src="/assets/images/avatar.jpg"
+            width="80"
+            alt="Ucself logo"
+            class="panel-cover__logo logo"
+        /></a>
+        <h1 class="panel-cover__title panel-title">
+          <a
+            href="/#blog"
+            title="link to homepage for Ucself"
+            class="blog-button"
+            >Ucself</a
+          >
+        </h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">为人者，有大度成大器矣!</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是ucself，一名大前端开发工程师。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        
+        <p class="panel-cover__description">生活需要总结，记录下自己学习的点滴，在此搭建自我知识体系。</p>
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item">
+                  <a
+                    href="/#blog"
+                    title="Visit blog"
+                    class="blog-button"
+                    >博客</a
+                  >
+                </li>
+                 
+                <li class="navigation__item">
+                  <a href="/pages/swift" title="Swift">Swift</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/archive" title="归档">归档</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/about" title="关于">关于</a>
+                </li>
+                 
+              </ul>
+            </nav>
+          </div>
+
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="#"
+        title="添加 lbj147123 的微信"
+      >
+        <i class="social fa fa-weixin"></i>
+        <span class="label">Weixin</span>
+      </a>
+    </li>
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="http://weibo.com/lbj147123"
+        title="@lbj147123 的微博"
+        target="_blank"
+      >
+        <i class="social fa fa-weibo"></i>
+        <span class="label">Weibo</span>
+      </a>
+    </li>
+     
+    <!-- Github -->
+    <li class="navigation__item">
+      <a
+        href="https://github.com/Ucself"
+        title="@Ucself 的 Github"
+        target="_blank"
+      >
+        <i class="social fa fa-github"></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+      
+
+    <!-- RSS -->
+    <li class="navigation__item">
+      <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+        <i class="social fa fa-rss"></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+
+    
+    <!-- Email -->
+    <li class="navigation__item">
+      <a href="mailto:lbj147123@163.com" title="Contact me">
+        <i class="social fa fa-envelope"></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article
+  class="post-container post-container--single"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header">
+    <div class="post-meta">
+      <time
+        datetime="2016-10-26 00:00:00 +0800"
+        itemprop="datePublished"
+        class="post-meta__date date"
+        >2016-10-26</time
+      >
+      &#8226;
+      <span class="post-meta__tags tags">archive</span>
+    </div>
+    <h1 class="post-title">Mac下cocoapods的配置安装</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="前言">前言</h2>
+<p>由于项目开发需要运用第三发库太多了，每下载一个第三个库都要去查看他的配置介绍然而就会一个一个的去引用系统的库，还有第三方库的管理问题，于是前段时间选择使用cocoapods 进行管理。每个程序员都有两台电脑（一台公司的，一台自己的），在公司配置完成，经过重重配置遇到问题解决，终于配置完成。突然发现自己电脑也要配置，然后之前遇到的问题也一个一个的又去查（这不是坑自己吗）。算了作为程序员还是写点博客比较好，记录自己所遇到的问题和自己的知识；方便你我，方便阅读的人。</p>
+<h2 id="标签">标签</h2>
+<p>RVM，Ruby，CocoaPods</p>
+<h2 id="安装-rvm">安装 RVM</h2>
+<p>RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)
+向终端输入以下代码安装RVM</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl -L get.rvm.io | bash -s stable
+</code></pre></div></div>
+<p>指定源</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ source ~/.rvm/scripts/rvm
+</code></pre></div></div>
+<p>安装成功后（由于安装会向网络下载文件可能会提示安装失败）向终端输入代码查看成功版本</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rvm -v
+</code></pre></div></div>
+<p>终端控制台会出现</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm 1.27.0 (latest) by Wayne E. Seguin &lt;wayneeseguin@gmail.com&gt;, Michal Papis &lt;mpapis@gmail.com&gt; [https://rvm.io/]
+</code></pre></div></div>
+<h2 id="使用rvm-升级或者安装ruby">使用RVM 升级或者安装Ruby</h2>
+<p>Ruby一般Mac系统都会自带不需要安装升级，但是我安装的时候遇到Ruby版本过低提示错误信息Error installing pods:activesupport requires Ruby version &gt;= 2.2.2.，所以需要rvm对Ruby进行升级
+终端输入</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ruby -v
+</code></pre></div></div>
+<p>可查看当前系统Ruby版本</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby 2.0.0p648 (2015-12-16 revision 53155) [x86_64-darwin15]
+</code></pre></div></div>
+<p>所以我们需要对ruby进行升级
+查看rvm版本</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm list known
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># MRI Rubies
+[ruby-]1.8.6[-p420]
+[ruby-]1.8.7[-head] # security released on head
+[ruby-]1.9.1[-p431]
+[ruby-]1.9.2[-p330]
+[ruby-]1.9.3[-p551]
+[ruby-]2.0.0[-p648]
+[ruby-]2.1[.8]
+[ruby-]2.2[.4]
+[ruby-]2.3[.0]
+[ruby-]2.2-head
+ruby-head
+
+# for forks use: rvm install ruby-head-&lt;name&gt; --url https://github.com/github/ruby.git --branch 2.2
+
+# JRuby
+jruby-1.6[.8]
+jruby-1.7[.23]
+jruby[-9.0.5.0]
+jruby-head
+
+# Rubinius
+rbx-1[.4.3]
+rbx-2.3[.0]
+rbx-2.4[.1]
+rbx[-2.5.8]
+rbx-head
+
+# Opal
+opal
+
+# Minimalistic ruby implementation - ISO 30170:2012
+mruby[-head]
+
+# Ruby Enterprise Edition
+ree-1.8.6
+ree[-1.8.7][-2012.02]
+
+# GoRuby
+goruby
+
+# Topaz
+topaz
+
+# MagLev
+maglev[-head]
+maglev-1.0.0
+
+# Mac OS X Snow Leopard Or Newer
+macruby-0.10
+macruby-0.11
+macruby[-0.12]
+macruby-nightly
+macruby-head
+
+# IronRuby
+ironruby[-1.1.3]
+ironruby-head
+</code></pre></div></div>
+<p>安装Ruby 输入</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm install 2.2
+</code></pre></div></div>
+<p>终端输出太长，就不打印了</p>
+
+<h2 id="使用ruby-安装cocoapods">使用Ruby 安装CocoaPods</h2>
+<p>使用淘宝的Ruby镜像访问cocoapods，官方代码</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+$ gem sources -l
+</code></pre></div></div>
+<p>两句命令结果分别是</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://gems.ruby-china.org/ added to sources
+#这个我已经切换过了
+source https://rubygems.org/ not present in cache 
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*** CURRENT SOURCES ***
+
+https://ruby.taobao.org/
+https://gems.ruby-china.org/
+</code></pre></div></div>
+<p>接下来就直接安装CocoaPods</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo gem install cocoapods
+</code></pre></div></div>
+<p>终端输出表示成功</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Password:
+Fetching: activesupport-4.2.7.1.gem (100%)
+Successfully installed activesupport-4.2.7.1
+Fetching: claide-1.0.1.gem (100%)
+Successfully installed claide-1.0.1
+Fetching: cocoapods-core-1.1.1.gem (100%)
+Successfully installed cocoapods-core-1.1.1
+Fetching: cocoapods-downloader-1.1.2.gem (100%)
+Successfully installed cocoapods-downloader-1.1.2
+Fetching: cocoapods-trunk-1.1.1.gem (100%)
+Successfully installed cocoapods-trunk-1.1.1
+Fetching: fourflusher-2.0.1.gem (100%)
+Successfully installed fourflusher-2.0.1
+Fetching: gh_inspector-1.0.2.gem (100%)
+Successfully installed gh_inspector-1.0.2
+Fetching: molinillo-0.5.2.gem (100%)
+Successfully installed molinillo-0.5.2
+Fetching: xcodeproj-1.3.3.gem (100%)
+Successfully installed xcodeproj-1.3.3
+Fetching: cocoapods-1.1.1.gem (100%)
+Successfully installed cocoapods-1.1.1
+Parsing documentation for activesupport-4.2.7.1
+Installing ri documentation for activesupport-4.2.7.1
+Parsing documentation for claide-1.0.1
+Installing ri documentation for claide-1.0.1
+Parsing documentation for cocoapods-core-1.1.1
+Installing ri documentation for cocoapods-core-1.1.1
+Parsing documentation for cocoapods-downloader-1.1.2
+Installing ri documentation for cocoapods-downloader-1.1.2
+Parsing documentation for cocoapods-trunk-1.1.1
+Installing ri documentation for cocoapods-trunk-1.1.1
+Parsing documentation for fourflusher-2.0.1
+Installing ri documentation for fourflusher-2.0.1
+Parsing documentation for gh_inspector-1.0.2
+Installing ri documentation for gh_inspector-1.0.2
+Parsing documentation for molinillo-0.5.2
+Installing ri documentation for molinillo-0.5.2
+Parsing documentation for xcodeproj-1.3.3
+Installing ri documentation for xcodeproj-1.3.3
+Parsing documentation for cocoapods-1.1.1
+Installing ri documentation for cocoapods-1.1.1
+Done installing documentation for activesupport, claide, cocoapods-core, cocoapods-downloader, cocoapods-trunk, fourflusher, gh_inspector, molinillo, xcodeproj, cocoapods after 12 seconds
+10 gems installed
+</code></pre></div></div>
+<p>再进行pod安装</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$pod setup
+</code></pre></div></div>
+
+  </section>
+</article>
+
+<section class="read-more">
+    
+  <div class="read-more-item">
+    <span class="read-more-item-dim">下一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2016/09/Markdown%E8%AF%AD%E6%B3%95/" title="link to MarkDown语法">MarkDown语法</a>
+    </h2>
+    <div class="post-list__meta">
+      <time
+        datetime="2016-09-29 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2016-09-29</time
+      >
+    </div>
+  </div>
+  
+</section>
+
+<!-- <section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2016/10/Mac%E4%B8%8Bcocoapods%E7%9A%84%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85/";
+        this.page.identifier = "/2016/10/Mac%E4%B8%8Bcocoapods%E7%9A%84%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85/";
+    };
+
+    var disqus_shortname = 'vno-jekyll';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+ -->
+
+            <section class="footer">
+    <footer>
+        <span class="footer__copyright">本站由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-03-21 生成。</span>
+        <span class="footer__copyright">  </span>
+        <span class="footer__copyright">本站由 <a href="https://ucself.cn">@ucself</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2019</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>
