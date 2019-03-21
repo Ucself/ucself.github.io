@@ -5,8 +5,8 @@
     <description>嗨，我是ucself，一名大前端开发工程师。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Mar 2019 10:46:08 +0800</pubDate>
-    <lastBuildDate>Thu, 21 Mar 2019 10:46:08 +0800</lastBuildDate>
+    <pubDate>Thu, 21 Mar 2019 17:33:23 +0800</pubDate>
+    <lastBuildDate>Thu, 21 Mar 2019 17:33:23 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -327,6 +327,99 @@
         <pubDate>Thu, 29 Sep 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/09/Markdown%E8%AF%AD%E6%B3%95/</link>
         <guid isPermaLink="true">http://localhost:4000/2016/09/Markdown%E8%AF%AD%E6%B3%95/</guid>
+        
+        <category>archive</category>
+        
+        
+        <category>archive</category>
+        
+      </item>
+    
+      <item>
+        <title>Github+jekyll+域名绑定</title>
+        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;       在脑子里面想了很久搭建自己的知识体系存储文章，方便当字典查看或者回顾知识点。有人说你这不就是博客吗，很多博客平台写不就行了？你说得对就是找一个写博客的地方，整理自我的知识体系。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;作为一个互联网从业者都想有一个自己的域名，空间，博客网站来记录这些；&lt;/li&gt;
+  &lt;li&gt;怕第三方服务网站数据丢失，博客网站也不是自己喜欢的样式；&lt;/li&gt;
+  &lt;li&gt;怕麻烦需要买空间，买域名，写web程序。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;太麻烦了，知道现在github推出了静态站点并且支持jekyll服务，就搭建了这么一个博客网站，并且用这篇文章记录下来。&lt;/p&gt;
+
+&lt;h2 id=&quot;第一步本地安装jekyll&quot;&gt;第一步：本地安装jekyll&lt;/h2&gt;
+
+&lt;p&gt;在终端输入&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;创建站点&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll new myblog
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;打开服务&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;在浏览器查看脚手架搭建的web站点,浏览器中输入： &lt;br /&gt;
+&lt;a href=&quot;http://127.0.0.1:4000&quot; target=&quot;_blank&quot;&gt;http://127.0.0.1:4000&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;如果一切正常，说明jekyll本地服务搭建成功。&lt;br /&gt;
+生成相关文件夹/文件功能参考官网解释&lt;br /&gt;
+&lt;a href=&quot;https://www.jekyll.com.cn/docs/structure/&quot; target=&quot;_blank&quot;&gt;https://www.jekyll.com.cn/docs/structure/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;第二步下载一个jekyll主题模板&quot;&gt;第二步：下载一个jekyll主题模板&lt;/h2&gt;
+
+&lt;p&gt;       第一步完成后说明本地服务搭建成功，但是需要一个自己觉得好看的主题模板，本站的jekyll主题是：  &lt;a href=&quot;https://github.com/onevcat/vno-jekyll&quot; target=&quot;_blank&quot;&gt;https://github.com/onevcat/vno-jekyll&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;clone 代码到本地&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git@github.com:onevcat/vno-jekyll.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;cd 代码到目录启动服务查看主题模板是否正常&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd vno-jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;如果一切正常的话，说明下载自己喜欢的主题模板本地运行成功&lt;/p&gt;
+
+&lt;h2 id=&quot;第三步github创建站点仓库&quot;&gt;第三步：GitHub创建站点仓库&lt;/h2&gt;
+
+&lt;p&gt;       实践结果分析：github+jekyll 最简单方式是jekyll编译生成的文件夹_site站点上传到仓库是最简单的方式。&lt;br /&gt;
+       所以我建立了两个GitHub仓库“ucself”和“ucself.github.io”，ucself用于整个项目所有文件存放，ucself.github.io 用于静态站点服务。ucself下的_site 文件夹配置为子仓库ucself.github.io&lt;/p&gt;
+
+&lt;p&gt;在ucself仓库下执行&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git submodule add git@github.com:Ucself/ucself.github.io.git _site
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;两个仓库就关联起来了。把ucself.githu.io配置为静态站点：&lt;br /&gt;
+&lt;img src=&quot;/assets/2016-09-27/github_pages.jpg&quot; alt=&quot;配置方式&quot; title=&quot;配置方式&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;第四步本地编译上传github&quot;&gt;第四步：本地编译上传GitHub&lt;/h2&gt;
+&lt;p&gt;当增加/删除/修改了博客后执行&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;执行完成后，上传代码到github。ucself、ucself.github.io两个仓库都提交代码。&lt;br /&gt;
+在浏览器中打开&lt;a href=&quot;ucself.github.io&quot; target=&quot;_blank&quot;&gt;ucself.github.io&lt;/a&gt;即可浏览更新的博客了&lt;/p&gt;
+
+&lt;h2 id=&quot;第五步绑定域名&quot;&gt;第五步：绑定域名&lt;/h2&gt;
+&lt;p&gt;绑定域名都是双向绑定的，在github上需要绑定，在域名提供商也需要绑定。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;在github设置中填写域名点击save即可。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2016-09-27/github_domain.jpg&quot; alt=&quot;配置域名&quot; title=&quot;配置域名&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;在域名提供商配置：在你购买的域名中增加五项解析项目，以覆盖全部解析&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2016-09-27/github_domain_parse.jpg&quot; alt=&quot;配置域名&quot; title=&quot;配置域名&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;好了，到现在为止就可以使用自己的域名&lt;a href=&quot;ucself.cn&quot; target=&quot;_blank&quot;&gt;ucself.cn&lt;/a&gt;访问自己的博客了。&lt;/p&gt;
+
+&lt;h2 id=&quot;总结&quot;&gt;总结：&lt;/h2&gt;
+&lt;p&gt;       这种搭建方式，也是很多众网友搭建方式，我也研究了好久，断断续续的去实践，中间遇到了很多问题，没有记录进来。当写这篇博客的时候，已经忘记了踩过多少坑和问题，这里就不罗列出来了。哦，对了如果要改变该主题某些功能，可以去研究一下官网的语法，作为互联网从业者也不难，本博客站点已修改了部分代码。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 27 Sep 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/09/Github+jekyll+%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/Github+jekyll+%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A/</guid>
         
         <category>archive</category>
         
