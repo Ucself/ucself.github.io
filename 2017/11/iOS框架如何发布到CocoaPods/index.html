@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>iOS框架如何发布到CocoaPods</title>
+  <meta name="description" content="iOS框架如何发布到CocoaPods">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="iOS框架如何发布到CocoaPods">
+  <meta name="twitter:description" content="iOS框架如何发布到CocoaPods">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="iOS框架如何发布到CocoaPods">
+  <meta property="og:description" content="iOS框架如何发布到CocoaPods">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/">
+  <link rel="alternate" type="application/rss+xml" title="Ucself" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header
+  class="panel-cover panel-cover--collapsed"
+  style="background-image: url('/assets/images/background-cover.jpg')"
+>
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+        <a
+          href="/#blog"
+          title="前往 Ucself 的主页"
+          class="blog-button"
+          ><img
+            src="/assets/images/avatar.jpg"
+            width="80"
+            alt="Ucself logo"
+            class="panel-cover__logo logo"
+        /></a>
+        <h1 class="panel-cover__title panel-title">
+          <a
+            href="/#blog"
+            title="link to homepage for Ucself"
+            class="blog-button"
+            >Ucself</a
+          >
+        </h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">为人者，有大度成大器矣!</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是ucself，一名大前端开发工程师。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        
+        <p class="panel-cover__description">生活需要总结，记录下自己学习的点滴，在此搭建自我知识体系。</p>
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item">
+                  <a
+                    href="/#blog"
+                    title="Visit blog"
+                    class="blog-button"
+                    >博客</a
+                  >
+                </li>
+                 
+                <li class="navigation__item">
+                  <a href="/pages/swift" title="Swift">Swift</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/archive" title="归档">归档</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/about" title="关于">关于</a>
+                </li>
+                 
+              </ul>
+            </nav>
+          </div>
+
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="#"
+        title="添加 lbj147123 的微信"
+      >
+        <i class="social fa fa-weixin"></i>
+        <span class="label">Weixin</span>
+      </a>
+    </li>
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="http://weibo.com/lbj147123"
+        title="@lbj147123 的微博"
+        target="_blank"
+      >
+        <i class="social fa fa-weibo"></i>
+        <span class="label">Weibo</span>
+      </a>
+    </li>
+     
+    <!-- Github -->
+    <li class="navigation__item">
+      <a
+        href="https://github.com/Ucself"
+        title="@Ucself 的 Github"
+        target="_blank"
+      >
+        <i class="social fa fa-github"></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+      
+
+    <!-- RSS -->
+    <li class="navigation__item">
+      <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+        <i class="social fa fa-rss"></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+
+    
+    <!-- Email -->
+    <li class="navigation__item">
+      <a href="mailto:lbj147123@163.com" title="Contact me">
+        <i class="social fa fa-envelope"></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article
+  class="post-container post-container--single"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header">
+    <div class="post-meta">
+      <time
+        datetime="2017-11-01 00:00:00 +0800"
+        itemprop="datePublished"
+        class="post-meta__date date"
+        >2017-11-01</time
+      >
+      &#8226;
+      <span class="post-meta__tags tags">archive</span>
+    </div>
+    <h1 class="post-title">iOS框架如何发布到CocoaPods</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="前言">前言</h2>
+<p>经常使用别人的封装库或者项目，在项目开发中自己也有封装，即使不能给别人广泛使用，也可以自己在多项目中pod方式使用自己封装的代码
+前提：mac上已经装好了pod,git</p>
+<h3 id="一创建自己库添加cocoapods支持">一、创建自己库添加Cocoapods支持</h3>
+<h4 id="1基于pod自动创建项目">1、基于pod自动创建项目</h4>
+<p>在终端输入</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod lib create JGCache
+</code></pre></div></div>
+<p>提示对应的询问命令</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cloning `https://github.com/CocoaPods/pod-template.git` into `JGCache`.
+Configuring JGCache template.
+
+------------------------------
+
+To get you started we need to ask a few questions, this should only take a minute.
+
+If this is your first time we recommend running through with the guide: 
+ - http://guides.cocoapods.org/making/using-pod-lib-create.html
+ ( hold cmd and double click links to open in a browser. )
+
+
+What language do you want to use?? [ Swift / ObjC ]
+ &gt; Swift
+
+Would you like to include a demo application with your library? [ Yes / No ]
+ &gt; Yes
+
+Which testing frameworks will you use? [ Quick / None ]
+ &gt; None
+
+Would you like to do view based testing? [ Yes / No ]
+ &gt; No
+</code></pre></div></div>
+<p>项目创建成功，并编译成功</p>
+<h4 id="2接下来在httpsgithubcom官网自己的账号下创建一个仓库jgcache这里不是重点不用介绍了">2、接下来在https://github.com/官网自己的账号下创建一个仓库JGCache（这里不是重点，不用介绍了）</h4>
+<h4 id="3将pod命令自动创建的项目上传到github-jgcache项目中这里不是重点不用介绍了">3、将pod命令自动创建的项目上传到github JGCache项目中，（这里不是重点，不用介绍了）</h4>
+<h4 id="4给仓库jgcache-主分支master-创建一个tag-010-这里不是重点不用介绍了">4、给仓库JGCache 主分支master 创建一个tag 0.1.0 （这里不是重点，不用介绍了）</h4>
+<h4 id="5打开项目中的jgcachepodspec文件可以看到默认设置">5、打开项目中的JGCache.podspec文件可以看到默认设置</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#
+# Be sure to run `pod lib lint JGCache.podspec' to ensure this is a
+# valid spec before submitting.
+#
+# Any lines starting with a # are optional, but their use is encouraged
+# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
+#
+
+Pod::Spec.new do |s|
+  s.name             = 'JGCache'
+  s.version          = '0.1.0'
+  s.summary          = 'A short description of JGCache.'
+
+# This description is used to generate tags and improve search results.
+#   * Think: What does it do? Why did you write it? What is the focus?
+#   * Try to keep it short, snappy and to the point.
+#   * Write the description between the DESC delimiters below.
+#   * Finally, don't worry about the indent, CocoaPods strips it!
+
+  s.description      = &lt;&lt;-DESC
+TODO: Add long description of the pod here.
+                       DESC
+
+  s.homepage         = 'https://github.com/lbj147123@163.com/JGCache'
+  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.license          = { :type =&gt; 'MIT', :file =&gt; 'LICENSE' }
+  s.author           = { 'lbj147123@163.com' =&gt; 'lbj147123@163.com' }
+  s.source           = { :git =&gt; 'https://github.com/lbj147123@163.com/JGCache.git', :tag =&gt; s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/&lt;TWITTER_USERNAME&gt;'
+
+  s.ios.deployment_target = '8.0'
+
+  s.source_files = 'JGCache/Classes/**/*'
+  
+  # s.resource_bundles = {
+  #   'JGCache' =&gt; ['JGCache/Assets/*.png']
+  # }
+
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.frameworks = 'UIKit', 'MapKit'
+  # s.dependency 'AFNetworking', '~&gt; 2.3'
+end
+
+</code></pre></div></div>
+<p>6、修改项目中的JGCache.podspec文件的设置为（这里就不介绍每一项的意思了）</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pod::Spec.new do |s|
+  s.name             = 'JGCache'
+  s.version          = '0.1.0'
+  s.summary          = 'this is description'
+
+# This description is used to generate tags and improve search results.
+#   * Think: What does it do? Why did you write it? What is the focus?
+#   * Try to keep it short, snappy and to the point.
+#   * Write the description between the DESC delimiters below.
+#   * Finally, don't worry about the indent, CocoaPods strips it!
+
+  s.description      = &lt;&lt;-DESC
+TODO: this is description
+                       DESC
+
+  s.homepage         = 'https://github.com/Ucself/JGCache'
+  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.license          = { :type =&gt; 'MIT', :file =&gt; 'LICENSE' }
+  s.author           = { '李保君' =&gt; 'lbj147123@163.com' }
+  s.source           = { :git =&gt; 'https://github.com/Ucself/JGCache.git', :tag =&gt; s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/&lt;TWITTER_USERNAME&gt;'
+
+  s.ios.deployment_target = '8.0'
+
+  s.source_files = 'JGCache/Classes/**/*'
+  
+  # s.resource_bundles = {
+  #   'JGCache' =&gt; ['JGCache/Assets/*.png']
+  # }
+
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.frameworks = 'UIKit', 'MapKit'
+  s.dependency 'ObjectMapper', '~&gt; 3.0.0'
+end
+</code></pre></div></div>
+<h4 id="7检测填写的podspec是否有错误cd进入jgcache文件目录">7、检测填写的podspec是否有错误，cd进入JGCache文件目录</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod spec lint
+</code></pre></div></div>
+<h4 id="8测试本地导入的文件是否报错cd-进入项目example文件路径导入依赖的第三方库">8、测试本地导入的文件是否报错。cd 进入项目Example文件路径,导入依赖的第三方库</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod install 
+</code></pre></div></div>
+<h4 id="9上传的cocopods管理">9、上传的cocopods管理</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod trunk push JGCache.podspec --allow-warnings
+</code></pre></div></div>
+<h3 id="二更新自己库添加cocoapods支持">二、更新自己库添加Cocoapods支持</h3>
+<h4 id="1jgcachepodspec-文件中你需要更改的项目更改主要更改版本如100">1、JGCache.podspec 文件中你需要更改的项目更改（主要更改版本如：1.0.0）</h4>
+<h4 id="2在啊gitbug对你的工程添加标签如100">2、在啊gitbug对你的工程添加标签如1.0.0</h4>
+<h4 id="3上传工程工程代码">3、上传工程工程代码</h4>
+<h4 id="4再次执行">4、再次执行</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod trunk push JGCache.podspec --allow-warnings
+</code></pre></div></div>
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+  <div class="read-more-item">
+    <span class="read-more-item-dim">上一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2018/03/swift-%E5%B7%A5%E7%A8%8B-TARGETS%E4%B8%8E%E9%A2%84%E5%AE%9A%E4%B9%89%E5%AE%8F/" title="link to swift 工程 TARGETS与预定义宏">swift 工程 TARGETS与预定义宏</a>
+    </h2>
+
+    <div class="post-list__meta">
+      <time
+        datetime="2018-03-29 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2018-03-29</time
+      >
+    </div>
+  </div>
+    
+  <div class="read-more-item">
+    <span class="read-more-item-dim">下一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2017/09/iOS-%E4%B8%ADFrameworks-Pods-Bridging-Header.h%E6%A1%A5%E6%8E%A5-import%E4%B9%8B%E9%97%B4%E7%9A%84%E7%90%86%E8%A7%A3/" title="link to iOS 中Frameworks，Pods ，-Bridging-Header.h桥接，import之间的理解">iOS 中Frameworks，Pods ，-Bridging-Header.h桥接，import之间的理解</a>
+    </h2>
+    <div class="post-list__meta">
+      <time
+        datetime="2017-09-21 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2017-09-21</time
+      >
+    </div>
+  </div>
+  
+</section>
+
+<!-- <section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/";
+        this.page.identifier = "/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/";
+    };
+
+    var disqus_shortname = 'vno-jekyll';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+ -->
+
+            <section class="footer">
+    <footer>
+        <span class="footer__copyright">本站由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-03-21 生成。</span>
+        <span class="footer__copyright">  </span>
+        <span class="footer__copyright">本站由 <a href="https://ucself.cn">@ucself</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2019</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>

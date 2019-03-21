@@ -5,9 +5,603 @@
     <description>嗨，我是ucself，一名大前端开发工程师。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Mar 2019 18:06:01 +0800</pubDate>
-    <lastBuildDate>Thu, 21 Mar 2019 18:06:01 +0800</lastBuildDate>
+    <pubDate>Thu, 21 Mar 2019 18:23:16 +0800</pubDate>
+    <lastBuildDate>Thu, 21 Mar 2019 18:23:16 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>2018年终总结，2019年初计划</title>
+        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;最近一段时间比较懵逼（以下的解决状态），感觉又一次浑浑噩噩的状态来临，似曾相识的感觉，想必许多人也有这样的状态过。我发誓要好好利用，不能再这样浪费时间。借此机会划写一篇“2018年终总结，2019年初计划”，来寻找原因，解决状态，制定计划。&lt;/p&gt;
+
+&lt;h4 id=&quot;寻找原因&quot;&gt;寻找原因&lt;/h4&gt;
+&lt;p&gt;1、目标计划
+说到计划，其实每个人都计划过，我现在还能翻开刚毕业时候写的人生规划列表。包含了硬实力（第一年初级工程师，第二年中级工程…）和软实力（第一年，第二年…），现在想起来都想笑，哈哈。算了不说无用的，来分析一下没有实施的原因：
+a. 目标太大而远：打一个比方，相当于“5年后我要当上CEO，迎娶白富美”，这目标太大，都不知道CEO需要哪些能力，自己有什么能力，这个5年的时间也太长了吧，说不一定已经嗝屁了呢，也不是说有长目标不好，就是感觉目前对我来说没太大用处。
+b. 目标不够明确：对于目标应该达到什么明确结果，而不是虚拟的
+c. 没有细化成小目标：在指定目标的时候并不知道执行过程中需要做什么，没有细分
+d. 目标没有执行约束：没有执行约束，想干嘛就干嘛，拖着就拖着，然后就拖忘掉了，最后完全没达到自我的预期&lt;/p&gt;
+
+&lt;p&gt;2、知识体系
+对于知识体系，我曾经也搭建过，记录过，比如使用《有道笔记》记录学习swift 语言的各个章节内容和自己写的demo；使用github 的 star/fork 记录优秀的框架；使用百度网盘保存资源等等。但是知识体系感觉还是很散落。
+打一个比方，2018年底2019年初互联网寒冬，互联网公司很多都在裁员（我们公司也在裁员，这次没有裁到我），领导们都叫我们充电。我在设想，如果裁员裁到我，我能否迅速的寻找下一家公司的时候汇集我知识体系，达到我最好的状态，显然不行。领导们叫我们充电，只是说明一种信号，到底冲什么呢，我觉得是搭建自我良好的知识体系。&lt;/p&gt;
+
+&lt;p&gt;3、自制力，约束
+说到没有自制力和约束：那就是在个人空档期的时候，自己未找到充电的方式，不充实。
+第一个原因：没有建立良性的目标任务，任务的严重程度和时间紧迫度，比如在工作，任务都完成的情况，空闲时间刷刷抖音，看看新闻，聊聊微信，半天就过去了，在玩玩游戏，一天就过去了。第二个原因：建立在环境下，学习工作的气氛。&lt;/p&gt;
+
+&lt;h4 id=&quot;解决状态&quot;&gt;解决状态&lt;/h4&gt;
+
+&lt;p&gt;状态首先捋一捋之前什么状态需要解决：
+1、忙碌期：任务太多的时候，非常忙碌，加班，这时候充实，严重的时候会反感。
+2、空档期：在工作生活空档期，比较闲，有些时候看看新闻资料，时间过得超慢，感觉在浪费时间，不想这样特别难受。
+3、知识沉淀：在空档期，或者忙碌期都没有知识体系沉淀，到了关键回想整理的时候全部靠脑子回想收之甚少，难受。&lt;/p&gt;
+
+&lt;p&gt;好吧，现在来解决解决。
+理清楚了上面“寻找原因”，这三个状态其实很好解决：
+1、首先建立“时间任务管理”来指定小目标：采用象限时间任务管理，当脑子里凸显出我想做什么\我应该做什么的时候（任务指派我），就按照重要性与紧迫性写入任务。按照任务管理做就行了
+2、在自己的“时间任务管理”的小目标中，觉得可以作为知识体系建立的使用github博客，进行分类归档
+3、在“自制力/约束”方面：紧迫性的“时间任务管理”已有；工作提升气氛方面，使用正确使用坐姿工作和娱乐，不要给身体一种懒散的状态。&lt;/p&gt;
+
+&lt;h4 id=&quot;制定计划&quot;&gt;制定计划&lt;/h4&gt;
+&lt;p&gt;好了，对自己分析那么多，制定点改善计划吧。
+1、使用笔记 “象限时间任务管理”。曾经使用过任务管理软件，道理时间就会提醒，让自己难受，任务就是在做事的时候去根据优先级选择做，不能让自己难受。
+2、使用github静态网站，作为知识体系记录。
+3、家里有自己工作，任务环境。&lt;/p&gt;
+
+&lt;p&gt;临时笔记，数据记录使用“有道笔记”；自我文件资源使用在“百度网盘”；关于IT项目资源使用“github”；各种浏览书签使用“safari”；常用软件（mac，windows）记录待发现&lt;/p&gt;
+
+&lt;h2 id=&quot;2018总结&quot;&gt;2018总结&lt;/h2&gt;
+&lt;p&gt;当写入到2018总结一栏的时候停顿了很久，没有记录全靠脑子回想难受，明年应该就不会了。
+首先列出几个2018的大节点吧：
+1、App 发布15次版本
+2、在雷神指导下搭建jenkins + fastlane + pgy App打包自动构建
+3、在雷神指导下完善工具链App 研发并投入研发部使用
+4、小试RN 接入App研发，同一套代码三端运行
+5、新增加研发功能菜单，方便与H5端同事，测试同事，native同事联调
+6、新使用第三方SDK
+7、初步了解进入前端开发rect体系并做了小型研发类型项目
+8、在软实力方面在关注，软实力提示展示毕竟与自己能力、视野有关
+9、在业务与自定义任务工作中，对技术能力，技术使用广度都有提升&lt;br /&gt;
+在找找自己的不足吧：
+1、这些大节点能回想起，但是做完之后没有归档到相应的知识体系
+2、如何再一次做这些功能，可能回去翻阅旧代码和文档(缺乏总结产物)&lt;/p&gt;
+
+&lt;h2 id=&quot;2019计划&quot;&gt;2019计划&lt;/h2&gt;
+&lt;p&gt;在2019来临之际根据前言，2018总结，指定些应该自我改变的目标与计划：
+1、使用“象限时间任务管理”，管理自我目标，任务（实践中不行，再换）(明确目标)
+2、对已经完成过得任务目标，进行知识体系构建，记录在github静态站中(明确目标)
+3、深入Native 技术能力（毕竟是吃饭的家伙），熟练前端React体系研发能力(明确目标)
+4、自制力提升（改变在任务目标，环境方式提升）(虚拟目标)
+5、软实力提升（学习周围人和能力）(虚拟目标)&lt;/p&gt;
+</description>
+        <pubDate>Wed, 16 Jan 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/01/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-2019%E5%B9%B4%E5%88%9D%E8%AE%A1%E5%88%92/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/01/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-2019%E5%B9%B4%E5%88%9D%E8%AE%A1%E5%88%92/</guid>
+        
+        <category>archive</category>
+        
+        
+        <category>archive</category>
+        
+      </item>
+    
+      <item>
+        <title>iOS UIViewController的self.view布局位置问题。</title>
+        <description>&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+&lt;p&gt;在平时的开发中，打开布局查看器老是遇见self.view有的控制器顶在了navagationbar上面，有的控制器顶在了navagationbar下面；一直很纠结这个问题，最近专门研究一下，并记录下来。&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/2007491-01b78db0d3ce2ea7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这里不做详细介绍了，如果不愿意详细看下面文章就看我总结吧，很详细的介绍在：https://www.jianshu.com/p/6925ce1b9e34&lt;/p&gt;
+
+&lt;p&gt;这里做一个总结：
+1、影响到self.view是顶入顶部（有navagationbar）或者底部（有tabbar）有三个属性可以影响到：
+A、isTranslucent（所属UINavigationBar），
+B、edgesForExtendedLayout（所属UIViewController），
+C、extendedLayoutIncludesOpaqueBars（所属UIViewController）
+2、isTranslucent 与 edgesForExtendedLayout 相互影响是否顶入顶部或底部，
+举例：
+（isTranslucent 为true 和 edgesForExtendedLayout 为all ）就self.view顶入顶部和底部，（
+A、isTranslucent 为false 和 edgesForExtendedLayout 为all ）就self.view不顶入顶部和底部，
+B、isTranslucent 为true 和 edgesForExtendedLayout 为.top ）就self.view顶入顶部和不顶入底部，
+其他的属性就自己揣测吧。
+3、extendedLayoutIncludesOpaqueBars  = true 可忽略 isTranslucent 对导航栏的影响（可以理解为：在其他默认设置情况先设置extendedLayoutIncludesOpaqueBars  = true， self.view顶入顶部和底部）；&lt;/p&gt;
+</description>
+        <pubDate>Fri, 30 Mar 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/03/iOS-UIViewController%E7%9A%84self.view%E5%B8%83%E5%B1%80%E4%BD%8D%E7%BD%AE%E9%97%AE%E9%A2%98/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/iOS-UIViewController%E7%9A%84self.view%E5%B8%83%E5%B1%80%E4%BD%8D%E7%BD%AE%E9%97%AE%E9%A2%98/</guid>
+        
+        <category>archive</category>
+        
+        
+        <category>archive</category>
+        
+      </item>
+    
+      <item>
+        <title>swift 工程 TARGETS与预定义宏</title>
+        <description>&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+&lt;p&gt;最近公司项目接入妙健康framework 的时候，framework不支持模拟器；如果接入进去整个工程都不支持模拟器了，这怎么得了，所以想了一个办法。
+想到的办法与实践是：给整个iOS添加TARGETS，模拟器使用的Targets工程 不接入妙健康framework，真机运行的Targets工程接入妙健康framework；其他项目文件两个Targets 工程一起使用；共同使用的文件再根据各自的Targets 工程预定义宏方式进行判断是否写秒健康代码，如图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/2007491-a0e8899d3ad832ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;###具体操作步骤：
+####1、通过如图方式复制一份现有工程，然后更名为：DoctorHealthSimulator
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/2007491-921754d3e32f0e3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;
+结果：
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/2007491-f4cea8f9629bf4bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;####2、把不需要接入的framework 或者文件的Target Membership 的DoctorHealthSimulator为未选中，如果在没有写任何接入代码的时候，就可以用模拟器编译DoctorHealthSimulator 就不会报错了
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/2007491-dd8cb02f96898004.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;
+####3、这时候真机运行的DoctorHealth要写接入代码，而模拟器运行DoctorHealthSimulator不需要写接入代码，但是他们都引用了同一个文件，像下面这样干，
+a、如果是swift工程项目，选中DoctorHealth -&amp;gt;build Settings -&amp;gt; other swift flags 加入如图所示配置（最后一个）
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/2007491-5d8be25bee330e4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;DoctorHealthSimulator就不用配置任何东西
+公用文件就像如图写：
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/2007491-eb6f2452823f12bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;b、如果是OC项目工程，选中DoctorHealth -&amp;gt;build Settings -&amp;gt; preprocessor macros 加入如图所示配置（最后一个）
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/2007491-1e73ad7d66bbc668.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;
+代码和swift工程方式写，配置完成
+c、如果是混合编写的工程，OC与swift代码都需要用到，则两个地方都要配置预编译宏&lt;/p&gt;
+
+&lt;p&gt;这样就完成了所需的配置。只是模拟器运行DoctorHealthSimulator工程，真机运行DoctorHealth工程，就达到了需要的效果，模拟器只是没有妙健康的功能（本来模拟器就不支持蓝牙等功能）&lt;/p&gt;
+</description>
+        <pubDate>Thu, 29 Mar 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/03/swift-%E5%B7%A5%E7%A8%8B-TARGETS%E4%B8%8E%E9%A2%84%E5%AE%9A%E4%B9%89%E5%AE%8F/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/swift-%E5%B7%A5%E7%A8%8B-TARGETS%E4%B8%8E%E9%A2%84%E5%AE%9A%E4%B9%89%E5%AE%8F/</guid>
+        
+        <category>archive</category>
+        
+        
+        <category>archive</category>
+        
+      </item>
+    
+      <item>
+        <title>iOS框架如何发布到CocoaPods</title>
+        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;经常使用别人的封装库或者项目，在项目开发中自己也有封装，即使不能给别人广泛使用，也可以自己在多项目中pod方式使用自己封装的代码
+前提：mac上已经装好了pod,git&lt;/p&gt;
+&lt;h3 id=&quot;一创建自己库添加cocoapods支持&quot;&gt;一、创建自己库添加Cocoapods支持&lt;/h3&gt;
+&lt;h4 id=&quot;1基于pod自动创建项目&quot;&gt;1、基于pod自动创建项目&lt;/h4&gt;
+&lt;p&gt;在终端输入&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod lib create JGCache
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;提示对应的询问命令&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Cloning `https://github.com/CocoaPods/pod-template.git` into `JGCache`.
+Configuring JGCache template.
+
+------------------------------
+
+To get you started we need to ask a few questions, this should only take a minute.
+
+If this is your first time we recommend running through with the guide: 
+ - http://guides.cocoapods.org/making/using-pod-lib-create.html
+ ( hold cmd and double click links to open in a browser. )
+
+
+What language do you want to use?? [ Swift / ObjC ]
+ &amp;gt; Swift
+
+Would you like to include a demo application with your library? [ Yes / No ]
+ &amp;gt; Yes
+
+Which testing frameworks will you use? [ Quick / None ]
+ &amp;gt; None
+
+Would you like to do view based testing? [ Yes / No ]
+ &amp;gt; No
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;项目创建成功，并编译成功&lt;/p&gt;
+&lt;h4 id=&quot;2接下来在httpsgithubcom官网自己的账号下创建一个仓库jgcache这里不是重点不用介绍了&quot;&gt;2、接下来在https://github.com/官网自己的账号下创建一个仓库JGCache（这里不是重点，不用介绍了）&lt;/h4&gt;
+&lt;h4 id=&quot;3将pod命令自动创建的项目上传到github-jgcache项目中这里不是重点不用介绍了&quot;&gt;3、将pod命令自动创建的项目上传到github JGCache项目中，（这里不是重点，不用介绍了）&lt;/h4&gt;
+&lt;h4 id=&quot;4给仓库jgcache-主分支master-创建一个tag-010-这里不是重点不用介绍了&quot;&gt;4、给仓库JGCache 主分支master 创建一个tag 0.1.0 （这里不是重点，不用介绍了）&lt;/h4&gt;
+&lt;h4 id=&quot;5打开项目中的jgcachepodspec文件可以看到默认设置&quot;&gt;5、打开项目中的JGCache.podspec文件可以看到默认设置&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#
+# Be sure to run `pod lib lint JGCache.podspec' to ensure this is a
+# valid spec before submitting.
+#
+# Any lines starting with a # are optional, but their use is encouraged
+# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
+#
+
+Pod::Spec.new do |s|
+  s.name             = 'JGCache'
+  s.version          = '0.1.0'
+  s.summary          = 'A short description of JGCache.'
+
+# This description is used to generate tags and improve search results.
+#   * Think: What does it do? Why did you write it? What is the focus?
+#   * Try to keep it short, snappy and to the point.
+#   * Write the description between the DESC delimiters below.
+#   * Finally, don't worry about the indent, CocoaPods strips it!
+
+  s.description      = &amp;lt;&amp;lt;-DESC
+TODO: Add long description of the pod here.
+                       DESC
+
+  s.homepage         = 'https://github.com/lbj147123@163.com/JGCache'
+  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.license          = { :type =&amp;gt; 'MIT', :file =&amp;gt; 'LICENSE' }
+  s.author           = { 'lbj147123@163.com' =&amp;gt; 'lbj147123@163.com' }
+  s.source           = { :git =&amp;gt; 'https://github.com/lbj147123@163.com/JGCache.git', :tag =&amp;gt; s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/&amp;lt;TWITTER_USERNAME&amp;gt;'
+
+  s.ios.deployment_target = '8.0'
+
+  s.source_files = 'JGCache/Classes/**/*'
+  
+  # s.resource_bundles = {
+  #   'JGCache' =&amp;gt; ['JGCache/Assets/*.png']
+  # }
+
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.frameworks = 'UIKit', 'MapKit'
+  # s.dependency 'AFNetworking', '~&amp;gt; 2.3'
+end
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;6、修改项目中的JGCache.podspec文件的设置为（这里就不介绍每一项的意思了）&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Pod::Spec.new do |s|
+  s.name             = 'JGCache'
+  s.version          = '0.1.0'
+  s.summary          = 'this is description'
+
+# This description is used to generate tags and improve search results.
+#   * Think: What does it do? Why did you write it? What is the focus?
+#   * Try to keep it short, snappy and to the point.
+#   * Write the description between the DESC delimiters below.
+#   * Finally, don't worry about the indent, CocoaPods strips it!
+
+  s.description      = &amp;lt;&amp;lt;-DESC
+TODO: this is description
+                       DESC
+
+  s.homepage         = 'https://github.com/Ucself/JGCache'
+  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.license          = { :type =&amp;gt; 'MIT', :file =&amp;gt; 'LICENSE' }
+  s.author           = { '李保君' =&amp;gt; 'lbj147123@163.com' }
+  s.source           = { :git =&amp;gt; 'https://github.com/Ucself/JGCache.git', :tag =&amp;gt; s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/&amp;lt;TWITTER_USERNAME&amp;gt;'
+
+  s.ios.deployment_target = '8.0'
+
+  s.source_files = 'JGCache/Classes/**/*'
+  
+  # s.resource_bundles = {
+  #   'JGCache' =&amp;gt; ['JGCache/Assets/*.png']
+  # }
+
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.frameworks = 'UIKit', 'MapKit'
+  s.dependency 'ObjectMapper', '~&amp;gt; 3.0.0'
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;7检测填写的podspec是否有错误cd进入jgcache文件目录&quot;&gt;7、检测填写的podspec是否有错误，cd进入JGCache文件目录&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod spec lint
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;8测试本地导入的文件是否报错cd-进入项目example文件路径导入依赖的第三方库&quot;&gt;8、测试本地导入的文件是否报错。cd 进入项目Example文件路径,导入依赖的第三方库&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod install 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;9上传的cocopods管理&quot;&gt;9、上传的cocopods管理&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod trunk push JGCache.podspec --allow-warnings
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;二更新自己库添加cocoapods支持&quot;&gt;二、更新自己库添加Cocoapods支持&lt;/h3&gt;
+&lt;h4 id=&quot;1jgcachepodspec-文件中你需要更改的项目更改主要更改版本如100&quot;&gt;1、JGCache.podspec 文件中你需要更改的项目更改（主要更改版本如：1.0.0）&lt;/h4&gt;
+&lt;h4 id=&quot;2在啊gitbug对你的工程添加标签如100&quot;&gt;2、在啊gitbug对你的工程添加标签如1.0.0&lt;/h4&gt;
+&lt;h4 id=&quot;3上传工程工程代码&quot;&gt;3、上传工程工程代码&lt;/h4&gt;
+&lt;h4 id=&quot;4再次执行&quot;&gt;4、再次执行&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod trunk push JGCache.podspec --allow-warnings
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Wed, 01 Nov 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/</guid>
+        
+        <category>archive</category>
+        
+        
+        <category>archive</category>
+        
+      </item>
+    
+      <item>
+        <title>iOS 中Frameworks，Pods ，-Bridging-Header.h桥接，import之间的理解</title>
+        <description>&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+&lt;p&gt;在项目开发中，遇到一个问题，由于Frameworks，Pods，-Bridging-Header.h，import的使用不当会造成控制台日志报错问题&lt;/p&gt;
+&lt;h2 id=&quot;frameworks&quot;&gt;Frameworks&lt;/h2&gt;
+&lt;p&gt;Frameworks 顾名思义就是框架，是第三方打包完成看不到源码，可以直接使用的
+在项目中引用方式&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;OC  引用某一个文件，Frameworks一般会提供一个h文件引用全部其他文件
+#import &amp;lt;JLRoutes/JLRoutes.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;swift  引用一个包，相当于引用了Frameworks中的所有文件
+import JLRoutes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;pods-方式&quot;&gt;Pods 方式&lt;/h2&gt;
+&lt;p&gt;Pods 在iOS中对封装的源码进行管理，可以视频pod方式导入项目中，相当于能看见源代码也能修改源代码的 Frameworks，有的不会生成Frameworks类似的包如：GrowingIO（因为在swift中import GrowingIO失败）
+在项目中引用方式&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;OC  引用某一个文件，Pods一般会提供一个h文件引用全部其他文件
+#import &amp;lt;JLRoutes/JLRoutes.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;swift  引用一个包，相当于引用了Pods中的所有文件
+import JLRoutes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;-bridging-headerh-桥接文件&quot;&gt;-Bridging-Header.h 桥接文件&lt;/h2&gt;
+&lt;p&gt;桥接文件，即是OC的文件通过桥接到Swift能调用
+1、在swift使用中我们可以对包（Frameworks/Pods）进行桥接，如&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#import &amp;lt;JLRoutes/JLRoutes.h&amp;gt;
+#import &amp;lt;GrowingIO/Growing.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;2、绝不能使用&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;#import “JLRoutes.h”&lt;/del&gt;
+&lt;del&gt;#import “Growing.h”&lt;/del&gt;
+虽然不会错报，会出现控制台打印变量问题
+3、项目中添加的OC代码就得使用&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#import &quot;JLRoutes.h&quot;
+#import &quot;Growing.h&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;import导入方式&quot;&gt;import导入方式&lt;/h2&gt;
+&lt;p&gt;如果是单个文件就需要导入，直接使用；如果是包&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import AFNetworking
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 21 Sep 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/09/iOS-%E4%B8%ADFrameworks-Pods-Bridging-Header.h%E6%A1%A5%E6%8E%A5-import%E4%B9%8B%E9%97%B4%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/iOS-%E4%B8%ADFrameworks-Pods-Bridging-Header.h%E6%A1%A5%E6%8E%A5-import%E4%B9%8B%E9%97%B4%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+        
+        <category>archive</category>
+        
+        
+        <category>archive</category>
+        
+      </item>
+    
+      <item>
+        <title>iOS NSPredicate（谓词）语法</title>
+        <description>&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+
+&lt;p&gt;在项目开发中遇见本地化搜索不是很高，当有本地化搜索的需求时候对NSPredicate的语法都去网上搜索，然而苹果官方也没有专门介绍语法，借这次机会总结和写下谓词的语法，方便以后开发查看&lt;/p&gt;
+
+&lt;h2 id=&quot;nspredicate的语法&quot;&gt;NSPredicate的语法&lt;/h2&gt;
+
+&lt;h3 id=&quot;比较运算符&quot;&gt;比较运算符&lt;/h3&gt;
+
+&lt;p&gt;1、=，==：判断两个表达式是否相等，在谓词中=和==是相同的意思都是判断，而没有赋值这一说
+2、&amp;gt;=，=&amp;gt;：判断左边表达式的值是否大于或等于右边表达式的值
+3、&amp;gt;：判断左边表达式的值是否大于右边表达式的值
+4、&amp;lt;：判断左边表达式的值是否小于右边表达式的值
+5、!=、&amp;lt;&amp;gt;：判断两个表达式是否不相等
+6、BETWEEN：BETWEEN表达式必须满足表达式 BETWEEN {下限，上限}的格式，要求该表达式必须大于或等于下限，并小于或等于上限&lt;/p&gt;
+
+&lt;p&gt;例：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//数据源
+let word = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;,&quot;g&quot;,&quot;h&quot;,&quot;i&quot;,&quot;j&quot;,&quot;k&quot;,&quot;l&quot;,&quot;m&quot;,&quot;n&quot;,&quot;o&quot;]
+//相等判断
+let equalPredicate:NSPredicate = NSPredicate.init(format: &quot;SELF == 'b'&quot;)
+print(&quot;word[1] is = b -&amp;gt; \(equalPredicate.evaluate(with: word[1]))&quot;)
+//之间判断
+let betweenPredicate:NSPredicate = NSPredicate.init(format: &quot;SELF BETWEEN {'d','m'}&quot;)
+ for item in word {
+      print(&quot;word item is between {'d','m'} -&amp;gt; \(betweenPredicate.evaluate(with: item))&quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;word[1] is = b -&amp;gt; true
+word item is between {'d','m'} -&amp;gt; false
+word item is between {'d','m'} -&amp;gt; false
+word item is between {'d','m'} -&amp;gt; false
+word item is between {'d','m'} -&amp;gt; true
+word item is between {'d','m'} -&amp;gt; true
+word item is between {'d','m'} -&amp;gt; true
+word item is between {'d','m'} -&amp;gt; true
+word item is between {'d','m'} -&amp;gt; true
+word item is between {'d','m'} -&amp;gt; true
+word item is between {'d','m'} -&amp;gt; true
+word item is between {'d','m'} -&amp;gt; true
+word item is between {'d','m'} -&amp;gt; true
+word item is between {'d','m'} -&amp;gt; true
+word item is between {'d','m'} -&amp;gt; false
+word item is between {'d','m'} -&amp;gt; false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;逻辑运算符&quot;&gt;逻辑运算符&lt;/h3&gt;
+
+&lt;p&gt;1、BEGINSWITH：检查某个字符串是否以指定的字符串开头（如判断字符串      是否以a开头：BEGINSWITH ‘a’）
+2、ENDSWITH：检查某个字符串是否以指定的字符串结尾
+3、CONTAINS：检查某个字符串是否包含指定的字符串
+4、LIKE：检查某个字符串是否匹配指定的字符串模板。其之后可以跟?代表一个字符和&lt;em&gt;代表任意多个字符两个通配符。比如”name LIKE ‘&lt;/em&gt;ac&lt;em&gt;’“，这表示name的值中包含ac则返回YES；”name LIKE ‘?ac&lt;/em&gt;’“，表示name的第2、3个字符为ac时返回YES。
+5、MATCHES：检查某个字符串是否匹配指定的正则表达式。虽然正则表达式的执行效率是最低的，但其功能是最强大的，也是我们最常用的。&lt;/p&gt;
+
+&lt;p&gt;注：字符串比较都是区分大小写和重音符号的。如：café和cafe是不一样的，Cafe和cafe也是不一样的。如果希望字符串比较运算不区分大小写和重音符号，请在这些运算符后使用[c]，[d]选项。其中[c]是不区分大小写，[d]是不区分重音符号，其写在字符串比较运算符之后，比如：name LIKE[cd] ‘cafe’，那么不论name是cafe、Cafe还是café上面的表达式都会返回YES。&lt;/p&gt;
+
+&lt;p&gt;例：最常见的就是正则匹配了&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//判断是不是邮箱
+let emailRegular = &quot;[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}&quot;
+let emailpredicate = NSPredicate(format:&quot;SELF MATCHES %@&quot;, emailRegular)
+print(&quot;www.llllll.com is = email -&amp;gt; \(emailpredicate.evaluate(with: &quot;www.llllll.com&quot;))&quot;)
+print(&quot;www@llllll.com is = email -&amp;gt; \(emailpredicate.evaluate(with: &quot;www@llllll.com&quot;))&quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;www.llllll.com is = email -&amp;gt; false
+www@llllll.com is = email -&amp;gt; true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;集合运算符&quot;&gt;集合运算符&lt;/h3&gt;
+
+&lt;p&gt;1、ANY、SOME：集合中任意一个元素满足条件，就返回YES。
+2、ALL：集合中所有元素都满足条件，才返回YES。
+3、NONE：集合中没有任何元素满足条件就返回YES。如:NONE person.age &amp;lt; 18，表示person集合中所有元素的age&amp;gt;=18时，才返回YES。
+4、IN：等价于SQL语句中的IN运算符，只有当左边表达式或值出现在右边的集合中才会返回YES。&lt;/p&gt;
+
+&lt;p&gt;例：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//数据源
+let word = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;,&quot;g&quot;,&quot;h&quot;,&quot;i&quot;,&quot;j&quot;,&quot;k&quot;,&quot;l&quot;,&quot;m&quot;,&quot;n&quot;,&quot;o&quot;]
+//集合判断
+let equalPredicate:NSPredicate = NSPredicate.init(format: &quot;NONE SELF &amp;gt; 'p'&quot;)
+print(&quot;word 所有元素都不是大于p -&amp;gt; \(equalPredicate.evaluate(with: word))&quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;word 所有元素都不是大于p -&amp;gt; true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;直接量值&quot;&gt;直接量值&lt;/h3&gt;
+&lt;p&gt;在谓词表达式中可以使用如下直接量
+1、FALSE、NO：代表逻辑假
+2、TRUE、YES：代表逻辑真
+3、NULL、NIL：代表空值
+4、SELF：代表正在被判断的对象自身
+5、”string”或’string’：代表字符串
+6、数组：和c中的写法相同，如：{‘one’, ‘two’, ‘three’}。
+7、数值：包括证书、小数和科学计数法表示的形式
+8、十六进制数：0x开头的数字
+9、八进制：0o开头的数字
+10、二进制：0b开头的数字&lt;/p&gt;
+
+&lt;h3 id=&quot;保留值&quot;&gt;保留值&lt;/h3&gt;
+&lt;p&gt;下列单词都是保留字（不论大小写）&lt;/p&gt;
+
+&lt;p&gt;AND、OR、IN、NOT、ALL、ANY、SOME、NONE、LIKE、CASEINSENSITIVE、CI、MATCHES、CONTAINS、BEGINSWITH、ENDSWITH、BETWEEN、NULL、NIL、SELF、TRUE、YES、FALSE、NO、FIRST、LAST、SIZE、ANYKEY、SUBQUERY、CAST、TRUEPREDICATE、FALSEPREDICATE&lt;/p&gt;
+
+&lt;p&gt;注：虽然大小写都可以，但是更推荐使用大写来表示这些保留字，也是上面介绍到的语法，没介绍到的自己理解吧，或者给我留言&lt;/p&gt;
+
+&lt;h3 id=&quot;在谓词中使用占位符参数&quot;&gt;在谓词中使用占位符参数&lt;/h3&gt;
+&lt;p&gt;%K：用于动态传入属性名
+%@：用于动态设置属性值&lt;/p&gt;
+
+&lt;p&gt;例：最后来一个综合的本地搜索吧，对自定义对象进行筛选&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//自定义对象
+@interface YContactObject : NSObject
+/**
+ *  联系人的姓名对象
+ */
+@property (nonatomic, strong)YContactNameObject * nameObject;
+@end
+
+//姓名对象
+@interface YContactNameObject : NSObject
+/**
+ *  姓名
+ */
+@property (nonatomic, copy)NSString * name;
+/**
+ *  昵称
+ */
+@property (nonatomic, copy) NSString * nickName;
+/**
+ *  名字
+ */
+@property (nonatomic, copy) NSString * givenName;
+
+-(NSString *)getName
+{
+    //除nil处理
+    self.middleName = (self.middleName) ? self.middleName : @&quot;&quot;;
+    self.givenName = (self.givenName) ? self.givenName : @&quot;&quot;;
+    self.familyName = (self.familyName) ? self.familyName : @&quot;&quot;;
+    
+    self.name = [[self.familyName stringByAppendingString:self.middleName] stringByAppendingString:self.givenName];
+    
+    return self.name;
+}
+
+@end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//通讯录数组
+self.sourceContactObjects:[YContactObject] = [**********]
+self.contactObjects:[YContactObject] = []
+//姓名过滤谓词
+let predicateString:String = String.init(format: &quot;(SELF.nameObject.getName CONTAINS '%@') OR ((SELF.phoneObject != NIL) AND (SELF.getFirstPhone CONTAINS '%@'))&quot;, searchText,searchText)
+let filterPredicate:NSPredicate = NSPredicate.init(format: predicateString)
+self.contactObjects = (sourceContactObjects as NSArray).filtered(using: filterPredicate) as! [YContactObject]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;运行结果&lt;/p&gt;
+
+&lt;p&gt;1、&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2007491-d7ab80c54deffbd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;Simulator Screen Shot 2017年9月11日 下午5.17.43.png&quot; /&gt;
+2、&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2007491-ff5a81fd05ff917a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;Simulator Screen Shot 2017年9月11日 下午5.17.50.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;后续有什么问题或者建议，请给我留言&lt;/p&gt;
+</description>
+        <pubDate>Mon, 11 Sep 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/09/iOS-NSPredicate-%E8%B0%93%E8%AF%8D-%E8%AF%AD%E6%B3%95/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/iOS-NSPredicate-%E8%B0%93%E8%AF%8D-%E8%AF%AD%E6%B3%95/</guid>
+        
+        <category>archive</category>
+        
+        
+        <category>archive</category>
+        
+      </item>
+    
+      <item>
+        <title>iOS Objective-C与Swift闭包（block）写法</title>
+        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在项目开发中经常会去查iOS闭包怎么写，因为它的语法太古怪，两种语言写法不一，经常搞混，干脆记录下常用的写法算了&lt;/p&gt;
+&lt;h2 id=&quot;闭包定义&quot;&gt;闭包定义&lt;/h2&gt;
+&lt;p&gt;闭包是指可以包含自由（未绑定到特定对象）变量的代码块；这些变量不是在这个代码块内或者任何全局上下文中定义的，而是在定义代码块的环境中定义（局部变量）。“闭包” 一词来源于以下两者的结合：要执行的代码块（由于自由变量被包含在代码块中，这些自由变量以及它们引用的对象没有被释放）和为自由变量提供绑定的计算环境（作用域）。&lt;/p&gt;
+&lt;h3 id=&quot;声明闭包block&quot;&gt;声明闭包（block）&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Objective-C&quot;&gt;typedef NSString *(^blockCallback)(NSString *parameter1, NSString *parameter2);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Swift&quot;&gt;//回调闭包 用于评价成功后
+    typealias callbackFunc = (_ orderId:String ) -&amp;gt; Void
+    var evaluationBlockCallback:callbackFunc?
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;定义闭包block&quot;&gt;定义闭包（block）&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;第一种方式 使用声明
+@property (nonatomic,strong) blockCallbackType blockCallbackName;
+
+_blockCallbackName = ^(NSString *parameter1,NSString *parameter2){
+        return parameter1;
+    };
+&amp;gt;第二种方式 不使用声明
+@property (nonatomic,strong) NSString *(^blockCallbackName2)(NSString *parameter1, NSString *parameter2);
+
+_blockCallbackName2 = ^(NSString *parameter1,NSString *parameter2){
+        return parameter1;
+    };
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let blockCallbackName:String = {(parameter1:String,parameter2:String) -&amp;gt;String in
+            return parameter1
+        }(&quot;parameter1&quot;,&quot;parameter2&quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;函数定义闭包block&quot;&gt;函数定义闭包（block）&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-(void)functionUseBlock:(NSString* (^)(NSString *parameter1, NSString *parameter2))callBackOne callBackTwo:(blockCallbackType)callBackTwo{
+    if (callBackOne) {
+        callBackOne(@&quot;parameter1&quot;,@&quot;parameter2&quot;);
+    }
+    if (callBackTwo) {
+        callBackTwo(@&quot;parameter1&quot;,@&quot;parameter2&quot;);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func functionUseBlock(callBack:(String,String) -&amp;gt;String) -&amp;gt; Void  {
+        print(callBack(&quot;parameter1&quot;,&quot;parameter2&quot;))
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;调用函数闭包block&quot;&gt;调用函数闭包（block）&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[self functionUseBlock:^NSString *(NSString *parameter1, NSString *parameter2) {
+        return parameter1;
+    } callBackTwo:^NSString *(NSString *parameter1, NSString *parameter2) {
+        return parameter1;
+    }];
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;self.functionUseBlock = { (parameter1, parameter2) -&amp;gt; String in
+            return parameter2
+        }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;结尾&quot;&gt;结尾&lt;/h3&gt;
+&lt;p&gt;Swift 版本根据参数和返回值有很多缩写方式，这里就不一一写上了。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 04 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/iOS-Objective-C%E4%B8%8ESwift%E9%97%AD%E5%8C%85-block-%E5%86%99%E6%B3%95/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/iOS-Objective-C%E4%B8%8ESwift%E9%97%AD%E5%8C%85-block-%E5%86%99%E6%B3%95/</guid>
+        
+        <category>archive</category>
+        
+        
+        <category>archive</category>
+        
+      </item>
     
       <item>
         <title>Mac下cocoapods的配置安装</title>

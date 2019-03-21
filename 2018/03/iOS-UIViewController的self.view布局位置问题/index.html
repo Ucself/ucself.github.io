@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>iOS UIViewController的self.view布局位置问题。</title>
+  <meta name="description" content="iOS UIViewController的self.view布局位置问题。">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="iOS UIViewController的self.view布局位置问题。">
+  <meta name="twitter:description" content="iOS UIViewController的self.view布局位置问题。">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="iOS UIViewController的self.view布局位置问题。">
+  <meta property="og:description" content="iOS UIViewController的self.view布局位置问题。">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2018/03/iOS-UIViewController%E7%9A%84self.view%E5%B8%83%E5%B1%80%E4%BD%8D%E7%BD%AE%E9%97%AE%E9%A2%98/">
+  <link rel="alternate" type="application/rss+xml" title="Ucself" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header
+  class="panel-cover panel-cover--collapsed"
+  style="background-image: url('/assets/images/background-cover.jpg')"
+>
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+        <a
+          href="/#blog"
+          title="前往 Ucself 的主页"
+          class="blog-button"
+          ><img
+            src="/assets/images/avatar.jpg"
+            width="80"
+            alt="Ucself logo"
+            class="panel-cover__logo logo"
+        /></a>
+        <h1 class="panel-cover__title panel-title">
+          <a
+            href="/#blog"
+            title="link to homepage for Ucself"
+            class="blog-button"
+            >Ucself</a
+          >
+        </h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">为人者，有大度成大器矣!</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是ucself，一名大前端开发工程师。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        
+        <p class="panel-cover__description">生活需要总结，记录下自己学习的点滴，在此搭建自我知识体系。</p>
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item">
+                  <a
+                    href="/#blog"
+                    title="Visit blog"
+                    class="blog-button"
+                    >博客</a
+                  >
+                </li>
+                 
+                <li class="navigation__item">
+                  <a href="/pages/swift" title="Swift">Swift</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/archive" title="归档">归档</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/about" title="关于">关于</a>
+                </li>
+                 
+              </ul>
+            </nav>
+          </div>
+
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="#"
+        title="添加 lbj147123 的微信"
+      >
+        <i class="social fa fa-weixin"></i>
+        <span class="label">Weixin</span>
+      </a>
+    </li>
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="http://weibo.com/lbj147123"
+        title="@lbj147123 的微博"
+        target="_blank"
+      >
+        <i class="social fa fa-weibo"></i>
+        <span class="label">Weibo</span>
+      </a>
+    </li>
+     
+    <!-- Github -->
+    <li class="navigation__item">
+      <a
+        href="https://github.com/Ucself"
+        title="@Ucself 的 Github"
+        target="_blank"
+      >
+        <i class="social fa fa-github"></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+      
+
+    <!-- RSS -->
+    <li class="navigation__item">
+      <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+        <i class="social fa fa-rss"></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+
+    
+    <!-- Email -->
+    <li class="navigation__item">
+      <a href="mailto:lbj147123@163.com" title="Contact me">
+        <i class="social fa fa-envelope"></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article
+  class="post-container post-container--single"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header">
+    <div class="post-meta">
+      <time
+        datetime="2018-03-30 00:00:00 +0800"
+        itemprop="datePublished"
+        class="post-meta__date date"
+        >2018-03-30</time
+      >
+      &#8226;
+      <span class="post-meta__tags tags">archive</span>
+    </div>
+    <h1 class="post-title">iOS UIViewController的self.view布局位置问题。</h1>
+  </header>
+
+  <section class="post">
+    <h1 id="前言">前言</h1>
+<p>在平时的开发中，打开布局查看器老是遇见self.view有的控制器顶在了navagationbar上面，有的控制器顶在了navagationbar下面；一直很纠结这个问题，最近专门研究一下，并记录下来。<img src="https://upload-images.jianshu.io/upload_images/2007491-01b78db0d3ce2ea7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>这里不做详细介绍了，如果不愿意详细看下面文章就看我总结吧，很详细的介绍在：https://www.jianshu.com/p/6925ce1b9e34</p>
+
+<p>这里做一个总结：
+1、影响到self.view是顶入顶部（有navagationbar）或者底部（有tabbar）有三个属性可以影响到：
+A、isTranslucent（所属UINavigationBar），
+B、edgesForExtendedLayout（所属UIViewController），
+C、extendedLayoutIncludesOpaqueBars（所属UIViewController）
+2、isTranslucent 与 edgesForExtendedLayout 相互影响是否顶入顶部或底部，
+举例：
+（isTranslucent 为true 和 edgesForExtendedLayout 为all ）就self.view顶入顶部和底部，（
+A、isTranslucent 为false 和 edgesForExtendedLayout 为all ）就self.view不顶入顶部和底部，
+B、isTranslucent 为true 和 edgesForExtendedLayout 为.top ）就self.view顶入顶部和不顶入底部，
+其他的属性就自己揣测吧。
+3、extendedLayoutIncludesOpaqueBars  = true 可忽略 isTranslucent 对导航栏的影响（可以理解为：在其他默认设置情况先设置extendedLayoutIncludesOpaqueBars  = true， self.view顶入顶部和底部）；</p>
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+  <div class="read-more-item">
+    <span class="read-more-item-dim">上一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2019/01/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-2019%E5%B9%B4%E5%88%9D%E8%AE%A1%E5%88%92/" title="link to 2018年终总结，2019年初计划">2018年终总结，2019年初计划</a>
+    </h2>
+
+    <div class="post-list__meta">
+      <time
+        datetime="2019-01-16 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2019-01-16</time
+      >
+    </div>
+  </div>
+    
+  <div class="read-more-item">
+    <span class="read-more-item-dim">下一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2018/03/swift-%E5%B7%A5%E7%A8%8B-TARGETS%E4%B8%8E%E9%A2%84%E5%AE%9A%E4%B9%89%E5%AE%8F/" title="link to swift 工程 TARGETS与预定义宏">swift 工程 TARGETS与预定义宏</a>
+    </h2>
+    <div class="post-list__meta">
+      <time
+        datetime="2018-03-29 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2018-03-29</time
+      >
+    </div>
+  </div>
+  
+</section>
+
+<!-- <section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2018/03/iOS-UIViewController%E7%9A%84self.view%E5%B8%83%E5%B1%80%E4%BD%8D%E7%BD%AE%E9%97%AE%E9%A2%98/";
+        this.page.identifier = "/2018/03/iOS-UIViewController%E7%9A%84self.view%E5%B8%83%E5%B1%80%E4%BD%8D%E7%BD%AE%E9%97%AE%E9%A2%98/";
+    };
+
+    var disqus_shortname = 'vno-jekyll';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+ -->
+
+            <section class="footer">
+    <footer>
+        <span class="footer__copyright">本站由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-03-21 生成。</span>
+        <span class="footer__copyright">  </span>
+        <span class="footer__copyright">本站由 <a href="https://ucself.cn">@ucself</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2019</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>

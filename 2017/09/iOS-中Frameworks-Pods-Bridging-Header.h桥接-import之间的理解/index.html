@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>iOS 中Frameworks，Pods ，-Bridging-Header.h桥接，import之间的理解</title>
+  <meta name="description" content="iOS 中Frameworks，Pods ，-Bridging-Header.h桥接，import之间的理解">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="iOS 中Frameworks，Pods ，-Bridging-Header.h桥接，import之间的理解">
+  <meta name="twitter:description" content="iOS 中Frameworks，Pods ，-Bridging-Header.h桥接，import之间的理解">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="iOS 中Frameworks，Pods ，-Bridging-Header.h桥接，import之间的理解">
+  <meta property="og:description" content="iOS 中Frameworks，Pods ，-Bridging-Header.h桥接，import之间的理解">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2017/09/iOS-%E4%B8%ADFrameworks-Pods-Bridging-Header.h%E6%A1%A5%E6%8E%A5-import%E4%B9%8B%E9%97%B4%E7%9A%84%E7%90%86%E8%A7%A3/">
+  <link rel="alternate" type="application/rss+xml" title="Ucself" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header
+  class="panel-cover panel-cover--collapsed"
+  style="background-image: url('/assets/images/background-cover.jpg')"
+>
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+        <a
+          href="/#blog"
+          title="前往 Ucself 的主页"
+          class="blog-button"
+          ><img
+            src="/assets/images/avatar.jpg"
+            width="80"
+            alt="Ucself logo"
+            class="panel-cover__logo logo"
+        /></a>
+        <h1 class="panel-cover__title panel-title">
+          <a
+            href="/#blog"
+            title="link to homepage for Ucself"
+            class="blog-button"
+            >Ucself</a
+          >
+        </h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">为人者，有大度成大器矣!</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是ucself，一名大前端开发工程师。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        
+        <p class="panel-cover__description">生活需要总结，记录下自己学习的点滴，在此搭建自我知识体系。</p>
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item">
+                  <a
+                    href="/#blog"
+                    title="Visit blog"
+                    class="blog-button"
+                    >博客</a
+                  >
+                </li>
+                 
+                <li class="navigation__item">
+                  <a href="/pages/swift" title="Swift">Swift</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/archive" title="归档">归档</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/about" title="关于">关于</a>
+                </li>
+                 
+              </ul>
+            </nav>
+          </div>
+
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="#"
+        title="添加 lbj147123 的微信"
+      >
+        <i class="social fa fa-weixin"></i>
+        <span class="label">Weixin</span>
+      </a>
+    </li>
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="http://weibo.com/lbj147123"
+        title="@lbj147123 的微博"
+        target="_blank"
+      >
+        <i class="social fa fa-weibo"></i>
+        <span class="label">Weibo</span>
+      </a>
+    </li>
+     
+    <!-- Github -->
+    <li class="navigation__item">
+      <a
+        href="https://github.com/Ucself"
+        title="@Ucself 的 Github"
+        target="_blank"
+      >
+        <i class="social fa fa-github"></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+      
+
+    <!-- RSS -->
+    <li class="navigation__item">
+      <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+        <i class="social fa fa-rss"></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+
+    
+    <!-- Email -->
+    <li class="navigation__item">
+      <a href="mailto:lbj147123@163.com" title="Contact me">
+        <i class="social fa fa-envelope"></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article
+  class="post-container post-container--single"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header">
+    <div class="post-meta">
+      <time
+        datetime="2017-09-21 00:00:00 +0800"
+        itemprop="datePublished"
+        class="post-meta__date date"
+        >2017-09-21</time
+      >
+      &#8226;
+      <span class="post-meta__tags tags">archive</span>
+    </div>
+    <h1 class="post-title">iOS 中Frameworks，Pods ，-Bridging-Header.h桥接，import之间的理解</h1>
+  </header>
+
+  <section class="post">
+    <h1 id="前言">前言</h1>
+<p>在项目开发中，遇到一个问题，由于Frameworks，Pods，-Bridging-Header.h，import的使用不当会造成控制台日志报错问题</p>
+<h2 id="frameworks">Frameworks</h2>
+<p>Frameworks 顾名思义就是框架，是第三方打包完成看不到源码，可以直接使用的
+在项目中引用方式</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OC  引用某一个文件，Frameworks一般会提供一个h文件引用全部其他文件
+#import &lt;JLRoutes/JLRoutes.h&gt;
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>swift  引用一个包，相当于引用了Frameworks中的所有文件
+import JLRoutes
+</code></pre></div></div>
+<h2 id="pods-方式">Pods 方式</h2>
+<p>Pods 在iOS中对封装的源码进行管理，可以视频pod方式导入项目中，相当于能看见源代码也能修改源代码的 Frameworks，有的不会生成Frameworks类似的包如：GrowingIO（因为在swift中import GrowingIO失败）
+在项目中引用方式</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OC  引用某一个文件，Pods一般会提供一个h文件引用全部其他文件
+#import &lt;JLRoutes/JLRoutes.h&gt;
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>swift  引用一个包，相当于引用了Pods中的所有文件
+import JLRoutes
+</code></pre></div></div>
+<h2 id="-bridging-headerh-桥接文件">-Bridging-Header.h 桥接文件</h2>
+<p>桥接文件，即是OC的文件通过桥接到Swift能调用
+1、在swift使用中我们可以对包（Frameworks/Pods）进行桥接，如</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import &lt;JLRoutes/JLRoutes.h&gt;
+#import &lt;GrowingIO/Growing.h&gt;
+</code></pre></div></div>
+<p>2、绝不能使用</p>
+
+<p><del>#import “JLRoutes.h”</del>
+<del>#import “Growing.h”</del>
+虽然不会错报，会出现控制台打印变量问题
+3、项目中添加的OC代码就得使用</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import "JLRoutes.h"
+#import "Growing.h"
+</code></pre></div></div>
+<h2 id="import导入方式">import导入方式</h2>
+<p>如果是单个文件就需要导入，直接使用；如果是包</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import AFNetworking
+</code></pre></div></div>
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+  <div class="read-more-item">
+    <span class="read-more-item-dim">上一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/" title="link to iOS框架如何发布到CocoaPods">iOS框架如何发布到CocoaPods</a>
+    </h2>
+
+    <div class="post-list__meta">
+      <time
+        datetime="2017-11-01 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2017-11-01</time
+      >
+    </div>
+  </div>
+    
+  <div class="read-more-item">
+    <span class="read-more-item-dim">下一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2017/09/iOS-NSPredicate-%E8%B0%93%E8%AF%8D-%E8%AF%AD%E6%B3%95/" title="link to iOS NSPredicate（谓词）语法">iOS NSPredicate（谓词）语法</a>
+    </h2>
+    <div class="post-list__meta">
+      <time
+        datetime="2017-09-11 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2017-09-11</time
+      >
+    </div>
+  </div>
+  
+</section>
+
+<!-- <section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2017/09/iOS-%E4%B8%ADFrameworks-Pods-Bridging-Header.h%E6%A1%A5%E6%8E%A5-import%E4%B9%8B%E9%97%B4%E7%9A%84%E7%90%86%E8%A7%A3/";
+        this.page.identifier = "/2017/09/iOS-%E4%B8%ADFrameworks-Pods-Bridging-Header.h%E6%A1%A5%E6%8E%A5-import%E4%B9%8B%E9%97%B4%E7%9A%84%E7%90%86%E8%A7%A3/";
+    };
+
+    var disqus_shortname = 'vno-jekyll';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+ -->
+
+            <section class="footer">
+    <footer>
+        <span class="footer__copyright">本站由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-03-21 生成。</span>
+        <span class="footer__copyright">  </span>
+        <span class="footer__copyright">本站由 <a href="https://ucself.cn">@ucself</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2019</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>
