@@ -117,8 +117,8 @@
     <!-- Weibo -->
     <li class="navigation__item">
       <a
-        href="http://weibo.com/lbj147123"
-        title="@lbj147123 的微博"
+        href="http://weibo.com/p/1005052165916834"
+        title="@p/1005052165916834 的微博"
         target="_blank"
       >
         <i class="social fa fa-weibo"></i>
@@ -193,35 +193,62 @@
 
   <section class="post">
     <h2 id="前言">前言</h2>
-<p>由于项目开发需要运用第三发库太多了，每下载一个第三个库都要去查看他的配置介绍然而就会一个一个的去引用系统的库，还有第三方库的管理问题，于是前段时间选择使用cocoapods 进行管理。每个程序员都有两台电脑（一台公司的，一台自己的），在公司配置完成，经过重重配置遇到问题解决，终于配置完成。突然发现自己电脑也要配置，然后之前遇到的问题也一个一个的又去查（这不是坑自己吗）。算了作为程序员还是写点博客比较好，记录自己所遇到的问题和自己的知识；方便你我，方便阅读的人。</p>
-<h2 id="标签">标签</h2>
-<p>RVM，Ruby，CocoaPods</p>
-<h2 id="安装-rvm">安装 RVM</h2>
-<p>RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)
-向终端输入以下代码安装RVM</p>
+
+<p>       由于项目开发需要运用第三发库太多了，每下载一个第三个库都要去查看他的配置介绍然而就会一个一个的去引用系统的库，还有第三方库的管理问题，于是前段时间选择使用 cocoapods 进行管理。每个程序员都有两台电脑（一台公司的，一台自己的），在公司配置完成，经过重重配置遇到问题解决，终于配置完成。突然发现自己电脑也要配置，然后之前遇到的问题也一个一个的又去查（这不是坑自己吗）。算了作为程序员还是写点博客比较好，记录自己所遇到的问题和自己的知识；方便你我，方便阅读的人。</p>
+
+<h2 id="配置步骤">配置步骤</h2>
+
+<ul>
+  <li>标签</li>
+</ul>
+
+<p>       RVM，Ruby，CocoaPods</p>
+
+<ul>
+  <li>安装 RVM</li>
+</ul>
+
+<p>       RVM:Ruby Version Manager,Ruby 版本管理器，包括 Ruby 的版本管理和 Gem 库管理(gemset)
+向终端输入以下代码安装 RVM</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl -L get.rvm.io | bash -s stable
 </code></pre></div></div>
+
 <p>指定源</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ source ~/.rvm/scripts/rvm
 </code></pre></div></div>
+
 <p>安装成功后（由于安装会向网络下载文件可能会提示安装失败）向终端输入代码查看成功版本</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rvm -v
 </code></pre></div></div>
+
 <p>终端控制台会出现</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm 1.27.0 (latest) by Wayne E. Seguin &lt;wayneeseguin@gmail.com&gt;, Michal Papis &lt;mpapis@gmail.com&gt; [https://rvm.io/]
 </code></pre></div></div>
-<h2 id="使用rvm-升级或者安装ruby">使用RVM 升级或者安装Ruby</h2>
-<p>Ruby一般Mac系统都会自带不需要安装升级，但是我安装的时候遇到Ruby版本过低提示错误信息Error installing pods:activesupport requires Ruby version &gt;= 2.2.2.，所以需要rvm对Ruby进行升级
+
+<ul>
+  <li>使用 RVM 升级或者安装 Ruby</li>
+</ul>
+
+<p>       Ruby 一般 Mac 系统都会自带不需要安装升级，但是我安装的时候遇到 Ruby 版本过低提示错误信息 Error installing pods:activesupport requires Ruby version &gt;= 2.2.2.，所以需要 rvm 对 Ruby 进行升级
 终端输入</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ruby -v
 </code></pre></div></div>
-<p>可查看当前系统Ruby版本</p>
+
+<p>       可查看当前系统 Ruby 版本</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby 2.0.0p648 (2015-12-16 revision 53155) [x86_64-darwin15]
 </code></pre></div></div>
-<p>所以我们需要对ruby进行升级
-查看rvm版本</p>
+
+<p>       所以我们需要对 ruby 进行升级，查看 rvm 版本</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm list known
 </code></pre></div></div>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># MRI Rubies
 [ruby-]1.8.6[-p420]
 [ruby-]1.8.7[-head] # security released on head
@@ -236,75 +263,46 @@
 ruby-head
 
 # for forks use: rvm install ruby-head-&lt;name&gt; --url https://github.com/github/ruby.git --branch 2.2
-
-# JRuby
-jruby-1.6[.8]
-jruby-1.7[.23]
-jruby[-9.0.5.0]
-jruby-head
-
-# Rubinius
-rbx-1[.4.3]
-rbx-2.3[.0]
-rbx-2.4[.1]
-rbx[-2.5.8]
-rbx-head
-
-# Opal
-opal
-
-# Minimalistic ruby implementation - ISO 30170:2012
-mruby[-head]
-
-# Ruby Enterprise Edition
-ree-1.8.6
-ree[-1.8.7][-2012.02]
-
-# GoRuby
-goruby
-
-# Topaz
-topaz
-
-# MagLev
-maglev[-head]
-maglev-1.0.0
-
-# Mac OS X Snow Leopard Or Newer
-macruby-0.10
-macruby-0.11
-macruby[-0.12]
-macruby-nightly
-macruby-head
-
-# IronRuby
-ironruby[-1.1.3]
-ironruby-head
+......
 </code></pre></div></div>
-<p>安装Ruby 输入</p>
+
+<p>       安装 Ruby 输入</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm install 2.2
 </code></pre></div></div>
-<p>终端输出太长，就不打印了</p>
 
-<h2 id="使用ruby-安装cocoapods">使用Ruby 安装CocoaPods</h2>
-<p>使用淘宝的Ruby镜像访问cocoapods，官方代码</p>
+<p>       终端输出太长，就不打印了</p>
+
+<ul>
+  <li>使用 Ruby 安装 CocoaPods</li>
+</ul>
+
+<p>       使用淘宝的 Ruby 镜像访问 cocoapods，官方代码</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 $ gem sources -l
 </code></pre></div></div>
-<p>两句命令结果分别是</p>
+
+<p>       两句命令结果分别是</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://gems.ruby-china.org/ added to sources
 #这个我已经切换过了
-source https://rubygems.org/ not present in cache 
+source https://rubygems.org/ not present in cache
 </code></pre></div></div>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*** CURRENT SOURCES ***
 
 https://ruby.taobao.org/
 https://gems.ruby-china.org/
 </code></pre></div></div>
-<p>接下来就直接安装CocoaPods</p>
+
+<p>       接下来就直接安装 CocoaPods</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo gem install cocoapods
 </code></pre></div></div>
-<p>终端输出表示成功</p>
+
+<p>       终端输出表示成功</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Password:
 Fetching: activesupport-4.2.7.1.gem (100%)
 Successfully installed activesupport-4.2.7.1
@@ -349,7 +347,9 @@ Installing ri documentation for cocoapods-1.1.1
 Done installing documentation for activesupport, claide, cocoapods-core, cocoapods-downloader, cocoapods-trunk, fourflusher, gh_inspector, molinillo, xcodeproj, cocoapods after 12 seconds
 10 gems installed
 </code></pre></div></div>
-<p>再进行pod安装</p>
+
+<p>       再进行 pod 安装</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$pod setup
 </code></pre></div></div>
 

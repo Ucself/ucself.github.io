@@ -5,8 +5,8 @@
     <description>嗨，我是ucself，一名大前端开发工程师。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Mar 2019 17:21:38 +0800</pubDate>
-    <lastBuildDate>Wed, 27 Mar 2019 17:21:38 +0800</lastBuildDate>
+    <pubDate>Wed, 27 Mar 2019 18:56:21 +0800</pubDate>
+    <lastBuildDate>Wed, 27 Mar 2019 18:56:21 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -362,22 +362,29 @@ import JLRoutes
     
       <item>
         <title>iOS NSPredicate（谓词）语法</title>
-        <description>&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
 
-&lt;p&gt;在项目开发中遇见本地化搜索不是很高，当有本地化搜索的需求时候对NSPredicate的语法都去网上搜索，然而苹果官方也没有专门介绍语法，借这次机会总结和写下谓词的语法，方便以后开发查看&lt;/p&gt;
+&lt;p&gt;       在项目开发中遇见本地化搜索不是很高，当有本地化搜索的需求时候对 NSPredicate 的语法都去网上搜索，然而苹果官方也没有专门介绍语法，借这次机会总结和写下谓词的语法，方便以后开发查看&lt;/p&gt;
 
-&lt;h2 id=&quot;nspredicate的语法&quot;&gt;NSPredicate的语法&lt;/h2&gt;
+&lt;h2 id=&quot;nspredicate-的语法&quot;&gt;NSPredicate 的语法&lt;/h2&gt;
 
-&lt;h3 id=&quot;比较运算符&quot;&gt;比较运算符&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;比较运算符&lt;/p&gt;
 
-&lt;p&gt;1、=，==：判断两个表达式是否相等，在谓词中=和==是相同的意思都是判断，而没有赋值这一说
-2、&amp;gt;=，=&amp;gt;：判断左边表达式的值是否大于或等于右边表达式的值
-3、&amp;gt;：判断左边表达式的值是否大于右边表达式的值
-4、&amp;lt;：判断左边表达式的值是否小于右边表达式的值
-5、!=、&amp;lt;&amp;gt;：判断两个表达式是否不相等
-6、BETWEEN：BETWEEN表达式必须满足表达式 BETWEEN {下限，上限}的格式，要求该表达式必须大于或等于下限，并小于或等于上限&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;=，==：判断两个表达式是否相等，在谓词中=和==是相同的意思都是判断，而没有赋值这一说&lt;/li&gt;
+      &lt;li&gt;=，=&amp;gt;：判断左边表达式的值是否大于或等于右边表达式的值&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; ：判断左边表达式的值是否大于右边表达式的值&lt;/li&gt;
+      &lt;li&gt;&amp;lt;：判断左边表达式的值是否小于右边表达式的值&lt;/li&gt;
+      &lt;li&gt;!=、&amp;lt;&amp;gt;：判断两个表达式是否不相等&lt;/li&gt;
+      &lt;li&gt;BETWEEN：BETWEEN 表达式必须满足表达式 BETWEEN {下限，上限}的格式，要求该表达式必须大于或等于下限，并小于或等于上限&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;例：&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//数据源
 let word = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;,&quot;g&quot;,&quot;h&quot;,&quot;i&quot;,&quot;j&quot;,&quot;k&quot;,&quot;l&quot;,&quot;m&quot;,&quot;n&quot;,&quot;o&quot;]
 //相等判断
@@ -389,6 +396,7 @@ let betweenPredicate:NSPredicate = NSPredicate.init(format: &quot;SELF BETWEEN {
       print(&quot;word item is between {'d','m'} -&amp;gt; \(betweenPredicate.evaluate(with: item))&quot;)
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;word[1] is = b -&amp;gt; true
 word item is between {'d','m'} -&amp;gt; false
 word item is between {'d','m'} -&amp;gt; false
@@ -407,68 +415,101 @@ word item is between {'d','m'} -&amp;gt; false
 word item is between {'d','m'} -&amp;gt; false
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;逻辑运算符&quot;&gt;逻辑运算符&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;逻辑运算符&lt;/p&gt;
 
-&lt;p&gt;1、BEGINSWITH：检查某个字符串是否以指定的字符串开头（如判断字符串      是否以a开头：BEGINSWITH ‘a’）
-2、ENDSWITH：检查某个字符串是否以指定的字符串结尾
-3、CONTAINS：检查某个字符串是否包含指定的字符串
-4、LIKE：检查某个字符串是否匹配指定的字符串模板。其之后可以跟?代表一个字符和&lt;em&gt;代表任意多个字符两个通配符。比如”name LIKE ‘&lt;/em&gt;ac&lt;em&gt;’“，这表示name的值中包含ac则返回YES；”name LIKE ‘?ac&lt;/em&gt;’“，表示name的第2、3个字符为ac时返回YES。
-5、MATCHES：检查某个字符串是否匹配指定的正则表达式。虽然正则表达式的执行效率是最低的，但其功能是最强大的，也是我们最常用的。&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;BEGINSWITH：检查某个字符串是否以指定的字符串开头（如判断字符串 是否以 a 开头：BEGINSWITH ‘a’）&lt;/li&gt;
+      &lt;li&gt;ENDSWITH：检查某个字符串是否以指定的字符串结尾&lt;/li&gt;
+      &lt;li&gt;CONTAINS：检查某个字符串是否包含指定的字符串&lt;/li&gt;
+      &lt;li&gt;LIKE：检查某个字符串是否匹配指定的字符串模板。其之后可以跟?代表一个字符和&lt;em&gt;代表任意多个字符两个通配符。比如”name LIKE ‘&lt;/em&gt;ac&lt;em&gt;’“，这表示 name 的值中包含 ac 则返回 YES；”name LIKE ‘?ac&lt;/em&gt;’“，表示 name 的第 1、1. 个字符为 ac 时返回 YES。&lt;/li&gt;
+      &lt;li&gt;MATCHES：检查某个字符串是否匹配指定的正则表达式。虽然正则表达式的执行效率是最低的，但其功能是最强大的，也是我们最常用的。&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;注：字符串比较都是区分大小写和重音符号的。如：café和cafe是不一样的，Cafe和cafe也是不一样的。如果希望字符串比较运算不区分大小写和重音符号，请在这些运算符后使用[c]，[d]选项。其中[c]是不区分大小写，[d]是不区分重音符号，其写在字符串比较运算符之后，比如：name LIKE[cd] ‘cafe’，那么不论name是cafe、Cafe还是café上面的表达式都会返回YES。&lt;/p&gt;
+&lt;p&gt;       注：字符串比较都是区分大小写和重音符号的。如：café 和 cafe 是不一样的，Cafe 和 cafe 也是不一样的。如果希望字符串比较运算不区分大小写和重音符号，请在这些运算符后使用[c]，[d]选项。其中[c]是不区分大小写，[d]是不区分重音符号，其写在字符串比较运算符之后，比如：name LIKE[cd] ‘cafe’，那么不论 name 是 cafe、Cafe 还是 café 上面的表达式都会返回 YES。&lt;/p&gt;
 
 &lt;p&gt;例：最常见的就是正则匹配了&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//判断是不是邮箱
 let emailRegular = &quot;[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}&quot;
 let emailpredicate = NSPredicate(format:&quot;SELF MATCHES %@&quot;, emailRegular)
 print(&quot;www.llllll.com is = email -&amp;gt; \(emailpredicate.evaluate(with: &quot;www.llllll.com&quot;))&quot;)
 print(&quot;www@llllll.com is = email -&amp;gt; \(emailpredicate.evaluate(with: &quot;www@llllll.com&quot;))&quot;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;www.llllll.com is = email -&amp;gt; false
 www@llllll.com is = email -&amp;gt; true
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;集合运算符&quot;&gt;集合运算符&lt;/h3&gt;
 
-&lt;p&gt;1、ANY、SOME：集合中任意一个元素满足条件，就返回YES。
-2、ALL：集合中所有元素都满足条件，才返回YES。
-3、NONE：集合中没有任何元素满足条件就返回YES。如:NONE person.age &amp;lt; 18，表示person集合中所有元素的age&amp;gt;=18时，才返回YES。
-4、IN：等价于SQL语句中的IN运算符，只有当左边表达式或值出现在右边的集合中才会返回YES。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;集合运算符&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;ANY、SOME：集合中任意一个元素满足条件，就返回 YES。&lt;/li&gt;
+      &lt;li&gt;ALL：集合中所有元素都满足条件，才返回 YES。&lt;/li&gt;
+      &lt;li&gt;NONE：集合中没有任何元素满足条件就返回 YES。如:NONE person.age &amp;lt; 18，表示 person 集合中所有元素的 age&amp;gt;=18 时，才返回 YES。&lt;/li&gt;
+      &lt;li&gt;IN：等价于 SQL 语句中的 IN 运算符，只有当左边表达式或值出现在右边的集合中才会返回 YES。&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;例：&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//数据源
 let word = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;,&quot;g&quot;,&quot;h&quot;,&quot;i&quot;,&quot;j&quot;,&quot;k&quot;,&quot;l&quot;,&quot;m&quot;,&quot;n&quot;,&quot;o&quot;]
 //集合判断
 let equalPredicate:NSPredicate = NSPredicate.init(format: &quot;NONE SELF &amp;gt; 'p'&quot;)
 print(&quot;word 所有元素都不是大于p -&amp;gt; \(equalPredicate.evaluate(with: word))&quot;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;word 所有元素都不是大于p -&amp;gt; true
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;直接量值&quot;&gt;直接量值&lt;/h3&gt;
-&lt;p&gt;在谓词表达式中可以使用如下直接量
-1、FALSE、NO：代表逻辑假
-2、TRUE、YES：代表逻辑真
-3、NULL、NIL：代表空值
-4、SELF：代表正在被判断的对象自身
-5、”string”或’string’：代表字符串
-6、数组：和c中的写法相同，如：{‘one’, ‘two’, ‘three’}。
-7、数值：包括证书、小数和科学计数法表示的形式
-8、十六进制数：0x开头的数字
-9、八进制：0o开头的数字
-10、二进制：0b开头的数字&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;直接量值&lt;/p&gt;
 
-&lt;h3 id=&quot;保留值&quot;&gt;保留值&lt;/h3&gt;
-&lt;p&gt;下列单词都是保留字（不论大小写）&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;FALSE、NO：代表逻辑假&lt;/li&gt;
+      &lt;li&gt;TRUE、YES：代表逻辑真&lt;/li&gt;
+      &lt;li&gt;NULL、NIL：代表空值&lt;/li&gt;
+      &lt;li&gt;SELF：代表正在被判断的对象自身&lt;/li&gt;
+      &lt;li&gt;“string”或’string’：代表字符串&lt;/li&gt;
+      &lt;li&gt;数组：和 c 中的写法相同，如：{‘one’, ‘two’, ‘three’}。&lt;/li&gt;
+      &lt;li&gt;数值：包括证书、小数和科学计数法表示的形式&lt;/li&gt;
+      &lt;li&gt;十六进制数：0x 开头的数字&lt;/li&gt;
+      &lt;li&gt;八进制：0o 开头的数字&lt;/li&gt;
+      &lt;li&gt;二进制：0b 开头的数字&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;AND、OR、IN、NOT、ALL、ANY、SOME、NONE、LIKE、CASEINSENSITIVE、CI、MATCHES、CONTAINS、BEGINSWITH、ENDSWITH、BETWEEN、NULL、NIL、SELF、TRUE、YES、FALSE、NO、FIRST、LAST、SIZE、ANYKEY、SUBQUERY、CAST、TRUEPREDICATE、FALSEPREDICATE&lt;/p&gt;
+&lt;p&gt;在谓词表达式中可以使用如上直接量&lt;/p&gt;
 
-&lt;p&gt;注：虽然大小写都可以，但是更推荐使用大写来表示这些保留字，也是上面介绍到的语法，没介绍到的自己理解吧，或者给我留言&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;保留值&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h3 id=&quot;在谓词中使用占位符参数&quot;&gt;在谓词中使用占位符参数&lt;/h3&gt;
-&lt;p&gt;%K：用于动态传入属性名
-%@：用于动态设置属性值&lt;/p&gt;
+&lt;p&gt;       下列单词都是保留字（不论大小写）：AND、OR、IN、NOT、ALL、ANY、SOME、NONE、LIKE、CASEINSENSITIVE、CI、MATCHES、CONTAINS、BEGINSWITH、ENDSWITH、BETWEEN、NULL、NIL、SELF、TRUE、YES、FALSE、NO、FIRST、LAST、SIZE、ANYKEY、SUBQUERY、CAST、TRUEPREDICATE、FALSEPREDICATE&lt;/p&gt;
 
-&lt;p&gt;例：最后来一个综合的本地搜索吧，对自定义对象进行筛选&lt;/p&gt;
+&lt;p&gt;       注：虽然大小写都可以，但是更推荐使用大写来表示这些保留字，也是上面介绍到的语法，没介绍到的自己理解吧，或者给我留言&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在谓词中使用占位符参数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;%K：用于动态传入属性名&lt;/p&gt;
+
+&lt;p&gt;%@：用于动态设置属性值&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;例：最后来一个综合的本地搜索吧，对自定义对象进行筛选&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//自定义对象
 @interface YContactObject : NSObject
 /**
@@ -498,14 +539,15 @@ print(&quot;word 所有元素都不是大于p -&amp;gt; \(equalPredicate.evaluat
     self.middleName = (self.middleName) ? self.middleName : @&quot;&quot;;
     self.givenName = (self.givenName) ? self.givenName : @&quot;&quot;;
     self.familyName = (self.familyName) ? self.familyName : @&quot;&quot;;
-    
+
     self.name = [[self.familyName stringByAppendingString:self.middleName] stringByAppendingString:self.givenName];
-    
+
     return self.name;
 }
 
 @end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//通讯录数组
 self.sourceContactObjects:[YContactObject] = [**********]
 self.contactObjects:[YContactObject] = []
@@ -514,10 +556,11 @@ let predicateString:String = String.init(format: &quot;(SELF.nameObject.getName 
 let filterPredicate:NSPredicate = NSPredicate.init(format: predicateString)
 self.contactObjects = (sourceContactObjects as NSArray).filtered(using: filterPredicate) as! [YContactObject]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;p&gt;运行结果&lt;/p&gt;
 
-&lt;p&gt;1、&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2007491-d7ab80c54deffbd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;Simulator Screen Shot 2017年9月11日 下午5.17.43.png&quot; /&gt;
-2、&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2007491-ff5a81fd05ff917a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;Simulator Screen Shot 2017年9月11日 下午5.17.50.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2007491-d7ab80c54deffbd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;Simulator Screen Shot 2017年9月11日 下午5.17.43.png&quot; /&gt;
+&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2007491-ff5a81fd05ff917a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;Simulator Screen Shot 2017年9月11日 下午5.17.50.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;后续有什么问题或者建议，请给我留言&lt;/p&gt;
 </description>
@@ -598,35 +641,53 @@ self.contactObjects = (sourceContactObjects as NSArray).filtered(using: filterPr
       <item>
         <title>iOS Objective-C与Swift闭包（block）写法</title>
         <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;在项目开发中经常会去查iOS闭包怎么写，因为它的语法太古怪，两种语言写法不一，经常搞混，干脆记录下常用的写法算了&lt;/p&gt;
-&lt;h2 id=&quot;闭包定义&quot;&gt;闭包定义&lt;/h2&gt;
-&lt;p&gt;闭包是指可以包含自由（未绑定到特定对象）变量的代码块；这些变量不是在这个代码块内或者任何全局上下文中定义的，而是在定义代码块的环境中定义（局部变量）。“闭包” 一词来源于以下两者的结合：要执行的代码块（由于自由变量被包含在代码块中，这些自由变量以及它们引用的对象没有被释放）和为自由变量提供绑定的计算环境（作用域）。&lt;/p&gt;
-&lt;h3 id=&quot;声明闭包block&quot;&gt;声明闭包（block）&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Objective-C&quot;&gt;typedef NSString *(^blockCallback)(NSString *parameter1, NSString *parameter2);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Swift&quot;&gt;//回调闭包 用于评价成功后
-    typealias callbackFunc = (_ orderId:String ) -&amp;gt; Void
-    var evaluationBlockCallback:callbackFunc?
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;定义闭包block&quot;&gt;定义闭包（block）&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;第一种方式 使用声明
-@property (nonatomic,strong) blockCallbackType blockCallbackName;
 
-_blockCallbackName = ^(NSString *parameter1,NSString *parameter2){
-        return parameter1;
-    };
-&amp;gt;第二种方式 不使用声明
-@property (nonatomic,strong) NSString *(^blockCallbackName2)(NSString *parameter1, NSString *parameter2);
+&lt;p&gt;       在项目开发中经常会去查 iOS 闭包怎么写，因为它的语法太古怪，两种语言写法不一，经常搞混，干脆记录下常用的写法算了&lt;/p&gt;
 
-_blockCallbackName2 = ^(NSString *parameter1,NSString *parameter2){
-        return parameter1;
-    };
+&lt;h2 id=&quot;闭包&quot;&gt;闭包&lt;/h2&gt;
+
+&lt;p&gt;       闭包是指可以包含自由（未绑定到特定对象）变量的代码块；这些变量不是在这个代码块内或者任何全局上下文中定义的，而是在定义代码块的环境中定义（局部变量）。&lt;/p&gt;
+
+&lt;p&gt;       “闭包” 一词来源于以下两者的结合：要执行的代码块（由于自由变量被包含在代码块中，这些自由变量以及它们引用的对象没有被释放）和为自由变量提供绑定的计算环境（作用域）。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;声明闭包（block）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Objective-C&quot;&gt;typedef NSString *(^blockType)(NSString *parameter1, NSString *parameter2);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Swift&quot;&gt;typealias blockType = (_ parameter1:String, parameter2:String ) -&amp;gt; Void
+var objectBlock:blockType?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;定义闭包（block）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 第一种方式 使用声明
+@property (nonatomic,strong) blockType *objectBlock;
+
+_objectBlock = ^(NSString *parameter1,NSString *parameter2){
+    return parameter1;
+};
+// 第二种方式 不使用声明
+@property (nonatomic,strong) NSString *(^objectBlock)(NSString *parameter1, NSString *parameter2);
+
+_objectBlock = ^(NSString *parameter1,NSString *parameter2){
+    return parameter1;
+};
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let blockCallbackName:String = {(parameter1:String,parameter2:String) -&amp;gt;String in
-            return parameter1
-        }(&quot;parameter1&quot;,&quot;parameter2&quot;)
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let blockCallbackName:String = {(parameter1:String, parameter2:String) -&amp;gt;String in
+    return parameter1
+}(&quot;parameter1&quot;,&quot;parameter2&quot;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;函数定义闭包block&quot;&gt;函数定义闭包（block）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;函数定义闭包（block）&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-(void)functionUseBlock:(NSString* (^)(NSString *parameter1, NSString *parameter2))callBackOne callBackTwo:(blockCallbackType)callBackTwo{
     if (callBackOne) {
         callBackOne(@&quot;parameter1&quot;,@&quot;parameter2&quot;);
@@ -636,23 +697,30 @@ _blockCallbackName2 = ^(NSString *parameter1,NSString *parameter2){
     }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func functionUseBlock(callBack:(String,String) -&amp;gt;String) -&amp;gt; Void  {
-        print(callBack(&quot;parameter1&quot;,&quot;parameter2&quot;))
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;调用函数闭包block&quot;&gt;调用函数闭包（block）&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[self functionUseBlock:^NSString *(NSString *parameter1, NSString *parameter2) {
-        return parameter1;
-    } callBackTwo:^NSString *(NSString *parameter1, NSString *parameter2) {
-        return parameter1;
-    }];
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;self.functionUseBlock = { (parameter1, parameter2) -&amp;gt; String in
-            return parameter2
-        }
+    print(callBack(&quot;parameter1&quot;,&quot;parameter2&quot;))
+}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;结尾&quot;&gt;结尾&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;调用函数闭包（block）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[self functionUseBlock:^NSString *(NSString *parameter1, NSString *parameter2) {
+    return parameter1;
+} callBackTwo:^NSString *(NSString *parameter1, NSString *parameter2) {
+    return parameter1;
+}];
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;self.functionUseBlock = { (parameter1, parameter2) -&amp;gt; String in
+    return parameter2
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;结尾&quot;&gt;结尾&lt;/h2&gt;
+
 &lt;p&gt;Swift 版本根据参数和返回值有很多缩写方式，这里就不一一写上了。&lt;/p&gt;
 </description>
         <pubDate>Fri, 04 Nov 2016 00:00:00 +0800</pubDate>
@@ -669,35 +737,62 @@ _blockCallbackName2 = ^(NSString *parameter1,NSString *parameter2){
       <item>
         <title>Mac下cocoapods的配置安装</title>
         <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;由于项目开发需要运用第三发库太多了，每下载一个第三个库都要去查看他的配置介绍然而就会一个一个的去引用系统的库，还有第三方库的管理问题，于是前段时间选择使用cocoapods 进行管理。每个程序员都有两台电脑（一台公司的，一台自己的），在公司配置完成，经过重重配置遇到问题解决，终于配置完成。突然发现自己电脑也要配置，然后之前遇到的问题也一个一个的又去查（这不是坑自己吗）。算了作为程序员还是写点博客比较好，记录自己所遇到的问题和自己的知识；方便你我，方便阅读的人。&lt;/p&gt;
-&lt;h2 id=&quot;标签&quot;&gt;标签&lt;/h2&gt;
-&lt;p&gt;RVM，Ruby，CocoaPods&lt;/p&gt;
-&lt;h2 id=&quot;安装-rvm&quot;&gt;安装 RVM&lt;/h2&gt;
-&lt;p&gt;RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)
-向终端输入以下代码安装RVM&lt;/p&gt;
+
+&lt;p&gt;       由于项目开发需要运用第三发库太多了，每下载一个第三个库都要去查看他的配置介绍然而就会一个一个的去引用系统的库，还有第三方库的管理问题，于是前段时间选择使用 cocoapods 进行管理。每个程序员都有两台电脑（一台公司的，一台自己的），在公司配置完成，经过重重配置遇到问题解决，终于配置完成。突然发现自己电脑也要配置，然后之前遇到的问题也一个一个的又去查（这不是坑自己吗）。算了作为程序员还是写点博客比较好，记录自己所遇到的问题和自己的知识；方便你我，方便阅读的人。&lt;/p&gt;
+
+&lt;h2 id=&quot;配置步骤&quot;&gt;配置步骤&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;标签&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;       RVM，Ruby，CocoaPods&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;安装 RVM&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;       RVM:Ruby Version Manager,Ruby 版本管理器，包括 Ruby 的版本管理和 Gem 库管理(gemset)
+向终端输入以下代码安装 RVM&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ curl -L get.rvm.io | bash -s stable
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;p&gt;指定源&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ source ~/.rvm/scripts/rvm
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;p&gt;安装成功后（由于安装会向网络下载文件可能会提示安装失败）向终端输入代码查看成功版本&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rvm -v
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;p&gt;终端控制台会出现&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rvm 1.27.0 (latest) by Wayne E. Seguin &amp;lt;wayneeseguin@gmail.com&amp;gt;, Michal Papis &amp;lt;mpapis@gmail.com&amp;gt; [https://rvm.io/]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;使用rvm-升级或者安装ruby&quot;&gt;使用RVM 升级或者安装Ruby&lt;/h2&gt;
-&lt;p&gt;Ruby一般Mac系统都会自带不需要安装升级，但是我安装的时候遇到Ruby版本过低提示错误信息Error installing pods:activesupport requires Ruby version &amp;gt;= 2.2.2.，所以需要rvm对Ruby进行升级
+
+&lt;ul&gt;
+  &lt;li&gt;使用 RVM 升级或者安装 Ruby&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;       Ruby 一般 Mac 系统都会自带不需要安装升级，但是我安装的时候遇到 Ruby 版本过低提示错误信息 Error installing pods:activesupport requires Ruby version &amp;gt;= 2.2.2.，所以需要 rvm 对 Ruby 进行升级
 终端输入&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ruby -v
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;可查看当前系统Ruby版本&lt;/p&gt;
+
+&lt;p&gt;       可查看当前系统 Ruby 版本&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby 2.0.0p648 (2015-12-16 revision 53155) [x86_64-darwin15]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;所以我们需要对ruby进行升级
-查看rvm版本&lt;/p&gt;
+
+&lt;p&gt;       所以我们需要对 ruby 进行升级，查看 rvm 版本&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rvm list known
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# MRI Rubies
 [ruby-]1.8.6[-p420]
 [ruby-]1.8.7[-head] # security released on head
@@ -712,75 +807,46 @@ _blockCallbackName2 = ^(NSString *parameter1,NSString *parameter2){
 ruby-head
 
 # for forks use: rvm install ruby-head-&amp;lt;name&amp;gt; --url https://github.com/github/ruby.git --branch 2.2
-
-# JRuby
-jruby-1.6[.8]
-jruby-1.7[.23]
-jruby[-9.0.5.0]
-jruby-head
-
-# Rubinius
-rbx-1[.4.3]
-rbx-2.3[.0]
-rbx-2.4[.1]
-rbx[-2.5.8]
-rbx-head
-
-# Opal
-opal
-
-# Minimalistic ruby implementation - ISO 30170:2012
-mruby[-head]
-
-# Ruby Enterprise Edition
-ree-1.8.6
-ree[-1.8.7][-2012.02]
-
-# GoRuby
-goruby
-
-# Topaz
-topaz
-
-# MagLev
-maglev[-head]
-maglev-1.0.0
-
-# Mac OS X Snow Leopard Or Newer
-macruby-0.10
-macruby-0.11
-macruby[-0.12]
-macruby-nightly
-macruby-head
-
-# IronRuby
-ironruby[-1.1.3]
-ironruby-head
+......
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;安装Ruby 输入&lt;/p&gt;
+
+&lt;p&gt;       安装 Ruby 输入&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rvm install 2.2
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;终端输出太长，就不打印了&lt;/p&gt;
 
-&lt;h2 id=&quot;使用ruby-安装cocoapods&quot;&gt;使用Ruby 安装CocoaPods&lt;/h2&gt;
-&lt;p&gt;使用淘宝的Ruby镜像访问cocoapods，官方代码&lt;/p&gt;
+&lt;p&gt;       终端输出太长，就不打印了&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;使用 Ruby 安装 CocoaPods&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;       使用淘宝的 Ruby 镜像访问 cocoapods，官方代码&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 $ gem sources -l
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;两句命令结果分别是&lt;/p&gt;
+
+&lt;p&gt;       两句命令结果分别是&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://gems.ruby-china.org/ added to sources
 #这个我已经切换过了
-source https://rubygems.org/ not present in cache 
+source https://rubygems.org/ not present in cache
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*** CURRENT SOURCES ***
 
 https://ruby.taobao.org/
 https://gems.ruby-china.org/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;接下来就直接安装CocoaPods&lt;/p&gt;
+
+&lt;p&gt;       接下来就直接安装 CocoaPods&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gem install cocoapods
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;终端输出表示成功&lt;/p&gt;
+
+&lt;p&gt;       终端输出表示成功&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Password:
 Fetching: activesupport-4.2.7.1.gem (100%)
 Successfully installed activesupport-4.2.7.1
@@ -825,7 +891,9 @@ Installing ri documentation for cocoapods-1.1.1
 Done installing documentation for activesupport, claide, cocoapods-core, cocoapods-downloader, cocoapods-trunk, fourflusher, gh_inspector, molinillo, xcodeproj, cocoapods after 12 seconds
 10 gems installed
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;再进行pod安装&lt;/p&gt;
+
+&lt;p&gt;       再进行 pod 安装&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$pod setup
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>

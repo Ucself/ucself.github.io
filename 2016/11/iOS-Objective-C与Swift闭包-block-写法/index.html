@@ -117,8 +117,8 @@
     <!-- Weibo -->
     <li class="navigation__item">
       <a
-        href="http://weibo.com/lbj147123"
-        title="@lbj147123 的微博"
+        href="http://weibo.com/p/1005052165916834"
+        title="@p/1005052165916834 的微博"
         target="_blank"
       >
         <i class="social fa fa-weibo"></i>
@@ -193,35 +193,53 @@
 
   <section class="post">
     <h2 id="前言">前言</h2>
-<p>在项目开发中经常会去查iOS闭包怎么写，因为它的语法太古怪，两种语言写法不一，经常搞混，干脆记录下常用的写法算了</p>
-<h2 id="闭包定义">闭包定义</h2>
-<p>闭包是指可以包含自由（未绑定到特定对象）变量的代码块；这些变量不是在这个代码块内或者任何全局上下文中定义的，而是在定义代码块的环境中定义（局部变量）。“闭包” 一词来源于以下两者的结合：要执行的代码块（由于自由变量被包含在代码块中，这些自由变量以及它们引用的对象没有被释放）和为自由变量提供绑定的计算环境（作用域）。</p>
-<h3 id="声明闭包block">声明闭包（block）</h3>
-<pre><code class="language-Objective-C">typedef NSString *(^blockCallback)(NSString *parameter1, NSString *parameter2);
-</code></pre>
-<pre><code class="language-Swift">//回调闭包 用于评价成功后
-    typealias callbackFunc = (_ orderId:String ) -&gt; Void
-    var evaluationBlockCallback:callbackFunc?
-</code></pre>
-<h3 id="定义闭包block">定义闭包（block）</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;第一种方式 使用声明
-@property (nonatomic,strong) blockCallbackType blockCallbackName;
 
-_blockCallbackName = ^(NSString *parameter1,NSString *parameter2){
-        return parameter1;
-    };
-&gt;第二种方式 不使用声明
-@property (nonatomic,strong) NSString *(^blockCallbackName2)(NSString *parameter1, NSString *parameter2);
+<p>       在项目开发中经常会去查 iOS 闭包怎么写，因为它的语法太古怪，两种语言写法不一，经常搞混，干脆记录下常用的写法算了</p>
 
-_blockCallbackName2 = ^(NSString *parameter1,NSString *parameter2){
-        return parameter1;
-    };
+<h2 id="闭包">闭包</h2>
+
+<p>       闭包是指可以包含自由（未绑定到特定对象）变量的代码块；这些变量不是在这个代码块内或者任何全局上下文中定义的，而是在定义代码块的环境中定义（局部变量）。</p>
+
+<p>       “闭包” 一词来源于以下两者的结合：要执行的代码块（由于自由变量被包含在代码块中，这些自由变量以及它们引用的对象没有被释放）和为自由变量提供绑定的计算环境（作用域）。</p>
+
+<ul>
+  <li>声明闭包（block）</li>
+</ul>
+
+<pre><code class="language-Objective-C">typedef NSString *(^blockType)(NSString *parameter1, NSString *parameter2);
+</code></pre>
+
+<pre><code class="language-Swift">typealias blockType = (_ parameter1:String, parameter2:String ) -&gt; Void
+var objectBlock:blockType?
+</code></pre>
+
+<ul>
+  <li>定义闭包（block）</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 第一种方式 使用声明
+@property (nonatomic,strong) blockType *objectBlock;
+
+_objectBlock = ^(NSString *parameter1,NSString *parameter2){
+    return parameter1;
+};
+// 第二种方式 不使用声明
+@property (nonatomic,strong) NSString *(^objectBlock)(NSString *parameter1, NSString *parameter2);
+
+_objectBlock = ^(NSString *parameter1,NSString *parameter2){
+    return parameter1;
+};
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let blockCallbackName:String = {(parameter1:String,parameter2:String) -&gt;String in
-            return parameter1
-        }("parameter1","parameter2")
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let blockCallbackName:String = {(parameter1:String, parameter2:String) -&gt;String in
+    return parameter1
+}("parameter1","parameter2")
 </code></pre></div></div>
-<h3 id="函数定义闭包block">函数定义闭包（block）</h3>
+
+<ul>
+  <li>函数定义闭包（block）</li>
+</ul>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-(void)functionUseBlock:(NSString* (^)(NSString *parameter1, NSString *parameter2))callBackOne callBackTwo:(blockCallbackType)callBackTwo{
     if (callBackOne) {
         callBackOne(@"parameter1",@"parameter2");
@@ -231,23 +249,30 @@ _blockCallbackName2 = ^(NSString *parameter1,NSString *parameter2){
     }
 }
 </code></pre></div></div>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func functionUseBlock(callBack:(String,String) -&gt;String) -&gt; Void  {
-        print(callBack("parameter1","parameter2"))
-    }
-</code></pre></div></div>
-<h3 id="调用函数闭包block">调用函数闭包（block）</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[self functionUseBlock:^NSString *(NSString *parameter1, NSString *parameter2) {
-        return parameter1;
-    } callBackTwo:^NSString *(NSString *parameter1, NSString *parameter2) {
-        return parameter1;
-    }];
-</code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>self.functionUseBlock = { (parameter1, parameter2) -&gt; String in
-            return parameter2
-        }
+    print(callBack("parameter1","parameter2"))
+}
 </code></pre></div></div>
 
-<h3 id="结尾">结尾</h3>
+<ul>
+  <li>调用函数闭包（block）</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[self functionUseBlock:^NSString *(NSString *parameter1, NSString *parameter2) {
+    return parameter1;
+} callBackTwo:^NSString *(NSString *parameter1, NSString *parameter2) {
+    return parameter1;
+}];
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>self.functionUseBlock = { (parameter1, parameter2) -&gt; String in
+    return parameter2
+}
+</code></pre></div></div>
+
+<h2 id="结尾">结尾</h2>
+
 <p>Swift 版本根据参数和返回值有很多缩写方式，这里就不一一写上了。</p>
 
   </section>

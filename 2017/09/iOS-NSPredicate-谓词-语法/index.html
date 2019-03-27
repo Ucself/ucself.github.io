@@ -117,8 +117,8 @@
     <!-- Weibo -->
     <li class="navigation__item">
       <a
-        href="http://weibo.com/lbj147123"
-        title="@lbj147123 的微博"
+        href="http://weibo.com/p/1005052165916834"
+        title="@p/1005052165916834 的微博"
         target="_blank"
       >
         <i class="social fa fa-weibo"></i>
@@ -192,22 +192,29 @@
   </header>
 
   <section class="post">
-    <h1 id="前言">前言</h1>
+    <h2 id="前言">前言</h2>
 
-<p>在项目开发中遇见本地化搜索不是很高，当有本地化搜索的需求时候对NSPredicate的语法都去网上搜索，然而苹果官方也没有专门介绍语法，借这次机会总结和写下谓词的语法，方便以后开发查看</p>
+<p>       在项目开发中遇见本地化搜索不是很高，当有本地化搜索的需求时候对 NSPredicate 的语法都去网上搜索，然而苹果官方也没有专门介绍语法，借这次机会总结和写下谓词的语法，方便以后开发查看</p>
 
-<h2 id="nspredicate的语法">NSPredicate的语法</h2>
+<h2 id="nspredicate-的语法">NSPredicate 的语法</h2>
 
-<h3 id="比较运算符">比较运算符</h3>
+<ul>
+  <li>
+    <p>比较运算符</p>
 
-<p>1、=，==：判断两个表达式是否相等，在谓词中=和==是相同的意思都是判断，而没有赋值这一说
-2、&gt;=，=&gt;：判断左边表达式的值是否大于或等于右边表达式的值
-3、&gt;：判断左边表达式的值是否大于右边表达式的值
-4、&lt;：判断左边表达式的值是否小于右边表达式的值
-5、!=、&lt;&gt;：判断两个表达式是否不相等
-6、BETWEEN：BETWEEN表达式必须满足表达式 BETWEEN {下限，上限}的格式，要求该表达式必须大于或等于下限，并小于或等于上限</p>
+    <ol>
+      <li>=，==：判断两个表达式是否相等，在谓词中=和==是相同的意思都是判断，而没有赋值这一说</li>
+      <li>=，=&gt;：判断左边表达式的值是否大于或等于右边表达式的值</li>
+      <li><code class="highlighter-rouge">&gt;</code> ：判断左边表达式的值是否大于右边表达式的值</li>
+      <li>&lt;：判断左边表达式的值是否小于右边表达式的值</li>
+      <li>!=、&lt;&gt;：判断两个表达式是否不相等</li>
+      <li>BETWEEN：BETWEEN 表达式必须满足表达式 BETWEEN {下限，上限}的格式，要求该表达式必须大于或等于下限，并小于或等于上限</li>
+    </ol>
+  </li>
+</ul>
 
 <p>例：</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//数据源
 let word = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"]
 //相等判断
@@ -219,6 +226,7 @@ let betweenPredicate:NSPredicate = NSPredicate.init(format: "SELF BETWEEN {'d','
       print("word item is between {'d','m'} -&gt; \(betweenPredicate.evaluate(with: item))")
 }
 </code></pre></div></div>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>word[1] is = b -&gt; true
 word item is between {'d','m'} -&gt; false
 word item is between {'d','m'} -&gt; false
@@ -237,68 +245,101 @@ word item is between {'d','m'} -&gt; false
 word item is between {'d','m'} -&gt; false
 </code></pre></div></div>
 
-<h3 id="逻辑运算符">逻辑运算符</h3>
+<ul>
+  <li>
+    <p>逻辑运算符</p>
 
-<p>1、BEGINSWITH：检查某个字符串是否以指定的字符串开头（如判断字符串      是否以a开头：BEGINSWITH ‘a’）
-2、ENDSWITH：检查某个字符串是否以指定的字符串结尾
-3、CONTAINS：检查某个字符串是否包含指定的字符串
-4、LIKE：检查某个字符串是否匹配指定的字符串模板。其之后可以跟?代表一个字符和<em>代表任意多个字符两个通配符。比如”name LIKE ‘</em>ac<em>’“，这表示name的值中包含ac则返回YES；”name LIKE ‘?ac</em>’“，表示name的第2、3个字符为ac时返回YES。
-5、MATCHES：检查某个字符串是否匹配指定的正则表达式。虽然正则表达式的执行效率是最低的，但其功能是最强大的，也是我们最常用的。</p>
+    <ol>
+      <li>BEGINSWITH：检查某个字符串是否以指定的字符串开头（如判断字符串 是否以 a 开头：BEGINSWITH ‘a’）</li>
+      <li>ENDSWITH：检查某个字符串是否以指定的字符串结尾</li>
+      <li>CONTAINS：检查某个字符串是否包含指定的字符串</li>
+      <li>LIKE：检查某个字符串是否匹配指定的字符串模板。其之后可以跟?代表一个字符和<em>代表任意多个字符两个通配符。比如”name LIKE ‘</em>ac<em>’“，这表示 name 的值中包含 ac 则返回 YES；”name LIKE ‘?ac</em>’“，表示 name 的第 1、1. 个字符为 ac 时返回 YES。</li>
+      <li>MATCHES：检查某个字符串是否匹配指定的正则表达式。虽然正则表达式的执行效率是最低的，但其功能是最强大的，也是我们最常用的。</li>
+    </ol>
+  </li>
+</ul>
 
-<p>注：字符串比较都是区分大小写和重音符号的。如：café和cafe是不一样的，Cafe和cafe也是不一样的。如果希望字符串比较运算不区分大小写和重音符号，请在这些运算符后使用[c]，[d]选项。其中[c]是不区分大小写，[d]是不区分重音符号，其写在字符串比较运算符之后，比如：name LIKE[cd] ‘cafe’，那么不论name是cafe、Cafe还是café上面的表达式都会返回YES。</p>
+<p>       注：字符串比较都是区分大小写和重音符号的。如：café 和 cafe 是不一样的，Cafe 和 cafe 也是不一样的。如果希望字符串比较运算不区分大小写和重音符号，请在这些运算符后使用[c]，[d]选项。其中[c]是不区分大小写，[d]是不区分重音符号，其写在字符串比较运算符之后，比如：name LIKE[cd] ‘cafe’，那么不论 name 是 cafe、Cafe 还是 café 上面的表达式都会返回 YES。</p>
 
 <p>例：最常见的就是正则匹配了</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//判断是不是邮箱
 let emailRegular = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 let emailpredicate = NSPredicate(format:"SELF MATCHES %@", emailRegular)
 print("www.llllll.com is = email -&gt; \(emailpredicate.evaluate(with: "www.llllll.com"))")
 print("www@llllll.com is = email -&gt; \(emailpredicate.evaluate(with: "www@llllll.com"))")
 </code></pre></div></div>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>www.llllll.com is = email -&gt; false
 www@llllll.com is = email -&gt; true
 </code></pre></div></div>
-<h3 id="集合运算符">集合运算符</h3>
 
-<p>1、ANY、SOME：集合中任意一个元素满足条件，就返回YES。
-2、ALL：集合中所有元素都满足条件，才返回YES。
-3、NONE：集合中没有任何元素满足条件就返回YES。如:NONE person.age &lt; 18，表示person集合中所有元素的age&gt;=18时，才返回YES。
-4、IN：等价于SQL语句中的IN运算符，只有当左边表达式或值出现在右边的集合中才会返回YES。</p>
+<ul>
+  <li>
+    <p>集合运算符</p>
+
+    <ol>
+      <li>ANY、SOME：集合中任意一个元素满足条件，就返回 YES。</li>
+      <li>ALL：集合中所有元素都满足条件，才返回 YES。</li>
+      <li>NONE：集合中没有任何元素满足条件就返回 YES。如:NONE person.age &lt; 18，表示 person 集合中所有元素的 age&gt;=18 时，才返回 YES。</li>
+      <li>IN：等价于 SQL 语句中的 IN 运算符，只有当左边表达式或值出现在右边的集合中才会返回 YES。</li>
+    </ol>
+  </li>
+</ul>
 
 <p>例：</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//数据源
 let word = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"]
 //集合判断
 let equalPredicate:NSPredicate = NSPredicate.init(format: "NONE SELF &gt; 'p'")
 print("word 所有元素都不是大于p -&gt; \(equalPredicate.evaluate(with: word))")
 </code></pre></div></div>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>word 所有元素都不是大于p -&gt; true
 </code></pre></div></div>
 
-<h3 id="直接量值">直接量值</h3>
-<p>在谓词表达式中可以使用如下直接量
-1、FALSE、NO：代表逻辑假
-2、TRUE、YES：代表逻辑真
-3、NULL、NIL：代表空值
-4、SELF：代表正在被判断的对象自身
-5、”string”或’string’：代表字符串
-6、数组：和c中的写法相同，如：{‘one’, ‘two’, ‘three’}。
-7、数值：包括证书、小数和科学计数法表示的形式
-8、十六进制数：0x开头的数字
-9、八进制：0o开头的数字
-10、二进制：0b开头的数字</p>
+<ul>
+  <li>
+    <p>直接量值</p>
 
-<h3 id="保留值">保留值</h3>
-<p>下列单词都是保留字（不论大小写）</p>
+    <ol>
+      <li>FALSE、NO：代表逻辑假</li>
+      <li>TRUE、YES：代表逻辑真</li>
+      <li>NULL、NIL：代表空值</li>
+      <li>SELF：代表正在被判断的对象自身</li>
+      <li>“string”或’string’：代表字符串</li>
+      <li>数组：和 c 中的写法相同，如：{‘one’, ‘two’, ‘three’}。</li>
+      <li>数值：包括证书、小数和科学计数法表示的形式</li>
+      <li>十六进制数：0x 开头的数字</li>
+      <li>八进制：0o 开头的数字</li>
+      <li>二进制：0b 开头的数字</li>
+    </ol>
+  </li>
+</ul>
 
-<p>AND、OR、IN、NOT、ALL、ANY、SOME、NONE、LIKE、CASEINSENSITIVE、CI、MATCHES、CONTAINS、BEGINSWITH、ENDSWITH、BETWEEN、NULL、NIL、SELF、TRUE、YES、FALSE、NO、FIRST、LAST、SIZE、ANYKEY、SUBQUERY、CAST、TRUEPREDICATE、FALSEPREDICATE</p>
+<p>在谓词表达式中可以使用如上直接量</p>
 
-<p>注：虽然大小写都可以，但是更推荐使用大写来表示这些保留字，也是上面介绍到的语法，没介绍到的自己理解吧，或者给我留言</p>
+<ul>
+  <li>保留值</li>
+</ul>
 
-<h3 id="在谓词中使用占位符参数">在谓词中使用占位符参数</h3>
-<p>%K：用于动态传入属性名
-%@：用于动态设置属性值</p>
+<p>       下列单词都是保留字（不论大小写）：AND、OR、IN、NOT、ALL、ANY、SOME、NONE、LIKE、CASEINSENSITIVE、CI、MATCHES、CONTAINS、BEGINSWITH、ENDSWITH、BETWEEN、NULL、NIL、SELF、TRUE、YES、FALSE、NO、FIRST、LAST、SIZE、ANYKEY、SUBQUERY、CAST、TRUEPREDICATE、FALSEPREDICATE</p>
 
-<p>例：最后来一个综合的本地搜索吧，对自定义对象进行筛选</p>
+<p>       注：虽然大小写都可以，但是更推荐使用大写来表示这些保留字，也是上面介绍到的语法，没介绍到的自己理解吧，或者给我留言</p>
+
+<ul>
+  <li>在谓词中使用占位符参数</li>
+</ul>
+
+<p>%K：用于动态传入属性名</p>
+
+<p>%@：用于动态设置属性值</p>
+
+<ul>
+  <li>例：最后来一个综合的本地搜索吧，对自定义对象进行筛选</li>
+</ul>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//自定义对象
 @interface YContactObject : NSObject
 /**
@@ -328,14 +369,15 @@ print("word 所有元素都不是大于p -&gt; \(equalPredicate.evaluate(with: w
     self.middleName = (self.middleName) ? self.middleName : @"";
     self.givenName = (self.givenName) ? self.givenName : @"";
     self.familyName = (self.familyName) ? self.familyName : @"";
-    
+
     self.name = [[self.familyName stringByAppendingString:self.middleName] stringByAppendingString:self.givenName];
-    
+
     return self.name;
 }
 
 @end
 </code></pre></div></div>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//通讯录数组
 self.sourceContactObjects:[YContactObject] = [**********]
 self.contactObjects:[YContactObject] = []
@@ -344,10 +386,11 @@ let predicateString:String = String.init(format: "(SELF.nameObject.getName CONTA
 let filterPredicate:NSPredicate = NSPredicate.init(format: predicateString)
 self.contactObjects = (sourceContactObjects as NSArray).filtered(using: filterPredicate) as! [YContactObject]
 </code></pre></div></div>
+
 <p>运行结果</p>
 
-<p>1、<img src="http://upload-images.jianshu.io/upload_images/2007491-d7ab80c54deffbd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simulator Screen Shot 2017年9月11日 下午5.17.43.png" />
-2、<img src="http://upload-images.jianshu.io/upload_images/2007491-ff5a81fd05ff917a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simulator Screen Shot 2017年9月11日 下午5.17.50.png" /></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2007491-d7ab80c54deffbd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simulator Screen Shot 2017年9月11日 下午5.17.43.png" />
+<img src="http://upload-images.jianshu.io/upload_images/2007491-ff5a81fd05ff917a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simulator Screen Shot 2017年9月11日 下午5.17.50.png" /></p>
 
 <p>后续有什么问题或者建议，请给我留言</p>
 

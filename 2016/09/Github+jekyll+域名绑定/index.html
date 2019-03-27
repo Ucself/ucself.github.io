@@ -117,8 +117,8 @@
     <!-- Weibo -->
     <li class="navigation__item">
       <a
-        href="http://weibo.com/lbj147123"
-        title="@lbj147123 的微博"
+        href="http://weibo.com/p/1005052165916834"
+        title="@p/1005052165916834 的微博"
         target="_blank"
       >
         <i class="social fa fa-weibo"></i>
@@ -195,72 +195,91 @@
     <h2 id="前言">前言</h2>
 
 <p>       在脑子里面想了很久搭建自己的知识体系存储文章，方便当字典查看或者回顾知识点。有人说你这不就是博客吗，很多博客平台写不就行了？你说得对就是找一个写博客的地方，整理自我的知识体系。</p>
+
 <ul>
   <li>作为一个互联网从业者都想有一个自己的域名，空间，博客网站来记录这些；</li>
   <li>怕第三方服务网站数据丢失，博客网站也不是自己喜欢的样式；</li>
-  <li>怕麻烦需要买空间，买域名，写web程序。</li>
+  <li>怕麻烦需要买空间，买域名，写 web 程序。</li>
 </ul>
 
-<p>太麻烦了，知道现在github推出了静态站点并且支持jekyll服务，就搭建了这么一个博客网站，并且用这篇文章记录下来。</p>
+<p>太麻烦了，知道现在 github 推出了静态站点并且支持 jekyll 服务，就搭建了这么一个博客网站，并且用这篇文章记录下来。</p>
 
-<h2 id="第一步本地安装jekyll">第一步：本地安装jekyll</h2>
+<h2 id="第一步本地安装-jekyll">第一步：本地安装 jekyll</h2>
 
 <p>在终端输入</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll
 </code></pre></div></div>
+
 <p>创建站点</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new myblog
 </code></pre></div></div>
+
 <p>打开服务</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll serve
 </code></pre></div></div>
-<p>在浏览器查看脚手架搭建的web站点,浏览器中输入： <br />
+
+<p>在浏览器查看脚手架搭建的 web 站点,浏览器中输入：<br />
 <a href="http://127.0.0.1:4000" target="_blank">http://127.0.0.1:4000</a></p>
 
-<p>如果一切正常，说明jekyll本地服务搭建成功。<br />
+<p>如果一切正常，说明 jekyll 本地服务搭建成功。<br />
 生成相关文件夹/文件功能参考官网解释<br />
 <a href="https://www.jekyll.com.cn/docs/structure/" target="_blank">https://www.jekyll.com.cn/docs/structure/</a></p>
 
-<h2 id="第二步下载一个jekyll主题模板">第二步：下载一个jekyll主题模板</h2>
+<h2 id="第二步下载一个-jekyll-主题模板">第二步：下载一个 jekyll 主题模板</h2>
 
-<p>       第一步完成后说明本地服务搭建成功，但是需要一个自己觉得好看的主题模板，本站的jekyll主题是：  <a href="https://github.com/onevcat/vno-jekyll" target="_blank">https://github.com/onevcat/vno-jekyll</a></p>
+<p>       第一步完成后说明本地服务搭建成功，但是需要一个自己觉得好看的主题模板，本站的 jekyll 主题是： <a href="https://github.com/onevcat/vno-jekyll" target="_blank">https://github.com/onevcat/vno-jekyll</a></p>
 
 <p>clone 代码到本地</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:onevcat/vno-jekyll.git
 </code></pre></div></div>
+
 <p>cd 代码到目录启动服务查看主题模板是否正常</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd vno-jekyll
 </code></pre></div></div>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll serve
 </code></pre></div></div>
 
 <p>如果一切正常的话，说明下载自己喜欢的主题模板本地运行成功</p>
 
-<h2 id="第三步github创建站点仓库">第三步：GitHub创建站点仓库</h2>
+<h2 id="第三步github-创建站点仓库">第三步：GitHub 创建站点仓库</h2>
 
-<p>       实践结果分析：github+jekyll 最简单方式是jekyll编译生成的文件夹_site站点上传到仓库是最简单的方式。<br />
-       所以我建立了两个GitHub仓库“ucself”和“ucself.github.io”，ucself用于整个项目所有文件存放，ucself.github.io 用于静态站点服务。ucself下的_site 文件夹配置为子仓库ucself.github.io</p>
+<p>       实践结果分析：github+jekyll 最简单方式是 jekyll 编译生成的文件夹_site 站点上传到仓库是最简单的方式。<br />
+       所以我建立了两个 GitHub 仓库“ucself”和“ucself.github.io”，ucself 用于整个项目所有文件存放，ucself.github.io 用于静态站点服务。ucself 下的_site 文件夹配置为子仓库 ucself.github.io</p>
 
-<p>在ucself仓库下执行</p>
+<p>在 ucself 仓库下执行</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git submodule add git@github.com:Ucself/ucself.github.io.git _site
 </code></pre></div></div>
-<p>两个仓库就关联起来了。把ucself.githu.io配置为静态站点：<br />
+
+<p>两个仓库就关联起来了。把 ucself.githu.io 配置为静态站点：<br />
 <img src="/assets/2016-09-27/github_pages.jpg" alt="配置方式" title="配置方式" /></p>
 
-<h2 id="第四步本地编译上传github">第四步：本地编译上传GitHub</h2>
+<h2 id="第四步本地编译上传-github">第四步：本地编译上传 GitHub</h2>
+
 <p>当增加/删除/修改了博客后执行</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll serve
 </code></pre></div></div>
-<p>执行完成后，上传代码到github。ucself、ucself.github.io两个仓库都提交代码。<br />
+
+<p>执行完成后，上传代码到 github。ucself、ucself.github.io 两个仓库都提交代码。<br />
 在浏览器中打开<a href="ucself.github.io" target="_blank">ucself.github.io</a>即可浏览更新的博客了</p>
 
 <h2 id="第五步绑定域名">第五步：绑定域名</h2>
-<p>绑定域名都是双向绑定的，在github上需要绑定，在域名提供商也需要绑定。</p>
+
+<p>绑定域名都是双向绑定的，在 github 上需要绑定，在域名提供商也需要绑定。</p>
+
 <ul>
-  <li>在github设置中填写域名点击save即可。</li>
+  <li>在 github 设置中填写域名点击 save 即可。</li>
 </ul>
 
 <p><img src="/assets/2016-09-27/github_domain.jpg" alt="配置域名" title="配置域名" /></p>
+
 <ul>
   <li>在域名提供商配置：在你购买的域名中增加五项解析项目，以覆盖全部解析</li>
 </ul>
@@ -270,6 +289,7 @@
 <p>好了，到现在为止就可以使用自己的域名<a href="ucself.cn" target="_blank">ucself.cn</a>访问自己的博客了。</p>
 
 <h2 id="总结">总结：</h2>
+
 <p>       这种搭建方式，也是很多众网友搭建方式，我也研究了好久，断断续续的去实践，中间遇到了很多问题，没有记录进来。当写这篇博客的时候，已经忘记了踩过多少坑和问题，这里就不罗列出来了。哦，对了如果要改变该主题某些功能，可以去研究一下官网的语法，作为互联网从业者也不难，本博客站点已修改了部分代码。</p>
 
   </section>
