@@ -5,8 +5,8 @@
     <description>嗨，我是ucself，一名大前端开发工程师。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Mar 2019 18:56:21 +0800</pubDate>
-    <lastBuildDate>Wed, 27 Mar 2019 18:56:21 +0800</lastBuildDate>
+    <pubDate>Fri, 29 Mar 2019 18:13:21 +0800</pubDate>
+    <lastBuildDate>Fri, 29 Mar 2019 18:13:21 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -310,42 +310,59 @@ end
       <item>
         <title>iOS 中Frameworks，Pods ，-Bridging-Header.h桥接，import之间的理解</title>
         <description>&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
-&lt;p&gt;在项目开发中，遇到一个问题，由于Frameworks，Pods，-Bridging-Header.h，import的使用不当会造成控制台日志报错问题&lt;/p&gt;
+
+&lt;p&gt;在项目开发中，遇到一个问题，由于 Frameworks，Pods，-Bridging-Header.h，import 的使用不当会造成控制台日志报错问题&lt;/p&gt;
+
 &lt;h2 id=&quot;frameworks&quot;&gt;Frameworks&lt;/h2&gt;
+
 &lt;p&gt;Frameworks 顾名思义就是框架，是第三方打包完成看不到源码，可以直接使用的
 在项目中引用方式&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;OC  引用某一个文件，Frameworks一般会提供一个h文件引用全部其他文件
 #import &amp;lt;JLRoutes/JLRoutes.h&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;swift  引用一个包，相当于引用了Frameworks中的所有文件
 import JLRoutes
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h2 id=&quot;pods-方式&quot;&gt;Pods 方式&lt;/h2&gt;
-&lt;p&gt;Pods 在iOS中对封装的源码进行管理，可以视频pod方式导入项目中，相当于能看见源代码也能修改源代码的 Frameworks，有的不会生成Frameworks类似的包如：GrowingIO（因为在swift中import GrowingIO失败）
+
+&lt;p&gt;Pods 在 iOS 中对封装的源码进行管理，可以视频 pod 方式导入项目中，相当于能看见源代码也能修改源代码的 Frameworks，有的不会生成 Frameworks 类似的包如：GrowingIO（因为在 swift 中 import GrowingIO 失败）
 在项目中引用方式&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;OC  引用某一个文件，Pods一般会提供一个h文件引用全部其他文件
 #import &amp;lt;JLRoutes/JLRoutes.h&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;swift  引用一个包，相当于引用了Pods中的所有文件
 import JLRoutes
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h2 id=&quot;-bridging-headerh-桥接文件&quot;&gt;-Bridging-Header.h 桥接文件&lt;/h2&gt;
-&lt;p&gt;桥接文件，即是OC的文件通过桥接到Swift能调用
-1、在swift使用中我们可以对包（Frameworks/Pods）进行桥接，如&lt;/p&gt;
+
+&lt;p&gt;桥接文件，即是 OC 的文件通过桥接到 Swift 能调用
+1、在 swift 使用中我们可以对包（Frameworks/Pods）进行桥接，如&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#import &amp;lt;JLRoutes/JLRoutes.h&amp;gt;
 #import &amp;lt;GrowingIO/Growing.h&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;p&gt;2、绝不能使用&lt;/p&gt;
 
 &lt;p&gt;&lt;del&gt;#import “JLRoutes.h”&lt;/del&gt;
 &lt;del&gt;#import “Growing.h”&lt;/del&gt;
 虽然不会错报，会出现控制台打印变量问题
-3、项目中添加的OC代码就得使用&lt;/p&gt;
+3、项目中添加的 OC 代码就得使用&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#import &quot;JLRoutes.h&quot;
 #import &quot;Growing.h&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;import导入方式&quot;&gt;import导入方式&lt;/h2&gt;
+
+&lt;h2 id=&quot;import-导入方式&quot;&gt;import 导入方式&lt;/h2&gt;
+
 &lt;p&gt;如果是单个文件就需要导入，直接使用；如果是包&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import AFNetworking
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
@@ -576,10 +593,319 @@ self.contactObjects = (sourceContactObjects as NSArray).filtered(using: filterPr
       </item>
     
       <item>
+        <title>Git 2、基础</title>
+        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;       在工作使用到很多常用工具，遇到问题百度/谷歌一下就知道怎么使用，日积月累了很多知识点和使用技能，但是没有整理成专题的知识体系，为了方便以后遇到问题或者空闲阅读的时候当字典查阅。就从这篇开始对 Git 知识体系进行连载。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://progit.bootcss.com&quot; title=&quot;阅读来自Pro Git&quot;&gt;阅读来自 Pro Git&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-基础&quot;&gt;Git 基础&lt;/h2&gt;
+
+&lt;p&gt;       在学习完本章之后，你应该能够配置并初始化一个仓库（repository）、开始或停止跟踪（track）文件、暂存（stage）或提交（commit)更改。 本章也将向你演示如何配置 Git 来忽略指定的文件和文件模式、如何迅速而简单地撤销错误操作、如何浏览你的项目的历史版本以及不同提交（commits）间的差异、如何向你的远程仓库推送（push）以及如何从你的远程仓库拉取（pull）文件。&lt;/p&gt;
+
+&lt;h3 id=&quot;获取-git-仓库&quot;&gt;获取 Git 仓库&lt;/h3&gt;
+
+&lt;p&gt;       1、在现有目录中初始化仓库&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       2、克隆现有的仓库&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git@github.com:Ucself/GitStudyRepository.git
+
+git clone git@github.com:Ucself/GitStudyRepository.git  RepositoryAlias
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;记录每次更新到仓库&quot;&gt;记录每次更新到仓库&lt;/h3&gt;
+
+&lt;p&gt;       1、文件的状态变化周期&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2016-11-10/git_lifecycle.jpg&quot; alt=&quot;生命周期&quot; title=&quot;生命周期&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;       2、检查当前文件状态&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git status
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       3、跟踪新文件&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add README
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       4、暂存已修改文件&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add CONTRIBUTING.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       5、状态简览&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git status -s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       6、忽略文件&lt;/p&gt;
+
+&lt;p&gt;       我们可以创建一个名为 .gitignore 的文件，列出要忽略的文件模式，文件 .gitignore 的格式规范如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;所有空行或者以 ＃ 开头的行都会被 Git 忽略。&lt;/li&gt;
+  &lt;li&gt;可以使用标准的 glob 模式匹配。&lt;/li&gt;
+  &lt;li&gt;匹配模式可以以（/）开头防止递归。&lt;/li&gt;
+  &lt;li&gt;匹配模式可以以（/）结尾指定目录。&lt;/li&gt;
+  &lt;li&gt;要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;       7、查看已暂存和未暂存的修改&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git status
+git diff
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       8、提交更新&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -m &quot;Story 182: Fix benchmarks for speed&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       9、提交更新，跳过使用暂存区域&lt;/p&gt;
+
+&lt;p&gt;       给 git commit 加上 -a 选项&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -m &quot;Story 182: Fix benchmarks for speed&quot; -a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       9、移除文件&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git rm PROJECTS.md
+rm 'PROJECTS.md'
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       9、移动文件&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git mv README.md README
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;查看提交历史&quot;&gt;查看提交历史&lt;/h3&gt;
+
+&lt;p&gt;       1、查看提交历史&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git log
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;git log 的常用选项&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;选项&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-p&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;按补丁格式显示每个更新之间的差异。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;–stat&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示每次更新的文件修改统计信息&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;–shortstat&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;只显示 –stat 中最后的行数修改添加移除统计。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;–name-only&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;仅在提交信息后显示已修改的文件清单。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;–name-status&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示新增、修改、删除的文件清单。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;–abbrev-commit&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;–relative-date&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;使用较短的相对时间显示（比如，“2 weeks ago”）。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;–graph&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示 ASCII 图形表示的分支合并历史。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;–pretty&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）。&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;       2、限制输出长度&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git log -(5)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;限制 git log 输出的选项&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;选项&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-(n)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;仅显示最近的 n 条提交&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;–since, –after&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;仅显示指定时间之后的提交。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;–until, –before&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;仅显示指定时间之前的提交。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;–author&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;仅显示指定作者相关的提交。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;–committer&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;仅显示指定提交者相关的提交。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;–grep&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;仅显示含指定关键字的提交&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-S&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;仅显示添加或移除了某个关键字的提交&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;撤消操作&quot;&gt;撤消操作&lt;/h3&gt;
+
+&lt;p&gt;       1、你提交后发现忘记了暂存某些需要的修改&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;最终你只会有一个提交 - 第二次提交将代替第一次提交的结果。&lt;/p&gt;
+
+&lt;p&gt;       2、取消暂存的文件&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git reset HEAD CONTRIBUTING.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       3、撤消对文件的修改&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout -- CONTRIBUTING.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;远程仓库的使用&quot;&gt;远程仓库的使用&lt;/h3&gt;
+
+&lt;p&gt;       1、查看远程仓库&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote -v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       2、添加远程仓库&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add pb https://github.com/paulboone/ticgit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       3、从远程仓库中抓取与拉取&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git fetch [remote-name]
+git pull [remote-name]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       4、推送到远程仓库&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push [remote-name] [branch-name]
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       5、查看远程仓库&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote show [remote-name]
+git remote show origin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       6、远程仓库的移除与重命名&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote rename pb paul
+git remote rm paul
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;打标签&quot;&gt;打标签&lt;/h3&gt;
+
+&lt;p&gt;       1、列出标签&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git tag
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       2、创建标签&lt;/p&gt;
+
+&lt;p&gt;附注标签&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git tag -a v1.4 -m 'my version 1.4'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;轻量标签&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git tag v1.4-lw
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       3、后期打标签&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git tag -a v1.2 9fceb02
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       4、共享标签&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push origin v1.5
+git push origin --tags
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;       5、检出标签&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout -b [branchname] [tagname]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;git-别名&quot;&gt;Git 别名&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 10 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/Git-2-%E5%9F%BA%E7%A1%80/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/Git-2-%E5%9F%BA%E7%A1%80/</guid>
+        
+        <category>git</category>
+        
+        
+        <category>git</category>
+        
+      </item>
+    
+      <item>
         <title>Git 1、起步</title>
         <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;       在工作使用到很多常用工具，遇到问题百度/谷歌一下就知道怎么使用，日积月累了很多知识点和使用技能，但是没有整理成专题的知识体系，为了方便以后遇到问题或者空闲阅读的时候当字典查阅。就从这篇开始对 Git 知识体系进行连载。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://progit.bootcss.com&quot; title=&quot;阅读来自Pro Git&quot;&gt;阅读来自 Pro Git&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;git-起步&quot;&gt;Git 起步&lt;/h2&gt;
 
@@ -900,332 +1226,6 @@ Done installing documentation for activesupport, claide, cocoapods-core, cocoapo
         <pubDate>Wed, 26 Oct 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/10/Mac%E4%B8%8Bcocoapods%E7%9A%84%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</link>
         <guid isPermaLink="true">http://localhost:4000/2016/10/Mac%E4%B8%8Bcocoapods%E7%9A%84%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</guid>
-        
-        <category>archive</category>
-        
-        
-        <category>archive</category>
-        
-      </item>
-    
-      <item>
-        <title>MarkDown语法</title>
-        <description>&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
-
-&lt;p&gt;Markdown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。&lt;/p&gt;
-
-&lt;h2 id=&quot;语法&quot;&gt;语法&lt;/h2&gt;
-
-&lt;h3 id=&quot;1标题&quot;&gt;1、标题&lt;/h3&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 这是一级标题
-## 这是二级标题
-### 这是三级标题
-#### 这是四级标题
-##### 这是五级标题
-###### 这是六级标题
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;效果：&lt;/p&gt;
-
-&lt;h1 id=&quot;这是一级标题&quot;&gt;这是一级标题&lt;/h1&gt;
-&lt;h2 id=&quot;这是二级标题&quot;&gt;这是二级标题&lt;/h2&gt;
-&lt;h3 id=&quot;这是三级标题&quot;&gt;这是三级标题&lt;/h3&gt;
-&lt;h4 id=&quot;这是四级标题&quot;&gt;这是四级标题&lt;/h4&gt;
-&lt;h5 id=&quot;这是五级标题&quot;&gt;这是五级标题&lt;/h5&gt;
-&lt;h6 id=&quot;这是六级标题&quot;&gt;这是六级标题&lt;/h6&gt;
-
-&lt;h3 id=&quot;2字体&quot;&gt;2、字体&lt;/h3&gt;
-
-&lt;p&gt;加粗：要加粗的文字左右分别用两个&lt;em&gt;号包起来&lt;br /&gt;
-斜体：要倾斜的文字左右分别用一个&lt;/em&gt;号包起来&lt;br /&gt;
-斜体加粗：要倾斜和加粗的文字左右分别用三个*号包起来&lt;br /&gt;
-删除线：要加删除线的文字左右分别用两个~~号包起来&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;**这是加粗的文字**
-*这是倾斜的文字*`
-***这是斜体加粗的文字***
-~~这是加删除线的文字~~
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;这是加粗的文字&lt;/strong&gt;&lt;br /&gt;
-&lt;em&gt;这是倾斜的文字&lt;/em&gt;`&lt;br /&gt;
-&lt;strong&gt;&lt;em&gt;这是斜体加粗的文字&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;del&gt;这是加删除线的文字&lt;/del&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3引用&quot;&gt;3、引用&lt;/h3&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;这是引用的内容
-&amp;gt;&amp;gt;&amp;gt;这是引用的内容
-&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;这是引用的内容
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;效果：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;这是引用的内容&lt;/p&gt;
-  &lt;blockquote&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;这是引用的内容&lt;/p&gt;
-      &lt;blockquote&gt;
-        &lt;blockquote&gt;
-          &lt;blockquote&gt;
-            &lt;blockquote&gt;
-              &lt;blockquote&gt;
-                &lt;blockquote&gt;
-                  &lt;blockquote&gt;
-                    &lt;p&gt;这是引用的内容&lt;/p&gt;
-                  &lt;/blockquote&gt;
-                &lt;/blockquote&gt;
-              &lt;/blockquote&gt;
-            &lt;/blockquote&gt;
-          &lt;/blockquote&gt;
-        &lt;/blockquote&gt;
-      &lt;/blockquote&gt;
-    &lt;/blockquote&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;4分割线&quot;&gt;4、分割线&lt;/h3&gt;
-
-&lt;p&gt;语法：三个或者三个以上的 - 或者 * 都可以&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
-&lt;span class=&quot;gd&quot;&gt;----
-&lt;/span&gt;***
-*****
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;效果：&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;hr /&gt;
-&lt;hr /&gt;
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;5图片&quot;&gt;5、图片&lt;/h3&gt;
-
-&lt;p&gt;语法：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![图片alt](图片地址 ''图片title'')
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;图片alt：是显示在图片下面的文字，相当于对图片内容的解释。   &lt;br /&gt;
-图片title：是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![清纯小美女](https://pan.baidu.com/s/1-uVVCZQPsAcz8C7aXZ5egA &quot;美女&quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;效果:&lt;br /&gt;
-&lt;img src=&quot;https://thumbnail0.baidupcs.com/thumbnail/985381d0f3a52177d7a36e8a3f20844e?fid=218278091-250528-1822553445&amp;amp;time=1553068800&amp;amp;rt=sh&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-X6vbmz3ZYKvM%2BjiqZGeA8HltPqE%3D&amp;amp;expires=8h&amp;amp;chkv=0&amp;amp;chkbd=0&amp;amp;chkpc=&amp;amp;dp-logid=1825044843093892748&amp;amp;dp-callid=0&amp;amp;size=c710_u400&amp;amp;quality=100&amp;amp;vuk=-&amp;amp;ft=video&quot; alt=&quot;清纯小美女&quot; title=&quot;美女&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;6超链接&quot;&gt;6、超链接&lt;/h3&gt;
-
-&lt;p&gt;语法：&lt;br /&gt;
-第一种:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[超链接名](超链接地址 &quot;超链接title&quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;超链接title:可加可不加&lt;/p&gt;
-
-&lt;p&gt;第二种:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;a href=&quot;超链接地址&quot; target=&quot;_blank&quot;&amp;gt;超链接名&amp;lt;/a&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[谷歌](http://google.com)
-[百度](http://baidu.com)
-
-&amp;lt;a href=&quot;http://baidu.com&quot; target=&quot;_blank&quot;&amp;gt;简书&amp;lt;/a&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://google.com&quot;&gt;谷歌&lt;/a&gt;
-&lt;a href=&quot;http://baidu.com&quot;&gt;百度&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://baidu.com&quot; target=&quot;_blank&quot;&gt;简书&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;7超链接&quot;&gt;7、超链接&lt;/h3&gt;
-
-&lt;p&gt;语法：&lt;br /&gt;
-无序列表：用 - + * 任何一种都可以&lt;br /&gt;
-有序列表：数字加点方式
-列表嵌套：上一级和下一级之间敲三个空格即可&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 列表内容
-+ 列表内容
-* 列表内容
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;注意：- + * 跟内容之间都要有一个空格&lt;/p&gt;
-
-&lt;p&gt;效果：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;列表内容&lt;/li&gt;
-  &lt;li&gt;列表内容&lt;/li&gt;
-  &lt;li&gt;列表内容&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 列表内容
-2. 列表内容
-3. 列表内容
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;注意：序号跟内容之间要有空格&lt;/p&gt;
-
-&lt;p&gt;效果：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;列表内容&lt;/li&gt;
-  &lt;li&gt;列表内容&lt;/li&gt;
-  &lt;li&gt;列表内容&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* 级无序列表内容 
-   * 二级无序列表内容
-   * 二级无序列表内容
-   * 二级无序列表内容
-* 一级无序列表内容
-   1. 二级有序列表内容
-   2. 二级有序列表内容
-   3. 二级有序列表内容
-1. 一级有序列表内容
-   - 二级无序列表内容
-   - 二级无序列表内容
-   - 二级无序列表内容
-2. 一级有序列表内容
-   1. 二级有序列表内容
-   2. 二级有序列表内容
-   3. 二级有序列表内容
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;效果：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;级无序列表内容
-    &lt;ul&gt;
-      &lt;li&gt;二级无序列表内容&lt;/li&gt;
-      &lt;li&gt;二级无序列表内容&lt;/li&gt;
-      &lt;li&gt;二级无序列表内容&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;一级无序列表内容
-    &lt;ol&gt;
-      &lt;li&gt;二级有序列表内容&lt;/li&gt;
-      &lt;li&gt;二级有序列表内容&lt;/li&gt;
-      &lt;li&gt;二级有序列表内容
-        &lt;ol&gt;
-          &lt;li&gt;一级有序列表内容
-    - 二级无序列表内容
-    - 二级无序列表内容
-    - 二级无序列表内容&lt;/li&gt;
-          &lt;li&gt;一级有序列表内容&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-      &lt;li&gt;二级有序列表内容&lt;/li&gt;
-      &lt;li&gt;二级有序列表内容&lt;/li&gt;
-      &lt;li&gt;二级有序列表内容&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;8表格&quot;&gt;8、表格&lt;/h3&gt;
-
-&lt;p&gt;语法：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;表头|表头|表头
----|:--:|---:
-内容|内容|内容
-内容|内容|内容
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;第二行分割表头和内容。
-- 有一个就行，为了对齐，多加了几个文字默认居左
-- 两边加: 表示文字居中
-- 右边加: 表示文字居右
-注：原生的语法两边都要用 | 包起来。此处省略
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;效果：&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;表头&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;表头&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;表头&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;表头&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;内容&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;内容&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;内容&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;内容&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;内容&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;内容&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;内容&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;内容&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;9代码&quot;&gt;9、代码&lt;/h3&gt;
-
-&lt;p&gt;语法：&lt;br /&gt;
-单行代码：代码之间分别用一个反引号包起来 &lt;br /&gt;
-代码块：代码之间分别用三个反引号包起来，且两边的反引号单独占一行(示例中没换行)&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`import Foundation`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```@IBAction func closeClick(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }```
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;import Foundation&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@IBAction func closeClick(_ sender: Any) {
-   self.navigationController?.popViewController(animated: true)
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;10换行&quot;&gt;10、换行&lt;/h3&gt;
-
-&lt;p&gt;语法：&lt;br /&gt;
-方式一：编辑好一行文字后敲两个空行，再按回车键编辑另一行文字&lt;br /&gt;
-方式二：编辑一行文字后再加一行空行&lt;br /&gt;
-方式三：编辑第一行的时候后面加上&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;第一行  
-第二行
-
-第一行
-
-第二行
-
-第一行&amp;lt;br /&amp;gt;第二行
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;效果：&lt;/p&gt;
-
-&lt;p&gt;第一行&lt;br /&gt;
-第二行&lt;/p&gt;
-
-&lt;p&gt;第一行&lt;/p&gt;
-
-&lt;p&gt;第二行&lt;/p&gt;
-
-&lt;p&gt;第一行&lt;br /&gt;第二行&lt;/p&gt;
-</description>
-        <pubDate>Thu, 29 Sep 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/09/Markdown%E8%AF%AD%E6%B3%95/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/Markdown%E8%AF%AD%E6%B3%95/</guid>
         
         <category>archive</category>
         
