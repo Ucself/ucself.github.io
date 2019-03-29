@@ -192,23 +192,42 @@
   </header>
 
   <section class="post">
-    <h1 id="前言">前言</h1>
-<p>在平时的开发中，打开布局查看器老是遇见self.view有的控制器顶在了navagationbar上面，有的控制器顶在了navagationbar下面；一直很纠结这个问题，最近专门研究一下，并记录下来。<img src="https://upload-images.jianshu.io/upload_images/2007491-01b78db0d3ce2ea7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+    <h2 id="前言">前言</h2>
+
+<p>       在平时的开发中，打开布局查看器老是遇见 self.view 有的控制器顶在了 navagationbar 上面，有的控制器顶在了 navagationbar 下面；一直很纠结这个问题，最近专门研究一下，并记录下来。</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/2007491-01b78db0d3ce2ea7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
 <p>这里不做详细介绍了，如果不愿意详细看下面文章就看我总结吧，很详细的介绍在：https://www.jianshu.com/p/6925ce1b9e34</p>
 
-<p>这里做一个总结：
-1、影响到self.view是顶入顶部（有navagationbar）或者底部（有tabbar）有三个属性可以影响到：
-A、isTranslucent（所属UINavigationBar），
-B、edgesForExtendedLayout（所属UIViewController），
-C、extendedLayoutIncludesOpaqueBars（所属UIViewController）
-2、isTranslucent 与 edgesForExtendedLayout 相互影响是否顶入顶部或底部，
-举例：
-（isTranslucent 为true 和 edgesForExtendedLayout 为all ）就self.view顶入顶部和底部，（
-A、isTranslucent 为false 和 edgesForExtendedLayout 为all ）就self.view不顶入顶部和底部，
-B、isTranslucent 为true 和 edgesForExtendedLayout 为.top ）就self.view顶入顶部和不顶入底部，
-其他的属性就自己揣测吧。
-3、extendedLayoutIncludesOpaqueBars  = true 可忽略 isTranslucent 对导航栏的影响（可以理解为：在其他默认设置情况先设置extendedLayoutIncludesOpaqueBars  = true， self.view顶入顶部和底部）；</p>
+<p>这里做一个总结：</p>
+
+<ul>
+  <li>影响到 self.view 是顶入顶部（有 navagationbar）或者底部（有 tabbar）有三个属性可以影响到：</li>
+</ul>
+
+<ol>
+  <li>isTranslucent（所属 UINavigationBar），</li>
+  <li>edgesForExtendedLayout（所属 UIViewController），</li>
+  <li>extendedLayoutIncludesOpaqueBars（所属 UIViewController）</li>
+</ol>
+
+<ul>
+  <li>
+    <p>isTranslucent 与 edgesForExtendedLayout 相互影响是否顶入顶部或底部，
+举例：</p>
+
+    <ol>
+      <li>（isTranslucent 为 true 和 edgesForExtendedLayout 为 all ）就 self.view 顶入顶部和底部，</li>
+      <li>（isTranslucent 为 false 和 edgesForExtendedLayout 为 all ）就 self.view 不顶入顶部和底部，</li>
+      <li>（isTranslucent 为 true 和 edgesForExtendedLayout 为.top ）就 self.view 顶入顶部和不顶入底部，
+其他的属性就自己揣测吧。</li>
+    </ol>
+  </li>
+  <li>
+    <p>extendedLayoutIncludesOpaqueBars = true 可忽略 isTranslucent 对导航栏的影响（可以理解为：在其他默认设置情况先设置 extendedLayoutIncludesOpaqueBars = true， self.view 顶入顶部和底部）；</p>
+  </li>
+</ul>
 
   </section>
 </article>

@@ -193,14 +193,23 @@
 
   <section class="post">
     <h2 id="前言">前言</h2>
-<p>经常使用别人的封装库或者项目，在项目开发中自己也有封装，即使不能给别人广泛使用，也可以自己在多项目中pod方式使用自己封装的代码
-前提：mac上已经装好了pod,git</p>
-<h3 id="一创建自己库添加cocoapods支持">一、创建自己库添加Cocoapods支持</h3>
-<h4 id="1基于pod自动创建项目">1、基于pod自动创建项目</h4>
+
+<p>经常使用别人的封装库或者项目，在项目开发中自己也有封装，即使不能给别人广泛使用，也可以自己在多项目中 pod 方式使用自己封装的代码
+前提：mac 上已经装好了 pod,git</p>
+
+<h2 id="一创建自己库添加-cocoapods-支持">一、创建自己库添加 Cocoapods 支持</h2>
+
+<ul>
+  <li>基于 pod 自动创建项目</li>
+</ul>
+
 <p>在终端输入</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod lib create JGCache
 </code></pre></div></div>
+
 <p>提示对应的询问命令</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cloning `https://github.com/CocoaPods/pod-template.git` into `JGCache`.
 Configuring JGCache template.
 
@@ -208,7 +217,7 @@ Configuring JGCache template.
 
 To get you started we need to ask a few questions, this should only take a minute.
 
-If this is your first time we recommend running through with the guide: 
+If this is your first time we recommend running through with the guide:
  - http://guides.cocoapods.org/making/using-pod-lib-create.html
  ( hold cmd and double click links to open in a browser. )
 
@@ -225,11 +234,24 @@ Which testing frameworks will you use? [ Quick / None ]
 Would you like to do view based testing? [ Yes / No ]
  &gt; No
 </code></pre></div></div>
+
 <p>项目创建成功，并编译成功</p>
-<h4 id="2接下来在httpsgithubcom官网自己的账号下创建一个仓库jgcache这里不是重点不用介绍了">2、接下来在https://github.com/官网自己的账号下创建一个仓库JGCache（这里不是重点，不用介绍了）</h4>
-<h4 id="3将pod命令自动创建的项目上传到github-jgcache项目中这里不是重点不用介绍了">3、将pod命令自动创建的项目上传到github JGCache项目中，（这里不是重点，不用介绍了）</h4>
-<h4 id="4给仓库jgcache-主分支master-创建一个tag-010-这里不是重点不用介绍了">4、给仓库JGCache 主分支master 创建一个tag 0.1.0 （这里不是重点，不用介绍了）</h4>
-<h4 id="5打开项目中的jgcachepodspec文件可以看到默认设置">5、打开项目中的JGCache.podspec文件可以看到默认设置</h4>
+
+<ul>
+  <li>
+    <p>接下来在https://github.com/官网自己的账号下创建一个仓库JGCache（这里不是重点，不用介绍了）</p>
+  </li>
+  <li>
+    <p>将 pod 命令自动创建的项目上传到 github JGCache 项目中，（这里不是重点，不用介绍了）</p>
+  </li>
+  <li>
+    <p>给仓库 JGCache 主分支 master 创建一个 tag 0.1.0 （这里不是重点，不用介绍了）</p>
+  </li>
+  <li>
+    <p>打开项目中的 JGCache.podspec 文件可以看到默认设置</p>
+  </li>
+</ul>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#
 # Be sure to run `pod lib lint JGCache.podspec' to ensure this is a
 # valid spec before submitting.
@@ -263,7 +285,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'JGCache/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'JGCache' =&gt; ['JGCache/Assets/*.png']
   # }
@@ -274,7 +296,11 @@ TODO: Add long description of the pod here.
 end
 
 </code></pre></div></div>
-<p>6、修改项目中的JGCache.podspec文件的设置为（这里就不介绍每一项的意思了）</p>
+
+<ul>
+  <li>修改项目中的 JGCache.podspec 文件的设置为（这里就不介绍每一项的意思了）</li>
+</ul>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pod::Spec.new do |s|
   s.name             = 'JGCache'
   s.version          = '0.1.0'
@@ -300,7 +326,7 @@ TODO: this is description
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'JGCache/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'JGCache' =&gt; ['JGCache/Assets/*.png']
   # }
@@ -310,20 +336,45 @@ TODO: this is description
   s.dependency 'ObjectMapper', '~&gt; 3.0.0'
 end
 </code></pre></div></div>
-<h4 id="7检测填写的podspec是否有错误cd进入jgcache文件目录">7、检测填写的podspec是否有错误，cd进入JGCache文件目录</h4>
+
+<ul>
+  <li>检测填写的 podspec 是否有错误，cd 进入 JGCache 文件目录</li>
+</ul>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod spec lint
 </code></pre></div></div>
-<h4 id="8测试本地导入的文件是否报错cd-进入项目example文件路径导入依赖的第三方库">8、测试本地导入的文件是否报错。cd 进入项目Example文件路径,导入依赖的第三方库</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod install 
+
+<ul>
+  <li>测试本地导入的文件是否报错。cd 进入项目 Example 文件路径,导入依赖的第三方库</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod install
 </code></pre></div></div>
-<h4 id="9上传的cocopods管理">9、上传的cocopods管理</h4>
+
+<ul>
+  <li>上传的 cocopods 管理</li>
+</ul>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod trunk push JGCache.podspec --allow-warnings
 </code></pre></div></div>
-<h3 id="二更新自己库添加cocoapods支持">二、更新自己库添加Cocoapods支持</h3>
-<h4 id="1jgcachepodspec-文件中你需要更改的项目更改主要更改版本如100">1、JGCache.podspec 文件中你需要更改的项目更改（主要更改版本如：1.0.0）</h4>
-<h4 id="2在啊gitbug对你的工程添加标签如100">2、在啊gitbug对你的工程添加标签如1.0.0</h4>
-<h4 id="3上传工程工程代码">3、上传工程工程代码</h4>
-<h4 id="4再次执行">4、再次执行</h4>
+
+<h2 id="二更新自己库添加-cocoapods-支持">二、更新自己库添加 Cocoapods 支持</h2>
+
+<ul>
+  <li>
+    <p>JGCache.podspec 文件中你需要更改的项目更改（主要更改版本如：1.0.0）</p>
+  </li>
+  <li>
+    <p>在啊 github 对你的工程添加标签如 1.0.0</p>
+  </li>
+  <li>
+    <p>上传工程工程代码</p>
+  </li>
+  <li>
+    <p>再次执行</p>
+  </li>
+</ul>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod trunk push JGCache.podspec --allow-warnings
 </code></pre></div></div>
 

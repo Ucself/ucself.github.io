@@ -192,34 +192,55 @@
   </header>
 
   <section class="post">
-    <h1 id="前言">前言</h1>
-<p>最近公司项目接入妙健康framework 的时候，framework不支持模拟器；如果接入进去整个工程都不支持模拟器了，这怎么得了，所以想了一个办法。
-想到的办法与实践是：给整个iOS添加TARGETS，模拟器使用的Targets工程 不接入妙健康framework，真机运行的Targets工程接入妙健康framework；其他项目文件两个Targets 工程一起使用；共同使用的文件再根据各自的Targets 工程预定义宏方式进行判断是否写秒健康代码，如图所示：</p>
+    <h2 id="前言">前言</h2>
+
+<p>       最近公司项目接入妙健康 framework 的时候，framework 不支持模拟器；如果接入进去整个工程都不支持模拟器了，这怎么得了，所以想了一个办法。
+想到的办法与实践是：给整个 iOS 添加 TARGETS，模拟器使用的 Targets 工程 不接入妙健康 framework，真机运行的 Targets 工程接入妙健康 framework；其他项目文件两个 Targets 工程一起使用；共同使用的文件再根据各自的 Targets 工程预定义宏方式进行判断是否写秒健康代码，如图所示：</p>
 
 <p><img src="https://upload-images.jianshu.io/upload_images/2007491-a0e8899d3ad832ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
-<p>###具体操作步骤：
-####1、通过如图方式复制一份现有工程，然后更名为：DoctorHealthSimulator
+<h2 id="具体操作步骤">具体操作步骤：</h2>
+
+<ul>
+  <li>设置 Targets</li>
+</ul>
+
+<p>       通过如图方式复制一份现有工程，然后更名为：DoctorHealthSimulator
 <img src="https://upload-images.jianshu.io/upload_images/2007491-921754d3e32f0e3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
 结果：
 <img src="https://upload-images.jianshu.io/upload_images/2007491-f4cea8f9629bf4bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
-<p>####2、把不需要接入的framework 或者文件的Target Membership 的DoctorHealthSimulator为未选中，如果在没有写任何接入代码的时候，就可以用模拟器编译DoctorHealthSimulator 就不会报错了
-<img src="https://upload-images.jianshu.io/upload_images/2007491-dd8cb02f96898004.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
-####3、这时候真机运行的DoctorHealth要写接入代码，而模拟器运行DoctorHealthSimulator不需要写接入代码，但是他们都引用了同一个文件，像下面这样干，
-a、如果是swift工程项目，选中DoctorHealth -&gt;build Settings -&gt; other swift flags 加入如图所示配置（最后一个）
+<ul>
+  <li>设置 targets 下的文件</li>
+</ul>
+
+<p>       把不需要接入的 framework 或者文件的 Target Membership 的 DoctorHealthSimulator 为未选中，如果在没有写任何接入代码的时候，就可以用模拟器编译 DoctorHealthSimulator 就不会报错了
+<img src="https://upload-images.jianshu.io/upload_images/2007491-dd8cb02f96898004.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<ul>
+  <li>设置文件引用，预编译宏</li>
+</ul>
+
+<p>       这时候真机运行的 DoctorHealth 要写接入代码，而模拟器运行 DoctorHealthSimulator 不需要写接入代码，但是他们都引用了同一个文件，像下面这样干，</p>
+
+<p>a、如果是 swift 工程项目，选中 DoctorHealth -&gt;build Settings -&gt; other swift flags 加入如图所示配置（最后一个）
 <img src="https://upload-images.jianshu.io/upload_images/2007491-5d8be25bee330e4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
-<p>DoctorHealthSimulator就不用配置任何东西
+<p>DoctorHealthSimulator 就不用配置任何东西
 公用文件就像如图写：
 <img src="https://upload-images.jianshu.io/upload_images/2007491-eb6f2452823f12bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
-<p>b、如果是OC项目工程，选中DoctorHealth -&gt;build Settings -&gt; preprocessor macros 加入如图所示配置（最后一个）
+<p>b、如果是 OC 项目工程，选中 DoctorHealth -&gt;build Settings -&gt; preprocessor macros 加入如图所示配置（最后一个）
 <img src="https://upload-images.jianshu.io/upload_images/2007491-1e73ad7d66bbc668.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
-代码和swift工程方式写，配置完成
-c、如果是混合编写的工程，OC与swift代码都需要用到，则两个地方都要配置预编译宏</p>
+代码和 swift 工程方式写，配置完成</p>
 
-<p>这样就完成了所需的配置。只是模拟器运行DoctorHealthSimulator工程，真机运行DoctorHealth工程，就达到了需要的效果，模拟器只是没有妙健康的功能（本来模拟器就不支持蓝牙等功能）</p>
+<p>c、如果是混合编写的工程，OC 与 swift 代码都需要用到，则两个地方都要配置预编译宏</p>
+
+<ul>
+  <li>这样就完成了所需的配置。</li>
+</ul>
+
+<p>       只是模拟器运行 DoctorHealthSimulator 工程，真机运行 DoctorHealth 工程，就达到了需要的效果，模拟器只是没有妙健康的功能（本来模拟器就不支持蓝牙等功能）</p>
 
   </section>
 </article>

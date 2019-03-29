@@ -192,7 +192,7 @@
   </header>
 
   <section class="post">
-    <h1 id="前言">前言</h1>
+    <h2 id="前言">前言</h2>
 
 <p>在项目开发中，遇到一个问题，由于 Frameworks，Pods，-Bridging-Header.h，import 的使用不当会造成控制台日志报错问题</p>
 
@@ -224,19 +224,29 @@ import JLRoutes
 
 <h2 id="-bridging-headerh-桥接文件">-Bridging-Header.h 桥接文件</h2>
 
-<p>桥接文件，即是 OC 的文件通过桥接到 Swift 能调用
-1、在 swift 使用中我们可以对包（Frameworks/Pods）进行桥接，如</p>
+<p>桥接文件，即是 OC 的文件通过桥接到 Swift 能调用</p>
+
+<ul>
+  <li>在 swift 使用中我们可以对包（Frameworks/Pods）进行桥接，如</li>
+</ul>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import &lt;JLRoutes/JLRoutes.h&gt;
 #import &lt;GrowingIO/Growing.h&gt;
 </code></pre></div></div>
 
-<p>2、绝不能使用</p>
+<ul>
+  <li>绝不能使用</li>
+</ul>
 
-<p><del>#import “JLRoutes.h”</del>
-<del>#import “Growing.h”</del>
-虽然不会错报，会出现控制台打印变量问题
-3、项目中添加的 OC 代码就得使用</p>
+<p><del>#import “JLRoutes.h”</del></p>
+
+<p><del>#import “Growing.h”</del></p>
+
+<p>虽然不会错报，会出现控制台打印变量问题</p>
+
+<ul>
+  <li>项目中添加的 OC 代码就得使用</li>
+</ul>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import "JLRoutes.h"
 #import "Growing.h"
