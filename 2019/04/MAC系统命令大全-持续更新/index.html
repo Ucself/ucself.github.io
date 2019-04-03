@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>MAC系统命令大全（持续更新）</title>
+  <meta name="description" content="MAC系统命令大全（持续更新）">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MAC系统命令大全（持续更新）">
+  <meta name="twitter:description" content="MAC系统命令大全（持续更新）">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MAC系统命令大全（持续更新）">
+  <meta property="og:description" content="MAC系统命令大全（持续更新）">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2019/04/MAC%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/">
+  <link rel="alternate" type="application/rss+xml" title="Ucself" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header
+  class="panel-cover panel-cover--collapsed"
+  style="background-image: url('/assets/images/background-cover.jpg')"
+>
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+        <a
+          href="/#blog"
+          title="前往 Ucself 的主页"
+          class="blog-button"
+          ><img
+            src="/assets/images/avatar.jpg"
+            width="80"
+            alt="Ucself logo"
+            class="panel-cover__logo logo"
+        /></a>
+        <h1 class="panel-cover__title panel-title">
+          <a
+            href="/#blog"
+            title="link to homepage for Ucself"
+            class="blog-button"
+            >Ucself</a
+          >
+        </h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">为人者，有大度成大器矣!</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是ucself，一名大前端开发工程师。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        
+        <p class="panel-cover__description">生活需要总结，记录下自己学习的点滴，在此搭建自我知识体系。</p>
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item">
+                  <a
+                    href="/#blog"
+                    title="Visit blog"
+                    class="blog-button"
+                    >博客</a
+                  >
+                </li>
+                 
+                <li class="navigation__item">
+                  <a href="/pages/git" title="Git">Git</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/archive" title="归档">归档</a>
+                </li>
+                 
+              </ul>
+            </nav>
+          </div>
+
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="#"
+        title="添加 lbj147123 的微信"
+      >
+        <i class="social fa fa-weixin"></i>
+        <span class="label">Weixin</span>
+      </a>
+    </li>
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="http://weibo.com/p/1005052165916834"
+        title="@p/1005052165916834 的微博"
+        target="_blank"
+      >
+        <i class="social fa fa-weibo"></i>
+        <span class="label">Weibo</span>
+      </a>
+    </li>
+     
+    <!-- Github -->
+    <li class="navigation__item">
+      <a
+        href="https://github.com/Ucself"
+        title="@Ucself 的 Github"
+        target="_blank"
+      >
+        <i class="social fa fa-github"></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+      
+
+    <!-- RSS -->
+    <li class="navigation__item">
+      <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+        <i class="social fa fa-rss"></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+
+    
+    <!-- Email -->
+    <li class="navigation__item">
+      <a href="mailto:lbj147123@163.com" title="Contact me">
+        <i class="social fa fa-envelope"></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article
+  class="post-container post-container--single"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header">
+    <div class="post-meta">
+      <time
+        datetime="2019-04-03 00:00:00 +0800"
+        itemprop="datePublished"
+        class="post-meta__date date"
+        >2019-04-03</time
+      >
+      &#8226;
+      <span class="post-meta__tags tags">archive</span>
+    </div>
+    <h1 class="post-title">MAC系统命令大全（持续更新）</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="简介">简介</h2>
+
+<p>记录 MAC 系统的命令大全</p>
+
+<p>更全参考 Linux 命令大全： <a href="http://www.runoob.com/linux/linux-command-manual.html" title="Linux 命令大全">http://www.runoob.com/linux/linux-command-manual.html</a></p>
+
+<h2 id="语法">语法</h2>
+
+<h3 id="目录操作">目录操作</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令名</th>
+      <th style="text-align: center">功能描述</th>
+      <th style="text-align: right">使用举例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>mkdir</td>
+      <td style="text-align: center">创建一个目录</td>
+      <td style="text-align: right">mkdir dirname</td>
+    </tr>
+    <tr>
+      <td>rmdir</td>
+      <td style="text-align: center">删除一个目录</td>
+      <td style="text-align: right">rmdir dirname</td>
+    </tr>
+    <tr>
+      <td>mvdir</td>
+      <td style="text-align: center">移动或重命名一个目录</td>
+      <td style="text-align: right">mvdir dir1 dir2</td>
+    </tr>
+    <tr>
+      <td>cd</td>
+      <td style="text-align: center">改变当前目录</td>
+      <td style="text-align: right">cd dirname</td>
+    </tr>
+    <tr>
+      <td>pwd</td>
+      <td style="text-align: center">显示当前目录的路径名</td>
+      <td style="text-align: right">pwd</td>
+    </tr>
+    <tr>
+      <td>ls</td>
+      <td style="text-align: center">显示当前目录的内容</td>
+      <td style="text-align: right">ls -la</td>
+    </tr>
+    <tr>
+      <td>dircmp</td>
+      <td style="text-align: center">比较两个目录的内容</td>
+      <td style="text-align: right">dircmp dir1 dir2</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="文件操作">文件操作</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令名</th>
+      <th style="text-align: center">功能描述</th>
+      <th style="text-align: right">使用举例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cat</td>
+      <td style="text-align: center">显示或连接文件</td>
+      <td style="text-align: right">cat filename</td>
+    </tr>
+    <tr>
+      <td>pg</td>
+      <td style="text-align: center">分页格式化显示文件内容</td>
+      <td style="text-align: right">pg filename</td>
+    </tr>
+    <tr>
+      <td>more</td>
+      <td style="text-align: center">分屏显示文件内容</td>
+      <td style="text-align: right">more filename</td>
+    </tr>
+    <tr>
+      <td>od</td>
+      <td style="text-align: center">显示非文本文件的内容</td>
+      <td style="text-align: right">od -c filename</td>
+    </tr>
+    <tr>
+      <td>cp</td>
+      <td style="text-align: center">复制文件或目录</td>
+      <td style="text-align: right">cp file1 file2</td>
+    </tr>
+    <tr>
+      <td>rm</td>
+      <td style="text-align: center">删除文件或目录</td>
+      <td style="text-align: right">rm filename</td>
+    </tr>
+    <tr>
+      <td>mv</td>
+      <td style="text-align: center">改变文件名或所在目录</td>
+      <td style="text-align: right">mv file1 file2</td>
+    </tr>
+    <tr>
+      <td>ln</td>
+      <td style="text-align: center">联接文件</td>
+      <td style="text-align: right">ln -s file1 file2</td>
+    </tr>
+    <tr>
+      <td>find</td>
+      <td style="text-align: center">使用匹配表达式查找文件</td>
+      <td style="text-align: right">find . -name “*.c” -print</td>
+    </tr>
+    <tr>
+      <td>file</td>
+      <td style="text-align: center">显示文件类型</td>
+      <td style="text-align: right">file filename</td>
+    </tr>
+    <tr>
+      <td>open</td>
+      <td style="text-align: center">使用默认的程序打开文件</td>
+      <td style="text-align: right">open filename</td>
+    </tr>
+    <tr>
+      <td>curl</td>
+      <td style="text-align: center">下载文件命令</td>
+      <td style="text-align: right">curl [选项][下载地址]</td>
+    </tr>
+    <tr>
+      <td>unzip</td>
+      <td style="text-align: center">解压文件</td>
+      <td style="text-align: right">unzip mylab2.zip</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="选择操作">选择操作</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令名</th>
+      <th style="text-align: center">功能描述</th>
+      <th style="text-align: right">使用举例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>head</td>
+      <td style="text-align: center">显示文件的最初几行</td>
+      <td style="text-align: right">head -20 filename</td>
+    </tr>
+    <tr>
+      <td>tail</td>
+      <td style="text-align: center">显示文件的最后几行</td>
+      <td style="text-align: right">tail -15 filename</td>
+    </tr>
+    <tr>
+      <td>cut</td>
+      <td style="text-align: center">显示文件每行中的某些域</td>
+      <td style="text-align: right">cut -f1,7 -d: /etc/passwd</td>
+    </tr>
+    <tr>
+      <td>colrm</td>
+      <td style="text-align: center">从标准输入中删除若干列</td>
+      <td style="text-align: right">colrm 8 20 file2</td>
+    </tr>
+    <tr>
+      <td>paste</td>
+      <td style="text-align: center">横向连接文件</td>
+      <td style="text-align: right">paste file1 file2</td>
+    </tr>
+    <tr>
+      <td>diff</td>
+      <td style="text-align: center">比较并显示两个文件的差异</td>
+      <td style="text-align: right">diff file1 file2</td>
+    </tr>
+    <tr>
+      <td>sed</td>
+      <td style="text-align: center">非交互方式流编辑器</td>
+      <td style="text-align: right">sed “s/red/green/g” filename</td>
+    </tr>
+    <tr>
+      <td>grep</td>
+      <td style="text-align: center">在文件中按模式查找</td>
+      <td style="text-align: right">grep “^[a-zA-Z]” filename</td>
+    </tr>
+    <tr>
+      <td>awk</td>
+      <td style="text-align: center">在文件中查找并处理模式</td>
+      <td style="text-align: right">awk ‘{print $1 $1}’ filename</td>
+    </tr>
+    <tr>
+      <td>sort</td>
+      <td style="text-align: center">排序或归并文件</td>
+      <td style="text-align: right">sort -d -f -u file1</td>
+    </tr>
+    <tr>
+      <td>uniq</td>
+      <td style="text-align: center">去掉文件中的重复行</td>
+      <td style="text-align: right">uniq file1 file2</td>
+    </tr>
+    <tr>
+      <td>comm</td>
+      <td style="text-align: center">显示两有序文件的公共和非公共行</td>
+      <td style="text-align: right">comm file1 file2</td>
+    </tr>
+    <tr>
+      <td>wc</td>
+      <td style="text-align: center">统计文件的字符数、词数和行数</td>
+      <td style="text-align: right">wc filename</td>
+    </tr>
+    <tr>
+      <td>nl</td>
+      <td style="text-align: center">给文件加上行号</td>
+      <td style="text-align: right">nl file1 &gt;file2</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="安全操作">安全操作</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令名</th>
+      <th style="text-align: center">功能描述</th>
+      <th style="text-align: right">使用举例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sudo</td>
+      <td style="text-align: center">获得权限</td>
+      <td style="text-align: right">sudo －s</td>
+    </tr>
+    <tr>
+      <td>passwd</td>
+      <td style="text-align: center">修改用户密码</td>
+      <td style="text-align: right">passwd</td>
+    </tr>
+    <tr>
+      <td>chmod</td>
+      <td style="text-align: center">改变文件或目录的权限</td>
+      <td style="text-align: right">chmod ug+x filename</td>
+    </tr>
+    <tr>
+      <td>umask</td>
+      <td style="text-align: center">定义创建文件的权限掩码</td>
+      <td style="text-align: right">umask 027</td>
+    </tr>
+    <tr>
+      <td>chown</td>
+      <td style="text-align: center">改变文件或目录的属主</td>
+      <td style="text-align: right">chown newowner filename</td>
+    </tr>
+    <tr>
+      <td>chgrp</td>
+      <td style="text-align: center">改变文件或目录的所属组</td>
+      <td style="text-align: right">chgrp staff filename</td>
+    </tr>
+    <tr>
+      <td>xlock</td>
+      <td style="text-align: center">给终端上锁</td>
+      <td style="text-align: right">xlock -remote</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="编程操作">编程操作</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令名</th>
+      <th style="text-align: center">功能描述</th>
+      <th style="text-align: right">使用举例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>make</td>
+      <td style="text-align: center">维护可执行程序的最新版本</td>
+      <td style="text-align: right">make</td>
+    </tr>
+    <tr>
+      <td>touch</td>
+      <td style="text-align: center">更新文件的访问和修改时间</td>
+      <td style="text-align: right">touch -m 05202400 filename</td>
+    </tr>
+    <tr>
+      <td>dbx</td>
+      <td style="text-align: center">命令行界面调试工具</td>
+      <td style="text-align: right">dbx a.out</td>
+    </tr>
+    <tr>
+      <td>xde</td>
+      <td style="text-align: center">图形用户界面调试工具</td>
+      <td style="text-align: right">xde a.out</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="进程操作">进程操作</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令名</th>
+      <th style="text-align: center">功能描述</th>
+      <th style="text-align: right">使用举例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ps</td>
+      <td style="text-align: center">显示进程当前状态</td>
+      <td style="text-align: right">ps u</td>
+    </tr>
+    <tr>
+      <td>kill</td>
+      <td style="text-align: center">终止进程</td>
+      <td style="text-align: right">kill -9 30142</td>
+    </tr>
+    <tr>
+      <td>nice</td>
+      <td style="text-align: center">改变待执行命令的优先级</td>
+      <td style="text-align: right">nice cc -c *.c</td>
+    </tr>
+    <tr>
+      <td>renice</td>
+      <td style="text-align: center">改变已运行进程的优先级</td>
+      <td style="text-align: right">renice +20 32768</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="时间操作">时间操作</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令名</th>
+      <th style="text-align: center">功能描述</th>
+      <th style="text-align: right">使用举例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>date</td>
+      <td style="text-align: center">显示系统的当前日期和时间</td>
+      <td style="text-align: right">date</td>
+    </tr>
+    <tr>
+      <td>cal</td>
+      <td style="text-align: center">显示日历</td>
+      <td style="text-align: right">cal 8 1996</td>
+    </tr>
+    <tr>
+      <td>time</td>
+      <td style="text-align: center">统计程序的执行时间</td>
+      <td style="text-align: right">time a.out</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="网络与通信操作">网络与通信操作</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令名</th>
+      <th style="text-align: center">功能描述</th>
+      <th style="text-align: right">使用举例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>telnet</td>
+      <td style="text-align: center">远程登录</td>
+      <td style="text-align: right">date</td>
+    </tr>
+    <tr>
+      <td>rlogin</td>
+      <td style="text-align: center">远程登录</td>
+      <td style="text-align: right">rlogin hostname -l username</td>
+    </tr>
+    <tr>
+      <td>rsh</td>
+      <td style="text-align: center">在远程主机执行指定命令</td>
+      <td style="text-align: right">rsh f01n03 date</td>
+    </tr>
+    <tr>
+      <td>ftp</td>
+      <td style="text-align: center">在本地主机与远程主机之间传输文件</td>
+      <td style="text-align: right">ftp ftp.sp.net.edu.cn</td>
+    </tr>
+    <tr>
+      <td>rcp</td>
+      <td style="text-align: center">在本地主机与远程主机 之间复制文件</td>
+      <td style="text-align: right">rcp file1 host1:file2</td>
+    </tr>
+    <tr>
+      <td>ping</td>
+      <td style="text-align: center">给一个网络主机发送 回应请求</td>
+      <td style="text-align: right">ping hpc.sp.net.edu.cn</td>
+    </tr>
+    <tr>
+      <td>mail</td>
+      <td style="text-align: center">阅读和发送电子邮件</td>
+      <td style="text-align: right">mail</td>
+    </tr>
+    <tr>
+      <td>write</td>
+      <td style="text-align: center">给另一用户发送报文</td>
+      <td style="text-align: right">write username pts/1</td>
+    </tr>
+    <tr>
+      <td>mesg</td>
+      <td style="text-align: center">允许或拒绝接收报文</td>
+      <td style="text-align: right">mesg n</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="korn-shell-命令">Korn Shell 命令</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令名</th>
+      <th style="text-align: center">功能描述</th>
+      <th style="text-align: right">使用举例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>history</td>
+      <td style="text-align: center">列出最近执行过的 几条命令及编号</td>
+      <td style="text-align: right">history</td>
+    </tr>
+    <tr>
+      <td>r</td>
+      <td style="text-align: center">重复执行最近执行过的 某条命令</td>
+      <td style="text-align: right">r -2</td>
+    </tr>
+    <tr>
+      <td>alias</td>
+      <td style="text-align: center">给某个命令定义别名</td>
+      <td style="text-align: right">alias del=rm -i</td>
+    </tr>
+    <tr>
+      <td>unalias</td>
+      <td style="text-align: center">取消对某个别名的定义</td>
+      <td style="text-align: right">unalias del</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="其他命令">其他命令</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令名</th>
+      <th style="text-align: center">功能描述</th>
+      <th style="text-align: right">使用举例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>uname</td>
+      <td style="text-align: center">显示操作系统的有关信息</td>
+      <td style="text-align: right">uname -a</td>
+    </tr>
+    <tr>
+      <td>clear</td>
+      <td style="text-align: center">清除屏幕或窗口内容</td>
+      <td style="text-align: right">clear</td>
+    </tr>
+    <tr>
+      <td>env</td>
+      <td style="text-align: center">显示当前所有设置过的环境变量</td>
+      <td style="text-align: right">env</td>
+    </tr>
+    <tr>
+      <td>who</td>
+      <td style="text-align: center">列出当前登录的所有用户</td>
+      <td style="text-align: right">who</td>
+    </tr>
+    <tr>
+      <td>whoami</td>
+      <td style="text-align: center">显示当前正进行操作的用户名</td>
+      <td style="text-align: right">whoami</td>
+    </tr>
+    <tr>
+      <td>tty</td>
+      <td style="text-align: center">显示终端或伪终端的名称</td>
+      <td style="text-align: right">tty</td>
+    </tr>
+    <tr>
+      <td>stty</td>
+      <td style="text-align: center">显示或重置控制键定义</td>
+      <td style="text-align: right">stty -a</td>
+    </tr>
+    <tr>
+      <td>du</td>
+      <td style="text-align: center">查询磁盘使用情况</td>
+      <td style="text-align: right">du -k subdir</td>
+    </tr>
+    <tr>
+      <td>df</td>
+      <td style="text-align: center">显示文件系统的总空间和可用空间</td>
+      <td style="text-align: right">df /tmp</td>
+    </tr>
+    <tr>
+      <td>w</td>
+      <td style="text-align: center">显示当前系统活动的总信息</td>
+      <td style="text-align: right">w</td>
+    </tr>
+  </tbody>
+</table>
+
+  </section>
+</article>
+
+<section class="read-more">
+    
+  <div class="read-more-item">
+    <span class="read-more-item-dim">下一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2019/01/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-2019%E5%B9%B4%E5%88%9D%E8%AE%A1%E5%88%92/" title="link to 2018年终总结，2019年初计划">2018年终总结，2019年初计划</a>
+    </h2>
+    <div class="post-list__meta">
+      <time
+        datetime="2019-01-16 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2019-01-16</time
+      >
+    </div>
+  </div>
+  
+</section>
+
+<!-- <section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2019/04/MAC%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/";
+        this.page.identifier = "/2019/04/MAC%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/";
+    };
+
+    var disqus_shortname = 'vno-jekyll';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+ -->
+
+            <section class="footer">
+    <footer>
+        <span class="footer__copyright">本站由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-04-03 生成。</span>
+        <span class="footer__copyright">  </span>
+        <span class="footer__copyright">本站由 <a href="https://ucself.cn">@ucself</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2019</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>

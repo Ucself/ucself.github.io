@@ -5,9 +5,545 @@
     <description>嗨，我是ucself，一名大前端开发工程师。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Mar 2019 18:52:22 +0800</pubDate>
-    <lastBuildDate>Fri, 29 Mar 2019 18:52:22 +0800</lastBuildDate>
+    <pubDate>Wed, 03 Apr 2019 16:02:47 +0800</pubDate>
+    <lastBuildDate>Wed, 03 Apr 2019 16:02:47 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>MAC系统命令大全（持续更新）</title>
+        <description>&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+
+&lt;p&gt;记录 MAC 系统的命令大全&lt;/p&gt;
+
+&lt;p&gt;更全参考 Linux 命令大全： &lt;a href=&quot;http://www.runoob.com/linux/linux-command-manual.html&quot; title=&quot;Linux 命令大全&quot;&gt;http://www.runoob.com/linux/linux-command-manual.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;语法&quot;&gt;语法&lt;/h2&gt;
+
+&lt;h3 id=&quot;目录操作&quot;&gt;目录操作&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;命令名&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;功能描述&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;使用举例&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mkdir&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;创建一个目录&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;mkdir dirname&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;rmdir&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;删除一个目录&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;rmdir dirname&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mvdir&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;移动或重命名一个目录&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;mvdir dir1 dir2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cd&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;改变当前目录&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;cd dirname&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;pwd&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示当前目录的路径名&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;pwd&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ls&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示当前目录的内容&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;ls -la&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;dircmp&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;比较两个目录的内容&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;dircmp dir1 dir2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;文件操作&quot;&gt;文件操作&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;命令名&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;功能描述&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;使用举例&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cat&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示或连接文件&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;cat filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;pg&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;分页格式化显示文件内容&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;pg filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;more&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;分屏显示文件内容&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;more filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;od&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示非文本文件的内容&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;od -c filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cp&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;复制文件或目录&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;cp file1 file2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;rm&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;删除文件或目录&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;rm filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mv&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;改变文件名或所在目录&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;mv file1 file2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ln&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;联接文件&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;ln -s file1 file2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;find&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;使用匹配表达式查找文件&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;find . -name “*.c” -print&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;file&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示文件类型&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;file filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;open&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;使用默认的程序打开文件&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;open filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;curl&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;下载文件命令&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;curl [选项][下载地址]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;unzip&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;解压文件&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;unzip mylab2.zip&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;选择操作&quot;&gt;选择操作&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;命令名&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;功能描述&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;使用举例&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;head&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示文件的最初几行&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;head -20 filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;tail&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示文件的最后几行&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;tail -15 filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cut&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示文件每行中的某些域&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;cut -f1,7 -d: /etc/passwd&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;colrm&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;从标准输入中删除若干列&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;colrm 8 20 file2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;paste&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;横向连接文件&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;paste file1 file2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;diff&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;比较并显示两个文件的差异&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;diff file1 file2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;sed&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;非交互方式流编辑器&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;sed “s/red/green/g” filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;grep&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;在文件中按模式查找&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;grep “^[a-zA-Z]” filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;awk&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;在文件中查找并处理模式&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;awk ‘{print $1 $1}’ filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;sort&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;排序或归并文件&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;sort -d -f -u file1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;uniq&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;去掉文件中的重复行&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;uniq file1 file2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;comm&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示两有序文件的公共和非公共行&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;comm file1 file2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;wc&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;统计文件的字符数、词数和行数&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;wc filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;nl&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;给文件加上行号&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;nl file1 &amp;gt;file2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;安全操作&quot;&gt;安全操作&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;命令名&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;功能描述&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;使用举例&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;sudo&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;获得权限&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;sudo －s&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;passwd&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;修改用户密码&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;passwd&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;chmod&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;改变文件或目录的权限&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;chmod ug+x filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;umask&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;定义创建文件的权限掩码&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;umask 027&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;chown&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;改变文件或目录的属主&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;chown newowner filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;chgrp&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;改变文件或目录的所属组&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;chgrp staff filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;xlock&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;给终端上锁&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;xlock -remote&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;编程操作&quot;&gt;编程操作&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;命令名&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;功能描述&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;使用举例&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;make&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;维护可执行程序的最新版本&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;make&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;touch&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;更新文件的访问和修改时间&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;touch -m 05202400 filename&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;dbx&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;命令行界面调试工具&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;dbx a.out&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;xde&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;图形用户界面调试工具&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;xde a.out&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;进程操作&quot;&gt;进程操作&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;命令名&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;功能描述&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;使用举例&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ps&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示进程当前状态&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;ps u&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;kill&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;终止进程&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;kill -9 30142&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;nice&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;改变待执行命令的优先级&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;nice cc -c *.c&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;renice&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;改变已运行进程的优先级&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;renice +20 32768&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;时间操作&quot;&gt;时间操作&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;命令名&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;功能描述&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;使用举例&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;date&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示系统的当前日期和时间&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;date&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cal&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示日历&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;cal 8 1996&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;time&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;统计程序的执行时间&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;time a.out&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;网络与通信操作&quot;&gt;网络与通信操作&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;命令名&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;功能描述&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;使用举例&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;telnet&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;远程登录&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;date&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;rlogin&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;远程登录&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;rlogin hostname -l username&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;rsh&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;在远程主机执行指定命令&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;rsh f01n03 date&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ftp&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;在本地主机与远程主机之间传输文件&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;ftp ftp.sp.net.edu.cn&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;rcp&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;在本地主机与远程主机 之间复制文件&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;rcp file1 host1:file2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ping&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;给一个网络主机发送 回应请求&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;ping hpc.sp.net.edu.cn&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mail&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;阅读和发送电子邮件&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;mail&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;write&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;给另一用户发送报文&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;write username pts/1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mesg&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;允许或拒绝接收报文&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;mesg n&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;korn-shell-命令&quot;&gt;Korn Shell 命令&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;命令名&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;功能描述&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;使用举例&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;history&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;列出最近执行过的 几条命令及编号&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;history&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;r&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;重复执行最近执行过的 某条命令&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;r -2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;alias&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;给某个命令定义别名&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;alias del=rm -i&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;unalias&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;取消对某个别名的定义&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;unalias del&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;其他命令&quot;&gt;其他命令&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;命令名&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;功能描述&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;使用举例&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;uname&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示操作系统的有关信息&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;uname -a&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;clear&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;清除屏幕或窗口内容&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;clear&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;env&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示当前所有设置过的环境变量&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;env&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;who&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;列出当前登录的所有用户&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;who&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;whoami&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示当前正进行操作的用户名&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;whoami&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;tty&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示终端或伪终端的名称&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;tty&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;stty&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示或重置控制键定义&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;stty -a&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;du&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;查询磁盘使用情况&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;du -k subdir&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;df&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示文件系统的总空间和可用空间&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;df /tmp&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;w&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;显示当前系统活动的总信息&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;w&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Wed, 03 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/04/MAC%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/04/MAC%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</guid>
+        
+        <category>archive</category>
+        
+        
+        <category>archive</category>
+        
+      </item>
     
       <item>
         <title>2018年终总结，2019年初计划</title>
@@ -1193,180 +1729,6 @@ _objectBlock = ^(NSString *parameter1,NSString *parameter2){
         <pubDate>Fri, 04 Nov 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/11/iOS-Objective-C%E4%B8%8ESwift%E9%97%AD%E5%8C%85-block-%E5%86%99%E6%B3%95/</link>
         <guid isPermaLink="true">http://localhost:4000/2016/11/iOS-Objective-C%E4%B8%8ESwift%E9%97%AD%E5%8C%85-block-%E5%86%99%E6%B3%95/</guid>
-        
-        <category>archive</category>
-        
-        
-        <category>archive</category>
-        
-      </item>
-    
-      <item>
-        <title>Mac下cocoapods的配置安装</title>
-        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
-
-&lt;p&gt;       由于项目开发需要运用第三发库太多了，每下载一个第三个库都要去查看他的配置介绍然而就会一个一个的去引用系统的库，还有第三方库的管理问题，于是前段时间选择使用 cocoapods 进行管理。每个程序员都有两台电脑（一台公司的，一台自己的），在公司配置完成，经过重重配置遇到问题解决，终于配置完成。突然发现自己电脑也要配置，然后之前遇到的问题也一个一个的又去查（这不是坑自己吗）。算了作为程序员还是写点博客比较好，记录自己所遇到的问题和自己的知识；方便你我，方便阅读的人。&lt;/p&gt;
-
-&lt;h2 id=&quot;配置步骤&quot;&gt;配置步骤&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;标签&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;       RVM，Ruby，CocoaPods&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;安装 RVM&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;       RVM:Ruby Version Manager,Ruby 版本管理器，包括 Ruby 的版本管理和 Gem 库管理(gemset)
-向终端输入以下代码安装 RVM&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ curl -L get.rvm.io | bash -s stable
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;指定源&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ source ~/.rvm/scripts/rvm
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;安装成功后（由于安装会向网络下载文件可能会提示安装失败）向终端输入代码查看成功版本&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rvm -v
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;终端控制台会出现&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rvm 1.27.0 (latest) by Wayne E. Seguin &amp;lt;wayneeseguin@gmail.com&amp;gt;, Michal Papis &amp;lt;mpapis@gmail.com&amp;gt; [https://rvm.io/]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;使用 RVM 升级或者安装 Ruby&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;       Ruby 一般 Mac 系统都会自带不需要安装升级，但是我安装的时候遇到 Ruby 版本过低提示错误信息 Error installing pods:activesupport requires Ruby version &amp;gt;= 2.2.2.，所以需要 rvm 对 Ruby 进行升级
-终端输入&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ruby -v
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       可查看当前系统 Ruby 版本&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby 2.0.0p648 (2015-12-16 revision 53155) [x86_64-darwin15]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       所以我们需要对 ruby 进行升级，查看 rvm 版本&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rvm list known
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# MRI Rubies
-[ruby-]1.8.6[-p420]
-[ruby-]1.8.7[-head] # security released on head
-[ruby-]1.9.1[-p431]
-[ruby-]1.9.2[-p330]
-[ruby-]1.9.3[-p551]
-[ruby-]2.0.0[-p648]
-[ruby-]2.1[.8]
-[ruby-]2.2[.4]
-[ruby-]2.3[.0]
-[ruby-]2.2-head
-ruby-head
-
-# for forks use: rvm install ruby-head-&amp;lt;name&amp;gt; --url https://github.com/github/ruby.git --branch 2.2
-......
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       安装 Ruby 输入&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rvm install 2.2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       终端输出太长，就不打印了&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;使用 Ruby 安装 CocoaPods&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;       使用淘宝的 Ruby 镜像访问 cocoapods，官方代码&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
-$ gem sources -l
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       两句命令结果分别是&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://gems.ruby-china.org/ added to sources
-#这个我已经切换过了
-source https://rubygems.org/ not present in cache
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*** CURRENT SOURCES ***
-
-https://ruby.taobao.org/
-https://gems.ruby-china.org/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       接下来就直接安装 CocoaPods&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gem install cocoapods
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       终端输出表示成功&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Password:
-Fetching: activesupport-4.2.7.1.gem (100%)
-Successfully installed activesupport-4.2.7.1
-Fetching: claide-1.0.1.gem (100%)
-Successfully installed claide-1.0.1
-Fetching: cocoapods-core-1.1.1.gem (100%)
-Successfully installed cocoapods-core-1.1.1
-Fetching: cocoapods-downloader-1.1.2.gem (100%)
-Successfully installed cocoapods-downloader-1.1.2
-Fetching: cocoapods-trunk-1.1.1.gem (100%)
-Successfully installed cocoapods-trunk-1.1.1
-Fetching: fourflusher-2.0.1.gem (100%)
-Successfully installed fourflusher-2.0.1
-Fetching: gh_inspector-1.0.2.gem (100%)
-Successfully installed gh_inspector-1.0.2
-Fetching: molinillo-0.5.2.gem (100%)
-Successfully installed molinillo-0.5.2
-Fetching: xcodeproj-1.3.3.gem (100%)
-Successfully installed xcodeproj-1.3.3
-Fetching: cocoapods-1.1.1.gem (100%)
-Successfully installed cocoapods-1.1.1
-Parsing documentation for activesupport-4.2.7.1
-Installing ri documentation for activesupport-4.2.7.1
-Parsing documentation for claide-1.0.1
-Installing ri documentation for claide-1.0.1
-Parsing documentation for cocoapods-core-1.1.1
-Installing ri documentation for cocoapods-core-1.1.1
-Parsing documentation for cocoapods-downloader-1.1.2
-Installing ri documentation for cocoapods-downloader-1.1.2
-Parsing documentation for cocoapods-trunk-1.1.1
-Installing ri documentation for cocoapods-trunk-1.1.1
-Parsing documentation for fourflusher-2.0.1
-Installing ri documentation for fourflusher-2.0.1
-Parsing documentation for gh_inspector-1.0.2
-Installing ri documentation for gh_inspector-1.0.2
-Parsing documentation for molinillo-0.5.2
-Installing ri documentation for molinillo-0.5.2
-Parsing documentation for xcodeproj-1.3.3
-Installing ri documentation for xcodeproj-1.3.3
-Parsing documentation for cocoapods-1.1.1
-Installing ri documentation for cocoapods-1.1.1
-Done installing documentation for activesupport, claide, cocoapods-core, cocoapods-downloader, cocoapods-trunk, fourflusher, gh_inspector, molinillo, xcodeproj, cocoapods after 12 seconds
-10 gems installed
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       再进行 pod 安装&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$pod setup
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Wed, 26 Oct 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/10/Mac%E4%B8%8Bcocoapods%E7%9A%84%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/Mac%E4%B8%8Bcocoapods%E7%9A%84%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</guid>
         
         <category>archive</category>
         
