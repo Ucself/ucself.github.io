@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Podspec 语法参考</title>
+  <meta name="description" content="Podspec 语法参考">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Podspec 语法参考">
+  <meta name="twitter:description" content="Podspec 语法参考">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Podspec 语法参考">
+  <meta property="og:description" content="Podspec 语法参考">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2019/04/Podspec%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/">
+  <link rel="alternate" type="application/rss+xml" title="Ucself" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header
+  class="panel-cover panel-cover--collapsed"
+  style="background-image: url('/assets/images/background-cover.jpg')"
+>
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+        <a
+          href="/#blog"
+          title="前往 Ucself 的主页"
+          class="blog-button"
+          ><img
+            src="/assets/images/avatar.jpg"
+            width="80"
+            alt="Ucself logo"
+            class="panel-cover__logo logo"
+        /></a>
+        <h1 class="panel-cover__title panel-title">
+          <a
+            href="/#blog"
+            title="link to homepage for Ucself"
+            class="blog-button"
+            >Ucself</a
+          >
+        </h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">为人者，有大度成大器矣!</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是ucself，一名大前端开发工程师。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        
+        <p class="panel-cover__description">生活需要总结，记录下自己学习的点滴，在此搭建自我知识体系。</p>
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item">
+                  <a
+                    href="/#blog"
+                    title="Visit blog"
+                    class="blog-button"
+                    >博客</a
+                  >
+                </li>
+                 
+                <li class="navigation__item">
+                  <a href="/pages/git" title="Git">Git</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/cocoapods" title="cocoapods">cocoapods</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/archive" title="归档">归档</a>
+                </li>
+                 
+              </ul>
+            </nav>
+          </div>
+
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="#"
+        title="添加 lbj147123 的微信"
+      >
+        <i class="social fa fa-weixin"></i>
+        <span class="label">Weixin</span>
+      </a>
+    </li>
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="http://weibo.com/p/1005052165916834"
+        title="@p/1005052165916834 的微博"
+        target="_blank"
+      >
+        <i class="social fa fa-weibo"></i>
+        <span class="label">Weibo</span>
+      </a>
+    </li>
+     
+    <!-- Github -->
+    <li class="navigation__item">
+      <a
+        href="https://github.com/Ucself"
+        title="@Ucself 的 Github"
+        target="_blank"
+      >
+        <i class="social fa fa-github"></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+      
+
+    <!-- RSS -->
+    <li class="navigation__item">
+      <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+        <i class="social fa fa-rss"></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+
+    
+    <!-- Email -->
+    <li class="navigation__item">
+      <a href="mailto:lbj147123@163.com" title="Contact me">
+        <i class="social fa fa-envelope"></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article
+  class="post-container post-container--single"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header">
+    <div class="post-meta">
+      <time
+        datetime="2019-04-16 00:00:00 +0800"
+        itemprop="datePublished"
+        class="post-meta__date date"
+        >2019-04-16</time
+      >
+      &#8226;
+      <span class="post-meta__tags tags">cocoapods</span>
+    </div>
+    <h1 class="post-title">Podspec 语法参考</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="目录">目录</h2>
+
+<!-- TOC -->
+
+<ul>
+  <li><a href="#目录">目录</a></li>
+  <li><a href="#简介">简介</a></li>
+  <li><a href="#specification">Specification</a></li>
+  <li><a href="#root-specification">Root specification</a>
+    <ul>
+      <li><a href="#name">name</a>
+        <ul>
+          <li><a href="#examples">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#version">version</a>
+        <ul>
+          <li><a href="#examples-1">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#swift_versions">swift_versions</a>
+        <ul>
+          <li><a href="#examples-2">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#cocoapods_version">cocoapods_version</a> - <a href="#examples-3">Examples:</a></li>
+      <li><a href="#authors">authors</a>
+        <ul>
+          <li><a href="#examples-4">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#social_media_url">social_media_url</a>
+        <ul>
+          <li><a href="#examples-5">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#license">license</a>
+        <ul>
+          <li><a href="#examples-6">Examples:</a></li>
+          <li><a href="#supported-keys">Supported Keys:</a></li>
+        </ul>
+      </li>
+      <li><a href="#homepage">homepage</a>
+        <ul>
+          <li><a href="#examples-7">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#source">source</a>
+        <ul>
+          <li><a href="#examples-8">Examples:</a></li>
+          <li><a href="#supported-keys-1">Supported Keys:</a></li>
+        </ul>
+      </li>
+      <li><a href="#summary">summary</a>
+        <ul>
+          <li><a href="#examples-9">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#description">description</a>
+        <ul>
+          <li><a href="#examples-10">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#screenshots">screenshots</a>
+        <ul>
+          <li><a href="#examples-11">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#documentation_url">documentation_url</a>
+        <ul>
+          <li><a href="#examples-12">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#prepare_command">prepare_command</a>
+        <ul>
+          <li><a href="#examples-13">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#static_framework">static_framework</a>
+        <ul>
+          <li><a href="#examples-14">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#deprecated">deprecated</a>
+        <ul>
+          <li><a href="#examples-15">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#deprecated_in_favor_of">deprecated_in_favor_of</a>
+        <ul>
+          <li><a href="#examples-16">Examples:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#platform">Platform</a>
+    <ul>
+      <li><a href="#platform">platform</a>
+        <ul>
+          <li><a href="#examples-17">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#deployment_target">deployment_target</a>
+        <ul>
+          <li><a href="#examples-18">Examples:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#build-settings">Build settings</a>
+    <ul>
+      <li><a href="#dependency">dependency</a>
+        <ul>
+          <li><a href="#examples-19">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#requires_arc">requires_arc</a>
+        <ul>
+          <li><a href="#defaults-to">Defaults to:</a></li>
+          <li><a href="#examples-20">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#frameworks">frameworks</a>
+        <ul>
+          <li><a href="#examples-21">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#weak_frameworksmulti-platform">weak_frameworksmulti-platform</a>
+        <ul>
+          <li><a href="#examples-22">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#libraries">libraries</a>
+        <ul>
+          <li><a href="#examples-23">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#compiler_flags">compiler_flags</a>
+        <ul>
+          <li><a href="#examples-24">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod_target_xcconfig">pod_target_xcconfig</a>
+        <ul>
+          <li><a href="#examples-25">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#user_target_xcconfig">user_target_xcconfig</a>
+        <ul>
+          <li><a href="#examples-26">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#prefix_header_content">prefix_header_content</a>
+        <ul>
+          <li><a href="#examples-27">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#prefix_header_file">prefix_header_file</a>
+        <ul>
+          <li><a href="#examples-28">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#module_name">module_name</a>
+        <ul>
+          <li><a href="#examples-29">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#header_dir">header_dir</a>
+        <ul>
+          <li><a href="#examples-30">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#header_mappings_dir">header_mappings_dir</a>
+        <ul>
+          <li><a href="#examples-31">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#script_phases">script_phases</a>
+        <ul>
+          <li><a href="#examples-32">Examples:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#file-patterns">File patterns</a>
+    <ul>
+      <li><a href="#source_files">source_files</a>
+        <ul>
+          <li><a href="#examples-33">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#public_header_files">public_header_files</a>
+        <ul>
+          <li><a href="#examples-34">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#private_header_files">private_header_files</a>
+        <ul>
+          <li><a href="#examples-35">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#vendored_frameworks">vendored_frameworks</a>
+        <ul>
+          <li><a href="#examples-36">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#vendored_libraries">vendored_libraries</a>
+        <ul>
+          <li><a href="#examples-37">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#resource_bundles">resource_bundles</a>
+        <ul>
+          <li><a href="#examples-38">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#resources">resources</a>
+        <ul>
+          <li><a href="#examples-39">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#exclude_files">exclude_files</a>
+        <ul>
+          <li><a href="#examples-40">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#preserve_paths">preserve_paths</a>
+        <ul>
+          <li><a href="#examples-41">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#module_map">module_map</a>
+        <ul>
+          <li><a href="#examples-42">Examples:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#subspecs">Subspecs</a>
+    <ul>
+      <li><a href="#subspec">subspec</a>
+        <ul>
+          <li><a href="#examples-43">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#requires_app_host">requires_app_host</a>
+        <ul>
+          <li><a href="#examples-44">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#scheme">scheme</a>
+        <ul>
+          <li><a href="#examples-45">Examples:</a></li>
+          <li><a href="#supported-keys-2">Supported Keys:</a></li>
+        </ul>
+      </li>
+      <li><a href="#test_spec">test_spec</a>
+        <ul>
+          <li><a href="#examples-46">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#app_spec">app_spec</a>
+        <ul>
+          <li><a href="#examples-47">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#default_subspecs">default_subspecs</a>
+        <ul>
+          <li><a href="#examples-48">Examples:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#multi-platform-support">Multi-Platform support</a>
+    <ul>
+      <li><a href="#ios">ios</a>
+        <ul>
+          <li><a href="#examples-49">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#osx">osx</a>
+        <ul>
+          <li><a href="#examples-50">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#macos">macos</a>
+        <ul>
+          <li><a href="#examples-51">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#tvos">tvos</a>
+        <ul>
+          <li><a href="#examples-52">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#watchos">watchos</a>
+        <ul>
+          <li><a href="#examples-53">Examples:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h2 id="简介">简介</h2>
+
+<p>本文翻译自官方的 <a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Syntax Reference</a>，若翻译中有什么异议，欢迎留言指正。</p>
+
+<p><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile</a></p>
+
+<p><a href="https://guides.cocoapods.org/syntax/podspec.html">Podspec</a></p>
+
+<p><a href="https://guides.cocoapods.org/terminal/commands.html">Command Line API</a></p>
+
+<h2 id="specification">Specification</h2>
+
+<p>A specification describes a version of Pod library. It includes details about where the source should be fetched from, what files to use, the build settings to apply, and other general metadata such as its name, version, and description.</p>
+
+<p>A stub specification file can be generated by the pod spec create command.</p>
+
+<p>The specification DSL provides great flexibility and dynamism. Moreover, the DSL adopts the convention over configuration and thus it can be very simple:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pod::Spec.new do |spec|
+  spec.name         = 'Reachability'
+  spec.version      = '3.1.0'
+  spec.license      = { :type =&gt; 'BSD' }
+  spec.homepage     = 'https://github.com/tonymillion/Reachability'
+  spec.authors      = { 'Tony Million' =&gt; 'tonymillion@gmail.com' }
+  spec.summary      = 'ARC and GCD Compatible Reachability Class for iOS and OS X.'
+  spec.source       = { :git =&gt; 'https://github.com/tonymillion/Reachability.git', :tag =&gt; 'v3.1.0' }
+  spec.source_files = 'Reachability.{h,m}'
+  spec.framework    = 'SystemConfiguration'
+end
+</code></pre></div></div>
+
+<p>Or it can be quite detailed:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pod::Spec.new do |spec|
+  spec.name          = 'Reachability'
+  spec.version       = '3.1.0'
+  spec.license       = { :type =&gt; 'BSD' }
+  spec.homepage      = 'https://github.com/tonymillion/Reachability'
+  spec.authors       = { 'Tony Million' =&gt; 'tonymillion@gmail.com' }
+  spec.summary       = 'ARC and GCD Compatible Reachability Class for iOS and OS X.'
+  spec.source        = { :git =&gt; 'https://github.com/tonymillion/Reachability.git', :tag =&gt; 'v3.1.0' }
+  spec.module_name   = 'Rich'
+  spec.swift_version = '4.0'
+
+  spec.ios.deployment_target  = '9.0'
+  spec.osx.deployment_target  = '10.10'
+
+  spec.source_files       = 'Reachability/common/*.swift'
+  spec.ios.source_files   = 'Reachability/ios/*.swift', 'Reachability/extensions/*.swift'
+  spec.osx.source_files   = 'Reachability/osx/*.swift'
+
+  spec.framework      = 'SystemConfiguration'
+  spec.ios.framework  = 'UIKit'
+  spec.osx.framework  = 'AppKit'
+
+  spec.dependency 'SomeOtherPod'
+end
+</code></pre></div></div>
+
+<h2 id="root-specification">Root specification</h2>
+
+<p>A ‘root’ specification stores the information about the specific version of a library.</p>
+
+<p>The attributes in this group can only be written to on the ‘root’ specification, not on the ‘sub-specifications’.</p>
+
+<p>The attributes listed in this group are the only one which are required by a podspec.</p>
+
+<p>The attributes of the other groups are offered to refine the podspec and follow a convention over configuration approach. A root specification can describe these attributes either directly of through ‘sub-specifications’.</p>
+
+<h3 id="name">name</h3>
+
+<p>required</p>
+
+<p>The name of the Pod.</p>
+
+<h4 id="examples">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.name = 'AFNetworking'
+</code></pre></div></div>
+
+<h3 id="version">version</h3>
+
+<p>required</p>
+
+<p>The version of the Pod. CocoaPods follows semantic versioning.</p>
+
+<h4 id="examples-1">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.version = '0.0.1'
+</code></pre></div></div>
+
+<h3 id="swift_versions">swift_versions</h3>
+
+<p>The versions of Swift that the specification supports. A version of ‘4’ will be treated as ‘4.0’ by CocoaPods and not ‘4.1’ or ‘4.2’.</p>
+
+<p>Note The Swift compiler mostly accepts major versions and sometimes will honor minor versions. While CocoaPods allows specifying a minor or patch version it might not be honored fully by the Swift compiler.</p>
+
+<h4 id="examples-2">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.swift_versions = ['3.0']
+spec.swift_versions = ['3.0', '4.0', '4.2']
+spec.swift_version = '3.0'
+spec.swift_version = '3.0', '4.0'
+</code></pre></div></div>
+
+<h3 id="cocoapods_version">cocoapods_version</h3>
+
+<p>The version of CocoaPods that the specification supports.</p>
+
+<h5 id="examples-3">Examples:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.cocoapods_version = '&gt;= 0.36'
+</code></pre></div></div>
+
+<h3 id="authors">authors</h3>
+
+<p>required</p>
+
+<p>The name and email addresses of the library maintainers, not the Podspec maintainer.</p>
+
+<h4 id="examples-4">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.author = 'Darth Vader'
+spec.authors = 'Darth Vader', 'Wookiee'
+spec.authors = { 'Darth Vader' =&gt; 'darthvader@darkside.com',
+                 'Wookiee'     =&gt; 'wookiee@aggrrttaaggrrt.com' }
+</code></pre></div></div>
+
+<h3 id="social_media_url">social_media_url</h3>
+
+<p>The URL for the social media contact of the Pod, CocoaPods web services can use this.</p>
+
+<p>For example, the @CocoaPodsFeed notifications will include the Twitter handle (shortening the description) if the URL is relative to Twitter. This does not necessarily have to be a Twitter URL, but only those are included in the Twitter @CocoaPodsFeed notifications.</p>
+
+<h4 id="examples-5">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.social_media_url = 'https://twitter.com/cocoapods'
+spec.social_media_url = 'https://groups.google.com/forum/#!forum/cocoapods'
+</code></pre></div></div>
+
+<h3 id="license">license</h3>
+
+<p>required</p>
+
+<p>The license of the Pod.</p>
+
+<p>Unless the source contains a file named LICENSE._ or LICENCE._, the path of the license file or the integral text of the notice commonly used for the license type must be specified. If a license file is specified, it either must be without a file extensions or be one of txt, md, or markdown.</p>
+
+<p>This information is used by CocoaPods to generate acknowledgement files (markdown and plist) which can be used in the acknowledgements section of the final application.</p>
+
+<h4 id="examples-6">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.license = 'MIT'
+spec.license = { :type =&gt; 'MIT', :file =&gt; 'MIT-LICENSE.txt' }
+spec.license = { :type =&gt; 'MIT', :text =&gt; &lt;&lt;-LICENSE
+                   Copyright 2012
+                   Permission is granted to...
+                 LICENSE
+               }
+</code></pre></div></div>
+
+<h4 id="supported-keys">Supported Keys:</h4>
+
+<p><code class="highlighter-rouge">:type</code></p>
+
+<p><code class="highlighter-rouge">:file</code></p>
+
+<p><code class="highlighter-rouge">:text</code></p>
+
+<h3 id="homepage">homepage</h3>
+
+<p>required</p>
+
+<p>The URL of the homepage of the Pod.</p>
+
+<h4 id="examples-7">Examples:</h4>
+
+<p>spec.homepage = ‘http://www.example.com’</p>
+
+<h3 id="source">source</h3>
+
+<p>required</p>
+
+<p>The location from where the library should be retrieved.</p>
+
+<h4 id="examples-8">Examples:</h4>
+
+<p>Specifying a Git source with a tag. This is how most OSS Podspecs work.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.source = { :git =&gt; 'https://github.com/AFNetworking/AFNetworking.git',
+                :tag =&gt; spec.version.to_s }
+</code></pre></div></div>
+
+<p>Using a tag prefixed with ‘v’ and submodules.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.source = { :git =&gt; 'https://github.com/typhoon-framework/Typhoon.git',
+                :tag =&gt; "v#{spec.version}", :submodules =&gt; true }
+</code></pre></div></div>
+
+<p>Using Subversion with a tag.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.source = { :svn =&gt; 'http://svn.code.sf.net/p/polyclipping/code', :tag =&gt; '4.8.8' }
+</code></pre></div></div>
+
+<p>Using Mercurial with the same revision as the spec’s semantic version string.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.source = { :hg =&gt; 'https://bitbucket.org/dcutting/hyperbek', :revision =&gt; "#{s.version}" }
+</code></pre></div></div>
+
+<p>Using HTTP to download a compressed file of the code. It supports zip, tgz, bz2, txz and tar.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.source = { :http =&gt; 'http://dev.wechatapp.com/download/sdk/WeChat_SDK_iOS_en.zip' }
+</code></pre></div></div>
+
+<p>Using HTTP to download a file using a hash to verify the download. It supports sha1 and sha256.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.source = { :http =&gt; 'http://dev.wechatapp.com/download/sdk/WeChat_SDK_iOS_en.zip',
+                :sha1 =&gt; '7e21857fe11a511f472cfd7cfa2d979bd7ab7d96' }
+</code></pre></div></div>
+
+<h4 id="supported-keys-1">Supported Keys:</h4>
+
+<p><code class="highlighter-rouge">:git</code> =&gt; <code class="highlighter-rouge">:tag, :branch, :commit, :submodules</code></p>
+
+<p><code class="highlighter-rouge">:svn</code> =&gt; <code class="highlighter-rouge">:folder, :tag, :revision</code></p>
+
+<p><code class="highlighter-rouge">:hg</code> =&gt; <code class="highlighter-rouge">:revision</code></p>
+
+<p><code class="highlighter-rouge">:http</code> =&gt; <code class="highlighter-rouge">:flatten, :type, :sha256, :sha1</code></p>
+
+<h3 id="summary">summary</h3>
+
+<p>required</p>
+
+<p>A short (maximum 140 characters) description of the Pod.</p>
+
+<p>The description should be short, yet informative. It represents the tag line of the Pod and there is no need to specify that a Pod is a library (they always are).</p>
+
+<p>The summary is expected to be properly capitalised and containing the correct punctuation.</p>
+
+<h4 id="examples-9">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.summary = 'Computes the meaning of life.'
+</code></pre></div></div>
+
+<h3 id="description">description</h3>
+
+<p>A description of the Pod more detailed than the summary.</p>
+
+<h4 id="examples-10">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.description = &lt;&lt;-DESC
+                     Computes the meaning of life.
+                     Features:
+                     1. Is self aware
+                     ...
+                     42. Likes candies.
+                   DESC
+</code></pre></div></div>
+
+<h3 id="screenshots">screenshots</h3>
+
+<p>A list of URLs to images showcasing the Pod. Intended for UI oriented libraries. CocoaPods recommends the usage of the gif format.</p>
+
+<h4 id="examples-11">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.screenshot = 'http://dl.dropbox.com/u/378729/MBProgressHUD/1.png'
+spec.screenshots = [ 'http://dl.dropbox.com/u/378729/MBProgressHUD/1.png',
+                     'http://dl.dropbox.com/u/378729/MBProgressHUD/2.png' ]
+</code></pre></div></div>
+
+<h3 id="documentation_url">documentation_url</h3>
+
+<p>An optional URL for the documentation of the Pod which will be honoured by CocoaPods web properties. Leaving it blank will default to a CocoaDocs generated URL for your library.</p>
+
+<h4 id="examples-12">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.documentation_url = 'http://www.example.com/docs.html'
+</code></pre></div></div>
+
+<h3 id="prepare_command">prepare_command</h3>
+
+<p>A bash script that will be executed after the Pod is downloaded. This command can be used to create, delete and modify any file downloaded and will be ran before any paths for other file attributes of the specification are collected.</p>
+
+<p>This command is executed before the Pod is cleaned and before the Pods project is created. The working directory is the root of the Pod.</p>
+
+<p>If the pod is installed with the :path option this command will not be executed.</p>
+
+<h4 id="examples-13">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.prepare_command = 'ruby build_files.rb'
+spec.prepare_command = &lt;&lt;-CMD
+                        sed -i 's/MyNameSpacedHeader/Header/g' ./**/*.h
+                        sed -i 's/MyNameOtherSpacedHeader/OtherHeader/g' ./**/*.h
+                   CMD
+</code></pre></div></div>
+
+<h3 id="static_framework">static_framework</h3>
+
+<p>Indicates, that if use_frameworks! is specified, the pod should include a static library framework.</p>
+
+<h4 id="examples-14">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.static_framework = true
+</code></pre></div></div>
+
+<h3 id="deprecated">deprecated</h3>
+
+<p>Whether the library has been deprecated.</p>
+
+<h4 id="examples-15">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.deprecated = true
+</code></pre></div></div>
+
+<h3 id="deprecated_in_favor_of">deprecated_in_favor_of</h3>
+
+<p>The name of the Pod that this one has been deprecated in favor of.</p>
+
+<h4 id="examples-16">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.deprecated_in_favor_of = 'NewMoreAwesomePod'
+</code></pre></div></div>
+
+<h2 id="platform">Platform</h2>
+
+<p>A specification should indicate the platform and the correspondent deployment targets on which the library is supported.</p>
+
+<p>If not defined in a subspec the attributes of this group inherit the value of the parent.</p>
+
+<h3 id="platform-1">platform</h3>
+
+<p>The platform on which this Pod is supported. Leaving this blank means the Pod is supported on all platforms. When supporting multiple platforms you should use deployment_target below instead.</p>
+
+<h4 id="examples-17">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.platform = :osx, '10.8'
+spec.platform = :ios
+spec.platform = :osx
+</code></pre></div></div>
+
+<h3 id="deployment_target">deployment_target</h3>
+
+<p>The minimum deployment targets of the supported platforms.</p>
+
+<p>As opposed to the platform attribute, the deployment_target attribute allows to specify multiple platforms on which this pod is supported — specifying a different deployment target for each.</p>
+
+<h4 id="examples-18">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.ios.deployment_target = '6.0'
+spec.osx.deployment_target = '10.8'
+</code></pre></div></div>
+
+<h2 id="build-settings">Build settings</h2>
+
+<p>In this group are listed the attributes related to the configuration of the build environment that should be used to build the library.</p>
+
+<p>If not defined in a subspec the attributes of this group inherit the value of the parent.</p>
+
+<h3 id="dependency">dependency</h3>
+
+<p>Any dependency on other Pods or to a ‘sub-specification’.</p>
+
+<p>Dependencies can specify versions requirements. The use of the optimistic version indicator ~&gt; is recommended because it provides good control over the version without being too restrictive. For example, ~&gt; 1.0.1 is equivalent to &gt;= 1.0.1 combined with &lt; 1.1. Similarly, ~&gt; 1.0 will match 1.0, 1.0.1, 1.1, but will not upgrade to 2.0.</p>
+
+<p>Pods with overly restrictive dependencies limit their compatibility with other Pods.</p>
+
+<h4 id="examples-19">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.dependency 'AFNetworking', '~&gt; 1.0'
+spec.dependency 'RestKit/CoreData', '~&gt; 0.20.0'
+spec.ios.dependency 'MBProgressHUD', '~&gt; 0.5'
+</code></pre></div></div>
+
+<h3 id="requires_arc">requires_arc</h3>
+
+<p>multi-platform</p>
+
+<p>requires_arc allows you to specify which source_files use ARC. This can either be the files which support ARC, or true to indicate all of the source_files use ARC.</p>
+
+<p>Files which do not use ARC will have the -fno-objc-arc compiler flag.</p>
+
+<p>The default value of this attribute is true.</p>
+
+<h4 id="defaults-to">Defaults to:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.requires_arc = true
+</code></pre></div></div>
+
+<h4 id="examples-20">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.requires_arc = false
+spec.requires_arc = 'Classes/Arc'
+spec.requires_arc = ['Classes/*ARC.m', 'Classes/ARC.mm']
+</code></pre></div></div>
+
+<h3 id="frameworks">frameworks</h3>
+
+<p>multi-platform</p>
+
+<p>A list of system frameworks that the user’s target needs to link against.</p>
+
+<h4 id="examples-21">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.ios.framework = 'CFNetwork'
+spec.frameworks = 'QuartzCore', 'CoreData'
+</code></pre></div></div>
+
+<h3 id="weak_frameworksmulti-platform">weak_frameworksmulti-platform</h3>
+
+<p>A list of frameworks that the user’s target needs to weakly link against.</p>
+
+<h4 id="examples-22">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.weak_framework = 'Twitter'
+spec.weak_frameworks = 'Twitter', 'SafariServices'
+</code></pre></div></div>
+
+<h3 id="libraries">libraries</h3>
+
+<p>multi-platform</p>
+
+<p>A list of system libraries that the user’s target (application) needs to link against.</p>
+
+<h4 id="examples-23">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.ios.library = 'xml2'
+spec.libraries = 'xml2', 'z'
+</code></pre></div></div>
+
+<h3 id="compiler_flags">compiler_flags</h3>
+
+<p>multi-platform</p>
+
+<p>A list of flags which should be passed to the compiler.</p>
+
+<h4 id="examples-24">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.compiler_flags = '-DOS_OBJECT_USE_OBJC=0', '-Wno-format'
+</code></pre></div></div>
+
+<h3 id="pod_target_xcconfig">pod_target_xcconfig</h3>
+
+<p>multi-platform</p>
+
+<p>Any flag to add to the final private pod target xcconfig file.</p>
+
+<h4 id="examples-25">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.pod_target_xcconfig = { 'OTHER_LDFLAGS' =&gt; '-lObjC' }
+</code></pre></div></div>
+
+<h3 id="user_target_xcconfig">user_target_xcconfig</h3>
+
+<p>multi-platform</p>
+
+<p>Specifies flags to add to the final aggregate target xcconfig file, which propagates to non-overridden and inheriting build settings to the integrated user targets.</p>
+
+<p>This attribute is not recommended as Pods should not pollute the build settings of the user project and this can cause conflicts.</p>
+
+<p>Multiple definitions for build settings that take multiple values will be merged. The user is warned on conflicting definitions for custom build settings and build settings that take only one value.</p>
+
+<p>Typically clang compiler flags or precompiler macro definitions go in here if they are required when importing the pod in the user target. Note that, this influences not only the compiler view of the public interface of your pod, but also all other integrated pods alongside to yours. You should always prefer pod_target_xcconfig, which can contain the same settings, but only influence the toolchain when compiling your pod target.</p>
+
+<h4 id="examples-26">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.user_target_xcconfig = { 'MY_SUBSPEC' =&gt; 'YES' }
+</code></pre></div></div>
+
+<h3 id="prefix_header_content">prefix_header_content</h3>
+
+<p>smulti-platform</p>
+
+<p>Any content to inject in the prefix header of the pod project.</p>
+
+<p>This attribute is not recommended as Pods should not pollute the prefix header of other libraries or of the user project.</p>
+
+<h4 id="examples-27">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.prefix_header_contents = '#import &lt;UIKit/UIKit.h&gt;'
+spec.prefix_header_contents = '#import &lt;UIKit/UIKit.h&gt;', '#import &lt;Foundation/Foundation.h&gt;'
+</code></pre></div></div>
+
+<h3 id="prefix_header_file">prefix_header_file</h3>
+
+<p>multi-platform</p>
+
+<p>A path to a prefix header file to inject in the prefix header of the pod project. false indicates that the default CocoaPods prefix header should not be generated. true is the default and indicates that the default CocoaPods prefix header should be generated.</p>
+
+<p>The file path options is not recommended as Pods should not pollute the prefix header of other libraries or of the user project.</p>
+
+<h4 id="examples-28">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.prefix_header_file = 'iphone/include/prefix.pch'
+spec.prefix_header_file = false
+</code></pre></div></div>
+
+<h3 id="module_name">module_name</h3>
+
+<p>The name to use for the framework / clang module which will be generated for this specification instead of the default (header_dir if set, otherwise the specification name).</p>
+
+<h4 id="examples-29">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.module_name = 'Three20'
+</code></pre></div></div>
+
+<h3 id="header_dir">header_dir</h3>
+
+<p>multi-platform</p>
+
+<p>The directory where to store the headers files so they don’t break includes.</p>
+
+<h4 id="examples-30">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.header_dir = 'Three20Core'
+</code></pre></div></div>
+
+<h3 id="header_mappings_dir">header_mappings_dir</h3>
+
+<p>multi-platform</p>
+
+<p>A directory from where to preserve the folder structure for the headers files. If not provided the headers files are flattened.</p>
+
+<h4 id="examples-31">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.header_mappings_dir = 'src/include'
+</code></pre></div></div>
+
+<h3 id="script_phases">script_phases</h3>
+
+<p>multi-platform</p>
+
+<p>This attribute allows to define a script phase to execute as part of compilation of the Pod. Unlike a prepare command, script phases execute as part of xcodebuild they can also utilize all environment variables that are set during compilation.</p>
+
+<p>A Pod can provide multiple script phases to execute and they will be added in the order they were declared and after taking into consideration their execution position setting.</p>
+
+<p>Note In order to provide visibility and awareness of the contents of all script phases, a warning will be presented to the user upon installing your pod if it includes any script phases.</p>
+
+<h4 id="examples-32">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.script_phase = { :name =&gt; 'Hello World', :script =&gt; 'echo "Hello World"' }
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.script_phase = { :name =&gt; 'Hello World', :script =&gt; 'echo "Hello World"', :execution_position =&gt; :before_compile }
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.script_phase = { :name =&gt; 'Hello World', :script =&gt; 'puts "Hello World"', :shell_path =&gt; '/usr/bin/ruby' }
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.script_phase = { :name =&gt; 'Hello World', :script =&gt; 'echo "Hello World"',
+  :input_files =&gt; ['/path/to/input_file.txt'], :output_files =&gt; ['/path/to/output_file.txt']
+}
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.script_phase = { :name =&gt; 'Hello World', :script =&gt; 'echo "Hello World"',
+  :input_file_lists =&gt; ['/path/to/input_files.xcfilelist'], :output_file_lists =&gt; ['/path/to/output_files.xcfilelist']
+}
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.script_phases = [
+    { :name =&gt; 'Hello World', :script =&gt; 'echo "Hello World"' },
+    { :name =&gt; 'Hello Ruby World', :script =&gt; 'puts "Hello World"', :shell_path =&gt; '/usr/bin/ruby' },
+  ]
+</code></pre></div></div>
+
+<h2 id="file-patterns">File patterns</h2>
+
+<p>Podspecs should be located at the root of the repository, and paths to files should be specified relative to the root of the repository as well. File patterns do not support traversing the parent directory ( .. ). File patterns may contain the following wildcard patterns:</p>
+
+<p>Pattern: *</p>
+
+<p>Matches any file. Can be restricted by other values in the glob.</p>
+
+<ul>
+  <li>will match all files</li>
+  <li>c* will match all files beginning with c</li>
+  <li>*c will match all files ending with c</li>
+  <li>*c* will match all files that have c in them (including at the beginning or end)</li>
+</ul>
+
+<p>Equivalent to /.*/x in regexp.</p>
+
+<p>Note this will not match Unix-like hidden files (dotfiles). In order to include those in the match results, you must use something like {<em>,.</em>}.</p>
+
+<p>Pattern: **</p>
+
+<p>Matches directories recursively.</p>
+
+<p>Pattern: ?</p>
+
+<p>Matches any one character. Equivalent to /.{1}/ in regexp.</p>
+
+<p>Pattern: [set]</p>
+
+<p>Matches any one character in set.</p>
+
+<p>Behaves exactly like character sets in Regexp, including set negation ([^a-z]).</p>
+
+<p>Pattern: {p,q}</p>
+
+<p>Matches either literal p or literal q.</p>
+
+<p>Matching literals may be more than one character in length. More than two literals may be specified.</p>
+
+<p>Equivalent to pattern alternation in regexp.</p>
+
+<p>Pattern: \</p>
+
+<p>Escapes the next meta-character.</p>
+
+<p>Examples</p>
+
+<p>Consider these to be evaluated in the source root of JSONKit.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"JSONKit.?"    #=&gt; ["JSONKit.h", "JSONKit.m"]
+"*.[a-z][a-z]" #=&gt; ["CHANGELOG.md", "README.md"]
+"*.[^m]*"      #=&gt; ["JSONKit.h"]
+"*.{h,m}"      #=&gt; ["JSONKit.h", "JSONKit.m"]
+"*"            #=&gt; ["CHANGELOG.md", "JSONKit.h", "JSONKit.m", "README.md"]
+</code></pre></div></div>
+
+<h3 id="source_files">source_files</h3>
+
+<p>multi-platform</p>
+
+<p>The source files of the Pod.</p>
+
+<h4 id="examples-33">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.source*files = 'Classes/**/\*.{h,m}'
+spec.source_files = 'Classes/**/*.{h,m}', 'More*Classes/\*\*/*.{h,m}'
+</code></pre></div></div>
+
+<h3 id="public_header_files">public_header_files</h3>
+
+<p>multi-platform</p>
+
+<p>A list of file patterns that should be used as public headers.</p>
+
+<p>These are the headers that will be exposed to the user’s project and from which documentation will be generated. When the library is built, these headers will appear in the build directory. If no public headers are specified then all the headers in source_files are considered public.</p>
+
+<h4 id="examples-34">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.public_header_files = 'Headers/Public/\*.h'
+</code></pre></div></div>
+
+<h3 id="private_header_files">private_header_files</h3>
+
+<p>multi-platform</p>
+
+<p>A list of file patterns that should be used to mark private headers.</p>
+
+<p>These patterns are matched against the public headers (or all the headers if no public headers have been specified) to exclude those headers which should not be exposed to the user project and which should not be used to generate the documentation. When the library is built, these headers will appear in the build directory.</p>
+
+<p>Header files that are not listed as neither public nor private will be treated as private, but in addition will not appear in the build directory at all.</p>
+
+<h4 id="examples-35">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.private_header_files = 'Headers/Private/\*.h'
+</code></pre></div></div>
+
+<h3 id="vendored_frameworks">vendored_frameworks</h3>
+
+<p>multi-platform</p>
+
+<p>The paths of the framework bundles that come shipped with the Pod.</p>
+
+<h4 id="examples-36">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.ios.vendored_frameworks = 'Frameworks/MyFramework.framework'
+spec.vendored_frameworks = 'MyFramework.framework', 'TheirFramework.framework'
+</code></pre></div></div>
+
+<h3 id="vendored_libraries">vendored_libraries</h3>
+
+<p>multi-platform</p>
+
+<p>The paths of the libraries that come shipped with the Pod.</p>
+
+<h4 id="examples-37">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.ios.vendored_library = 'Libraries/libProj4.a'
+spec.vendored_libraries = 'libProj4.a', 'libJavaScriptCore.a'
+</code></pre></div></div>
+
+<h3 id="resource_bundles">resource_bundles</h3>
+
+<p>multi-platform</p>
+
+<p>This attribute allows to define the name and the file of the resource bundles which should be built for the Pod. They are specified as a hash where the keys represent the name of the bundles and the values the file patterns that they should include.</p>
+
+<p>For building the Pod as a static library, we strongly recommend library developers to adopt resource bundles as there can be name collisions using the resources attribute.</p>
+
+<p>The names of the bundles should at least include the name of the Pod to minimise the chance of name collisions.</p>
+
+<p>To provide different resources per platform namespaced bundles must be used.</p>
+
+<h4 id="examples-38">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.ios.resource*bundle = { 'MapBox' =&gt; 'MapView/Map/Resources/*.png' }
+spec.resource_bundles = {
+    'MapBox' =&gt; ['MapView/Map/Resources/*.png'],
+    'MapBoxOtherResources' =&gt; ['MapView/Map/OtherResources/*.png']
+  }
+</code></pre></div></div>
+
+<h3 id="resources">resources</h3>
+
+<p>multi-platform</p>
+
+<p>A list of resources that should be copied into the target bundle.</p>
+
+<p>For building the Pod as a static library, we strongly recommend library developers to adopt resource bundles as there can be name collisions using the resources attribute. Moreover, resources specified with this attribute are copied directly to the client target and therefore they are not optimised by Xcode.</p>
+
+<h4 id="examples-39">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.resource = 'Resources/HockeySDK.bundle'
+spec.resources = ['Images/*.png', 'Sounds/*']
+</code></pre></div></div>
+
+<h3 id="exclude_files">exclude_files</h3>
+
+<p>multi-platform</p>
+
+<p>A list of file patterns that should be excluded from the other file patterns.</p>
+
+<h4 id="examples-40">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.ios.exclude_files = 'Classes/osx'
+spec.exclude_files = 'Classes/\*\*/unused.{h,m}'
+</code></pre></div></div>
+
+<h3 id="preserve_paths">preserve_paths</h3>
+
+<p>multi-platform</p>
+
+<p>Any file that should not be removed after being downloaded.</p>
+
+<p>By default, CocoaPods removes all files that are not matched by any of the other file pattern.</p>
+
+<h4 id="examples-41">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.preserve_path = 'IMPORTANT.txt'
+spec.preserve_paths = 'Frameworks/\*.framework'
+</code></pre></div></div>
+
+<h3 id="module_map">module_map</h3>
+
+<p>multi-platform</p>
+
+<p>The module map file that should be used when this pod is integrated as a framework.</p>
+
+<p>By default, CocoaPods creates a module map file based upon the public headers in a specification.</p>
+
+<h4 id="examples-42">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.module_map = 'source/module.modulemap'
+</code></pre></div></div>
+
+<h2 id="subspecs">Subspecs</h2>
+
+<p>A library can specify a dependency on either another library, a subspec of another library, or a subspec of itself.</p>
+
+<h3 id="subspec">subspec</h3>
+
+<p>Represents specification for a module of the library.</p>
+
+<p>Subspecs participate on a dual hierarchy.</p>
+
+<p>On one side, a specification automatically inherits as a dependency all it children ‘sub-specifications’ (unless a default subspec is specified).</p>
+
+<p>On the other side, a ‘sub-specification’ inherits the value of the attributes of the parents so common values for attributes can be specified in the ancestors.</p>
+
+<p>Although it sounds complicated in practice it means that subspecs in general do what you would expect:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'ShareKit', '2.0'
+</code></pre></div></div>
+
+<p>Installs ShareKit with all the sharers like ShareKit/Evernote, ShareKit/Facebook, etc, as they are defined as subspecs.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'ShareKit/Twitter', '2.0'
+pod 'ShareKit/Pinboard', '2.0'
+</code></pre></div></div>
+
+<p>Installs ShareKit with only the source files for ShareKit/Twitter, ShareKit/Pinboard. Note that, in this case, the ‘sub-specifications’ to compile need the source files, the dependencies, and the other attributes defined by the root specification. CocoaPods is smart enough to handle any issues arising from duplicate attributes.</p>
+
+<h4 id="examples-43">Examples:</h4>
+
+<p>Subspecs with different source files.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>subspec 'Twitter' do |sp|
+  sp.source_files = 'Classes/Twitter'
+end
+
+subspec 'Pinboard' do |sp|
+  sp.source_files = 'Classes/Pinboard'
+end
+</code></pre></div></div>
+
+<p>Subspecs referencing dependencies to other subspecs.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pod::Spec.new do |s|
+  s.name = 'RestKit'
+
+  s.subspec 'Core' do |cs|
+    cs.dependency 'RestKit/ObjectMapping'
+    cs.dependency 'RestKit/Network'
+    cs.dependency 'RestKit/CoreData'
+  end
+
+  s.subspec 'ObjectMapping' do |os|
+  end
+end
+</code></pre></div></div>
+
+<p>Nested subspecs.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pod::Spec.new do |s|
+  s.name = 'Root'
+
+  s.subspec 'Level_1' do |sp|
+    sp.subspec 'Level_2' do |ssp|
+    end
+  end
+end
+</code></pre></div></div>
+
+<h3 id="requires_app_host">requires_app_host</h3>
+
+<p>multi-platform</p>
+
+<p>Whether a test specification requires an app host to run tests. This only applies to test specifications.</p>
+
+<h4 id="examples-44">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>test_spec.requires_app_host = true
+</code></pre></div></div>
+
+<h3 id="scheme">scheme</h3>
+
+<p>multi-platform</p>
+
+<p>Specifies the scheme configuration to be used for this specification.</p>
+
+<h4 id="examples-45">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.scheme = { :launch_arguments =&gt; ['Arg1'] }
+spec.scheme = { :launch_arguments =&gt; ['Arg1', 'Arg2'], :environment_variables =&gt; { 'Key1' =&gt; 'Val1'} }
+</code></pre></div></div>
+
+<h4 id="supported-keys-2">Supported Keys:</h4>
+
+<p><code class="highlighter-rouge">:launch_arguments</code></p>
+
+<p><code class="highlighter-rouge">:environment_variables</code></p>
+
+<h3 id="test_spec">test_spec</h3>
+
+<p>Represents a test specification for the library. Here you can place all your tests for your podspec along with the test dependencies.</p>
+
+<h4 id="examples-46">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pod::Spec.new do |spec|
+  spec.name = 'NSAttributedString+CCLFormat'
+
+  spec.test_spec do |test_spec|
+    test_spec.source_files = 'NSAttributedString+CCLFormatTests.m'
+    test_spec.dependency 'Expecta'
+  end
+end
+</code></pre></div></div>
+
+<h3 id="app_spec">app_spec</h3>
+
+<p>Represents an app specification for the library. Here you can place all your app source files for your podspec along with the app dependencies.</p>
+
+<h4 id="examples-47">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pod::Spec.new do |spec|
+  spec.name = 'NSAttributedString+CCLFormat'
+
+  spec.app_spec do |app_spec|
+    app_spec.source_files = 'NSAttributedString+CCLFormat.m'
+    app_spec.dependency 'AFNetworking'
+  end
+end
+</code></pre></div></div>
+
+<h3 id="default_subspecs">default_subspecs</h3>
+
+<p>An array of subspecs names that should be used as preferred dependency. If not specified a specifications requires all its subspecs as dependencies.</p>
+
+<p>A Pod should make available the full library by default. Users can fine tune their dependencies, and exclude unneeded subspecs, once their requirements are known. Therefore, this attribute is rarely needed. It is intended to be used to select a default if there are ‘sub-specifications’ which provide alternative incompatible implementations, or to exclude modules rarely needed (especially if they trigger dependencies on other libraries).</p>
+
+<h4 id="examples-48">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.default_subspec = 'Core'
+spec.default_subspecs = 'Core', 'UI'
+</code></pre></div></div>
+
+<h2 id="multi-platform-support">Multi-Platform support</h2>
+
+<p>A specification can store values which are specific to only one platform.</p>
+
+<p>For example one might want to store resources which are specific to only iOS projects.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.resources = 'Resources/**/\*.png'
+spec.ios.resources = 'Resources_ios/**/\*.png'
+</code></pre></div></div>
+
+<h3 id="ios">ios</h3>
+
+<p>Provides support for specifying iOS attributes.</p>
+
+<h4 id="examples-49">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.ios.source\*files = 'Classes/ios/\*\*/\_.{h,m}'
+</code></pre></div></div>
+
+<h3 id="osx">osx</h3>
+
+<p>Provides support for specifying OS X attributes.</p>
+
+<h4 id="examples-50">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.osx.source\*files = 'Classes/osx/\*\*/\_.{h,m}'
+</code></pre></div></div>
+
+<h3 id="macos">macos</h3>
+
+<p>Provides support for specifying OS X attributes.</p>
+
+<h4 id="examples-51">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.osx.source\*files = 'Classes/osx/\*\*/\_.{h,m}'
+</code></pre></div></div>
+
+<h3 id="tvos">tvos</h3>
+
+<p>Provides support for specifying tvOS attributes.</p>
+
+<h4 id="examples-52">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.tvos.source\*files = 'Classes/tvos/\*\*/\_.{h,m}'
+</code></pre></div></div>
+
+<h3 id="watchos">watchos</h3>
+
+<p>Provides support for specifying watchOS attributes.</p>
+
+<h4 id="examples-53">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spec.watchos.source\*files = 'Classes/watchos/\*\*/\_.{h,m}'
+</code></pre></div></div>
+
+  </section>
+</article>
+
+<section class="read-more">
+    
+  <div class="read-more-item">
+    <span class="read-more-item-dim">下一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2019/04/Podfile%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/" title="link to Podfile语法参考">Podfile语法参考</a>
+    </h2>
+    <div class="post-list__meta">
+      <time
+        datetime="2019-04-15 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2019-04-15</time
+      >
+    </div>
+  </div>
+  
+</section>
+
+<!-- <section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2019/04/Podspec%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/";
+        this.page.identifier = "/2019/04/Podspec%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/";
+    };
+
+    var disqus_shortname = 'vno-jekyll';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+ -->
+
+            <section class="footer">
+    <footer>
+        <span class="footer__copyright">本站由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-04-16 生成。</span>
+        <span class="footer__copyright">  </span>
+        <span class="footer__copyright">本站由 <a href="https://ucself.cn">@ucself</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2019</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>

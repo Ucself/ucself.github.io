@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Podfile语法参考</title>
+  <meta name="description" content="Podfile语法参考">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Podfile语法参考">
+  <meta name="twitter:description" content="Podfile语法参考">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Podfile语法参考">
+  <meta property="og:description" content="Podfile语法参考">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2019/04/Podfile%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/">
+  <link rel="alternate" type="application/rss+xml" title="Ucself" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header
+  class="panel-cover panel-cover--collapsed"
+  style="background-image: url('/assets/images/background-cover.jpg')"
+>
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+        <a
+          href="/#blog"
+          title="前往 Ucself 的主页"
+          class="blog-button"
+          ><img
+            src="/assets/images/avatar.jpg"
+            width="80"
+            alt="Ucself logo"
+            class="panel-cover__logo logo"
+        /></a>
+        <h1 class="panel-cover__title panel-title">
+          <a
+            href="/#blog"
+            title="link to homepage for Ucself"
+            class="blog-button"
+            >Ucself</a
+          >
+        </h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">为人者，有大度成大器矣!</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是ucself，一名大前端开发工程师。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        
+        <p class="panel-cover__description">生活需要总结，记录下自己学习的点滴，在此搭建自我知识体系。</p>
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item">
+                  <a
+                    href="/#blog"
+                    title="Visit blog"
+                    class="blog-button"
+                    >博客</a
+                  >
+                </li>
+                 
+                <li class="navigation__item">
+                  <a href="/pages/git" title="Git">Git</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/cocoapods" title="cocoapods">cocoapods</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/archive" title="归档">归档</a>
+                </li>
+                 
+              </ul>
+            </nav>
+          </div>
+
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="#"
+        title="添加 lbj147123 的微信"
+      >
+        <i class="social fa fa-weixin"></i>
+        <span class="label">Weixin</span>
+      </a>
+    </li>
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="http://weibo.com/p/1005052165916834"
+        title="@p/1005052165916834 的微博"
+        target="_blank"
+      >
+        <i class="social fa fa-weibo"></i>
+        <span class="label">Weibo</span>
+      </a>
+    </li>
+     
+    <!-- Github -->
+    <li class="navigation__item">
+      <a
+        href="https://github.com/Ucself"
+        title="@Ucself 的 Github"
+        target="_blank"
+      >
+        <i class="social fa fa-github"></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+      
+
+    <!-- RSS -->
+    <li class="navigation__item">
+      <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+        <i class="social fa fa-rss"></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+
+    
+    <!-- Email -->
+    <li class="navigation__item">
+      <a href="mailto:lbj147123@163.com" title="Contact me">
+        <i class="social fa fa-envelope"></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article
+  class="post-container post-container--single"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header">
+    <div class="post-meta">
+      <time
+        datetime="2019-04-15 00:00:00 +0800"
+        itemprop="datePublished"
+        class="post-meta__date date"
+        >2019-04-15</time
+      >
+      &#8226;
+      <span class="post-meta__tags tags">cocoapods</span>
+    </div>
+    <h1 class="post-title">Podfile语法参考</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="目录">目录</h2>
+
+<!-- TOC -->
+
+<ul>
+  <li><a href="#目录">目录</a></li>
+  <li><a href="#简介">简介</a></li>
+  <li><a href="#podfile">Podfile</a></li>
+  <li><a href="#root-options">Root Options</a>
+    <ul>
+      <li><a href="#install">install!</a>
+        <ul>
+          <li><a href="#examples">Examples:</a></li>
+          <li><a href="#supported-keys">Supported Keys:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#dependencies">Dependencies</a>
+    <ul>
+      <li><a href="#pod">pod</a>
+        <ul>
+          <li><a href="#build-configurations">Build configurations</a></li>
+          <li><a href="#modular-headers">Modular Headers</a></li>
+          <li><a href="#source">Source</a></li>
+          <li><a href="#subspecs">Subspecs</a></li>
+          <li><a href="#test-specs">Test Specs</a></li>
+          <li><a href="#using-the-files-from-a-local-path">Using the files from a local path.</a></li>
+          <li><a href="#from-a-podspec-in-the-root-of-a-library-repository">From a podspec in the root of a library repository.</a></li>
+          <li><a href="#from-a-podspec-outside-a-spec-repository-for-a-library-without-podspec">From a podspec outside a spec repository, for a library without podspec.</a></li>
+        </ul>
+      </li>
+      <li><a href="#podspec">podspec</a>
+        <ul>
+          <li><a href="#parameters">Parameters</a></li>
+          <li><a href="#examples-1">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#target">target</a>
+        <ul>
+          <li><a href="#parameters-1">Parameters</a></li>
+          <li><a href="#examples-2">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#script_phase">script_phase</a>
+        <ul>
+          <li><a href="#parameters-2">Parameters</a></li>
+          <li><a href="#examples-3">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#abstract_target">abstract_target</a>
+        <ul>
+          <li><a href="#parameters-3">Parameters</a></li>
+          <li><a href="#examples-4">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#abstract">abstract!</a></li>
+      <li><a href="#inherit">inherit!</a>
+        <ul>
+          <li><a href="#parameters-4">Parameters</a></li>
+          <li><a href="#examples-5">Examples:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#target-configuration">Target configuration</a>
+    <ul>
+      <li><a href="#platform">platform</a>
+        <ul>
+          <li><a href="#parameters-5">Parameters</a></li>
+          <li><a href="#examples-6">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#project">project</a>
+        <ul>
+          <li><a href="#parameters-6">Parameters</a></li>
+          <li><a href="#examples-7">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#xcodeproj">xcodeproj</a></li>
+      <li><a href="#link_with">link_with</a></li>
+      <li><a href="#inhibit_all_warnings">inhibit_all_warnings!</a></li>
+      <li><a href="#use_modular_headers">use_modular_headers!</a></li>
+      <li><a href="#use_frameworks">use_frameworks!</a></li>
+    </ul>
+  </li>
+  <li><a href="#workspace">Workspace</a>
+    <ul>
+      <li><a href="#workspace">workspace</a>
+        <ul>
+          <li><a href="#parameters-7">Parameters</a></li>
+          <li><a href="#examples-8">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#generate_bridge_support">generate_bridge_support!</a></li>
+      <li><a href="#set_arc_compatibility_flag">set_arc_compatibility_flag!</a></li>
+    </ul>
+  </li>
+  <li><a href="#sources">Sources</a>
+    <ul>
+      <li><a href="#source">source</a>
+        <ul>
+          <li><a href="#parameters-8">Parameters</a></li>
+          <li><a href="#examples-9">Examples:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#hooks">Hooks</a>
+    <ul>
+      <li><a href="#plugin">plugin</a>
+        <ul>
+          <li><a href="#parameters-9">Parameters</a></li>
+          <li><a href="#examples-10">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pre_install">pre_install</a>
+        <ul>
+          <li><a href="#examples-11">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#post_install">post_install</a>
+        <ul>
+          <li><a href="#examples-12">Examples:</a></li>
+        </ul>
+      </li>
+      <li><a href="#supports_swift_versions">supports_swift_versions</a>
+        <ul>
+          <li><a href="#parameters-10">Parameters</a></li>
+          <li><a href="#examples-13">Examples:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h2 id="简介">简介</h2>
+
+<p>本文翻译自官方的 <a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Syntax Reference</a>，若翻译中有什么异议，欢迎留言指正。</p>
+
+<p><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile</a></p>
+
+<p><a href="https://guides.cocoapods.org/syntax/podspec.html">Podspec</a></p>
+
+<p><a href="https://guides.cocoapods.org/terminal/commands.html">Command Line API</a></p>
+
+<h2 id="podfile">Podfile</h2>
+
+<p>The Podfile is a specification that describes the dependencies of the targets of one or more Xcode projects.</p>
+
+<p>A Podfile can be very simple:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target 'MyApp'
+pod 'AFNetworking', '~&gt; 1.0'
+</code></pre></div></div>
+
+<p>An example of a more complex Podfile can be:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>platform :ios, '9.0'
+inhibit_all_warnings!
+
+target 'MyApp' do
+  pod 'ObjectiveSugar', '~&gt; 0.5'
+
+  target 'MyAppTests' do
+    inherit! :search_paths
+    pod 'OCMock', '~&gt; 2.0.1'
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    puts "#{target.name}"
+  end
+end
+</code></pre></div></div>
+
+<h2 id="root-options">Root Options</h2>
+
+<p>Configuration that applies to the Podfile as a whole.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">install!</code> declares the installation method and options to be used during installation.</li>
+</ul>
+
+<h3 id="install">install!</h3>
+
+<p>Specifies the installation method and options to be used when CocoaPods installs this Podfile.</p>
+
+<p>The first parameter indicates the installation method to use; next parameters indicate installation options.</p>
+
+<p>For now the only accepted installation method is ‘cocoapods’, so you’ll always use this value for the first parameter; but more installation methods might be available in future versions.</p>
+
+<h4 id="examples">Examples:</h4>
+
+<p>Specifying custom CocoaPods installation options</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install! 'cocoapods',
+         :deterministic_uuids =&gt; false,
+         :integrate_targets =&gt; false
+</code></pre></div></div>
+
+<h4 id="supported-keys">Supported Keys:</h4>
+
+<p><code class="highlighter-rouge">:clean</code></p>
+
+<p>Whether to clean the sources of the pods during installation</p>
+
+<p>Cleaning removes any files not used by the pod as specified by the podspec and the platforms that the project supports</p>
+
+<p>this option defaults to true.</p>
+
+<p><code class="highlighter-rouge">:deduplicate_targets</code></p>
+
+<p>Whether to deduplicate pod targets</p>
+
+<p>Target deduplication adds suffixes to pod targets for the cases where a pod is included in multiple targets that have different requirements. For example, a pod named ‘MyPod’ with a subspec ‘SubA’ that is included in two targets as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target 'MyTargetA' do
+  pod 'MyPod/SubA'
+end
+
+target 'MyTargetB' do
+  pod 'MyPod'
+end
+</code></pre></div></div>
+
+<p>will result in two Pod targets: <code class="highlighter-rouge">MyPod</code> and <code class="highlighter-rouge">MyPod-SubA</code></p>
+
+<p>this option defaults to true.</p>
+
+<p><code class="highlighter-rouge">:deterministic_uuids</code></p>
+
+<p>Whether to generate deterministic UUIDs when creating the Pods project</p>
+
+<p>this option defaults to true.</p>
+
+<p><code class="highlighter-rouge">:integrate_targets</code></p>
+
+<p>Whether to integrate the installed pods into the user project</p>
+
+<p>If set to false, Pods will be downloaded and installed to the Pods/ directory but they will not be integrated into your project.</p>
+
+<p>this option defaults to true.</p>
+
+<p><code class="highlighter-rouge">:lock_pod_sources</code></p>
+
+<p>Whether to lock the source files of pods. Xcode will prompt to unlock the files when attempting to modify their contents</p>
+
+<p>There is a performance penalty to locking the pods during installation. If this is significantly impacting the duration of pod install for your project, you can try setting this to false</p>
+
+<p>this option defaults to true.</p>
+
+<p><code class="highlighter-rouge">:warn_for_multiple_pod_sources</code></p>
+
+<p>Whether to emit a warning when multiple sources contain a Pod with the same name and version</p>
+
+<p>this option defaults to true.</p>
+
+<p><code class="highlighter-rouge">:share_schemes_for_development_pods</code></p>
+
+<p>Whether to share Xcode schemes for development pods.</p>
+
+<p>Schemes for development pods are created automatically but are not shared by default.</p>
+
+<p>this option defaults to false.</p>
+
+<p><code class="highlighter-rouge">:disable_input_output_paths</code></p>
+
+<p>Whether to disable the input &amp; output paths of the CocoaPods script phases (Copy Frameworks &amp; Copy Resources)</p>
+
+<p>this option defaults to false.</p>
+
+<p><code class="highlighter-rouge">:preserve_pod_file_structure</code></p>
+
+<p>Whether to preserve the file structure of all Pods, including externally sourced pods.</p>
+
+<p>By default, the file structure of Pod sources is preserved only for development pods. Setting <code class="highlighter-rouge">:preserve_pod_file_structure</code> to <code class="highlighter-rouge">true</code> will always preserve the file structure.</p>
+
+<p>this option defaults to false.</p>
+
+<p><code class="highlighter-rouge">:generate_multiple_pod_projects</code></p>
+
+<p>Whether to generate a project per pod target. Instead of creating 1 Pods.xcodeproj, this option will generate a project for every pod target that will be nested under the Pods.xcodeproj.</p>
+
+<p>this option defaults to false.</p>
+
+<p><code class="highlighter-rouge">:incremental_installation</code></p>
+
+<p>Whether to enable only regenerating targets and their associate projects that have changed since the previous installation.</p>
+
+<p>this option defaults to false.</p>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<p>The Podfile specifies the dependencies of each user target.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">pod</code> is the way to declare a specific dependency.</li>
+  <li><code class="highlighter-rouge">podspec</code> provides an easy API for the creation of podspecs.</li>
+  <li><code class="highlighter-rouge">target</code> is how you scope your dependencies to specific targets in your Xcode projects.</li>
+</ul>
+
+<h3 id="pod">pod</h3>
+
+<p>Specifies a dependency of the project.</p>
+
+<p>A dependency requirement is defined by the name of the Pod and optionally a list of version requirements.</p>
+
+<p>When starting out with a project it is likely that you will want to use the latest version of a Pod. If this is the case, simply omit the version requirements.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'SSZipArchive'
+</code></pre></div></div>
+
+<p>Later on in the project you may want to freeze to a specific version of a Pod, in which case you can specify that version number.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'Objection', '0.9'
+</code></pre></div></div>
+
+<p>Besides no version, or a specific one, it is also possible to use operators:</p>
+
+<ul>
+  <li>
+    <p>= 0.1 Version 0.1.</p>
+  </li>
+  <li><code class="highlighter-rouge">&gt; 0.1</code> Any version higher than 0.1.</li>
+  <li><code class="highlighter-rouge">&gt; = 0.1</code> Version 0.1 and any higher version.</li>
+  <li><code class="highlighter-rouge">&gt; &lt; 0.1</code> Any version lower than 0.1.</li>
+  <li><code class="highlighter-rouge">&gt; &lt;= 0.1</code> Version 0.1 and any lower version.</li>
+  <li><code class="highlighter-rouge">&gt; ~&gt; 0.1.2</code> Version 0.1.2 and the versions up to 0.2, not including 0.2. This operator works based on the last component that you specify in your version requirement. The example is equal to <code class="highlighter-rouge">&gt;= 0.1.2</code> combined with <code class="highlighter-rouge">&lt; 0.2.0</code> and will always match the latest known version matching your requirements.</li>
+  <li><code class="highlighter-rouge">&gt; ~&gt; 0.1.3-beta.0</code> Beta and release versions for 0.1.3, release versions up to 0.2 excluding 0.2. Components separated by a dash (-) will not be considered for the version requirement.</li>
+</ul>
+
+<p>A list of version requirements can be specified for even more fine grained control.</p>
+
+<p>For more information, regarding versioning policy, see:</p>
+
+<ul>
+  <li>Semantic Versioning</li>
+  <li>RubyGems Versioning Policies</li>
+</ul>
+
+<h4 id="build-configurations">Build configurations</h4>
+
+<p>By default dependencies are installed in all the build configurations of the target. For debug purposes or for other reasons, they can be only enabled on a list of build configurations.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'PonyDebugger', :configurations =&gt; ['Debug', 'Beta']
+</code></pre></div></div>
+
+<p>Alternatively, you can specify to have it included on a single build configuration.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'PonyDebugger', :configuration =&gt; 'Debug'
+</code></pre></div></div>
+
+<p>Note that transitive dependencies are included in all configurations and you have to manually specify build configurations for them as well in case this is not desired.</p>
+
+<h4 id="modular-headers">Modular Headers</h4>
+
+<p>If you would like to use modular headers per Pod you can use the following syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'SSZipArchive', :modular_headers =&gt; true
+</code></pre></div></div>
+
+<p>Additionally, when you use the <code class="highlighter-rouge">use_modular_headers!</code> attribute, you can exclude a particular Pod from modular headers using the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'SSZipArchive', :modular_headers =&gt; false
+</code></pre></div></div>
+
+<h4 id="source">Source</h4>
+
+<p>By default the sources specified at the global level are searched in the order they are specified for a dependency match. This behaviour can be altered for a specific dependency by specifying the source with the dependency:</p>
+
+<p>pod ‘PonyDebugger’, :source =&gt; ‘https://github.com/CocoaPods/Specs.git’
+In this case only the specified source will be searched for the dependency and any global sources ignored.</p>
+
+<h4 id="subspecs">Subspecs</h4>
+
+<p>When installing a Pod via its name, it will install all of the default subspecs defined in the podspec.</p>
+
+<p>You may install a specific subspec using the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'QueryKit/Attribute'
+</code></pre></div></div>
+
+<p>You may specify a collection of subspecs to be installed as follows:</p>
+
+<p>pod ‘QueryKit’, :subspecs =&gt; [‘Attribute’, ‘QuerySet’]</p>
+
+<h4 id="test-specs">Test Specs</h4>
+
+<p>Test specs can be optionally included via the <code class="highlighter-rouge">:testspecs</code> option. By default, none of a Pod’s test specs are included.</p>
+
+<p>You may specify a list of test spec names to install using the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'AFNetworking', :testspecs =&gt; ['UnitTests', 'SomeOtherTests']
+</code></pre></div></div>
+
+<p>The values provided to <code class="highlighter-rouge">:testspecs</code> correspond to the name provided to the <code class="highlighter-rouge">test_spec</code> DSL attribute in a Podspec.</p>
+
+<p>Dependencies can be obtained also from external sources.</p>
+
+<h4 id="using-the-files-from-a-local-path">Using the files from a local path.</h4>
+
+<p>If you would like to use develop a Pod in tandem with its client project you can use the path option.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'AFNetworking', :path =&gt; '~/Documents/AFNetworking'
+</code></pre></div></div>
+
+<p>Using this option CocoaPods will assume the given folder to be the root of the Pod and will link the files directly from there in the Pods project. This means that your edits will persist to CocoaPods installations.</p>
+
+<p>The referenced folder can be a checkout of your your favourite SCM or even a git submodule of the current repository.</p>
+
+<p>Note that the <code class="highlighter-rouge">podspec</code> of the Pod file is expected to be in the folder.</p>
+
+<h4 id="from-a-podspec-in-the-root-of-a-library-repository">From a podspec in the root of a library repository.</h4>
+
+<p>Sometimes you may want to use the bleeding edge version of a Pod. Or a specific revision. If this is the case, you can specify that with your pod declaration.</p>
+
+<p>To use the <code class="highlighter-rouge">master</code> branch of the repository:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'AFNetworking', :git =&gt; 'https://github.com/gowalla/AFNetworking.git'
+</code></pre></div></div>
+
+<p>To use a different branch of the repository:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'AFNetworking', :git =&gt; 'https://github.com/gowalla/AFNetworking.git', :branch =&gt; 'dev'
+</code></pre></div></div>
+
+<p>To use a tag of the repository:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'AFNetworking', :git =&gt; 'https://github.com/gowalla/AFNetworking.git', :tag =&gt; '0.7.0'
+</code></pre></div></div>
+
+<p>Or specify a commit:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'AFNetworking', :git =&gt; 'https://github.com/gowalla/AFNetworking.git', :commit =&gt; '082f8319af'
+</code></pre></div></div>
+
+<p>It is important to note, though, that this means that the version will have to satisfy any other dependencies on the Pod by other Pods.</p>
+
+<p>The <code class="highlighter-rouge">podspec</code> file is expected to be in the root of the repository, if this library does not have a <code class="highlighter-rouge">podspec</code> file in its repository yet, you will have to use one of the approaches outlined in the sections below.</p>
+
+<h4 id="from-a-podspec-outside-a-spec-repository-for-a-library-without-podspec">From a podspec outside a spec repository, for a library without podspec.</h4>
+
+<p>If a podspec is available from another source outside of the library’s repository. Consider, for instance, a podspec available via HTTP:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'JSONKit', :podspec =&gt; 'https://example.com/JSONKit.podspec'
+</code></pre></div></div>
+
+<h3 id="podspec">podspec</h3>
+
+<p>Use just the dependencies of a Pod defined in the given podspec file. If no arguments are passed the first podspec in the root of the Podfile is used. It is intended to be used by the project of a library. Note: this does not include the sources derived from the podspec just the CocoaPods infrastructure.</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<p>options Hash {Symbol=&gt;String}</p>
+
+<p>The path where to load the {Specification}. If not provided the first podspec in the directory of the Podfile is used.</p>
+
+<h4 id="examples-1">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podspec
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podspec :name =&gt; 'QuickDialog'
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>podspec :path =&gt; '/Documents/PrettyKit/PrettyKit.podspec'
+</code></pre></div></div>
+
+<h3 id="target">target</h3>
+
+<p>Defines a CocoaPods target and scopes dependencies defined within the given block. A target should correspond to an Xcode target. By default the target includes the dependencies defined outside of the block, unless instructed not to inherit! them.</p>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<p>name Symbol, String</p>
+
+<p>The name of the target.</p>
+
+<h4 id="examples-2">Examples:</h4>
+
+<p>Defining a target</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target 'ZipApp' do
+  pod 'SSZipArchive'
+end
+</code></pre></div></div>
+
+<p>Defining a test target accessing SSZipArchive pod from its parent</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target 'ZipApp' do
+  pod 'SSZipArchive'
+
+  target 'ZipAppTests' do
+    inherit! :search_paths
+    pod 'Nimble'
+  end
+end
+</code></pre></div></div>
+
+<p>Defining a target applies Pods to multiple targets via its parent target</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target 'ShowsApp' do
+  pod 'ShowsKit'
+
+  # Has its own copy of ShowsKit + ShowTVAuth
+  target 'ShowsTV' do
+    pod 'ShowTVAuth'
+  end
+
+  # Has its own copy of Specta + Expecta
+  # and has access to ShowsKit via the app
+  # that the test target is bundled into
+
+  target 'ShowsTests' do
+    inherit! :search_paths
+    pod 'Specta'
+    pod 'Expecta'
+  end
+end
+</code></pre></div></div>
+
+<h3 id="script_phase">script_phase</h3>
+
+<p>Adds a script phase to be integrated with this target. A script phase can be used to execute an arbitrary script that can use all Xcode environment variables during execution. A target may include multiple script phases which they will be added in the order they were declared. Deleting a script phase will effectively remove it from the target if it has been added previously.</p>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<p>options Hash</p>
+
+<p>The options for this script phase.</p>
+
+<h4 id="examples-3">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>script_phase :name =&gt; 'HelloWorldScript', :script =&gt; 'echo "Hello World"'
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>script_phase :name =&gt; 'HelloWorldScript', :script =&gt; 'puts "Hello World"', :shell_path =&gt; '/usr/bin/ruby'
+</code></pre></div></div>
+
+<h3 id="abstract_target">abstract_target</h3>
+
+<p>Defines a new abstract target that can be used for convenient target dependency inheritance.</p>
+
+<h4 id="parameters-3">Parameters</h4>
+
+<p>name Symbol, String
+The name of the target.</p>
+
+<h4 id="examples-4">Examples:</h4>
+
+<p>Defining an abstract target</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abstract_target 'Networking' do
+  pod 'AlamoFire'
+
+  target 'Networking App 1'
+  target 'Networking App 2'
+end
+</code></pre></div></div>
+
+<p>Defining an abstract_target wrapping Pods to multiple targets</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Note: There are no targets called "Shows" in any of this workspace's Xcode projects
+abstract_target 'Shows' do
+  pod 'ShowsKit'
+
+  # The target ShowsiOS has its own copy of ShowsKit (inherited) + ShowWebAuth (added here)
+  target 'ShowsiOS' do
+    pod 'ShowWebAuth'
+  end
+
+  # The target ShowsTV has its own copy of ShowsKit (inherited) + ShowTVAuth (added here)
+  target 'ShowsTV' do
+    pod 'ShowTVAuth'
+  end
+
+  # Our tests target has its own copy of
+  # our testing frameworks, and has access
+  # to ShowsKit as well because it is
+  # a child of the abstract target 'Shows'
+
+  target 'ShowsTests' do
+    inherit! :search_paths
+    pod 'Specta'
+    pod 'Expecta'
+  end
+end
+</code></pre></div></div>
+
+<h3 id="abstract">abstract!</h3>
+
+<p>Denotes that the current target is abstract, and thus will not directly link against an Xcode target.</p>
+
+<h3 id="inherit">inherit!</h3>
+
+<p>Sets the inheritance mode for the current target.</p>
+
+<h4 id="parameters-4">Parameters</h4>
+
+<p>inheritance Symbol</p>
+
+<p>The inheritance mode to set.</p>
+
+<p>Available Modes: + <code class="highlighter-rouge">:complete</code> The target inherits all behaviour from the parent. + <code class="highlighter-rouge">:none</code> The target inherits none of the behaviour from the parent. + <code class="highlighter-rouge">:search_paths</code> The target inherits the search paths of the parent only.</p>
+
+<h4 id="examples-5">Examples:</h4>
+
+<p>Inheriting only search paths</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target 'App' do
+  target 'AppTests' do
+    inherit! :search_paths
+  end
+end
+</code></pre></div></div>
+
+<h2 id="target-configuration">Target configuration</h2>
+
+<p>These settings are used to control the CocoaPods generated project.</p>
+
+<p>This starts out simply with stating what platform you are working on. xcodeproj allows you to state specifically which project to link with.</p>
+
+<h3 id="platform">platform</h3>
+
+<p>Specifies the platform for which a static library should be built.</p>
+
+<p>CocoaPods provides a default deployment target if one is not specified. The current default values are 4.3 for iOS, 10.6 for OS X, 9.0 for tvOS and 2.0 for watchOS.</p>
+
+<p>If the deployment target requires it (iOS &lt; 4.3), armv6 architecture will be added to ARCHS.</p>
+
+<h4 id="parameters-5">Parameters</h4>
+
+<p>name Symbol
+The name of platform, can be either :osx for OS X, :ios for iOS, :tvos for tvOS, or :watchos for watchOS.</p>
+
+<p>target String, Version
+The optional deployment. If not provided a default value according to the platform name will be assigned.</p>
+
+<h4 id="examples-6">Examples:</h4>
+
+<p>Specifying the platform</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>platform :ios, '4.0'
+platform :ios
+</code></pre></div></div>
+
+<h3 id="project">project</h3>
+
+<p>Specifies the Xcode project that contains the target that the Pods library should be linked with.</p>
+
+<p>If none of the target definitions specify an explicit project and there is only one project in the same directory as the Podfile then that project will be used.</p>
+
+<p>It is possible also to specify whether the build settings of your custom build configurations should be modelled after the release or the debug presets. To do so you need to specify a hash where the name of each build configuration is associated to either :release or :debug.</p>
+
+<h4 id="parameters-6">Parameters</h4>
+
+<p>path String</p>
+
+<p>The path of the project to link with</p>
+
+<p>build_configurations Hash{String =&gt; symbol}
+A hash where the keys are the name of the build configurations in your Xcode project and the values are Symbols that specify if the configuration should be based on the <code class="highlighter-rouge">:debug</code> or <code class="highlighter-rouge">:release</code> configuration. If no explicit mapping is specified for a configuration in your project, it will default to <code class="highlighter-rouge">:release</code>.</p>
+
+<h4 id="examples-7">Examples:</h4>
+
+<p>Specifying the user project</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># This Target can be found in a Xcode project called `FastGPS`
+target 'MyGPSApp' do
+  project 'FastGPS'
+  ...
+end
+
+# Same Podfile, multiple Xcodeprojects
+target 'MyNotesApp' do
+  project 'FastNotes'
+  ...
+end
+</code></pre></div></div>
+
+<p>Using custom build configurations</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>project 'TestProject', 'Mac App Store' =&gt; :release, 'Test' =&gt; :debug
+</code></pre></div></div>
+
+<h3 id="xcodeproj">xcodeproj</h3>
+
+<p>xcodeproj is deprecated in 1.0 and has been renamed to project. For pre-1.0 versions use xcodeproj.</p>
+
+<h3 id="link_with">link_with</h3>
+
+<p>link_with is deprecated in 1.0 in favour of abstract_target and target inheritance instead.</p>
+
+<h3 id="inhibit_all_warnings">inhibit_all_warnings!</h3>
+
+<p>Inhibits all the warnings from the CocoaPods libraries.</p>
+
+<p>This attribute is inherited by child target definitions.</p>
+
+<p>If you would like to inhibit warnings per Pod you can use the following syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'SSZipArchive', :inhibit_warnings =&gt; true
+</code></pre></div></div>
+
+<p>Additionally, when you use inhibit_all_warnings! attribute, you can exclude a particular Pod from being inhibited using the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'SSZipArchive', :inhibit_warnings =&gt; false
+</code></pre></div></div>
+
+<h3 id="use_modular_headers">use_modular_headers!</h3>
+
+<p>Use modular headers for all CocoaPods static libraries.</p>
+
+<p>This attribute is inherited by child target definitions.</p>
+
+<p>If you would like to use modular headers per Pod you can use the following syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'SSZipArchive', :modular_headers =&gt; true
+</code></pre></div></div>
+
+<p>Additionally, when you use the use_modular_headers! attribute, you can exclude a particular Pod from modular headers using the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'SSZipArchive', :modular_headers =&gt; false
+</code></pre></div></div>
+
+<h3 id="use_frameworks">use_frameworks!</h3>
+
+<p>Use frameworks instead of static libraries for Pods.</p>
+
+<p>This attribute is inherited by child target definitions.</p>
+
+<h2 id="workspace">Workspace</h2>
+
+<p>This group list the options to configure workspace and to set global settings.</p>
+
+<h3 id="workspace-1">workspace</h3>
+
+<p>Specifies the Xcode workspace that should contain all the projects.</p>
+
+<p>If no explicit Xcode workspace is specified and only one project exists in the same directory as the Podfile, then the name of that project is used as the workspace’s name.</p>
+
+<h4 id="parameters-7">Parameters</h4>
+
+<p>path String</p>
+
+<p>Path of the workspace.</p>
+
+<h4 id="examples-8">Examples:</h4>
+
+<p>Specifying a workspace</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>workspace 'MyWorkspace'
+</code></pre></div></div>
+
+<h3 id="generate_bridge_support">generate_bridge_support!</h3>
+
+<p>Specifies that a BridgeSupport metadata document should be generated from the headers of all installed Pods.</p>
+
+<p>This is for scripting languages such as MacRuby, Nu, and JSCocoa, which use it to bridge types, functions, etc.</p>
+
+<h3 id="set_arc_compatibility_flag">set_arc_compatibility_flag!</h3>
+
+<p>Specifies that the -fobjc-arc flag should be added to the OTHER_LD_FLAGS.</p>
+
+<p>This is used as a workaround for a compiler bug with non-ARC projects (see #142). This was originally done automatically but libtool as of Xcode 4.3.2 no longer seems to support the -fobjc-arc flag. Therefore it now has to be enabled explicitly using this method.</p>
+
+<p>Support for this method might be dropped in CocoaPods 1.0.</p>
+
+<h2 id="sources">Sources</h2>
+
+<p>The Podfile retrieves specs from a given list of sources (repositories).</p>
+
+<p>Sources are global and they are not stored per target definition.</p>
+
+<h3 id="source-1">source</h3>
+
+<p>Specifies the location of specs</p>
+
+<p>Use this method to specify sources. The order of the sources is relevant. CocoaPods will use the highest version of a Pod of the first source which includes the Pod (regardless whether other sources have a higher version).</p>
+
+<p>The official CocoaPods source is implicit. Once you specify another source, then it will need to be included.</p>
+
+<h4 id="parameters-8">Parameters</h4>
+
+<p>source String
+The URL of a specs repository.</p>
+
+<h4 id="examples-9">Examples:</h4>
+
+<p>Specifying to first use the Artsy repository and then the CocoaPods Master Repository</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source 'https://github.com/artsy/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+</code></pre></div></div>
+
+<h2 id="hooks">Hooks</h2>
+
+<p>The Podfile provides hooks that will be called during the installation process.</p>
+
+<p>Hooks are global and not stored per target definition.</p>
+
+<h3 id="plugin">plugin</h3>
+
+<p>Specifies the plugins that should be used during installation.</p>
+
+<p>Use this method to specify a plugin that should be used during installation, along with the options that should be passed to the plugin when it is invoked.</p>
+
+<h4 id="parameters-9">Parameters</h4>
+
+<p>name String
+The name of the plugin.</p>
+
+<p>options Hash
+The optional options that should be passed to the plugin when its hooks are invoked.</p>
+
+<h4 id="examples-10">Examples:</h4>
+
+<p>Specifying to use the <code class="highlighter-rouge">slather</code> and <code class="highlighter-rouge">cocoapods-keys</code> plugins.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>plugin 'cocoapods-keys', :keyring =&gt; 'Eidolon'
+plugin 'slather'
+</code></pre></div></div>
+
+<h3 id="pre_install">pre_install</h3>
+
+<p>This hook allows you to make any changes to the Pods after they have been downloaded but before they are installed.</p>
+
+<p>It receives the <code class="highlighter-rouge">Pod::Installer</code> as its only argument.</p>
+
+<h4 id="examples-11">Examples:</h4>
+
+<p>Defining a pre-install hook in a Podfile.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pre_install do |installer|
+  # Do something fancy!
+end
+</code></pre></div></div>
+
+<h3 id="post_install">post_install</h3>
+
+<p>This hook allows you to make any last changes to the generated Xcode project before it is written to disk, or any other tasks you might want to perform.</p>
+
+<p>It receives the <code class="highlighter-rouge">Pod::Installer</code> as its only argument.</p>
+
+<h4 id="examples-12">Examples:</h4>
+
+<p>Customising the build settings of all targets</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['GCC_ENABLE_OBJC_GC'] = 'supported'
+    end
+  end
+end
+</code></pre></div></div>
+
+<h3 id="supports_swift_versions">supports_swift_versions</h3>
+
+<p>Specifies the Swift version requirements this target definition supports.</p>
+
+<p>Note These requirements are inherited from the parent, if specified and if none are specified at the root level then all versions are considered to be supported.</p>
+
+<h4 id="parameters-10">Parameters</h4>
+
+<p>requirementsString, Version, Array, Array
+The set of requirements this target supports.</p>
+
+<h4 id="examples-13">Examples:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target 'MyApp' do
+  supports_swift_versions '&gt;= 3.0', '&lt; 4.0'
+  pod 'AFNetworking', '~&gt; 1.0'
+end
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>supports_swift_versions '&gt;= 3.0', '&lt; 4.0'
+
+target 'MyApp' do
+  pod 'AFNetworking', '~&gt; 1.0'
+end
+
+target 'ZipApp' do
+  pod 'SSZipArchive'
+end
+</code></pre></div></div>
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+  <div class="read-more-item">
+    <span class="read-more-item-dim">上一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2019/04/Podspec%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/" title="link to Podspec 语法参考">Podspec 语法参考</a>
+    </h2>
+
+    <div class="post-list__meta">
+      <time
+        datetime="2019-04-16 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2019-04-16</time
+      >
+    </div>
+  </div>
+    
+  <div class="read-more-item">
+    <span class="read-more-item-dim">下一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2019/04/MAC%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/" title="link to MAC系统命令大全（持续更新）">MAC系统命令大全（持续更新）</a>
+    </h2>
+    <div class="post-list__meta">
+      <time
+        datetime="2019-04-03 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2019-04-03</time
+      >
+    </div>
+  </div>
+  
+</section>
+
+<!-- <section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2019/04/Podfile%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/";
+        this.page.identifier = "/2019/04/Podfile%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/";
+    };
+
+    var disqus_shortname = 'vno-jekyll';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+ -->
+
+            <section class="footer">
+    <footer>
+        <span class="footer__copyright">本站由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-04-16 生成。</span>
+        <span class="footer__copyright">  </span>
+        <span class="footer__copyright">本站由 <a href="https://ucself.cn">@ucself</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2019</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Git 3、分支</title>
+  <meta name="description" content="Git 3、分支">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Git 3、分支">
+  <meta name="twitter:description" content="Git 3、分支">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Git 3、分支">
+  <meta property="og:description" content="Git 3、分支">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2016/11/Git-3-%E5%88%86%E6%94%AF/">
+  <link rel="alternate" type="application/rss+xml" title="Ucself" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header
+  class="panel-cover panel-cover--collapsed"
+  style="background-image: url('/assets/images/background-cover.jpg')"
+>
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+        <a
+          href="/#blog"
+          title="前往 Ucself 的主页"
+          class="blog-button"
+          ><img
+            src="/assets/images/avatar.jpg"
+            width="80"
+            alt="Ucself logo"
+            class="panel-cover__logo logo"
+        /></a>
+        <h1 class="panel-cover__title panel-title">
+          <a
+            href="/#blog"
+            title="link to homepage for Ucself"
+            class="blog-button"
+            >Ucself</a
+          >
+        </h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">为人者，有大度成大器矣!</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是ucself，一名大前端开发工程师。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        
+        <p class="panel-cover__description">生活需要总结，记录下自己学习的点滴，在此搭建自我知识体系。</p>
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item">
+                  <a
+                    href="/#blog"
+                    title="Visit blog"
+                    class="blog-button"
+                    >博客</a
+                  >
+                </li>
+                 
+                <li class="navigation__item">
+                  <a href="/pages/git" title="Git">Git</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/cocoapods" title="cocoapods">cocoapods</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/archive" title="归档">归档</a>
+                </li>
+                 
+              </ul>
+            </nav>
+          </div>
+
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="#"
+        title="添加 lbj147123 的微信"
+      >
+        <i class="social fa fa-weixin"></i>
+        <span class="label">Weixin</span>
+      </a>
+    </li>
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="http://weibo.com/p/1005052165916834"
+        title="@p/1005052165916834 的微博"
+        target="_blank"
+      >
+        <i class="social fa fa-weibo"></i>
+        <span class="label">Weibo</span>
+      </a>
+    </li>
+     
+    <!-- Github -->
+    <li class="navigation__item">
+      <a
+        href="https://github.com/Ucself"
+        title="@Ucself 的 Github"
+        target="_blank"
+      >
+        <i class="social fa fa-github"></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+      
+
+    <!-- RSS -->
+    <li class="navigation__item">
+      <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+        <i class="social fa fa-rss"></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+
+    
+    <!-- Email -->
+    <li class="navigation__item">
+      <a href="mailto:lbj147123@163.com" title="Contact me">
+        <i class="social fa fa-envelope"></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article
+  class="post-container post-container--single"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header">
+    <div class="post-meta">
+      <time
+        datetime="2016-11-12 00:00:00 +0800"
+        itemprop="datePublished"
+        class="post-meta__date date"
+        >2016-11-12</time
+      >
+      &#8226;
+      <span class="post-meta__tags tags">git</span>
+    </div>
+    <h1 class="post-title">Git 3、分支</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="前言">前言</h2>
+
+<p>       在工作使用到很多常用工具，遇到问题百度/谷歌一下就知道怎么使用，日积月累了很多知识点和使用技能，但是没有整理成专题的知识体系，为了方便以后遇到问题或者空闲阅读的时候当字典查阅。就从这篇开始对 Git 知识体系进行连载。</p>
+
+<p><a href="https://progit.bootcss.com" title="阅读来自Pro Git">阅读来自 Pro Git</a></p>
+
+<h2 id="git-基础">Git 基础</h2>
+
+<p>       在学习完本章之后，你应该能够配置并初始化一个仓库（repository）、开始或停止跟踪（track）文件、暂存（stage）或提交（commit)更改。 本章也将向你演示如何配置 Git 来忽略指定的文件和文件模式、如何迅速而简单地撤销错误操作、如何浏览你的项目的历史版本以及不同提交（commits）间的差异、如何向你的远程仓库推送（push）以及如何从你的远程仓库拉取（pull）文件。</p>
+
+<h3 id="分支简介">分支简介</h3>
+
+<p>       在当前所在的提交对象上创建一个分支</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch testing
+</code></pre></div></div>
+
+<p>       分支切换</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout testing
+</code></pre></div></div>
+
+<h3 id="分支的新建与合并">分支的新建与合并</h3>
+
+<p>       分支创建与切换</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b iss53
+</code></pre></div></div>
+
+<p>       等同</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch iss53
+git checkout iss53
+</code></pre></div></div>
+
+<p>       分支的合并</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout master
+git merge iss53
+</code></pre></div></div>
+
+<p>       分支删除</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch -d iss53
+</code></pre></div></div>
+
+<h3 id="分支管理">分支管理</h3>
+
+<p>       当前所有分支</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch
+</code></pre></div></div>
+
+<p>       查看每一个分支的最后一次提交</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch -v
+</code></pre></div></div>
+
+<p>       查看哪些分支已经合并到当前分支</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch --merged
+</code></pre></div></div>
+
+<p>       查看所有包含未合并工作的分支</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch --no-merged
+</code></pre></div></div>
+
+<h3 id="远程分支">远程分支</h3>
+
+<p>       获得远程引用的分支完整列表</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git ls-remote
+</code></pre></div></div>
+
+<p>       远程分支的更多信息</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote show
+</code></pre></div></div>
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+  <div class="read-more-item">
+    <span class="read-more-item-dim">上一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2017/09/iOS-NSPredicate-%E8%B0%93%E8%AF%8D-%E8%AF%AD%E6%B3%95/" title="link to iOS NSPredicate（谓词）语法">iOS NSPredicate（谓词）语法</a>
+    </h2>
+
+    <div class="post-list__meta">
+      <time
+        datetime="2017-09-11 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2017-09-11</time
+      >
+    </div>
+  </div>
+    
+  <div class="read-more-item">
+    <span class="read-more-item-dim">下一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2016/11/Git-2-%E5%9F%BA%E7%A1%80/" title="link to Git 2、基础">Git 2、基础</a>
+    </h2>
+    <div class="post-list__meta">
+      <time
+        datetime="2016-11-10 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2016-11-10</time
+      >
+    </div>
+  </div>
+  
+</section>
+
+<!-- <section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2016/11/Git-3-%E5%88%86%E6%94%AF/";
+        this.page.identifier = "/2016/11/Git-3-%E5%88%86%E6%94%AF/";
+    };
+
+    var disqus_shortname = 'vno-jekyll';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+ -->
+
+            <section class="footer">
+    <footer>
+        <span class="footer__copyright">本站由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-04-16 生成。</span>
+        <span class="footer__copyright">  </span>
+        <span class="footer__copyright">本站由 <a href="https://ucself.cn">@ucself</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2019</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>
