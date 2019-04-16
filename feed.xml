@@ -3,11 +3,2189 @@
   <channel>
     <title>Ucself</title>
     <description>嗨，我是ucself，一名大前端开发工程师。</description>
-    <link>https://ucself.cn/</link>
-    <atom:link href="https://ucself.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 Apr 2019 17:49:15 +0800</pubDate>
-    <lastBuildDate>Wed, 03 Apr 2019 17:49:15 +0800</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 16 Apr 2019 16:51:56 +0800</pubDate>
+    <lastBuildDate>Tue, 16 Apr 2019 16:51:56 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Podspec 语法参考</title>
+        <description>&lt;h2 id=&quot;目录&quot;&gt;目录&lt;/h2&gt;
+
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#目录&quot;&gt;目录&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#简介&quot;&gt;简介&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#specification&quot;&gt;Specification&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#root-specification&quot;&gt;Root specification&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#name&quot;&gt;name&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#version&quot;&gt;version&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-1&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#swift_versions&quot;&gt;swift_versions&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-2&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#cocoapods_version&quot;&gt;cocoapods_version&lt;/a&gt; - &lt;a href=&quot;#examples-3&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#authors&quot;&gt;authors&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-4&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#social_media_url&quot;&gt;social_media_url&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-5&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#license&quot;&gt;license&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-6&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#supported-keys&quot;&gt;Supported Keys:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#homepage&quot;&gt;homepage&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-7&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#source&quot;&gt;source&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-8&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#supported-keys-1&quot;&gt;Supported Keys:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#summary&quot;&gt;summary&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-9&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#description&quot;&gt;description&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-10&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#screenshots&quot;&gt;screenshots&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-11&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#documentation_url&quot;&gt;documentation_url&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-12&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#prepare_command&quot;&gt;prepare_command&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-13&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#static_framework&quot;&gt;static_framework&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-14&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#deprecated&quot;&gt;deprecated&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-15&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#deprecated_in_favor_of&quot;&gt;deprecated_in_favor_of&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-16&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#platform&quot;&gt;Platform&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#platform&quot;&gt;platform&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-17&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#deployment_target&quot;&gt;deployment_target&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-18&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#build-settings&quot;&gt;Build settings&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#dependency&quot;&gt;dependency&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-19&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#requires_arc&quot;&gt;requires_arc&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#defaults-to&quot;&gt;Defaults to:&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-20&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#frameworks&quot;&gt;frameworks&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-21&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#weak_frameworksmulti-platform&quot;&gt;weak_frameworksmulti-platform&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-22&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#libraries&quot;&gt;libraries&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-23&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#compiler_flags&quot;&gt;compiler_flags&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-24&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#pod_target_xcconfig&quot;&gt;pod_target_xcconfig&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-25&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#user_target_xcconfig&quot;&gt;user_target_xcconfig&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-26&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#prefix_header_content&quot;&gt;prefix_header_content&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-27&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#prefix_header_file&quot;&gt;prefix_header_file&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-28&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#module_name&quot;&gt;module_name&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-29&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#header_dir&quot;&gt;header_dir&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-30&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#header_mappings_dir&quot;&gt;header_mappings_dir&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-31&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#script_phases&quot;&gt;script_phases&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-32&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#file-patterns&quot;&gt;File patterns&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#source_files&quot;&gt;source_files&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-33&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#public_header_files&quot;&gt;public_header_files&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-34&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#private_header_files&quot;&gt;private_header_files&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-35&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#vendored_frameworks&quot;&gt;vendored_frameworks&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-36&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#vendored_libraries&quot;&gt;vendored_libraries&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-37&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#resource_bundles&quot;&gt;resource_bundles&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-38&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#resources&quot;&gt;resources&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-39&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#exclude_files&quot;&gt;exclude_files&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-40&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#preserve_paths&quot;&gt;preserve_paths&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-41&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#module_map&quot;&gt;module_map&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-42&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#subspecs&quot;&gt;Subspecs&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#subspec&quot;&gt;subspec&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-43&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#requires_app_host&quot;&gt;requires_app_host&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-44&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#scheme&quot;&gt;scheme&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-45&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#supported-keys-2&quot;&gt;Supported Keys:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#test_spec&quot;&gt;test_spec&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-46&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#app_spec&quot;&gt;app_spec&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-47&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#default_subspecs&quot;&gt;default_subspecs&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-48&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#multi-platform-support&quot;&gt;Multi-Platform support&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#ios&quot;&gt;ios&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-49&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#osx&quot;&gt;osx&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-50&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#macos&quot;&gt;macos&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-51&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#tvos&quot;&gt;tvos&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-52&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#watchos&quot;&gt;watchos&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-53&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+
+&lt;p&gt;本文翻译自官方的 &lt;a href=&quot;https://guides.cocoapods.org/syntax/podfile.html&quot;&gt;Podfile Syntax Reference&lt;/a&gt;，若翻译中有什么异议，欢迎留言指正。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://guides.cocoapods.org/syntax/podfile.html&quot;&gt;Podfile&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://guides.cocoapods.org/syntax/podspec.html&quot;&gt;Podspec&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://guides.cocoapods.org/terminal/commands.html&quot;&gt;Command Line API&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;specification&quot;&gt;Specification&lt;/h2&gt;
+
+&lt;p&gt;A specification describes a version of Pod library. It includes details about where the source should be fetched from, what files to use, the build settings to apply, and other general metadata such as its name, version, and description.&lt;/p&gt;
+
+&lt;p&gt;A stub specification file can be generated by the pod spec create command.&lt;/p&gt;
+
+&lt;p&gt;The specification DSL provides great flexibility and dynamism. Moreover, the DSL adopts the convention over configuration and thus it can be very simple:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Pod::Spec.new do |spec|
+  spec.name         = 'Reachability'
+  spec.version      = '3.1.0'
+  spec.license      = { :type =&amp;gt; 'BSD' }
+  spec.homepage     = 'https://github.com/tonymillion/Reachability'
+  spec.authors      = { 'Tony Million' =&amp;gt; 'tonymillion@gmail.com' }
+  spec.summary      = 'ARC and GCD Compatible Reachability Class for iOS and OS X.'
+  spec.source       = { :git =&amp;gt; 'https://github.com/tonymillion/Reachability.git', :tag =&amp;gt; 'v3.1.0' }
+  spec.source_files = 'Reachability.{h,m}'
+  spec.framework    = 'SystemConfiguration'
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Or it can be quite detailed:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Pod::Spec.new do |spec|
+  spec.name          = 'Reachability'
+  spec.version       = '3.1.0'
+  spec.license       = { :type =&amp;gt; 'BSD' }
+  spec.homepage      = 'https://github.com/tonymillion/Reachability'
+  spec.authors       = { 'Tony Million' =&amp;gt; 'tonymillion@gmail.com' }
+  spec.summary       = 'ARC and GCD Compatible Reachability Class for iOS and OS X.'
+  spec.source        = { :git =&amp;gt; 'https://github.com/tonymillion/Reachability.git', :tag =&amp;gt; 'v3.1.0' }
+  spec.module_name   = 'Rich'
+  spec.swift_version = '4.0'
+
+  spec.ios.deployment_target  = '9.0'
+  spec.osx.deployment_target  = '10.10'
+
+  spec.source_files       = 'Reachability/common/*.swift'
+  spec.ios.source_files   = 'Reachability/ios/*.swift', 'Reachability/extensions/*.swift'
+  spec.osx.source_files   = 'Reachability/osx/*.swift'
+
+  spec.framework      = 'SystemConfiguration'
+  spec.ios.framework  = 'UIKit'
+  spec.osx.framework  = 'AppKit'
+
+  spec.dependency 'SomeOtherPod'
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;root-specification&quot;&gt;Root specification&lt;/h2&gt;
+
+&lt;p&gt;A ‘root’ specification stores the information about the specific version of a library.&lt;/p&gt;
+
+&lt;p&gt;The attributes in this group can only be written to on the ‘root’ specification, not on the ‘sub-specifications’.&lt;/p&gt;
+
+&lt;p&gt;The attributes listed in this group are the only one which are required by a podspec.&lt;/p&gt;
+
+&lt;p&gt;The attributes of the other groups are offered to refine the podspec and follow a convention over configuration approach. A root specification can describe these attributes either directly of through ‘sub-specifications’.&lt;/p&gt;
+
+&lt;h3 id=&quot;name&quot;&gt;name&lt;/h3&gt;
+
+&lt;p&gt;required&lt;/p&gt;
+
+&lt;p&gt;The name of the Pod.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.name = 'AFNetworking'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;version&quot;&gt;version&lt;/h3&gt;
+
+&lt;p&gt;required&lt;/p&gt;
+
+&lt;p&gt;The version of the Pod. CocoaPods follows semantic versioning.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-1&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.version = '0.0.1'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;swift_versions&quot;&gt;swift_versions&lt;/h3&gt;
+
+&lt;p&gt;The versions of Swift that the specification supports. A version of ‘4’ will be treated as ‘4.0’ by CocoaPods and not ‘4.1’ or ‘4.2’.&lt;/p&gt;
+
+&lt;p&gt;Note The Swift compiler mostly accepts major versions and sometimes will honor minor versions. While CocoaPods allows specifying a minor or patch version it might not be honored fully by the Swift compiler.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-2&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.swift_versions = ['3.0']
+spec.swift_versions = ['3.0', '4.0', '4.2']
+spec.swift_version = '3.0'
+spec.swift_version = '3.0', '4.0'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;cocoapods_version&quot;&gt;cocoapods_version&lt;/h3&gt;
+
+&lt;p&gt;The version of CocoaPods that the specification supports.&lt;/p&gt;
+
+&lt;h5 id=&quot;examples-3&quot;&gt;Examples:&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.cocoapods_version = '&amp;gt;= 0.36'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;authors&quot;&gt;authors&lt;/h3&gt;
+
+&lt;p&gt;required&lt;/p&gt;
+
+&lt;p&gt;The name and email addresses of the library maintainers, not the Podspec maintainer.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-4&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.author = 'Darth Vader'
+spec.authors = 'Darth Vader', 'Wookiee'
+spec.authors = { 'Darth Vader' =&amp;gt; 'darthvader@darkside.com',
+                 'Wookiee'     =&amp;gt; 'wookiee@aggrrttaaggrrt.com' }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;social_media_url&quot;&gt;social_media_url&lt;/h3&gt;
+
+&lt;p&gt;The URL for the social media contact of the Pod, CocoaPods web services can use this.&lt;/p&gt;
+
+&lt;p&gt;For example, the @CocoaPodsFeed notifications will include the Twitter handle (shortening the description) if the URL is relative to Twitter. This does not necessarily have to be a Twitter URL, but only those are included in the Twitter @CocoaPodsFeed notifications.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-5&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.social_media_url = 'https://twitter.com/cocoapods'
+spec.social_media_url = 'https://groups.google.com/forum/#!forum/cocoapods'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;license&quot;&gt;license&lt;/h3&gt;
+
+&lt;p&gt;required&lt;/p&gt;
+
+&lt;p&gt;The license of the Pod.&lt;/p&gt;
+
+&lt;p&gt;Unless the source contains a file named LICENSE._ or LICENCE._, the path of the license file or the integral text of the notice commonly used for the license type must be specified. If a license file is specified, it either must be without a file extensions or be one of txt, md, or markdown.&lt;/p&gt;
+
+&lt;p&gt;This information is used by CocoaPods to generate acknowledgement files (markdown and plist) which can be used in the acknowledgements section of the final application.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-6&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.license = 'MIT'
+spec.license = { :type =&amp;gt; 'MIT', :file =&amp;gt; 'MIT-LICENSE.txt' }
+spec.license = { :type =&amp;gt; 'MIT', :text =&amp;gt; &amp;lt;&amp;lt;-LICENSE
+                   Copyright 2012
+                   Permission is granted to...
+                 LICENSE
+               }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;supported-keys&quot;&gt;Supported Keys:&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:type&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:file&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:text&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;homepage&quot;&gt;homepage&lt;/h3&gt;
+
+&lt;p&gt;required&lt;/p&gt;
+
+&lt;p&gt;The URL of the homepage of the Pod.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-7&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;spec.homepage = ‘http://www.example.com’&lt;/p&gt;
+
+&lt;h3 id=&quot;source&quot;&gt;source&lt;/h3&gt;
+
+&lt;p&gt;required&lt;/p&gt;
+
+&lt;p&gt;The location from where the library should be retrieved.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-8&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;Specifying a Git source with a tag. This is how most OSS Podspecs work.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.source = { :git =&amp;gt; 'https://github.com/AFNetworking/AFNetworking.git',
+                :tag =&amp;gt; spec.version.to_s }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Using a tag prefixed with ‘v’ and submodules.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.source = { :git =&amp;gt; 'https://github.com/typhoon-framework/Typhoon.git',
+                :tag =&amp;gt; &quot;v#{spec.version}&quot;, :submodules =&amp;gt; true }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Using Subversion with a tag.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.source = { :svn =&amp;gt; 'http://svn.code.sf.net/p/polyclipping/code', :tag =&amp;gt; '4.8.8' }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Using Mercurial with the same revision as the spec’s semantic version string.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.source = { :hg =&amp;gt; 'https://bitbucket.org/dcutting/hyperbek', :revision =&amp;gt; &quot;#{s.version}&quot; }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Using HTTP to download a compressed file of the code. It supports zip, tgz, bz2, txz and tar.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.source = { :http =&amp;gt; 'http://dev.wechatapp.com/download/sdk/WeChat_SDK_iOS_en.zip' }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Using HTTP to download a file using a hash to verify the download. It supports sha1 and sha256.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.source = { :http =&amp;gt; 'http://dev.wechatapp.com/download/sdk/WeChat_SDK_iOS_en.zip',
+                :sha1 =&amp;gt; '7e21857fe11a511f472cfd7cfa2d979bd7ab7d96' }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;supported-keys-1&quot;&gt;Supported Keys:&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:git&lt;/code&gt; =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;:tag, :branch, :commit, :submodules&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:svn&lt;/code&gt; =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;:folder, :tag, :revision&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:hg&lt;/code&gt; =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;:revision&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:http&lt;/code&gt; =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;:flatten, :type, :sha256, :sha1&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;summary&lt;/h3&gt;
+
+&lt;p&gt;required&lt;/p&gt;
+
+&lt;p&gt;A short (maximum 140 characters) description of the Pod.&lt;/p&gt;
+
+&lt;p&gt;The description should be short, yet informative. It represents the tag line of the Pod and there is no need to specify that a Pod is a library (they always are).&lt;/p&gt;
+
+&lt;p&gt;The summary is expected to be properly capitalised and containing the correct punctuation.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-9&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.summary = 'Computes the meaning of life.'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;description&quot;&gt;description&lt;/h3&gt;
+
+&lt;p&gt;A description of the Pod more detailed than the summary.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-10&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.description = &amp;lt;&amp;lt;-DESC
+                     Computes the meaning of life.
+                     Features:
+                     1. Is self aware
+                     ...
+                     42. Likes candies.
+                   DESC
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;screenshots&quot;&gt;screenshots&lt;/h3&gt;
+
+&lt;p&gt;A list of URLs to images showcasing the Pod. Intended for UI oriented libraries. CocoaPods recommends the usage of the gif format.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-11&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.screenshot = 'http://dl.dropbox.com/u/378729/MBProgressHUD/1.png'
+spec.screenshots = [ 'http://dl.dropbox.com/u/378729/MBProgressHUD/1.png',
+                     'http://dl.dropbox.com/u/378729/MBProgressHUD/2.png' ]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;documentation_url&quot;&gt;documentation_url&lt;/h3&gt;
+
+&lt;p&gt;An optional URL for the documentation of the Pod which will be honoured by CocoaPods web properties. Leaving it blank will default to a CocoaDocs generated URL for your library.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-12&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.documentation_url = 'http://www.example.com/docs.html'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;prepare_command&quot;&gt;prepare_command&lt;/h3&gt;
+
+&lt;p&gt;A bash script that will be executed after the Pod is downloaded. This command can be used to create, delete and modify any file downloaded and will be ran before any paths for other file attributes of the specification are collected.&lt;/p&gt;
+
+&lt;p&gt;This command is executed before the Pod is cleaned and before the Pods project is created. The working directory is the root of the Pod.&lt;/p&gt;
+
+&lt;p&gt;If the pod is installed with the :path option this command will not be executed.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-13&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.prepare_command = 'ruby build_files.rb'
+spec.prepare_command = &amp;lt;&amp;lt;-CMD
+                        sed -i 's/MyNameSpacedHeader/Header/g' ./**/*.h
+                        sed -i 's/MyNameOtherSpacedHeader/OtherHeader/g' ./**/*.h
+                   CMD
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;static_framework&quot;&gt;static_framework&lt;/h3&gt;
+
+&lt;p&gt;Indicates, that if use_frameworks! is specified, the pod should include a static library framework.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-14&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.static_framework = true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;deprecated&quot;&gt;deprecated&lt;/h3&gt;
+
+&lt;p&gt;Whether the library has been deprecated.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-15&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.deprecated = true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;deprecated_in_favor_of&quot;&gt;deprecated_in_favor_of&lt;/h3&gt;
+
+&lt;p&gt;The name of the Pod that this one has been deprecated in favor of.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-16&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.deprecated_in_favor_of = 'NewMoreAwesomePod'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;platform&quot;&gt;Platform&lt;/h2&gt;
+
+&lt;p&gt;A specification should indicate the platform and the correspondent deployment targets on which the library is supported.&lt;/p&gt;
+
+&lt;p&gt;If not defined in a subspec the attributes of this group inherit the value of the parent.&lt;/p&gt;
+
+&lt;h3 id=&quot;platform-1&quot;&gt;platform&lt;/h3&gt;
+
+&lt;p&gt;The platform on which this Pod is supported. Leaving this blank means the Pod is supported on all platforms. When supporting multiple platforms you should use deployment_target below instead.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-17&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.platform = :osx, '10.8'
+spec.platform = :ios
+spec.platform = :osx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;deployment_target&quot;&gt;deployment_target&lt;/h3&gt;
+
+&lt;p&gt;The minimum deployment targets of the supported platforms.&lt;/p&gt;
+
+&lt;p&gt;As opposed to the platform attribute, the deployment_target attribute allows to specify multiple platforms on which this pod is supported — specifying a different deployment target for each.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-18&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.ios.deployment_target = '6.0'
+spec.osx.deployment_target = '10.8'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;build-settings&quot;&gt;Build settings&lt;/h2&gt;
+
+&lt;p&gt;In this group are listed the attributes related to the configuration of the build environment that should be used to build the library.&lt;/p&gt;
+
+&lt;p&gt;If not defined in a subspec the attributes of this group inherit the value of the parent.&lt;/p&gt;
+
+&lt;h3 id=&quot;dependency&quot;&gt;dependency&lt;/h3&gt;
+
+&lt;p&gt;Any dependency on other Pods or to a ‘sub-specification’.&lt;/p&gt;
+
+&lt;p&gt;Dependencies can specify versions requirements. The use of the optimistic version indicator ~&amp;gt; is recommended because it provides good control over the version without being too restrictive. For example, ~&amp;gt; 1.0.1 is equivalent to &amp;gt;= 1.0.1 combined with &amp;lt; 1.1. Similarly, ~&amp;gt; 1.0 will match 1.0, 1.0.1, 1.1, but will not upgrade to 2.0.&lt;/p&gt;
+
+&lt;p&gt;Pods with overly restrictive dependencies limit their compatibility with other Pods.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-19&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.dependency 'AFNetworking', '~&amp;gt; 1.0'
+spec.dependency 'RestKit/CoreData', '~&amp;gt; 0.20.0'
+spec.ios.dependency 'MBProgressHUD', '~&amp;gt; 0.5'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;requires_arc&quot;&gt;requires_arc&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;requires_arc allows you to specify which source_files use ARC. This can either be the files which support ARC, or true to indicate all of the source_files use ARC.&lt;/p&gt;
+
+&lt;p&gt;Files which do not use ARC will have the -fno-objc-arc compiler flag.&lt;/p&gt;
+
+&lt;p&gt;The default value of this attribute is true.&lt;/p&gt;
+
+&lt;h4 id=&quot;defaults-to&quot;&gt;Defaults to:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.requires_arc = true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;examples-20&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.requires_arc = false
+spec.requires_arc = 'Classes/Arc'
+spec.requires_arc = ['Classes/*ARC.m', 'Classes/ARC.mm']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;frameworks&quot;&gt;frameworks&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;A list of system frameworks that the user’s target needs to link against.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-21&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.ios.framework = 'CFNetwork'
+spec.frameworks = 'QuartzCore', 'CoreData'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;weak_frameworksmulti-platform&quot;&gt;weak_frameworksmulti-platform&lt;/h3&gt;
+
+&lt;p&gt;A list of frameworks that the user’s target needs to weakly link against.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-22&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.weak_framework = 'Twitter'
+spec.weak_frameworks = 'Twitter', 'SafariServices'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;libraries&quot;&gt;libraries&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;A list of system libraries that the user’s target (application) needs to link against.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-23&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.ios.library = 'xml2'
+spec.libraries = 'xml2', 'z'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;compiler_flags&quot;&gt;compiler_flags&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;A list of flags which should be passed to the compiler.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-24&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.compiler_flags = '-DOS_OBJECT_USE_OBJC=0', '-Wno-format'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;pod_target_xcconfig&quot;&gt;pod_target_xcconfig&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;Any flag to add to the final private pod target xcconfig file.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-25&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.pod_target_xcconfig = { 'OTHER_LDFLAGS' =&amp;gt; '-lObjC' }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;user_target_xcconfig&quot;&gt;user_target_xcconfig&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;Specifies flags to add to the final aggregate target xcconfig file, which propagates to non-overridden and inheriting build settings to the integrated user targets.&lt;/p&gt;
+
+&lt;p&gt;This attribute is not recommended as Pods should not pollute the build settings of the user project and this can cause conflicts.&lt;/p&gt;
+
+&lt;p&gt;Multiple definitions for build settings that take multiple values will be merged. The user is warned on conflicting definitions for custom build settings and build settings that take only one value.&lt;/p&gt;
+
+&lt;p&gt;Typically clang compiler flags or precompiler macro definitions go in here if they are required when importing the pod in the user target. Note that, this influences not only the compiler view of the public interface of your pod, but also all other integrated pods alongside to yours. You should always prefer pod_target_xcconfig, which can contain the same settings, but only influence the toolchain when compiling your pod target.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-26&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.user_target_xcconfig = { 'MY_SUBSPEC' =&amp;gt; 'YES' }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;prefix_header_content&quot;&gt;prefix_header_content&lt;/h3&gt;
+
+&lt;p&gt;smulti-platform&lt;/p&gt;
+
+&lt;p&gt;Any content to inject in the prefix header of the pod project.&lt;/p&gt;
+
+&lt;p&gt;This attribute is not recommended as Pods should not pollute the prefix header of other libraries or of the user project.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-27&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.prefix_header_contents = '#import &amp;lt;UIKit/UIKit.h&amp;gt;'
+spec.prefix_header_contents = '#import &amp;lt;UIKit/UIKit.h&amp;gt;', '#import &amp;lt;Foundation/Foundation.h&amp;gt;'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;prefix_header_file&quot;&gt;prefix_header_file&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;A path to a prefix header file to inject in the prefix header of the pod project. false indicates that the default CocoaPods prefix header should not be generated. true is the default and indicates that the default CocoaPods prefix header should be generated.&lt;/p&gt;
+
+&lt;p&gt;The file path options is not recommended as Pods should not pollute the prefix header of other libraries or of the user project.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-28&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.prefix_header_file = 'iphone/include/prefix.pch'
+spec.prefix_header_file = false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;module_name&quot;&gt;module_name&lt;/h3&gt;
+
+&lt;p&gt;The name to use for the framework / clang module which will be generated for this specification instead of the default (header_dir if set, otherwise the specification name).&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-29&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.module_name = 'Three20'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;header_dir&quot;&gt;header_dir&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;The directory where to store the headers files so they don’t break includes.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-30&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.header_dir = 'Three20Core'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;header_mappings_dir&quot;&gt;header_mappings_dir&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;A directory from where to preserve the folder structure for the headers files. If not provided the headers files are flattened.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-31&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.header_mappings_dir = 'src/include'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;script_phases&quot;&gt;script_phases&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;This attribute allows to define a script phase to execute as part of compilation of the Pod. Unlike a prepare command, script phases execute as part of xcodebuild they can also utilize all environment variables that are set during compilation.&lt;/p&gt;
+
+&lt;p&gt;A Pod can provide multiple script phases to execute and they will be added in the order they were declared and after taking into consideration their execution position setting.&lt;/p&gt;
+
+&lt;p&gt;Note In order to provide visibility and awareness of the contents of all script phases, a warning will be presented to the user upon installing your pod if it includes any script phases.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-32&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.script_phase = { :name =&amp;gt; 'Hello World', :script =&amp;gt; 'echo &quot;Hello World&quot;' }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.script_phase = { :name =&amp;gt; 'Hello World', :script =&amp;gt; 'echo &quot;Hello World&quot;', :execution_position =&amp;gt; :before_compile }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.script_phase = { :name =&amp;gt; 'Hello World', :script =&amp;gt; 'puts &quot;Hello World&quot;', :shell_path =&amp;gt; '/usr/bin/ruby' }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.script_phase = { :name =&amp;gt; 'Hello World', :script =&amp;gt; 'echo &quot;Hello World&quot;',
+  :input_files =&amp;gt; ['/path/to/input_file.txt'], :output_files =&amp;gt; ['/path/to/output_file.txt']
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.script_phase = { :name =&amp;gt; 'Hello World', :script =&amp;gt; 'echo &quot;Hello World&quot;',
+  :input_file_lists =&amp;gt; ['/path/to/input_files.xcfilelist'], :output_file_lists =&amp;gt; ['/path/to/output_files.xcfilelist']
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.script_phases = [
+    { :name =&amp;gt; 'Hello World', :script =&amp;gt; 'echo &quot;Hello World&quot;' },
+    { :name =&amp;gt; 'Hello Ruby World', :script =&amp;gt; 'puts &quot;Hello World&quot;', :shell_path =&amp;gt; '/usr/bin/ruby' },
+  ]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;file-patterns&quot;&gt;File patterns&lt;/h2&gt;
+
+&lt;p&gt;Podspecs should be located at the root of the repository, and paths to files should be specified relative to the root of the repository as well. File patterns do not support traversing the parent directory ( .. ). File patterns may contain the following wildcard patterns:&lt;/p&gt;
+
+&lt;p&gt;Pattern: *&lt;/p&gt;
+
+&lt;p&gt;Matches any file. Can be restricted by other values in the glob.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;will match all files&lt;/li&gt;
+  &lt;li&gt;c* will match all files beginning with c&lt;/li&gt;
+  &lt;li&gt;*c will match all files ending with c&lt;/li&gt;
+  &lt;li&gt;*c* will match all files that have c in them (including at the beginning or end)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Equivalent to /.*/x in regexp.&lt;/p&gt;
+
+&lt;p&gt;Note this will not match Unix-like hidden files (dotfiles). In order to include those in the match results, you must use something like {&lt;em&gt;,.&lt;/em&gt;}.&lt;/p&gt;
+
+&lt;p&gt;Pattern: **&lt;/p&gt;
+
+&lt;p&gt;Matches directories recursively.&lt;/p&gt;
+
+&lt;p&gt;Pattern: ?&lt;/p&gt;
+
+&lt;p&gt;Matches any one character. Equivalent to /.{1}/ in regexp.&lt;/p&gt;
+
+&lt;p&gt;Pattern: [set]&lt;/p&gt;
+
+&lt;p&gt;Matches any one character in set.&lt;/p&gt;
+
+&lt;p&gt;Behaves exactly like character sets in Regexp, including set negation ([^a-z]).&lt;/p&gt;
+
+&lt;p&gt;Pattern: {p,q}&lt;/p&gt;
+
+&lt;p&gt;Matches either literal p or literal q.&lt;/p&gt;
+
+&lt;p&gt;Matching literals may be more than one character in length. More than two literals may be specified.&lt;/p&gt;
+
+&lt;p&gt;Equivalent to pattern alternation in regexp.&lt;/p&gt;
+
+&lt;p&gt;Pattern: \&lt;/p&gt;
+
+&lt;p&gt;Escapes the next meta-character.&lt;/p&gt;
+
+&lt;p&gt;Examples&lt;/p&gt;
+
+&lt;p&gt;Consider these to be evaluated in the source root of JSONKit.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;JSONKit.?&quot;    #=&amp;gt; [&quot;JSONKit.h&quot;, &quot;JSONKit.m&quot;]
+&quot;*.[a-z][a-z]&quot; #=&amp;gt; [&quot;CHANGELOG.md&quot;, &quot;README.md&quot;]
+&quot;*.[^m]*&quot;      #=&amp;gt; [&quot;JSONKit.h&quot;]
+&quot;*.{h,m}&quot;      #=&amp;gt; [&quot;JSONKit.h&quot;, &quot;JSONKit.m&quot;]
+&quot;*&quot;            #=&amp;gt; [&quot;CHANGELOG.md&quot;, &quot;JSONKit.h&quot;, &quot;JSONKit.m&quot;, &quot;README.md&quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;source_files&quot;&gt;source_files&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;The source files of the Pod.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-33&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.source*files = 'Classes/**/\*.{h,m}'
+spec.source_files = 'Classes/**/*.{h,m}', 'More*Classes/\*\*/*.{h,m}'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;public_header_files&quot;&gt;public_header_files&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;A list of file patterns that should be used as public headers.&lt;/p&gt;
+
+&lt;p&gt;These are the headers that will be exposed to the user’s project and from which documentation will be generated. When the library is built, these headers will appear in the build directory. If no public headers are specified then all the headers in source_files are considered public.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-34&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.public_header_files = 'Headers/Public/\*.h'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;private_header_files&quot;&gt;private_header_files&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;A list of file patterns that should be used to mark private headers.&lt;/p&gt;
+
+&lt;p&gt;These patterns are matched against the public headers (or all the headers if no public headers have been specified) to exclude those headers which should not be exposed to the user project and which should not be used to generate the documentation. When the library is built, these headers will appear in the build directory.&lt;/p&gt;
+
+&lt;p&gt;Header files that are not listed as neither public nor private will be treated as private, but in addition will not appear in the build directory at all.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-35&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.private_header_files = 'Headers/Private/\*.h'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;vendored_frameworks&quot;&gt;vendored_frameworks&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;The paths of the framework bundles that come shipped with the Pod.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-36&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.ios.vendored_frameworks = 'Frameworks/MyFramework.framework'
+spec.vendored_frameworks = 'MyFramework.framework', 'TheirFramework.framework'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;vendored_libraries&quot;&gt;vendored_libraries&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;The paths of the libraries that come shipped with the Pod.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-37&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.ios.vendored_library = 'Libraries/libProj4.a'
+spec.vendored_libraries = 'libProj4.a', 'libJavaScriptCore.a'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;resource_bundles&quot;&gt;resource_bundles&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;This attribute allows to define the name and the file of the resource bundles which should be built for the Pod. They are specified as a hash where the keys represent the name of the bundles and the values the file patterns that they should include.&lt;/p&gt;
+
+&lt;p&gt;For building the Pod as a static library, we strongly recommend library developers to adopt resource bundles as there can be name collisions using the resources attribute.&lt;/p&gt;
+
+&lt;p&gt;The names of the bundles should at least include the name of the Pod to minimise the chance of name collisions.&lt;/p&gt;
+
+&lt;p&gt;To provide different resources per platform namespaced bundles must be used.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-38&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.ios.resource*bundle = { 'MapBox' =&amp;gt; 'MapView/Map/Resources/*.png' }
+spec.resource_bundles = {
+    'MapBox' =&amp;gt; ['MapView/Map/Resources/*.png'],
+    'MapBoxOtherResources' =&amp;gt; ['MapView/Map/OtherResources/*.png']
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;resources&quot;&gt;resources&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;A list of resources that should be copied into the target bundle.&lt;/p&gt;
+
+&lt;p&gt;For building the Pod as a static library, we strongly recommend library developers to adopt resource bundles as there can be name collisions using the resources attribute. Moreover, resources specified with this attribute are copied directly to the client target and therefore they are not optimised by Xcode.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-39&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.resource = 'Resources/HockeySDK.bundle'
+spec.resources = ['Images/*.png', 'Sounds/*']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;exclude_files&quot;&gt;exclude_files&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;A list of file patterns that should be excluded from the other file patterns.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-40&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.ios.exclude_files = 'Classes/osx'
+spec.exclude_files = 'Classes/\*\*/unused.{h,m}'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;preserve_paths&quot;&gt;preserve_paths&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;Any file that should not be removed after being downloaded.&lt;/p&gt;
+
+&lt;p&gt;By default, CocoaPods removes all files that are not matched by any of the other file pattern.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-41&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.preserve_path = 'IMPORTANT.txt'
+spec.preserve_paths = 'Frameworks/\*.framework'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;module_map&quot;&gt;module_map&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;The module map file that should be used when this pod is integrated as a framework.&lt;/p&gt;
+
+&lt;p&gt;By default, CocoaPods creates a module map file based upon the public headers in a specification.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-42&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.module_map = 'source/module.modulemap'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;subspecs&quot;&gt;Subspecs&lt;/h2&gt;
+
+&lt;p&gt;A library can specify a dependency on either another library, a subspec of another library, or a subspec of itself.&lt;/p&gt;
+
+&lt;h3 id=&quot;subspec&quot;&gt;subspec&lt;/h3&gt;
+
+&lt;p&gt;Represents specification for a module of the library.&lt;/p&gt;
+
+&lt;p&gt;Subspecs participate on a dual hierarchy.&lt;/p&gt;
+
+&lt;p&gt;On one side, a specification automatically inherits as a dependency all it children ‘sub-specifications’ (unless a default subspec is specified).&lt;/p&gt;
+
+&lt;p&gt;On the other side, a ‘sub-specification’ inherits the value of the attributes of the parents so common values for attributes can be specified in the ancestors.&lt;/p&gt;
+
+&lt;p&gt;Although it sounds complicated in practice it means that subspecs in general do what you would expect:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'ShareKit', '2.0'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Installs ShareKit with all the sharers like ShareKit/Evernote, ShareKit/Facebook, etc, as they are defined as subspecs.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'ShareKit/Twitter', '2.0'
+pod 'ShareKit/Pinboard', '2.0'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Installs ShareKit with only the source files for ShareKit/Twitter, ShareKit/Pinboard. Note that, in this case, the ‘sub-specifications’ to compile need the source files, the dependencies, and the other attributes defined by the root specification. CocoaPods is smart enough to handle any issues arising from duplicate attributes.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-43&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;Subspecs with different source files.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;subspec 'Twitter' do |sp|
+  sp.source_files = 'Classes/Twitter'
+end
+
+subspec 'Pinboard' do |sp|
+  sp.source_files = 'Classes/Pinboard'
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Subspecs referencing dependencies to other subspecs.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Pod::Spec.new do |s|
+  s.name = 'RestKit'
+
+  s.subspec 'Core' do |cs|
+    cs.dependency 'RestKit/ObjectMapping'
+    cs.dependency 'RestKit/Network'
+    cs.dependency 'RestKit/CoreData'
+  end
+
+  s.subspec 'ObjectMapping' do |os|
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Nested subspecs.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Pod::Spec.new do |s|
+  s.name = 'Root'
+
+  s.subspec 'Level_1' do |sp|
+    sp.subspec 'Level_2' do |ssp|
+    end
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;requires_app_host&quot;&gt;requires_app_host&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;Whether a test specification requires an app host to run tests. This only applies to test specifications.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-44&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;test_spec.requires_app_host = true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;scheme&quot;&gt;scheme&lt;/h3&gt;
+
+&lt;p&gt;multi-platform&lt;/p&gt;
+
+&lt;p&gt;Specifies the scheme configuration to be used for this specification.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-45&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.scheme = { :launch_arguments =&amp;gt; ['Arg1'] }
+spec.scheme = { :launch_arguments =&amp;gt; ['Arg1', 'Arg2'], :environment_variables =&amp;gt; { 'Key1' =&amp;gt; 'Val1'} }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;supported-keys-2&quot;&gt;Supported Keys:&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:launch_arguments&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:environment_variables&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;test_spec&quot;&gt;test_spec&lt;/h3&gt;
+
+&lt;p&gt;Represents a test specification for the library. Here you can place all your tests for your podspec along with the test dependencies.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-46&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Pod::Spec.new do |spec|
+  spec.name = 'NSAttributedString+CCLFormat'
+
+  spec.test_spec do |test_spec|
+    test_spec.source_files = 'NSAttributedString+CCLFormatTests.m'
+    test_spec.dependency 'Expecta'
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;app_spec&quot;&gt;app_spec&lt;/h3&gt;
+
+&lt;p&gt;Represents an app specification for the library. Here you can place all your app source files for your podspec along with the app dependencies.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-47&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Pod::Spec.new do |spec|
+  spec.name = 'NSAttributedString+CCLFormat'
+
+  spec.app_spec do |app_spec|
+    app_spec.source_files = 'NSAttributedString+CCLFormat.m'
+    app_spec.dependency 'AFNetworking'
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;default_subspecs&quot;&gt;default_subspecs&lt;/h3&gt;
+
+&lt;p&gt;An array of subspecs names that should be used as preferred dependency. If not specified a specifications requires all its subspecs as dependencies.&lt;/p&gt;
+
+&lt;p&gt;A Pod should make available the full library by default. Users can fine tune their dependencies, and exclude unneeded subspecs, once their requirements are known. Therefore, this attribute is rarely needed. It is intended to be used to select a default if there are ‘sub-specifications’ which provide alternative incompatible implementations, or to exclude modules rarely needed (especially if they trigger dependencies on other libraries).&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-48&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.default_subspec = 'Core'
+spec.default_subspecs = 'Core', 'UI'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;multi-platform-support&quot;&gt;Multi-Platform support&lt;/h2&gt;
+
+&lt;p&gt;A specification can store values which are specific to only one platform.&lt;/p&gt;
+
+&lt;p&gt;For example one might want to store resources which are specific to only iOS projects.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.resources = 'Resources/**/\*.png'
+spec.ios.resources = 'Resources_ios/**/\*.png'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;ios&quot;&gt;ios&lt;/h3&gt;
+
+&lt;p&gt;Provides support for specifying iOS attributes.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-49&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.ios.source\*files = 'Classes/ios/\*\*/\_.{h,m}'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;osx&quot;&gt;osx&lt;/h3&gt;
+
+&lt;p&gt;Provides support for specifying OS X attributes.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-50&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.osx.source\*files = 'Classes/osx/\*\*/\_.{h,m}'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;macos&quot;&gt;macos&lt;/h3&gt;
+
+&lt;p&gt;Provides support for specifying OS X attributes.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-51&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.osx.source\*files = 'Classes/osx/\*\*/\_.{h,m}'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;tvos&quot;&gt;tvos&lt;/h3&gt;
+
+&lt;p&gt;Provides support for specifying tvOS attributes.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-52&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.tvos.source\*files = 'Classes/tvos/\*\*/\_.{h,m}'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;watchos&quot;&gt;watchos&lt;/h3&gt;
+
+&lt;p&gt;Provides support for specifying watchOS attributes.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-53&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spec.watchos.source\*files = 'Classes/watchos/\*\*/\_.{h,m}'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 16 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/04/Podspec%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/04/Podspec%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/</guid>
+        
+        <category>cocoapods</category>
+        
+        
+        <category>cocoapods</category>
+        
+      </item>
+    
+      <item>
+        <title>Podfile语法参考</title>
+        <description>&lt;h2 id=&quot;目录&quot;&gt;目录&lt;/h2&gt;
+
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#目录&quot;&gt;目录&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#简介&quot;&gt;简介&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#podfile&quot;&gt;Podfile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#root-options&quot;&gt;Root Options&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#install&quot;&gt;install!&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#supported-keys&quot;&gt;Supported Keys:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#dependencies&quot;&gt;Dependencies&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#pod&quot;&gt;pod&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#build-configurations&quot;&gt;Build configurations&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#modular-headers&quot;&gt;Modular Headers&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#source&quot;&gt;Source&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#subspecs&quot;&gt;Subspecs&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#test-specs&quot;&gt;Test Specs&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#using-the-files-from-a-local-path&quot;&gt;Using the files from a local path.&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#from-a-podspec-in-the-root-of-a-library-repository&quot;&gt;From a podspec in the root of a library repository.&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#from-a-podspec-outside-a-spec-repository-for-a-library-without-podspec&quot;&gt;From a podspec outside a spec repository, for a library without podspec.&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#podspec&quot;&gt;podspec&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#parameters&quot;&gt;Parameters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-1&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#target&quot;&gt;target&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#parameters-1&quot;&gt;Parameters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-2&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#script_phase&quot;&gt;script_phase&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#parameters-2&quot;&gt;Parameters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-3&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#abstract_target&quot;&gt;abstract_target&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#parameters-3&quot;&gt;Parameters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-4&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#abstract&quot;&gt;abstract!&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#inherit&quot;&gt;inherit!&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#parameters-4&quot;&gt;Parameters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-5&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#target-configuration&quot;&gt;Target configuration&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#platform&quot;&gt;platform&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#parameters-5&quot;&gt;Parameters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-6&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#project&quot;&gt;project&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#parameters-6&quot;&gt;Parameters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-7&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#xcodeproj&quot;&gt;xcodeproj&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#link_with&quot;&gt;link_with&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#inhibit_all_warnings&quot;&gt;inhibit_all_warnings!&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#use_modular_headers&quot;&gt;use_modular_headers!&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#use_frameworks&quot;&gt;use_frameworks!&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#workspace&quot;&gt;Workspace&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#workspace&quot;&gt;workspace&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#parameters-7&quot;&gt;Parameters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-8&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#generate_bridge_support&quot;&gt;generate_bridge_support!&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#set_arc_compatibility_flag&quot;&gt;set_arc_compatibility_flag!&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#sources&quot;&gt;Sources&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#source&quot;&gt;source&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#parameters-8&quot;&gt;Parameters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-9&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#hooks&quot;&gt;Hooks&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#plugin&quot;&gt;plugin&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#parameters-9&quot;&gt;Parameters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-10&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#pre_install&quot;&gt;pre_install&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-11&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#post_install&quot;&gt;post_install&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-12&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#supports_swift_versions&quot;&gt;supports_swift_versions&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#parameters-10&quot;&gt;Parameters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#examples-13&quot;&gt;Examples:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+
+&lt;p&gt;本文翻译自官方的 &lt;a href=&quot;https://guides.cocoapods.org/syntax/podfile.html&quot;&gt;Podfile Syntax Reference&lt;/a&gt;，若翻译中有什么异议，欢迎留言指正。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://guides.cocoapods.org/syntax/podfile.html&quot;&gt;Podfile&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://guides.cocoapods.org/syntax/podspec.html&quot;&gt;Podspec&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://guides.cocoapods.org/terminal/commands.html&quot;&gt;Command Line API&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;podfile&quot;&gt;Podfile&lt;/h2&gt;
+
+&lt;p&gt;The Podfile is a specification that describes the dependencies of the targets of one or more Xcode projects.&lt;/p&gt;
+
+&lt;p&gt;A Podfile can be very simple:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;target 'MyApp'
+pod 'AFNetworking', '~&amp;gt; 1.0'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;An example of a more complex Podfile can be:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;platform :ios, '9.0'
+inhibit_all_warnings!
+
+target 'MyApp' do
+  pod 'ObjectiveSugar', '~&amp;gt; 0.5'
+
+  target 'MyAppTests' do
+    inherit! :search_paths
+    pod 'OCMock', '~&amp;gt; 2.0.1'
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    puts &quot;#{target.name}&quot;
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;root-options&quot;&gt;Root Options&lt;/h2&gt;
+
+&lt;p&gt;Configuration that applies to the Podfile as a whole.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;install!&lt;/code&gt; declares the installation method and options to be used during installation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;install&quot;&gt;install!&lt;/h3&gt;
+
+&lt;p&gt;Specifies the installation method and options to be used when CocoaPods installs this Podfile.&lt;/p&gt;
+
+&lt;p&gt;The first parameter indicates the installation method to use; next parameters indicate installation options.&lt;/p&gt;
+
+&lt;p&gt;For now the only accepted installation method is ‘cocoapods’, so you’ll always use this value for the first parameter; but more installation methods might be available in future versions.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;Specifying custom CocoaPods installation options&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;install! 'cocoapods',
+         :deterministic_uuids =&amp;gt; false,
+         :integrate_targets =&amp;gt; false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;supported-keys&quot;&gt;Supported Keys:&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:clean&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Whether to clean the sources of the pods during installation&lt;/p&gt;
+
+&lt;p&gt;Cleaning removes any files not used by the pod as specified by the podspec and the platforms that the project supports&lt;/p&gt;
+
+&lt;p&gt;this option defaults to true.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:deduplicate_targets&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Whether to deduplicate pod targets&lt;/p&gt;
+
+&lt;p&gt;Target deduplication adds suffixes to pod targets for the cases where a pod is included in multiple targets that have different requirements. For example, a pod named ‘MyPod’ with a subspec ‘SubA’ that is included in two targets as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;target 'MyTargetA' do
+  pod 'MyPod/SubA'
+end
+
+target 'MyTargetB' do
+  pod 'MyPod'
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;will result in two Pod targets: &lt;code class=&quot;highlighter-rouge&quot;&gt;MyPod&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;MyPod-SubA&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;this option defaults to true.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:deterministic_uuids&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Whether to generate deterministic UUIDs when creating the Pods project&lt;/p&gt;
+
+&lt;p&gt;this option defaults to true.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:integrate_targets&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Whether to integrate the installed pods into the user project&lt;/p&gt;
+
+&lt;p&gt;If set to false, Pods will be downloaded and installed to the Pods/ directory but they will not be integrated into your project.&lt;/p&gt;
+
+&lt;p&gt;this option defaults to true.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:lock_pod_sources&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Whether to lock the source files of pods. Xcode will prompt to unlock the files when attempting to modify their contents&lt;/p&gt;
+
+&lt;p&gt;There is a performance penalty to locking the pods during installation. If this is significantly impacting the duration of pod install for your project, you can try setting this to false&lt;/p&gt;
+
+&lt;p&gt;this option defaults to true.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:warn_for_multiple_pod_sources&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Whether to emit a warning when multiple sources contain a Pod with the same name and version&lt;/p&gt;
+
+&lt;p&gt;this option defaults to true.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:share_schemes_for_development_pods&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Whether to share Xcode schemes for development pods.&lt;/p&gt;
+
+&lt;p&gt;Schemes for development pods are created automatically but are not shared by default.&lt;/p&gt;
+
+&lt;p&gt;this option defaults to false.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:disable_input_output_paths&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Whether to disable the input &amp;amp; output paths of the CocoaPods script phases (Copy Frameworks &amp;amp; Copy Resources)&lt;/p&gt;
+
+&lt;p&gt;this option defaults to false.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:preserve_pod_file_structure&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Whether to preserve the file structure of all Pods, including externally sourced pods.&lt;/p&gt;
+
+&lt;p&gt;By default, the file structure of Pod sources is preserved only for development pods. Setting &lt;code class=&quot;highlighter-rouge&quot;&gt;:preserve_pod_file_structure&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; will always preserve the file structure.&lt;/p&gt;
+
+&lt;p&gt;this option defaults to false.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:generate_multiple_pod_projects&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Whether to generate a project per pod target. Instead of creating 1 Pods.xcodeproj, this option will generate a project for every pod target that will be nested under the Pods.xcodeproj.&lt;/p&gt;
+
+&lt;p&gt;this option defaults to false.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:incremental_installation&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Whether to enable only regenerating targets and their associate projects that have changed since the previous installation.&lt;/p&gt;
+
+&lt;p&gt;this option defaults to false.&lt;/p&gt;
+
+&lt;h2 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h2&gt;
+
+&lt;p&gt;The Podfile specifies the dependencies of each user target.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pod&lt;/code&gt; is the way to declare a specific dependency.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;podspec&lt;/code&gt; provides an easy API for the creation of podspecs.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;target&lt;/code&gt; is how you scope your dependencies to specific targets in your Xcode projects.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;pod&quot;&gt;pod&lt;/h3&gt;
+
+&lt;p&gt;Specifies a dependency of the project.&lt;/p&gt;
+
+&lt;p&gt;A dependency requirement is defined by the name of the Pod and optionally a list of version requirements.&lt;/p&gt;
+
+&lt;p&gt;When starting out with a project it is likely that you will want to use the latest version of a Pod. If this is the case, simply omit the version requirements.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'SSZipArchive'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Later on in the project you may want to freeze to a specific version of a Pod, in which case you can specify that version number.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'Objection', '0.9'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Besides no version, or a specific one, it is also possible to use operators:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;= 0.1 Version 0.1.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt; 0.1&lt;/code&gt; Any version higher than 0.1.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt; = 0.1&lt;/code&gt; Version 0.1 and any higher version.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt; &amp;lt; 0.1&lt;/code&gt; Any version lower than 0.1.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt; &amp;lt;= 0.1&lt;/code&gt; Version 0.1 and any lower version.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt; ~&amp;gt; 0.1.2&lt;/code&gt; Version 0.1.2 and the versions up to 0.2, not including 0.2. This operator works based on the last component that you specify in your version requirement. The example is equal to &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;= 0.1.2&lt;/code&gt; combined with &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt; 0.2.0&lt;/code&gt; and will always match the latest known version matching your requirements.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt; ~&amp;gt; 0.1.3-beta.0&lt;/code&gt; Beta and release versions for 0.1.3, release versions up to 0.2 excluding 0.2. Components separated by a dash (-) will not be considered for the version requirement.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A list of version requirements can be specified for even more fine grained control.&lt;/p&gt;
+
+&lt;p&gt;For more information, regarding versioning policy, see:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Semantic Versioning&lt;/li&gt;
+  &lt;li&gt;RubyGems Versioning Policies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;build-configurations&quot;&gt;Build configurations&lt;/h4&gt;
+
+&lt;p&gt;By default dependencies are installed in all the build configurations of the target. For debug purposes or for other reasons, they can be only enabled on a list of build configurations.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'PonyDebugger', :configurations =&amp;gt; ['Debug', 'Beta']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Alternatively, you can specify to have it included on a single build configuration.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'PonyDebugger', :configuration =&amp;gt; 'Debug'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that transitive dependencies are included in all configurations and you have to manually specify build configurations for them as well in case this is not desired.&lt;/p&gt;
+
+&lt;h4 id=&quot;modular-headers&quot;&gt;Modular Headers&lt;/h4&gt;
+
+&lt;p&gt;If you would like to use modular headers per Pod you can use the following syntax:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'SSZipArchive', :modular_headers =&amp;gt; true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Additionally, when you use the &lt;code class=&quot;highlighter-rouge&quot;&gt;use_modular_headers!&lt;/code&gt; attribute, you can exclude a particular Pod from modular headers using the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'SSZipArchive', :modular_headers =&amp;gt; false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;source&quot;&gt;Source&lt;/h4&gt;
+
+&lt;p&gt;By default the sources specified at the global level are searched in the order they are specified for a dependency match. This behaviour can be altered for a specific dependency by specifying the source with the dependency:&lt;/p&gt;
+
+&lt;p&gt;pod ‘PonyDebugger’, :source =&amp;gt; ‘https://github.com/CocoaPods/Specs.git’
+In this case only the specified source will be searched for the dependency and any global sources ignored.&lt;/p&gt;
+
+&lt;h4 id=&quot;subspecs&quot;&gt;Subspecs&lt;/h4&gt;
+
+&lt;p&gt;When installing a Pod via its name, it will install all of the default subspecs defined in the podspec.&lt;/p&gt;
+
+&lt;p&gt;You may install a specific subspec using the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'QueryKit/Attribute'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You may specify a collection of subspecs to be installed as follows:&lt;/p&gt;
+
+&lt;p&gt;pod ‘QueryKit’, :subspecs =&amp;gt; [‘Attribute’, ‘QuerySet’]&lt;/p&gt;
+
+&lt;h4 id=&quot;test-specs&quot;&gt;Test Specs&lt;/h4&gt;
+
+&lt;p&gt;Test specs can be optionally included via the &lt;code class=&quot;highlighter-rouge&quot;&gt;:testspecs&lt;/code&gt; option. By default, none of a Pod’s test specs are included.&lt;/p&gt;
+
+&lt;p&gt;You may specify a list of test spec names to install using the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'AFNetworking', :testspecs =&amp;gt; ['UnitTests', 'SomeOtherTests']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The values provided to &lt;code class=&quot;highlighter-rouge&quot;&gt;:testspecs&lt;/code&gt; correspond to the name provided to the &lt;code class=&quot;highlighter-rouge&quot;&gt;test_spec&lt;/code&gt; DSL attribute in a Podspec.&lt;/p&gt;
+
+&lt;p&gt;Dependencies can be obtained also from external sources.&lt;/p&gt;
+
+&lt;h4 id=&quot;using-the-files-from-a-local-path&quot;&gt;Using the files from a local path.&lt;/h4&gt;
+
+&lt;p&gt;If you would like to use develop a Pod in tandem with its client project you can use the path option.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'AFNetworking', :path =&amp;gt; '~/Documents/AFNetworking'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Using this option CocoaPods will assume the given folder to be the root of the Pod and will link the files directly from there in the Pods project. This means that your edits will persist to CocoaPods installations.&lt;/p&gt;
+
+&lt;p&gt;The referenced folder can be a checkout of your your favourite SCM or even a git submodule of the current repository.&lt;/p&gt;
+
+&lt;p&gt;Note that the &lt;code class=&quot;highlighter-rouge&quot;&gt;podspec&lt;/code&gt; of the Pod file is expected to be in the folder.&lt;/p&gt;
+
+&lt;h4 id=&quot;from-a-podspec-in-the-root-of-a-library-repository&quot;&gt;From a podspec in the root of a library repository.&lt;/h4&gt;
+
+&lt;p&gt;Sometimes you may want to use the bleeding edge version of a Pod. Or a specific revision. If this is the case, you can specify that with your pod declaration.&lt;/p&gt;
+
+&lt;p&gt;To use the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch of the repository:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'AFNetworking', :git =&amp;gt; 'https://github.com/gowalla/AFNetworking.git'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To use a different branch of the repository:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'AFNetworking', :git =&amp;gt; 'https://github.com/gowalla/AFNetworking.git', :branch =&amp;gt; 'dev'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To use a tag of the repository:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'AFNetworking', :git =&amp;gt; 'https://github.com/gowalla/AFNetworking.git', :tag =&amp;gt; '0.7.0'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Or specify a commit:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'AFNetworking', :git =&amp;gt; 'https://github.com/gowalla/AFNetworking.git', :commit =&amp;gt; '082f8319af'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It is important to note, though, that this means that the version will have to satisfy any other dependencies on the Pod by other Pods.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;podspec&lt;/code&gt; file is expected to be in the root of the repository, if this library does not have a &lt;code class=&quot;highlighter-rouge&quot;&gt;podspec&lt;/code&gt; file in its repository yet, you will have to use one of the approaches outlined in the sections below.&lt;/p&gt;
+
+&lt;h4 id=&quot;from-a-podspec-outside-a-spec-repository-for-a-library-without-podspec&quot;&gt;From a podspec outside a spec repository, for a library without podspec.&lt;/h4&gt;
+
+&lt;p&gt;If a podspec is available from another source outside of the library’s repository. Consider, for instance, a podspec available via HTTP:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'JSONKit', :podspec =&amp;gt; 'https://example.com/JSONKit.podspec'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;podspec&quot;&gt;podspec&lt;/h3&gt;
+
+&lt;p&gt;Use just the dependencies of a Pod defined in the given podspec file. If no arguments are passed the first podspec in the root of the Podfile is used. It is intended to be used by the project of a library. Note: this does not include the sources derived from the podspec just the CocoaPods infrastructure.&lt;/p&gt;
+
+&lt;h4 id=&quot;parameters&quot;&gt;Parameters&lt;/h4&gt;
+
+&lt;p&gt;options Hash {Symbol=&amp;gt;String}&lt;/p&gt;
+
+&lt;p&gt;The path where to load the {Specification}. If not provided the first podspec in the directory of the Podfile is used.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-1&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;podspec
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;podspec :name =&amp;gt; 'QuickDialog'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;podspec :path =&amp;gt; '/Documents/PrettyKit/PrettyKit.podspec'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;target&quot;&gt;target&lt;/h3&gt;
+
+&lt;p&gt;Defines a CocoaPods target and scopes dependencies defined within the given block. A target should correspond to an Xcode target. By default the target includes the dependencies defined outside of the block, unless instructed not to inherit! them.&lt;/p&gt;
+
+&lt;h4 id=&quot;parameters-1&quot;&gt;Parameters&lt;/h4&gt;
+
+&lt;p&gt;name Symbol, String&lt;/p&gt;
+
+&lt;p&gt;The name of the target.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-2&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;Defining a target&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;target 'ZipApp' do
+  pod 'SSZipArchive'
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Defining a test target accessing SSZipArchive pod from its parent&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;target 'ZipApp' do
+  pod 'SSZipArchive'
+
+  target 'ZipAppTests' do
+    inherit! :search_paths
+    pod 'Nimble'
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Defining a target applies Pods to multiple targets via its parent target&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;target 'ShowsApp' do
+  pod 'ShowsKit'
+
+  # Has its own copy of ShowsKit + ShowTVAuth
+  target 'ShowsTV' do
+    pod 'ShowTVAuth'
+  end
+
+  # Has its own copy of Specta + Expecta
+  # and has access to ShowsKit via the app
+  # that the test target is bundled into
+
+  target 'ShowsTests' do
+    inherit! :search_paths
+    pod 'Specta'
+    pod 'Expecta'
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;script_phase&quot;&gt;script_phase&lt;/h3&gt;
+
+&lt;p&gt;Adds a script phase to be integrated with this target. A script phase can be used to execute an arbitrary script that can use all Xcode environment variables during execution. A target may include multiple script phases which they will be added in the order they were declared. Deleting a script phase will effectively remove it from the target if it has been added previously.&lt;/p&gt;
+
+&lt;h4 id=&quot;parameters-2&quot;&gt;Parameters&lt;/h4&gt;
+
+&lt;p&gt;options Hash&lt;/p&gt;
+
+&lt;p&gt;The options for this script phase.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-3&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;script_phase :name =&amp;gt; 'HelloWorldScript', :script =&amp;gt; 'echo &quot;Hello World&quot;'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;script_phase :name =&amp;gt; 'HelloWorldScript', :script =&amp;gt; 'puts &quot;Hello World&quot;', :shell_path =&amp;gt; '/usr/bin/ruby'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;abstract_target&quot;&gt;abstract_target&lt;/h3&gt;
+
+&lt;p&gt;Defines a new abstract target that can be used for convenient target dependency inheritance.&lt;/p&gt;
+
+&lt;h4 id=&quot;parameters-3&quot;&gt;Parameters&lt;/h4&gt;
+
+&lt;p&gt;name Symbol, String
+The name of the target.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-4&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;Defining an abstract target&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;abstract_target 'Networking' do
+  pod 'AlamoFire'
+
+  target 'Networking App 1'
+  target 'Networking App 2'
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Defining an abstract_target wrapping Pods to multiple targets&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Note: There are no targets called &quot;Shows&quot; in any of this workspace's Xcode projects
+abstract_target 'Shows' do
+  pod 'ShowsKit'
+
+  # The target ShowsiOS has its own copy of ShowsKit (inherited) + ShowWebAuth (added here)
+  target 'ShowsiOS' do
+    pod 'ShowWebAuth'
+  end
+
+  # The target ShowsTV has its own copy of ShowsKit (inherited) + ShowTVAuth (added here)
+  target 'ShowsTV' do
+    pod 'ShowTVAuth'
+  end
+
+  # Our tests target has its own copy of
+  # our testing frameworks, and has access
+  # to ShowsKit as well because it is
+  # a child of the abstract target 'Shows'
+
+  target 'ShowsTests' do
+    inherit! :search_paths
+    pod 'Specta'
+    pod 'Expecta'
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;abstract&quot;&gt;abstract!&lt;/h3&gt;
+
+&lt;p&gt;Denotes that the current target is abstract, and thus will not directly link against an Xcode target.&lt;/p&gt;
+
+&lt;h3 id=&quot;inherit&quot;&gt;inherit!&lt;/h3&gt;
+
+&lt;p&gt;Sets the inheritance mode for the current target.&lt;/p&gt;
+
+&lt;h4 id=&quot;parameters-4&quot;&gt;Parameters&lt;/h4&gt;
+
+&lt;p&gt;inheritance Symbol&lt;/p&gt;
+
+&lt;p&gt;The inheritance mode to set.&lt;/p&gt;
+
+&lt;p&gt;Available Modes: + &lt;code class=&quot;highlighter-rouge&quot;&gt;:complete&lt;/code&gt; The target inherits all behaviour from the parent. + &lt;code class=&quot;highlighter-rouge&quot;&gt;:none&lt;/code&gt; The target inherits none of the behaviour from the parent. + &lt;code class=&quot;highlighter-rouge&quot;&gt;:search_paths&lt;/code&gt; The target inherits the search paths of the parent only.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-5&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;Inheriting only search paths&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;target 'App' do
+  target 'AppTests' do
+    inherit! :search_paths
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;target-configuration&quot;&gt;Target configuration&lt;/h2&gt;
+
+&lt;p&gt;These settings are used to control the CocoaPods generated project.&lt;/p&gt;
+
+&lt;p&gt;This starts out simply with stating what platform you are working on. xcodeproj allows you to state specifically which project to link with.&lt;/p&gt;
+
+&lt;h3 id=&quot;platform&quot;&gt;platform&lt;/h3&gt;
+
+&lt;p&gt;Specifies the platform for which a static library should be built.&lt;/p&gt;
+
+&lt;p&gt;CocoaPods provides a default deployment target if one is not specified. The current default values are 4.3 for iOS, 10.6 for OS X, 9.0 for tvOS and 2.0 for watchOS.&lt;/p&gt;
+
+&lt;p&gt;If the deployment target requires it (iOS &amp;lt; 4.3), armv6 architecture will be added to ARCHS.&lt;/p&gt;
+
+&lt;h4 id=&quot;parameters-5&quot;&gt;Parameters&lt;/h4&gt;
+
+&lt;p&gt;name Symbol
+The name of platform, can be either :osx for OS X, :ios for iOS, :tvos for tvOS, or :watchos for watchOS.&lt;/p&gt;
+
+&lt;p&gt;target String, Version
+The optional deployment. If not provided a default value according to the platform name will be assigned.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-6&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;Specifying the platform&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;platform :ios, '4.0'
+platform :ios
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;project&quot;&gt;project&lt;/h3&gt;
+
+&lt;p&gt;Specifies the Xcode project that contains the target that the Pods library should be linked with.&lt;/p&gt;
+
+&lt;p&gt;If none of the target definitions specify an explicit project and there is only one project in the same directory as the Podfile then that project will be used.&lt;/p&gt;
+
+&lt;p&gt;It is possible also to specify whether the build settings of your custom build configurations should be modelled after the release or the debug presets. To do so you need to specify a hash where the name of each build configuration is associated to either :release or :debug.&lt;/p&gt;
+
+&lt;h4 id=&quot;parameters-6&quot;&gt;Parameters&lt;/h4&gt;
+
+&lt;p&gt;path String&lt;/p&gt;
+
+&lt;p&gt;The path of the project to link with&lt;/p&gt;
+
+&lt;p&gt;build_configurations Hash{String =&amp;gt; symbol}
+A hash where the keys are the name of the build configurations in your Xcode project and the values are Symbols that specify if the configuration should be based on the &lt;code class=&quot;highlighter-rouge&quot;&gt;:debug&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;:release&lt;/code&gt; configuration. If no explicit mapping is specified for a configuration in your project, it will default to &lt;code class=&quot;highlighter-rouge&quot;&gt;:release&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-7&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;Specifying the user project&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# This Target can be found in a Xcode project called `FastGPS`
+target 'MyGPSApp' do
+  project 'FastGPS'
+  ...
+end
+
+# Same Podfile, multiple Xcodeprojects
+target 'MyNotesApp' do
+  project 'FastNotes'
+  ...
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Using custom build configurations&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;project 'TestProject', 'Mac App Store' =&amp;gt; :release, 'Test' =&amp;gt; :debug
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;xcodeproj&quot;&gt;xcodeproj&lt;/h3&gt;
+
+&lt;p&gt;xcodeproj is deprecated in 1.0 and has been renamed to project. For pre-1.0 versions use xcodeproj.&lt;/p&gt;
+
+&lt;h3 id=&quot;link_with&quot;&gt;link_with&lt;/h3&gt;
+
+&lt;p&gt;link_with is deprecated in 1.0 in favour of abstract_target and target inheritance instead.&lt;/p&gt;
+
+&lt;h3 id=&quot;inhibit_all_warnings&quot;&gt;inhibit_all_warnings!&lt;/h3&gt;
+
+&lt;p&gt;Inhibits all the warnings from the CocoaPods libraries.&lt;/p&gt;
+
+&lt;p&gt;This attribute is inherited by child target definitions.&lt;/p&gt;
+
+&lt;p&gt;If you would like to inhibit warnings per Pod you can use the following syntax:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'SSZipArchive', :inhibit_warnings =&amp;gt; true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Additionally, when you use inhibit_all_warnings! attribute, you can exclude a particular Pod from being inhibited using the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'SSZipArchive', :inhibit_warnings =&amp;gt; false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;use_modular_headers&quot;&gt;use_modular_headers!&lt;/h3&gt;
+
+&lt;p&gt;Use modular headers for all CocoaPods static libraries.&lt;/p&gt;
+
+&lt;p&gt;This attribute is inherited by child target definitions.&lt;/p&gt;
+
+&lt;p&gt;If you would like to use modular headers per Pod you can use the following syntax:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'SSZipArchive', :modular_headers =&amp;gt; true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Additionally, when you use the use_modular_headers! attribute, you can exclude a particular Pod from modular headers using the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pod 'SSZipArchive', :modular_headers =&amp;gt; false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;use_frameworks&quot;&gt;use_frameworks!&lt;/h3&gt;
+
+&lt;p&gt;Use frameworks instead of static libraries for Pods.&lt;/p&gt;
+
+&lt;p&gt;This attribute is inherited by child target definitions.&lt;/p&gt;
+
+&lt;h2 id=&quot;workspace&quot;&gt;Workspace&lt;/h2&gt;
+
+&lt;p&gt;This group list the options to configure workspace and to set global settings.&lt;/p&gt;
+
+&lt;h3 id=&quot;workspace-1&quot;&gt;workspace&lt;/h3&gt;
+
+&lt;p&gt;Specifies the Xcode workspace that should contain all the projects.&lt;/p&gt;
+
+&lt;p&gt;If no explicit Xcode workspace is specified and only one project exists in the same directory as the Podfile, then the name of that project is used as the workspace’s name.&lt;/p&gt;
+
+&lt;h4 id=&quot;parameters-7&quot;&gt;Parameters&lt;/h4&gt;
+
+&lt;p&gt;path String&lt;/p&gt;
+
+&lt;p&gt;Path of the workspace.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-8&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;Specifying a workspace&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;workspace 'MyWorkspace'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;generate_bridge_support&quot;&gt;generate_bridge_support!&lt;/h3&gt;
+
+&lt;p&gt;Specifies that a BridgeSupport metadata document should be generated from the headers of all installed Pods.&lt;/p&gt;
+
+&lt;p&gt;This is for scripting languages such as MacRuby, Nu, and JSCocoa, which use it to bridge types, functions, etc.&lt;/p&gt;
+
+&lt;h3 id=&quot;set_arc_compatibility_flag&quot;&gt;set_arc_compatibility_flag!&lt;/h3&gt;
+
+&lt;p&gt;Specifies that the -fobjc-arc flag should be added to the OTHER_LD_FLAGS.&lt;/p&gt;
+
+&lt;p&gt;This is used as a workaround for a compiler bug with non-ARC projects (see #142). This was originally done automatically but libtool as of Xcode 4.3.2 no longer seems to support the -fobjc-arc flag. Therefore it now has to be enabled explicitly using this method.&lt;/p&gt;
+
+&lt;p&gt;Support for this method might be dropped in CocoaPods 1.0.&lt;/p&gt;
+
+&lt;h2 id=&quot;sources&quot;&gt;Sources&lt;/h2&gt;
+
+&lt;p&gt;The Podfile retrieves specs from a given list of sources (repositories).&lt;/p&gt;
+
+&lt;p&gt;Sources are global and they are not stored per target definition.&lt;/p&gt;
+
+&lt;h3 id=&quot;source-1&quot;&gt;source&lt;/h3&gt;
+
+&lt;p&gt;Specifies the location of specs&lt;/p&gt;
+
+&lt;p&gt;Use this method to specify sources. The order of the sources is relevant. CocoaPods will use the highest version of a Pod of the first source which includes the Pod (regardless whether other sources have a higher version).&lt;/p&gt;
+
+&lt;p&gt;The official CocoaPods source is implicit. Once you specify another source, then it will need to be included.&lt;/p&gt;
+
+&lt;h4 id=&quot;parameters-8&quot;&gt;Parameters&lt;/h4&gt;
+
+&lt;p&gt;source String
+The URL of a specs repository.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-9&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;Specifying to first use the Artsy repository and then the CocoaPods Master Repository&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;source 'https://github.com/artsy/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;hooks&quot;&gt;Hooks&lt;/h2&gt;
+
+&lt;p&gt;The Podfile provides hooks that will be called during the installation process.&lt;/p&gt;
+
+&lt;p&gt;Hooks are global and not stored per target definition.&lt;/p&gt;
+
+&lt;h3 id=&quot;plugin&quot;&gt;plugin&lt;/h3&gt;
+
+&lt;p&gt;Specifies the plugins that should be used during installation.&lt;/p&gt;
+
+&lt;p&gt;Use this method to specify a plugin that should be used during installation, along with the options that should be passed to the plugin when it is invoked.&lt;/p&gt;
+
+&lt;h4 id=&quot;parameters-9&quot;&gt;Parameters&lt;/h4&gt;
+
+&lt;p&gt;name String
+The name of the plugin.&lt;/p&gt;
+
+&lt;p&gt;options Hash
+The optional options that should be passed to the plugin when its hooks are invoked.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-10&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;Specifying to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;slather&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;cocoapods-keys&lt;/code&gt; plugins.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plugin 'cocoapods-keys', :keyring =&amp;gt; 'Eidolon'
+plugin 'slather'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;pre_install&quot;&gt;pre_install&lt;/h3&gt;
+
+&lt;p&gt;This hook allows you to make any changes to the Pods after they have been downloaded but before they are installed.&lt;/p&gt;
+
+&lt;p&gt;It receives the &lt;code class=&quot;highlighter-rouge&quot;&gt;Pod::Installer&lt;/code&gt; as its only argument.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-11&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;Defining a pre-install hook in a Podfile.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pre_install do |installer|
+  # Do something fancy!
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;post_install&quot;&gt;post_install&lt;/h3&gt;
+
+&lt;p&gt;This hook allows you to make any last changes to the generated Xcode project before it is written to disk, or any other tasks you might want to perform.&lt;/p&gt;
+
+&lt;p&gt;It receives the &lt;code class=&quot;highlighter-rouge&quot;&gt;Pod::Installer&lt;/code&gt; as its only argument.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-12&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;p&gt;Customising the build settings of all targets&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['GCC_ENABLE_OBJC_GC'] = 'supported'
+    end
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;supports_swift_versions&quot;&gt;supports_swift_versions&lt;/h3&gt;
+
+&lt;p&gt;Specifies the Swift version requirements this target definition supports.&lt;/p&gt;
+
+&lt;p&gt;Note These requirements are inherited from the parent, if specified and if none are specified at the root level then all versions are considered to be supported.&lt;/p&gt;
+
+&lt;h4 id=&quot;parameters-10&quot;&gt;Parameters&lt;/h4&gt;
+
+&lt;p&gt;requirementsString, Version, Array, Array
+The set of requirements this target supports.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples-13&quot;&gt;Examples:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;target 'MyApp' do
+  supports_swift_versions '&amp;gt;= 3.0', '&amp;lt; 4.0'
+  pod 'AFNetworking', '~&amp;gt; 1.0'
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;supports_swift_versions '&amp;gt;= 3.0', '&amp;lt; 4.0'
+
+target 'MyApp' do
+  pod 'AFNetworking', '~&amp;gt; 1.0'
+end
+
+target 'ZipApp' do
+  pod 'SSZipArchive'
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Mon, 15 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/04/Podfile%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/04/Podfile%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/</guid>
+        
+        <category>cocoapods</category>
+        
+        
+        <category>cocoapods</category>
+        
+      </item>
     
       <item>
         <title>MAC系统命令大全（持续更新）</title>
@@ -535,8 +2713,8 @@
 &lt;/table&gt;
 </description>
         <pubDate>Wed, 03 Apr 2019 00:00:00 +0800</pubDate>
-        <link>https://ucself.cn/2019/04/MAC%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</link>
-        <guid isPermaLink="true">https://ucself.cn/2019/04/MAC%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</guid>
+        <link>http://localhost:4000/2019/04/MAC%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/04/MAC%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</guid>
         
         <category>archive</category>
         
@@ -652,8 +2830,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 16 Jan 2019 00:00:00 +0800</pubDate>
-        <link>https://ucself.cn/2019/01/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-2019%E5%B9%B4%E5%88%9D%E8%AE%A1%E5%88%92/</link>
-        <guid isPermaLink="true">https://ucself.cn/2019/01/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-2019%E5%B9%B4%E5%88%9D%E8%AE%A1%E5%88%92/</guid>
+        <link>http://localhost:4000/2019/01/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-2019%E5%B9%B4%E5%88%9D%E8%AE%A1%E5%88%92/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/01/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-2019%E5%B9%B4%E5%88%9D%E8%AE%A1%E5%88%92/</guid>
         
         <category>archive</category>
         
@@ -702,8 +2880,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 30 Mar 2018 00:00:00 +0800</pubDate>
-        <link>https://ucself.cn/2018/03/iOS-UIViewController%E7%9A%84self.view%E5%B8%83%E5%B1%80%E4%BD%8D%E7%BD%AE%E9%97%AE%E9%A2%98/</link>
-        <guid isPermaLink="true">https://ucself.cn/2018/03/iOS-UIViewController%E7%9A%84self.view%E5%B8%83%E5%B1%80%E4%BD%8D%E7%BD%AE%E9%97%AE%E9%A2%98/</guid>
+        <link>http://localhost:4000/2018/03/iOS-UIViewController%E7%9A%84self.view%E5%B8%83%E5%B1%80%E4%BD%8D%E7%BD%AE%E9%97%AE%E9%A2%98/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/iOS-UIViewController%E7%9A%84self.view%E5%B8%83%E5%B1%80%E4%BD%8D%E7%BD%AE%E9%97%AE%E9%A2%98/</guid>
         
         <category>archive</category>
         
@@ -765,8 +2943,8 @@
 &lt;p&gt;       只是模拟器运行 DoctorHealthSimulator 工程，真机运行 DoctorHealth 工程，就达到了需要的效果，模拟器只是没有妙健康的功能（本来模拟器就不支持蓝牙等功能）&lt;/p&gt;
 </description>
         <pubDate>Thu, 29 Mar 2018 00:00:00 +0800</pubDate>
-        <link>https://ucself.cn/2018/03/swift-%E5%B7%A5%E7%A8%8B-TARGETS%E4%B8%8E%E9%A2%84%E5%AE%9A%E4%B9%89%E5%AE%8F/</link>
-        <guid isPermaLink="true">https://ucself.cn/2018/03/swift-%E5%B7%A5%E7%A8%8B-TARGETS%E4%B8%8E%E9%A2%84%E5%AE%9A%E4%B9%89%E5%AE%8F/</guid>
+        <link>http://localhost:4000/2018/03/swift-%E5%B7%A5%E7%A8%8B-TARGETS%E4%B8%8E%E9%A2%84%E5%AE%9A%E4%B9%89%E5%AE%8F/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/swift-%E5%B7%A5%E7%A8%8B-TARGETS%E4%B8%8E%E9%A2%84%E5%AE%9A%E4%B9%89%E5%AE%8F/</guid>
         
         <category>archive</category>
         
@@ -777,7 +2955,20 @@
     
       <item>
         <title>iOS框架如何发布到CocoaPods</title>
-        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;目录&quot;&gt;目录&lt;/h2&gt;
+
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#目录&quot;&gt;目录&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#前言&quot;&gt;前言&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#一创建自己库添加-cocoapods-支持&quot;&gt;一、创建自己库添加 Cocoapods 支持&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#二更新自己库添加-cocoapods-支持&quot;&gt;二、更新自己库添加 Cocoapods 支持&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;经常使用别人的封装库或者项目，在项目开发中自己也有封装，即使不能给别人广泛使用，也可以自己在多项目中 pod 方式使用自己封装的代码
 前提：mac 上已经装好了 pod,git&lt;/p&gt;
@@ -964,13 +3155,13 @@ end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Wed, 01 Nov 2017 00:00:00 +0800</pubDate>
-        <link>https://ucself.cn/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/</link>
-        <guid isPermaLink="true">https://ucself.cn/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/</guid>
+        <link>http://localhost:4000/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/</guid>
         
-        <category>archive</category>
+        <category>cocoapods</category>
         
         
-        <category>archive</category>
+        <category>cocoapods</category>
         
       </item>
     
@@ -1044,8 +3235,8 @@ import JLRoutes
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 21 Sep 2017 00:00:00 +0800</pubDate>
-        <link>https://ucself.cn/2017/09/iOS-%E4%B8%ADFrameworks-Pods-Bridging-Header.h%E6%A1%A5%E6%8E%A5-import%E4%B9%8B%E9%97%B4%E7%9A%84%E7%90%86%E8%A7%A3/</link>
-        <guid isPermaLink="true">https://ucself.cn/2017/09/iOS-%E4%B8%ADFrameworks-Pods-Bridging-Header.h%E6%A1%A5%E6%8E%A5-import%E4%B9%8B%E9%97%B4%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+        <link>http://localhost:4000/2017/09/iOS-%E4%B8%ADFrameworks-Pods-Bridging-Header.h%E6%A1%A5%E6%8E%A5-import%E4%B9%8B%E9%97%B4%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/iOS-%E4%B8%ADFrameworks-Pods-Bridging-Header.h%E6%A1%A5%E6%8E%A5-import%E4%B9%8B%E9%97%B4%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
         
         <category>archive</category>
         
@@ -1259,8 +3450,8 @@ self.contactObjects = (sourceContactObjects as NSArray).filtered(using: filterPr
 &lt;p&gt;后续有什么问题或者建议，请给我留言&lt;/p&gt;
 </description>
         <pubDate>Mon, 11 Sep 2017 00:00:00 +0800</pubDate>
-        <link>https://ucself.cn/2017/09/iOS-NSPredicate-%E8%B0%93%E8%AF%8D-%E8%AF%AD%E6%B3%95/</link>
-        <guid isPermaLink="true">https://ucself.cn/2017/09/iOS-NSPredicate-%E8%B0%93%E8%AF%8D-%E8%AF%AD%E6%B3%95/</guid>
+        <link>http://localhost:4000/2017/09/iOS-NSPredicate-%E8%B0%93%E8%AF%8D-%E8%AF%AD%E6%B3%95/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/iOS-NSPredicate-%E8%B0%93%E8%AF%8D-%E8%AF%AD%E6%B3%95/</guid>
         
         <category>archive</category>
         
@@ -1270,7 +3461,7 @@ self.contactObjects = (sourceContactObjects as NSArray).filtered(using: filterPr
       </item>
     
       <item>
-        <title>Git 2、基础</title>
+        <title>Git 3、分支</title>
         <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;       在工作使用到很多常用工具，遇到问题百度/谷歌一下就知道怎么使用，日积月累了很多知识点和使用技能，但是没有整理成专题的知识体系，为了方便以后遇到问题或者空闲阅读的时候当字典查阅。就从这篇开始对 Git 知识体系进行连载。&lt;/p&gt;
@@ -1281,466 +3472,84 @@ self.contactObjects = (sourceContactObjects as NSArray).filtered(using: filterPr
 
 &lt;p&gt;       在学习完本章之后，你应该能够配置并初始化一个仓库（repository）、开始或停止跟踪（track）文件、暂存（stage）或提交（commit)更改。 本章也将向你演示如何配置 Git 来忽略指定的文件和文件模式、如何迅速而简单地撤销错误操作、如何浏览你的项目的历史版本以及不同提交（commits）间的差异、如何向你的远程仓库推送（push）以及如何从你的远程仓库拉取（pull）文件。&lt;/p&gt;
 
-&lt;h3 id=&quot;获取-git-仓库&quot;&gt;获取 Git 仓库&lt;/h3&gt;
+&lt;h3 id=&quot;分支简介&quot;&gt;分支简介&lt;/h3&gt;
 
-&lt;p&gt;       1、在现有目录中初始化仓库&lt;/p&gt;
+&lt;p&gt;       在当前所在的提交对象上创建一个分支&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git init
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch testing
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;       2、克隆现有的仓库&lt;/p&gt;
+&lt;p&gt;       分支切换&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git@github.com:Ucself/GitStudyRepository.git
-
-git clone git@github.com:Ucself/GitStudyRepository.git  RepositoryAlias
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout testing
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;记录每次更新到仓库&quot;&gt;记录每次更新到仓库&lt;/h3&gt;
+&lt;h3 id=&quot;分支的新建与合并&quot;&gt;分支的新建与合并&lt;/h3&gt;
 
-&lt;p&gt;       1、文件的状态变化周期&lt;/p&gt;
+&lt;p&gt;       分支创建与切换&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/2016-11-10/git_lifecycle.jpg&quot; alt=&quot;生命周期&quot; title=&quot;生命周期&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;       2、检查当前文件状态&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git status
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout -b iss53
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;       3、跟踪新文件&lt;/p&gt;
+&lt;p&gt;       等同&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add README
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch iss53
+git checkout iss53
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;       4、暂存已修改文件&lt;/p&gt;
+&lt;p&gt;       分支的合并&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add CONTRIBUTING.md
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout master
+git merge iss53
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;       5、状态简览&lt;/p&gt;
+&lt;p&gt;       分支删除&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git status -s
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch -d iss53
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;       6、忽略文件&lt;/p&gt;
+&lt;h3 id=&quot;分支管理&quot;&gt;分支管理&lt;/h3&gt;
 
-&lt;p&gt;       我们可以创建一个名为 .gitignore 的文件，列出要忽略的文件模式，文件 .gitignore 的格式规范如下：&lt;/p&gt;
+&lt;p&gt;       当前所有分支&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;所有空行或者以 ＃ 开头的行都会被 Git 忽略。&lt;/li&gt;
-  &lt;li&gt;可以使用标准的 glob 模式匹配。&lt;/li&gt;
-  &lt;li&gt;匹配模式可以以（/）开头防止递归。&lt;/li&gt;
-  &lt;li&gt;匹配模式可以以（/）结尾指定目录。&lt;/li&gt;
-  &lt;li&gt;要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;       7、查看已暂存和未暂存的修改&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git status
-git diff
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;       8、提交更新&lt;/p&gt;
+&lt;p&gt;       查看每一个分支的最后一次提交&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -m &quot;Story 182: Fix benchmarks for speed&quot;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch -v
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;       9、提交更新，跳过使用暂存区域&lt;/p&gt;
+&lt;p&gt;       查看哪些分支已经合并到当前分支&lt;/p&gt;
 
-&lt;p&gt;       给 git commit 加上 -a 选项&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -m &quot;Story 182: Fix benchmarks for speed&quot; -a
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch --merged
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;       9、移除文件&lt;/p&gt;
+&lt;p&gt;       查看所有包含未合并工作的分支&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git rm PROJECTS.md
-rm 'PROJECTS.md'
-
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch --no-merged
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;       9、移动文件&lt;/p&gt;
+&lt;h3 id=&quot;远程分支&quot;&gt;远程分支&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git mv README.md README
+&lt;p&gt;       获得远程引用的分支完整列表&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git ls-remote
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;查看提交历史&quot;&gt;查看提交历史&lt;/h3&gt;
+&lt;p&gt;       远程分支的更多信息&lt;/p&gt;
 
-&lt;p&gt;       1、查看提交历史&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git log
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;git log 的常用选项&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;选项&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;说明&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-p&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;按补丁格式显示每个更新之间的差异。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;–stat&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;显示每次更新的文件修改统计信息&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;–shortstat&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;只显示 –stat 中最后的行数修改添加移除统计。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;–name-only&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;仅在提交信息后显示已修改的文件清单。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;–name-status&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;显示新增、修改、删除的文件清单。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;–abbrev-commit&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;–relative-date&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;使用较短的相对时间显示（比如，“2 weeks ago”）。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;–graph&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;显示 ASCII 图形表示的分支合并历史。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;–pretty&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）。&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;       2、限制输出长度&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git log -(5)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;限制 git log 输出的选项&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;选项&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;说明&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-(n)&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;仅显示最近的 n 条提交&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;–since, –after&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;仅显示指定时间之后的提交。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;–until, –before&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;仅显示指定时间之前的提交。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;–author&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;仅显示指定作者相关的提交。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;–committer&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;仅显示指定提交者相关的提交。&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;–grep&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;仅显示含指定关键字的提交&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-S&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;仅显示添加或移除了某个关键字的提交&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;撤消操作&quot;&gt;撤消操作&lt;/h3&gt;
-
-&lt;p&gt;       1、你提交后发现忘记了暂存某些需要的修改&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git commit -m 'initial commit'
-$ git add forgotten_file
-$ git commit --amend
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;最终你只会有一个提交 - 第二次提交将代替第一次提交的结果。&lt;/p&gt;
-
-&lt;p&gt;       2、取消暂存的文件&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git reset HEAD CONTRIBUTING.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       3、撤消对文件的修改&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout -- CONTRIBUTING.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;远程仓库的使用&quot;&gt;远程仓库的使用&lt;/h3&gt;
-
-&lt;p&gt;       1、查看远程仓库&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote -v
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       2、添加远程仓库&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add pb https://github.com/paulboone/ticgit
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       3、从远程仓库中抓取与拉取&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git fetch [remote-name]
-git pull [remote-name]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       4、推送到远程仓库&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push [remote-name] [branch-name]
-git push origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       5、查看远程仓库&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote show [remote-name]
-git remote show origin
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       6、远程仓库的移除与重命名&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote rename pb paul
-git remote rm paul
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;打标签&quot;&gt;打标签&lt;/h3&gt;
-
-&lt;p&gt;       1、列出标签&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git tag
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       2、创建标签&lt;/p&gt;
-
-&lt;p&gt;附注标签&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git tag -a v1.4 -m 'my version 1.4'
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;轻量标签&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git tag v1.4-lw
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       3、后期打标签&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git tag -a v1.2 9fceb02
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       4、共享标签&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push origin v1.5
-git push origin --tags
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       5、检出标签&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout -b [branchname] [tagname]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;git-别名&quot;&gt;Git 别名&lt;/h3&gt;
-
-&lt;p&gt;       1、添加别名&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config --global alias.co checkout
-git config --global alias.br branch
-git config --global alias.ci commit
-git config --global alias.st status
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;       2、移除别名&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config --global --unset alias.acp
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote show
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
-        <pubDate>Thu, 10 Nov 2016 00:00:00 +0800</pubDate>
-        <link>https://ucself.cn/2016/11/Git-2-%E5%9F%BA%E7%A1%80/</link>
-        <guid isPermaLink="true">https://ucself.cn/2016/11/Git-2-%E5%9F%BA%E7%A1%80/</guid>
+        <pubDate>Sat, 12 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/Git-3-%E5%88%86%E6%94%AF/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/Git-3-%E5%88%86%E6%94%AF/</guid>
         
         <category>git</category>
         
         
         <category>git</category>
-        
-      </item>
-    
-      <item>
-        <title>Git 1、起步</title>
-        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
-
-&lt;p&gt;       在工作使用到很多常用工具，遇到问题百度/谷歌一下就知道怎么使用，日积月累了很多知识点和使用技能，但是没有整理成专题的知识体系，为了方便以后遇到问题或者空闲阅读的时候当字典查阅。就从这篇开始对 Git 知识体系进行连载。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://progit.bootcss.com&quot; title=&quot;阅读来自Pro Git&quot;&gt;阅读来自 Pro Git&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-起步&quot;&gt;Git 起步&lt;/h2&gt;
-
-&lt;p&gt;       什么是“版本控制”？我为什么要关心它呢？ 版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;分布式版本控制系统&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;       客户端并不只提取最新版本的文件快照，而是把代码仓库完整地镜像下来。 这么一来，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。 因为每一次的克隆操作，实际上都是一次对代码仓库的完整备份。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/2016-11-05/git_system.jpg&quot; alt=&quot;分布式版本控制系统&quot; title=&quot;分布式版本控制系统&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;直接记录快照，而非差异比较&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;       Git 更像是把数据看作是对小型文件系统的一组快照。 每次你提交更新，或在 Git 中保存项目状态时，它主要对当时的全部文件制作一个快照并保存这个快照的索引。 为了高效，如果文件没有修改，Git 不再重新存储该文件，而是只保留一个链接指向之前存储的文件。 Git 对待数据更像是一个 快照流。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/2016-11-05/git_storage.jpg&quot; alt=&quot;直接记录快照&quot; title=&quot;直接记录快照&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;近乎所有操作都是本地执行&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;       Git 在 Git 中的绝大多数操作都只需要访问本地文件和资源，一般不需要来自网络上其它计算机的信息。因为你在本地磁盘上就有项目的完整历史，所以大部分操作看起来瞬间完成。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Git 一般只添加数据&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;       你执行的 Git 操作，几乎只往 Git 数据库中增加数据。 很难让 Git 执行任何不可逆操作，或者让它以任何方式清除数据。 但是一旦你提交快照到 Git 中，就难以再丢失数据，特别是如果你定期的推送数据库到其它仓库的话。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Git 三种状态&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;Git 仓库目录： Git 用来保存项目的元数据和对象数据库的地方。&lt;/li&gt;
-      &lt;li&gt;工作目录：对项目的某个版本独立提取出来的内容。&lt;/li&gt;
-      &lt;li&gt;暂存区域：是一个文件，保存了下次将提交的文件列表信息，一般在 Git 仓库目录中。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/2016-11-05/git_state.jpg&quot; alt=&quot;直接记录快照&quot; title=&quot;直接记录快照&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 05 Nov 2016 00:00:00 +0800</pubDate>
-        <link>https://ucself.cn/2016/11/Git-1-%E8%B5%B7%E6%AD%A5/</link>
-        <guid isPermaLink="true">https://ucself.cn/2016/11/Git-1-%E8%B5%B7%E6%AD%A5/</guid>
-        
-        <category>git</category>
-        
-        
-        <category>git</category>
-        
-      </item>
-    
-      <item>
-        <title>iOS Objective-C与Swift闭包（block）写法</title>
-        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
-
-&lt;p&gt;       在项目开发中经常会去查 iOS 闭包怎么写，因为它的语法太古怪，两种语言写法不一，经常搞混，干脆记录下常用的写法算了&lt;/p&gt;
-
-&lt;h2 id=&quot;闭包&quot;&gt;闭包&lt;/h2&gt;
-
-&lt;p&gt;       闭包是指可以包含自由（未绑定到特定对象）变量的代码块；这些变量不是在这个代码块内或者任何全局上下文中定义的，而是在定义代码块的环境中定义（局部变量）。&lt;/p&gt;
-
-&lt;p&gt;       “闭包” 一词来源于以下两者的结合：要执行的代码块（由于自由变量被包含在代码块中，这些自由变量以及它们引用的对象没有被释放）和为自由变量提供绑定的计算环境（作用域）。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;声明闭包（block）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-Objective-C&quot;&gt;typedef NSString *(^blockType)(NSString *parameter1, NSString *parameter2);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-Swift&quot;&gt;typealias blockType = (_ parameter1:String, parameter2:String ) -&amp;gt; Void
-var objectBlock:blockType?
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;定义闭包（block）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 第一种方式 使用声明
-@property (nonatomic,strong) blockType *objectBlock;
-
-_objectBlock = ^(NSString *parameter1,NSString *parameter2){
-    return parameter1;
-};
-// 第二种方式 不使用声明
-@property (nonatomic,strong) NSString *(^objectBlock)(NSString *parameter1, NSString *parameter2);
-
-_objectBlock = ^(NSString *parameter1,NSString *parameter2){
-    return parameter1;
-};
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let blockCallbackName:String = {(parameter1:String, parameter2:String) -&amp;gt;String in
-    return parameter1
-}(&quot;parameter1&quot;,&quot;parameter2&quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;函数定义闭包（block）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-(void)functionUseBlock:(NSString* (^)(NSString *parameter1, NSString *parameter2))callBackOne callBackTwo:(blockCallbackType)callBackTwo{
-    if (callBackOne) {
-        callBackOne(@&quot;parameter1&quot;,@&quot;parameter2&quot;);
-    }
-    if (callBackTwo) {
-        callBackTwo(@&quot;parameter1&quot;,@&quot;parameter2&quot;);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func functionUseBlock(callBack:(String,String) -&amp;gt;String) -&amp;gt; Void  {
-    print(callBack(&quot;parameter1&quot;,&quot;parameter2&quot;))
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;调用函数闭包（block）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[self functionUseBlock:^NSString *(NSString *parameter1, NSString *parameter2) {
-    return parameter1;
-} callBackTwo:^NSString *(NSString *parameter1, NSString *parameter2) {
-    return parameter1;
-}];
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;self.functionUseBlock = { (parameter1, parameter2) -&amp;gt; String in
-    return parameter2
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;结尾&quot;&gt;结尾&lt;/h2&gt;
-
-&lt;p&gt;Swift 版本根据参数和返回值有很多缩写方式，这里就不一一写上了。&lt;/p&gt;
-</description>
-        <pubDate>Fri, 04 Nov 2016 00:00:00 +0800</pubDate>
-        <link>https://ucself.cn/2016/11/iOS-Objective-C%E4%B8%8ESwift%E9%97%AD%E5%8C%85-block-%E5%86%99%E6%B3%95/</link>
-        <guid isPermaLink="true">https://ucself.cn/2016/11/iOS-Objective-C%E4%B8%8ESwift%E9%97%AD%E5%8C%85-block-%E5%86%99%E6%B3%95/</guid>
-        
-        <category>archive</category>
-        
-        
-        <category>archive</category>
         
       </item>
     

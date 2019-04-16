@@ -24,8 +24,8 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="https://ucself.cn/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/">
-  <link rel="alternate" type="application/rss+xml" title="Ucself" href="https://ucself.cn/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/">
+  <link rel="alternate" type="application/rss+xml" title="Ucself" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
   
@@ -90,6 +90,10 @@
                  
                 <li class="navigation__item">
                   <a href="/pages/git" title="Git">Git</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/cocoapods" title="cocoapods">cocoapods</a>
                 </li>
                   
                 <li class="navigation__item">
@@ -186,13 +190,26 @@
         >2017-11-01</time
       >
       &#8226;
-      <span class="post-meta__tags tags">archive</span>
+      <span class="post-meta__tags tags">cocoapods</span>
     </div>
     <h1 class="post-title">iOS框架如何发布到CocoaPods</h1>
   </header>
 
   <section class="post">
-    <h2 id="前言">前言</h2>
+    <h2 id="目录">目录</h2>
+
+<!-- TOC -->
+
+<ul>
+  <li><a href="#目录">目录</a></li>
+  <li><a href="#前言">前言</a></li>
+  <li><a href="#一创建自己库添加-cocoapods-支持">一、创建自己库添加 Cocoapods 支持</a></li>
+  <li><a href="#二更新自己库添加-cocoapods-支持">二、更新自己库添加 Cocoapods 支持</a></li>
+</ul>
+
+<!-- /TOC -->
+
+<h2 id="前言">前言</h2>
 
 <p>经常使用别人的封装库或者项目，在项目开发中自己也有封装，即使不能给别人广泛使用，也可以自己在多项目中 pod 方式使用自己封装的代码
 前提：mac 上已经装好了 pod,git</p>
@@ -420,7 +437,7 @@ end
     <script>
     
     var disqus_config = function () {
-        this.page.url = "https://ucself.cn/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/";
+        this.page.url = "http://localhost:4000/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/";
         this.page.identifier = "/2017/11/iOS%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods/";
     };
 
@@ -444,7 +461,7 @@ end
 
             <section class="footer">
     <footer>
-        <span class="footer__copyright">本站由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-04-03 生成。</span>
+        <span class="footer__copyright">本站由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-04-16 生成。</span>
         <span class="footer__copyright">  </span>
         <span class="footer__copyright">本站由 <a href="https://ucself.cn">@ucself</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2019</span>
     </footer>
