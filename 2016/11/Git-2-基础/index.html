@@ -196,7 +196,26 @@
   </header>
 
   <section class="post">
-    <h2 id="前言">前言</h2>
+    <!-- TOC -->
+
+<ul>
+  <li><a href="#前言">前言</a></li>
+  <li><a href="#git-基础">Git 基础</a>
+    <ul>
+      <li><a href="#获取-git-仓库">获取 Git 仓库</a></li>
+      <li><a href="#记录每次更新到仓库">记录每次更新到仓库</a></li>
+      <li><a href="#查看提交历史">查看提交历史</a></li>
+      <li><a href="#撤消操作">撤消操作</a></li>
+      <li><a href="#远程仓库的使用">远程仓库的使用</a></li>
+      <li><a href="#打标签">打标签</a></li>
+      <li><a href="#git-别名">Git 别名</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h2 id="前言">前言</h2>
 
 <p>       在工作使用到很多常用工具，遇到问题百度/谷歌一下就知道怎么使用，日积月累了很多知识点和使用技能，但是没有整理成专题的知识体系，为了方便以后遇到问题或者空闲阅读的时候当字典查阅。就从这篇开始对 Git 知识体系进行连载。</p>
 
@@ -484,7 +503,12 @@ git push origin --tags
 
 <h3 id="git-别名">Git 别名</h3>
 
-<p>       1、添加别名</p>
+<p>       1、查看所有别名</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git alias
+</code></pre></div></div>
+
+<p>       2、添加别名</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global alias.co checkout
 git config --global alias.br branch
@@ -492,7 +516,7 @@ git config --global alias.ci commit
 git config --global alias.st status
 </code></pre></div></div>
 
-<p>       2、移除别名</p>
+<p>       3、移除别名</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global --unset alias.acp
 </code></pre></div></div>

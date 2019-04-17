@@ -196,7 +196,24 @@
   </header>
 
   <section class="post">
-    <h2 id="前言">前言</h2>
+    <!-- TOC -->
+
+<ul>
+  <li><a href="#前言">前言</a></li>
+  <li><a href="#git-基础">Git 基础</a>
+    <ul>
+      <li><a href="#分支简介">分支简介</a></li>
+      <li><a href="#分支的新建与合并">分支的新建与合并</a></li>
+      <li><a href="#分支管理">分支管理</a></li>
+      <li><a href="#远程分支">远程分支</a></li>
+      <li><a href="#变基">变基</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h2 id="前言">前言</h2>
 
 <p>       在工作使用到很多常用工具，遇到问题百度/谷歌一下就知道怎么使用，日积月累了很多知识点和使用技能，但是没有整理成专题的知识体系，为了方便以后遇到问题或者空闲阅读的时候当字典查阅。就从这篇开始对 Git 知识体系进行连载。</p>
 
@@ -275,6 +292,35 @@ git merge iss53
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote show
 </code></pre></div></div>
+
+<p>       推送分支到远程</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin serverfix
+</code></pre></div></div>
+
+<p>       跟踪分支</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout --track origin/serverfix
+</code></pre></div></div>
+
+<p>       设置分支别名</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b sf origin/serverfix
+</code></pre></div></div>
+
+<p>       拉取</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull
+</code></pre></div></div>
+
+<p>       删除远程分支</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin --delete serverfix
+</code></pre></div></div>
+
+<h3 id="变基">变基</h3>
+
+<p>在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase</p>
 
   </section>
 </article>
