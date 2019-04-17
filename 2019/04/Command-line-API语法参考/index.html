@@ -1,0 +1,3112 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Command-line-API 语法参考</title>
+  <meta name="description" content="Command-line-API 语法参考">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Command-line-API 语法参考">
+  <meta name="twitter:description" content="Command-line-API 语法参考">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Command-line-API 语法参考">
+  <meta property="og:description" content="Command-line-API 语法参考">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2019/04/Command-line-API%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/">
+  <link rel="alternate" type="application/rss+xml" title="Ucself" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header
+  class="panel-cover panel-cover--collapsed"
+  style="background-image: url('/assets/images/background-cover.jpg')"
+>
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+        <a
+          href="/#blog"
+          title="前往 Ucself 的主页"
+          class="blog-button"
+          ><img
+            src="/assets/images/avatar.jpg"
+            width="80"
+            alt="Ucself logo"
+            class="panel-cover__logo logo"
+        /></a>
+        <h1 class="panel-cover__title panel-title">
+          <a
+            href="/#blog"
+            title="link to homepage for Ucself"
+            class="blog-button"
+            >Ucself</a
+          >
+        </h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">为人者，有大度成大器矣!</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是ucself，一名大前端开发工程师。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        
+        <p class="panel-cover__description">生活需要总结，记录下自己学习的点滴，在此搭建自我知识体系。</p>
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item">
+                  <a
+                    href="/#blog"
+                    title="Visit blog"
+                    class="blog-button"
+                    >博客</a
+                  >
+                </li>
+                 
+                <li class="navigation__item">
+                  <a href="/pages/git" title="Git">Git</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/cocoapods" title="cocoapods">cocoapods</a>
+                </li>
+                  
+                <li class="navigation__item">
+                  <a href="/pages/archive" title="归档">归档</a>
+                </li>
+                 
+              </ul>
+            </nav>
+          </div>
+
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="#"
+        title="添加 lbj147123 的微信"
+      >
+        <i class="social fa fa-weixin"></i>
+        <span class="label">Weixin</span>
+      </a>
+    </li>
+    
+    <!-- Weibo -->
+    <li class="navigation__item">
+      <a
+        href="http://weibo.com/p/1005052165916834"
+        title="@p/1005052165916834 的微博"
+        target="_blank"
+      >
+        <i class="social fa fa-weibo"></i>
+        <span class="label">Weibo</span>
+      </a>
+    </li>
+     
+    <!-- Github -->
+    <li class="navigation__item">
+      <a
+        href="https://github.com/Ucself"
+        title="@Ucself 的 Github"
+        target="_blank"
+      >
+        <i class="social fa fa-github"></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+      
+
+    <!-- RSS -->
+    <li class="navigation__item">
+      <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+        <i class="social fa fa-rss"></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+
+    
+    <!-- Email -->
+    <li class="navigation__item">
+      <a href="mailto:lbj147123@163.com" title="Contact me">
+        <i class="social fa fa-envelope"></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article
+  class="post-container post-container--single"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header">
+    <div class="post-meta">
+      <time
+        datetime="2019-04-17 00:00:00 +0800"
+        itemprop="datePublished"
+        class="post-meta__date date"
+        >2019-04-17</time
+      >
+      &#8226;
+      <span class="post-meta__tags tags">cocoapods</span>
+    </div>
+    <h1 class="post-title">Command-line-API 语法参考</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="目录">目录</h2>
+
+<!-- TOC -->
+
+<ul>
+  <li><a href="#目录">目录</a></li>
+  <li><a href="#简介">简介</a></li>
+  <li><a href="#commands">Commands</a></li>
+  <li><a href="#installation">Installation</a>
+    <ul>
+      <li><a href="#pod-init">pod init</a>
+        <ul>
+          <li><a href="#inherited-options">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-install">pod install</a>
+        <ul>
+          <li><a href="#options">Options:</a></li>
+          <li><a href="#inherited-options-1">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-update">pod update</a>
+        <ul>
+          <li><a href="#options-1">Options:</a></li>
+          <li><a href="#inherited-options-2">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-outdated">pod outdated</a>
+        <ul>
+          <li><a href="#options-2">Options:</a></li>
+          <li><a href="#inherited-options-3">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-deintegrate">pod deintegrate</a>
+        <ul>
+          <li><a href="#options-3">Options:</a></li>
+          <li><a href="#inherited-options-4">Inherited options:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#environment">Environment</a>
+    <ul>
+      <li><a href="#pod-env">pod env</a>
+        <ul>
+          <li><a href="#inherited-options-5">Inherited options:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#browse">Browse</a>
+    <ul>
+      <li><a href="#pod-search">pod search</a>
+        <ul>
+          <li><a href="#options-4">Options:</a></li>
+          <li><a href="#inherited-options-6">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-list">pod list</a>
+        <ul>
+          <li><a href="#options-5">Options:</a></li>
+          <li><a href="#inherited-options-7">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-try">pod try</a>
+        <ul>
+          <li><a href="#options-6">Options:</a></li>
+          <li><a href="#inherited-options-8">Inherited options:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#specifications">Specifications</a>
+    <ul>
+      <li><a href="#pod-spec-create">pod spec create</a>
+        <ul>
+          <li><a href="#inherited-options-9">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-spec-lint">pod spec lint</a>
+        <ul>
+          <li><a href="#options-7">Options:</a></li>
+          <li><a href="#inherited-options-10">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-spec-cat">pod spec cat</a>
+        <ul>
+          <li><a href="#options-8">Options:</a></li>
+          <li><a href="#inherited-options-11">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-spec-which">pod spec which</a>
+        <ul>
+          <li><a href="#options-9">Options:</a></li>
+          <li><a href="#inherited-options-12">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-spec-edit">pod spec edit</a>
+        <ul>
+          <li><a href="#options-10">Options:</a></li>
+          <li><a href="#inherited-options-13">Inherited options:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#trunk">Trunk</a>
+    <ul>
+      <li><a href="#pod-trunk-add-owner">pod trunk add-owner</a>
+        <ul>
+          <li><a href="#inherited-options-14">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-trunk-info">pod trunk info</a>
+        <ul>
+          <li><a href="#inherited-options-15">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-trunk-me">pod trunk me</a>
+        <ul>
+          <li><a href="#inherited-options-16">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-trunk-push">pod trunk push</a>
+        <ul>
+          <li><a href="#options-11">Options:</a></li>
+          <li><a href="#inherited-options-17">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-trunk-register">pod trunk register</a>
+        <ul>
+          <li><a href="#options-12">Options:</a></li>
+          <li><a href="#inherited-options-18">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-trunk-remove-owner">pod trunk remove-owner</a>
+        <ul>
+          <li><a href="#inherited-options-19">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-trunk-deprecate">pod trunk deprecate</a>
+        <ul>
+          <li><a href="#options-13">Options:</a></li>
+          <li><a href="#inherited-options-20">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-trunk-delete">pod trunk delete</a>
+        <ul>
+          <li><a href="#inherited-options-21">Inherited options:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#repos">Repos</a>
+    <ul>
+      <li><a href="#pod-repo-add">pod repo add</a>
+        <ul>
+          <li><a href="#options-14">Options:</a></li>
+          <li><a href="#inherited-options-22">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-repo-add-cdn">pod repo add-cdn</a>
+        <ul>
+          <li><a href="#inherited-options-23">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-repo-update">pod repo update</a>
+        <ul>
+          <li><a href="#inherited-options-24">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-repo-lint">pod repo lint</a>
+        <ul>
+          <li><a href="#options-15">Options:</a></li>
+          <li><a href="#inherited-options-25">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-repo-list">pod repo list</a>
+        <ul>
+          <li><a href="#options-16">Options:</a></li>
+          <li><a href="#inherited-options-26">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-repo-remove">pod repo remove</a>
+        <ul>
+          <li><a href="#inherited-options-27">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-repo-push">pod repo push</a>
+        <ul>
+          <li><a href="#options-17">Options:</a></li>
+          <li><a href="#inherited-options-28">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-setup">pod setup</a>
+        <ul>
+          <li><a href="#inherited-options-29">Inherited options:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#libraries">Libraries</a>
+    <ul>
+      <li><a href="#pod-lib-create">pod lib create</a>
+        <ul>
+          <li><a href="#options-18">Options:</a></li>
+          <li><a href="#inherited-options-30">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-lib-lint">pod lib lint</a>
+        <ul>
+          <li><a href="#options-19">Options:</a></li>
+          <li><a href="#inherited-options-31">Inherited options:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#ipc">IPC</a>
+    <ul>
+      <li><a href="#pod-ipc-repl">pod ipc repl</a>
+        <ul>
+          <li><a href="#options-20">Options:</a></li>
+          <li><a href="#inherited-options-32">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-ipc-spec">pod ipc spec</a>
+        <ul>
+          <li><a href="#inherited-options-33">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-ipc-podfile">pod ipc podfile</a>
+        <ul>
+          <li><a href="#options-21">Options:</a>
+            <ul>
+              <li><a href="#inherited-options-34">Inherited options:</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#pod-ipc-podfile-json">pod ipc podfile-json</a>
+        <ul>
+          <li><a href="#options-22">Options:</a></li>
+          <li><a href="#inherited-options-35">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-ipc-list">pod ipc list</a>
+        <ul>
+          <li><a href="#inherited-options-36">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-ipc-update-search-index">pod ipc update-search-index</a>
+        <ul>
+          <li><a href="#inherited-options-37">Inherited options:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#plugins">Plugins</a>
+    <ul>
+      <li><a href="#pod-plugins-list">pod plugins list</a>
+        <ul>
+          <li><a href="#inherited-options-38">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-plugins-search">pod plugins search</a>
+        <ul>
+          <li><a href="#options-23">Options:</a></li>
+          <li><a href="#inherited-options-39">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-plugins-installed">pod plugins installed</a>
+        <ul>
+          <li><a href="#inherited-options-40">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-plugins-create">pod plugins create</a>
+        <ul>
+          <li><a href="#inherited-options-41">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-plugins-publish">pod plugins publish</a>
+        <ul>
+          <li><a href="#inherited-options-42">Inherited options:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#cache">Cache</a>
+    <ul>
+      <li><a href="#pod-cache-list">pod cache list</a>
+        <ul>
+          <li><a href="#options-24">Options:</a></li>
+          <li><a href="#inherited-options-43">Inherited options:</a></li>
+        </ul>
+      </li>
+      <li><a href="#pod-cache-clean">pod cache clean</a>
+        <ul>
+          <li><a href="#inherited-options-44">Inherited options:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h2 id="简介">简介</h2>
+
+<p>本文翻译自官方的 <a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Syntax Reference</a>，若翻译中有什么异议，欢迎留言指正。</p>
+
+<p><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile</a></p>
+
+<p><a href="https://guides.cocoapods.org/syntax/podspec.html">Podspec</a></p>
+
+<p><a href="https://guides.cocoapods.org/terminal/commands.html">Command Line API</a></p>
+
+<h2 id="commands">Commands</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod
+</code></pre></div></div>
+
+<p>CocoaPods, the Cocoa library package manager.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>The commands listed in this group provide support for installing and integrating the dependencies specified in a Podfile.</p>
+
+<p>Following is presented the basic workflow for integrating CocoaPods in a user project.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ touch Podfile
+$ vim Podfile
+$ pod install
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ open \*.xcworkspace
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vim podfile
+$ pod install
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pod outdated
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pod update
+</code></pre></div></div>
+
+<p>Commands</p>
+
+<ul>
+  <li>pod init</li>
+  <li>pod install</li>
+  <li>pod update</li>
+  <li>pod outdated</li>
+  <li>pod deintegrate</li>
+</ul>
+
+<h3 id="pod-init">pod init</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod init XCODEPROJ
+</code></pre></div></div>
+
+<p>Creates a Podfile for the current directory if none currently exists. If an XCODEPROJ project file is specified or if there is only a single project file in the current directory, targets will be automatically generated based on targets defined in the project.</p>
+
+<p>It is possible to specify a list of dependencies which will be used by the template in the Podfile.default (normal targets) Podfile.test (test targets) files which should be stored in the /home/travis/.cocoapods/templates folder.</p>
+
+<h4 id="inherited-options">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–version</td>
+      <td style="text-align: center">Show the version of the tool.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-install">pod install</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod install
+</code></pre></div></div>
+
+<p>Downloads all dependencies defined in Podfile and creates an Xcode Pods library project in ./Pods.</p>
+
+<p>The Xcode project file should be specified in your Podfile like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>project `path/to/XcodeProject.xcodeproj`
+</code></pre></div></div>
+
+<p>If no project is specified, then a search for an Xcode project will be made. If more than one Xcode project is found, the command will raise an error.</p>
+
+<p>This will configure the project to reference the Pods static library, add a build configuration file, and add a post build script to copy Pod resources.</p>
+
+<p>This may return one of several error codes if it encounters problems. _ 1 Generic error code _ 31 Spec not found (i.e out-of-date source repos, mistyped Pod name etc…)</p>
+
+<h4 id="options">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–repo-update</td>
+      <td style="text-align: center">Force running pod repo update before install.</td>
+    </tr>
+    <tr>
+      <td>–deployment</td>
+      <td style="text-align: center">Disallow any changes to the Podfile or the Podfile.lock during installation.</td>
+    </tr>
+    <tr>
+      <td>–clean-install</td>
+      <td style="text-align: center">Ignore the contents of the project cache and force a full pod installation. This only applies to projects that have enabled incremental installation..</td>
+    </tr>
+    <tr>
+      <td>–project-directory=/project/dir/</td>
+      <td style="text-align: center">The path to the root of the project directory.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-1">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–version</td>
+      <td style="text-align: center">Show the version of the tool.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-update">pod update</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod update [POD_NAMES ...]
+</code></pre></div></div>
+
+<p>Updates the Pods identified by the specified POD_NAMES, which is a space-delimited list of pod names. If no POD_NAMES are specified, it updates all the Pods, ignoring the contents of the Podfile.lock. This command is reserved for the update of dependencies; pod install should be used to install changes to the Podfile.</p>
+
+<h4 id="options-1">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–sources=https://github.com/artsy/Specs,master</td>
+      <td style="text-align: center">The sources from which to update dependent pods. Multiple sources must be comma-delimited. The master repo will not be included by default with this option..</td>
+    </tr>
+    <tr>
+      <td>–exclude-pods=podName</td>
+      <td style="text-align: center">Pods to exclude during update. Multiple pods must be comma-delimited..</td>
+    </tr>
+    <tr>
+      <td>–clean-install</td>
+      <td style="text-align: center">Ignore the contents of the project cache and force a full pod installation. This only applies to projects that have enabled incremental installation..</td>
+    </tr>
+    <tr>
+      <td>–project-directory=/project/dir/</td>
+      <td style="text-align: center">The path to the root of the project directory.</td>
+    </tr>
+    <tr>
+      <td>–no-repo-update</td>
+      <td style="text-align: center">Skip running pod repo update before install.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-2">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–version</td>
+      <td style="text-align: center">Show the version of the tool.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-outdated">pod outdated</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod outdated
+</code></pre></div></div>
+
+<p>Shows the outdated pods in the current Podfile.lock, but only those from spec repos, not those from local/external sources.</p>
+
+<h4 id="options-2">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–project-directory=/project/dir/</td>
+      <td style="text-align: center">The path to the root of the project directory.</td>
+    </tr>
+    <tr>
+      <td>–no-repo-update</td>
+      <td style="text-align: center">Skip running pod repo update before install.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-3">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–version</td>
+      <td style="text-align: center">Show the version of the tool.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-deintegrate">pod deintegrate</h3>
+
+<p>Available since v1.0.0.beta.1.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod deintegrate [XCODE_PROJECT]
+</code></pre></div></div>
+
+<p>Deintegrate your project from CocoaPods. Removing all traces of CocoaPods from your Xcode project.</p>
+
+<p>If no xcodeproj is specified, then a search for an Xcode project will be made in the current directory.</p>
+
+<h4 id="options-3">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–project-directory=/project/dir/</td>
+      <td style="text-align: center">The path to the root of the project directory.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-4">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–version</td>
+      <td style="text-align: center">Show the version of the tool.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="environment">Environment</h2>
+
+<ul>
+  <li>pod env</li>
+</ul>
+
+<h3 id="pod-env">pod env</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod env
+</code></pre></div></div>
+
+<p>Display pod environment.</p>
+
+<h4 id="inherited-options-5">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–version</td>
+      <td style="text-align: center">Show the version of the tool.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="browse">Browse</h2>
+
+<ul>
+  <li>pod search</li>
+  <li>pod list</li>
+  <li>pod try</li>
+</ul>
+
+<h3 id="pod-search">pod search</h3>
+
+<p>Available since v0.0.2.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod search QUERY
+</code></pre></div></div>
+
+<p>Searches for pods, ignoring case, whose name, summary, description, or authors match QUERY. If the –simple option is specified, this will only search in the names of the pods.</p>
+
+<h4 id="options-4">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–regex</td>
+      <td style="text-align: center">Interpret the QUERY as a regular expression.</td>
+    </tr>
+    <tr>
+      <td>–simple</td>
+      <td style="text-align: center">Search only by name.</td>
+    </tr>
+    <tr>
+      <td>–stats</td>
+      <td style="text-align: center">Show additional stats (like GitHub watchers and forks).</td>
+    </tr>
+    <tr>
+      <td>–web</td>
+      <td style="text-align: center">Searches on cocoapods.org.</td>
+    </tr>
+    <tr>
+      <td>–ios</td>
+      <td style="text-align: center">Restricts the search to Pods supported on iOS.</td>
+    </tr>
+    <tr>
+      <td>–osx</td>
+      <td style="text-align: center">Restricts the search to Pods supported on macOS.</td>
+    </tr>
+    <tr>
+      <td>–watchos</td>
+      <td style="text-align: center">Restricts the search to Pods supported on watchOS.</td>
+    </tr>
+    <tr>
+      <td>–tvos</td>
+      <td style="text-align: center">Restricts the search to Pods supported on tvOS.</td>
+    </tr>
+    <tr>
+      <td>–no-pager</td>
+      <td style="text-align: center">Do not pipe search results into a pager.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-6">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–version</td>
+      <td style="text-align: center">Show the version of the tool.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-list">pod list</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod list
+</code></pre></div></div>
+
+<p>Lists all available pods.</p>
+
+<h4 id="options-5">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–update</td>
+      <td style="text-align: center">Run pod repo update before listing.</td>
+    </tr>
+    <tr>
+      <td>–stats</td>
+      <td style="text-align: center">Show additional stats (like GitHub watchers and forks).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-7">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–version</td>
+      <td style="text-align: center">Show the version of the tool.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-try">pod try</h3>
+
+<p>Available since v0.29.0.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod try NAME|URL
+</code></pre></div></div>
+
+<p>Downloads the Pod with the given NAME (or Git URL), install its dependencies if needed and opens its demo project. If a Git URL is provided the head of the repo is used.</p>
+
+<p>If a Git URL is specified, then a –podspec_name can be provided, if the podspec name is different than the git repo for some reason.</p>
+
+<h4 id="options-6">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–podspec_name=[name]</td>
+      <td style="text-align: center">The name of the podspec file within the Git Repository.</td>
+    </tr>
+    <tr>
+      <td>–no-repo-update</td>
+      <td style="text-align: center">Skip running pod repo update before install.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-8">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–version</td>
+      <td style="text-align: center">Show the version of the tool.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="specifications">Specifications</h2>
+
+<ul>
+  <li>pod spec create</li>
+  <li>pod spec lint</li>
+  <li>pod spec cat</li>
+  <li>pod spec which</li>
+  <li>pod spec edit</li>
+</ul>
+
+<h3 id="pod-spec-create">pod spec create</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod spec create [NAME|https://github.com/USER/REPO]
+</code></pre></div></div>
+
+<p>Creates a PodSpec, in the current working dir, called NAME.podspec. If a GitHub url is passed the spec is prepopulated.</p>
+
+<h4 id="inherited-options-9">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-spec-lint">pod spec lint</h3>
+
+<p>pod spec lint [NAME.podspec|DIRECTORY|http://PATH/NAME.podspec …]
+Validates NAME.podspec. If a DIRECTORY is provided, it validates the podspec files found, including subfolders. In case the argument is omitted, it defaults to the current working dir.</p>
+
+<h4 id="options-7">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–quick</td>
+      <td style="text-align: center">Lint skips checks that would require to download and build the spec.</td>
+    </tr>
+    <tr>
+      <td>–allow-warnings</td>
+      <td style="text-align: center">Lint validates even if warnings are present.</td>
+    </tr>
+    <tr>
+      <td>–subspec=NAME</td>
+      <td style="text-align: center">Lint validates only the given subspec.</td>
+    </tr>
+    <tr>
+      <td>–no-subspecs</td>
+      <td style="text-align: center">Lint skips validation of subspecs.</td>
+    </tr>
+    <tr>
+      <td>–no-clean</td>
+      <td style="text-align: center">Lint leaves the build directory intact for inspection.</td>
+    </tr>
+    <tr>
+      <td>–fail-fast</td>
+      <td style="text-align: center">Lint stops on the first failing platform or subspec.</td>
+    </tr>
+    <tr>
+      <td>–use-libraries</td>
+      <td style="text-align: center">Lint uses static libraries to install the spec.</td>
+    </tr>
+    <tr>
+      <td>–use-modular-headers</td>
+      <td style="text-align: center">Lint uses modular headers during installation.</td>
+    </tr>
+    <tr>
+      <td>–sources=https://github.com/artsy/Specs,master</td>
+      <td style="text-align: center">The sources from which to pull dependent pods (defaults to https://github.com/CocoaPods/Specs.git). Multiple sources must be comma-delimited..</td>
+    </tr>
+    <tr>
+      <td>–platforms=ios,macos</td>
+      <td style="text-align: center">Lint against specific platforms(defaults to all platforms supported by the podspec).Multiple platforms must be comma-delimited.</td>
+    </tr>
+    <tr>
+      <td>–private</td>
+      <td style="text-align: center">Lint skips checks that apply only to public specs.</td>
+    </tr>
+    <tr>
+      <td>–swift-version=VERSION</td>
+      <td style="text-align: center">The SWIFT_VERSION that should be used to lint the spec. This takes precedence over the Swift versions specified by the spec or a .swift-version file..</td>
+    </tr>
+    <tr>
+      <td>–skip-import-validation</td>
+      <td style="text-align: center">Lint skips validating that the pod can be imported.</td>
+    </tr>
+    <tr>
+      <td>–skip-tests</td>
+      <td style="text-align: center">Lint skips building and running tests during validation.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-10">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-spec-cat">pod spec cat</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod spec cat [QUERY]
+</code></pre></div></div>
+
+<p>Prints the content of the podspec(s) whose name matches QUERY to standard output.</p>
+
+<h4 id="options-8">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–regex</td>
+      <td style="text-align: center">Interpret the QUERY as a regular expression.</td>
+    </tr>
+    <tr>
+      <td>–show-all</td>
+      <td style="text-align: center">Pick from all versions of the given podspec.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-11">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-spec-which">pod spec which</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod spec which [QUERY]
+</code></pre></div></div>
+
+<p>Prints the path of the .podspec file(s) whose name matches QUERY</p>
+
+<h4 id="options-9">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–regex</td>
+      <td style="text-align: center">Interpret the QUERY as a regular expression.</td>
+    </tr>
+    <tr>
+      <td>–show-all</td>
+      <td style="text-align: center">Pick from all versions of the given podspec.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-12">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-spec-edit">pod spec edit</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod spec edit [QUERY]
+</code></pre></div></div>
+
+<p>Opens the podspec matching QUERY to be edited.</p>
+
+<h4 id="options-10">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–regex</td>
+      <td style="text-align: center">Interpret the QUERY as a regular expression.</td>
+    </tr>
+    <tr>
+      <td>–show-all</td>
+      <td style="text-align: center">Pick from all versions of the given podspec.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-13">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="trunk">Trunk</h2>
+
+<ul>
+  <li>pod trunk add-owner</li>
+  <li>pod trunk info</li>
+  <li>pod trunk me</li>
+  <li>pod trunk push</li>
+  <li>pod trunk register</li>
+  <li>pod trunk remove-owner</li>
+  <li>pod trunk deprecate</li>
+  <li>pod trunk delete</li>
+</ul>
+
+<h3 id="pod-trunk-add-owner">pod trunk add-owner</h3>
+
+<p>Available since v0.33.0.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod trunk add-owner POD OWNER-EMAIL
+</code></pre></div></div>
+
+<p>Adds the registered user with specified OWNER-EMAIL as an owner of the given POD. An ‘owner’ is a registered user whom is allowed to make changes to a pod, such as pushing new versions and adding and removing other ‘owners’.</p>
+
+<h4 id="inherited-options-14">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-trunk-info">pod trunk info</h3>
+
+<p>Available since v0.33.0.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod trunk info NAME
+</code></pre></div></div>
+
+<p>Returns information about a Pod.</p>
+
+<h4 id="inherited-options-15">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-trunk-me">pod trunk me</h3>
+
+<p>Available since v0.33.0.</p>
+
+<p>pod trunk me
+Includes information about your registration, followed by all your sessions.</p>
+
+<p>These are your current session, other valid sessions, unverified sessions, and expired sessions.</p>
+
+<h4 id="inherited-options-16">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-trunk-push">pod trunk push</h3>
+
+<p>Available since v0.33.0.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod trunk push [PATH]
+</code></pre></div></div>
+
+<p>Publish the podspec at PATH to make it available to all users of the ‘master’ spec-repo. If PATH is not provided, defaults to the current directory.</p>
+
+<p>Before pushing the podspec to cocoapods.org, this will perform a local lint of the podspec, including a build of the library. However, it remains your responsibility to ensure that the published podspec will actually work for your users. Thus it is recommended that you first try to use the podspec to integrate the library into your demo and/or real application.</p>
+
+<p>If this is the first time you publish a spec for this pod, you will automatically be registered as the ‘owner’ of this pod. (Note that ‘owner’ in this case implies a person that is allowed to publish new versions and add other ‘owners’, not necessarily the library author.)</p>
+
+<h4 id="options-11">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–allow-warnings</td>
+      <td style="text-align: center">Allows push even if there are lint warnings.</td>
+    </tr>
+    <tr>
+      <td>–use-libraries</td>
+      <td style="text-align: center">Linter uses static libraries to install the spec.</td>
+    </tr>
+    <tr>
+      <td>–use-modular-headers</td>
+      <td style="text-align: center">Lint uses modular headers during installation.</td>
+    </tr>
+    <tr>
+      <td>–swift-version=VERSION</td>
+      <td style="text-align: center">The SWIFT_VERSION that should be used to lint the spec. This takes precedence over a .swift-version file..</td>
+    </tr>
+    <tr>
+      <td>–skip-import-validation</td>
+      <td style="text-align: center">Lint skips validating that the pod can be imported.</td>
+    </tr>
+    <tr>
+      <td>–skip-tests</td>
+      <td style="text-align: center">Lint skips building and running tests during validation.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-17">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-trunk-register">pod trunk register</h3>
+
+<p>Available since v0.33.0.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod trunk register EMAIL [YOUR_NAME]
+</code></pre></div></div>
+
+<p>Register a new account, or create a new session.</p>
+
+<p>If this is your first registration, both an EMAIL address and YOUR_NAME are required. If you’ve already registered with trunk, you may omit the YOUR_NAME (unless you would like to change it).</p>
+
+<p>It is recommended that you provide a description of the session, so that it will be easier to identify later on. For instance, when you would like to clean-up your sessions. A common example is to specify the location where the machine, that you are using the session for, is physically located.</p>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pod trunk register eloy@example.com `Eloy Durán` --description=`Personal Laptop`
+$ pod trunk register eloy@example.com --description=`Work Laptop`
+$ pod trunk register eloy@example.com
+</code></pre></div></div>
+
+<h4 id="options-12">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–description=DESCRIPTION</td>
+      <td style="text-align: center">An arbitrary description to easily identify your session later on..</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-18">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-trunk-remove-owner">pod trunk remove-owner</h3>
+
+<p>Available since v0.33.0.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod trunk remove-owner POD OWNER-EMAIL
+</code></pre></div></div>
+
+<p>Removes the user with specified OWNER-EMAIL from being an owner of the given POD. An ‘owner’ is a registered user whom is allowed to make changes to a pod, such as pushing new versions and adding and removing other ‘owners’.</p>
+
+<h4 id="inherited-options-19">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-trunk-deprecate">pod trunk deprecate</h3>
+
+<p>Available since v1.0.0.beta.1.</p>
+
+<p>pod trunk deprecate NAME
+Deprecates a pod.</p>
+
+<h4 id="options-13">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–in-favor-of=OTHER_NAME</td>
+      <td style="text-align: center">The pod to deprecate this pod in favor of..</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-20">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-trunk-delete">pod trunk delete</h3>
+
+<p>Available since v1.0.0.beta.1.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod trunk delete NAME VERSION
+</code></pre></div></div>
+
+<p>WARNING: It is generally considered bad behavior to remove versions of a Pod that others are depending on! Please consider using the deprecate command instead.</p>
+
+<p>Deletes the specified pod version from trunk and the master specs repo. Once deleted, this version can never be pushed again.</p>
+
+<h4 id="inherited-options-21">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="repos">Repos</h2>
+
+<ul>
+  <li>pod repo add</li>
+  <li>pod repo add-cdn</li>
+  <li>pod repo update</li>
+  <li>pod repo lint</li>
+  <li>pod repo list</li>
+  <li>pod repo remove</li>
+  <li>pod repo push</li>
+  <li>pod setup</li>
+</ul>
+
+<h3 id="pod-repo-add">pod repo add</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod repo add NAME URL [BRANCH]
+</code></pre></div></div>
+
+<p>Clones URL in the local spec-repos directory at /home/travis/.cocoapods/repos. The remote can later be referred to by NAME.</p>
+
+<h4 id="options-14">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–progress</td>
+      <td style="text-align: center">Show the progress of cloning the spec repository.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-22">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-repo-add-cdn">pod repo add-cdn</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod repo add-cdn NAME URL
+</code></pre></div></div>
+
+<p>Add URL to the local spec-repos directory at /home/travis/.cocoapods/repos. The remote can later be referred to by NAME.</p>
+
+<h4 id="inherited-options-23">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-repo-update">pod repo update</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod repo update [NAME]
+</code></pre></div></div>
+
+<p>Updates the local clone of the spec-repo NAME. If NAME is omitted this will update all spec-repos in /home/travis/.cocoapods/repos.</p>
+
+<h4 id="inherited-options-24">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-repo-lint">pod repo lint</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod repo lint [NAME|DIRECTORY]
+</code></pre></div></div>
+
+<p>Lints the spec-repo NAME. If a directory is provided it is assumed to be the root of a repo. Finally, if NAME is not provided this will lint all the spec-repos known to CocoaPods.</p>
+
+<h4 id="options-15">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–only-errors</td>
+      <td style="text-align: center">Lint presents only the errors.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-25">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-repo-list">pod repo list</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod repo list
+</code></pre></div></div>
+
+<p>List the repos from the local spec-repos directory at /home/travis/.cocoapods/repos.</p>
+
+<h4 id="options-16">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–count-only</td>
+      <td style="text-align: center">Show the total number of repos.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-26">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-repo-remove">pod repo remove</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod repo remove NAME
+</code></pre></div></div>
+
+<p>Deletes the remote named NAME from the local spec-repos directory at /home/travis/.cocoapods/repos.</p>
+
+<h4 id="inherited-options-27">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-repo-push">pod repo push</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod repo push REPO [NAME.podspec]
+</code></pre></div></div>
+
+<p>Validates NAME.podspec or *.podspec in the current working dir, creates a directory and version folder for the pod in the local copy of REPO (/home/travis/.cocoapods/repos/[REPO]), copies the podspec file into the version directory, and finally it pushes REPO to its remote.</p>
+
+<h4 id="options-17">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–allow-warnings</td>
+      <td style="text-align: center">Allows pushing even if there are warnings.</td>
+    </tr>
+    <tr>
+      <td>–use-libraries</td>
+      <td style="text-align: center">Linter uses static libraries to install the spec.</td>
+    </tr>
+    <tr>
+      <td>–use-modular-headers</td>
+      <td style="text-align: center">Lint uses modular headers during installation.</td>
+    </tr>
+    <tr>
+      <td>–sources=https://github.com/artsy/Specs,master</td>
+      <td style="text-align: center">The sources from which to pull dependent pods (defaults to all available repos). Multiple sources must be comma-delimited..</td>
+    </tr>
+    <tr>
+      <td>–local-only</td>
+      <td style="text-align: center">Does not perform the step of pushing REPO to its remote.</td>
+    </tr>
+    <tr>
+      <td>–no-private</td>
+      <td style="text-align: center">Lint includes checks that apply only to public repos.</td>
+    </tr>
+    <tr>
+      <td>–skip-import-validation</td>
+      <td style="text-align: center">Lint skips validating that the pod can be imported.</td>
+    </tr>
+    <tr>
+      <td>–skip-tests</td>
+      <td style="text-align: center">Lint skips building and running tests during validation.</td>
+    </tr>
+    <tr>
+      <td>–commit-message=”Fix bug in pod”</td>
+      <td style="text-align: center">Add custom commit message. Opens default editor if no commit message is specified..</td>
+    </tr>
+    <tr>
+      <td>–use-json</td>
+      <td style="text-align: center">Push JSON spec to repo.</td>
+    </tr>
+    <tr>
+      <td>–swift-version=VERSION</td>
+      <td style="text-align: center">The SWIFT_VERSION that should be used when linting the spec. This takes precedence over the Swift versions specified by the spec or a .swift-version file..</td>
+    </tr>
+    <tr>
+      <td>–no-overwrite</td>
+      <td style="text-align: center">Disallow pushing that would overwrite an existing spec..</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-28">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-setup">pod setup</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod setup
+</code></pre></div></div>
+
+<p>Creates a directory at /home/travis/.cocoapods/repos which will hold your spec-repos. This is where it will create a clone of the public master spec-repo from:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://github.com/CocoaPods/Specs
+</code></pre></div></div>
+
+<p>If the clone already exists, it will ensure that it is up-to-date.</p>
+
+<h4 id="inherited-options-29">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–version</td>
+      <td style="text-align: center">Show the version of the tool.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="libraries">Libraries</h2>
+
+<ul>
+  <li>pod lib create</li>
+  <li>pod lib lint</li>
+</ul>
+
+<h3 id="pod-lib-create">pod lib create</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod lib create NAME
+</code></pre></div></div>
+
+<p>Creates a scaffold for the development of a new Pod named NAME according to the CocoaPods best practices. If a TEMPLATE_URL, pointing to a git repo containing a compatible template, is specified, it will be used in place of the default one.</p>
+
+<h4 id="options-18">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–template-url=URL</td>
+      <td style="text-align: center">The URL of the git repo containing a compatible template.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-30">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-lib-lint">pod lib lint</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod lib lint [PODSPEC_PATHS ...]
+</code></pre></div></div>
+
+<p>Validates the Pod using the files in the working directory.</p>
+
+<h4 id="options-19">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–quick</td>
+      <td style="text-align: center">Lint skips checks that would require to download and build the spec.</td>
+    </tr>
+    <tr>
+      <td>–allow-warnings</td>
+      <td style="text-align: center">Lint validates even if warnings are present.</td>
+    </tr>
+    <tr>
+      <td>–subspec=NAME</td>
+      <td style="text-align: center">Lint validates only the given subspec.</td>
+    </tr>
+    <tr>
+      <td>–no-subspecs</td>
+      <td style="text-align: center">Lint skips validation of subspecs.</td>
+    </tr>
+    <tr>
+      <td>–no-clean</td>
+      <td style="text-align: center">Lint leaves the build directory intact for inspection.</td>
+    </tr>
+    <tr>
+      <td>–fail-fast</td>
+      <td style="text-align: center">Lint stops on the first failing platform or subspec.</td>
+    </tr>
+    <tr>
+      <td>–use-libraries</td>
+      <td style="text-align: center">Lint uses static libraries to install the spec.</td>
+    </tr>
+    <tr>
+      <td>–use-modular-headers</td>
+      <td style="text-align: center">Lint uses modular headers during installation.</td>
+    </tr>
+    <tr>
+      <td>–sources=https://github.com/artsy/Specs,master</td>
+      <td style="text-align: center">The sources from which to pull dependent pods (defaults to https://github.com/CocoaPods/Specs.git). Multiple sources must be comma-delimited..</td>
+    </tr>
+    <tr>
+      <td>–platforms=ios,macos</td>
+      <td style="text-align: center">Lint against specific platforms(defaults to all platforms supported by the podspec).Multiple platforms must be comma-delimited.</td>
+    </tr>
+    <tr>
+      <td>–private</td>
+      <td style="text-align: center">Lint skips checks that apply only to public specs.</td>
+    </tr>
+    <tr>
+      <td>–swift-version=VERSION</td>
+      <td style="text-align: center">The SWIFT_VERSION that should be used to lint the spec. This takes precedence over the Swift versions specified by the spec or a .swift-version file..</td>
+    </tr>
+    <tr>
+      <td>–skip-import-validation</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td>Lint skips validating that the pod can be imported.</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td>–skip-tests</td>
+      <td style="text-align: center">Lint skips building and running tests during validation.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-31">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="ipc">IPC</h2>
+
+<ul>
+  <li>pod ipc repl</li>
+  <li>pod ipc spec</li>
+  <li>pod ipc podfile</li>
+  <li>pod ipc podfile-json</li>
+  <li>pod ipc list</li>
+  <li>pod ipc update-search-index</li>
+</ul>
+
+<h3 id="pod-ipc-repl">pod ipc repl</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod ipc repl
+</code></pre></div></div>
+
+<p>The repl listens to commands on standard input and prints their result to standard output. It accepts all the other ipc subcommands. The repl will signal the end of output with the the ASCII CR+LF \n\r.</p>
+
+<h4 id="options-20">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–project-directory=/project/dir/</td>
+      <td style="text-align: center">The path to the root of the project directory.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-32">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-ipc-spec">pod ipc spec</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod ipc spec PATH
+</code></pre></div></div>
+
+<p>Converts a podspec to JSON and prints it to STDOUT.</p>
+
+<h4 id="inherited-options-33">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-ipc-podfile">pod ipc podfile</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod ipc podfile PATH
+</code></pre></div></div>
+
+<p>Converts a Podfile to YAML and prints it to STDOUT.</p>
+
+<h4 id="options-21">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–project-directory=/project/dir/</td>
+      <td style="text-align: center">The path to the root of the project directory.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="inherited-options-34">Inherited options:</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-ipc-podfile-json">pod ipc podfile-json</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod ipc podfile-json PATH
+</code></pre></div></div>
+
+<p>Converts a Podfile to JSON and prints it to STDOUT.</p>
+
+<p>####Options:
+| title | desciption |
+| ——————————— | :——————————————–: |
+| –project-directory=/project/dir/ | The path to the root of the project directory. |</p>
+
+<h4 id="inherited-options-35">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-ipc-list">pod ipc list</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod ipc list
+</code></pre></div></div>
+
+<p>Prints to STDOUT a YAML dictionary where the keys are the name of the specifications and each corresponding value is a dictionary with the following keys: - defined_in_file - version - authors - summary - description - platforms</p>
+
+<h4 id="inherited-options-36">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>###pod ipc update-search-index</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod ipc update-search-index
+</code></pre></div></div>
+
+<p>Updates the search index and prints its path to standard output. The search index is a YAML encoded dictionary where the keys are the names of the Pods and the values are a dictionary containing the following information: - version - summary - description - authors</p>
+
+<h4 id="inherited-options-37">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="plugins">Plugins</h2>
+
+<ul>
+  <li>pod plugins list</li>
+  <li>pod plugins search</li>
+  <li>pod plugins installed</li>
+  <li>pod plugins create</li>
+  <li>pod plugins publish</li>
+</ul>
+
+<p>###pod plugins list</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod plugins list
+</code></pre></div></div>
+
+<p>List all known plugins (according to the list hosted on github.com/CocoaPods/cocoapods-plugins)</p>
+
+<h4 id="inherited-options-38">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-plugins-search">pod plugins search</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod plugins search QUERY
+</code></pre></div></div>
+
+<p>Searches plugins whose name contains the given QUERY. QUERY is a regular expression, ignoring case.</p>
+
+<p>With –full, it also searches by author and description.</p>
+
+<h4 id="options-22">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–full</td>
+      <td style="text-align: center">Search by name, author, and description.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-39">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-plugins-installed">pod plugins installed</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod plugins installed
+</code></pre></div></div>
+
+<p>List all installed plugins and their respective version.</p>
+
+<h4 id="inherited-options-40">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-plugins-create">pod plugins create</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod plugins create NAME [TEMPLATE_URL]
+</code></pre></div></div>
+
+<p>Creates a scaffold for the development of a new plugin named NAME according to the CocoaPods best practices.</p>
+
+<p>If a TEMPLATE_URL, pointing to a git repo containing a compatible template, is specified, it will be used in place of the default one.</p>
+
+<h4 id="inherited-options-41">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-plugins-publish">pod plugins publish</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod plugins publish
+</code></pre></div></div>
+
+<p>This command is only useful for developers of CocoaPods plugins.</p>
+
+<p>It opens a new GitHub issue to request adding the plugin currently being developped to the list of official plugins.</p>
+
+<p>The current directory is expected to have one (and only one) .gemspec file describing the CocoaPods plugin gem.</p>
+
+<h4 id="inherited-options-42">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="cache">Cache</h2>
+
+<ul>
+  <li>pod cache list</li>
+  <li>pod cache clean</li>
+</ul>
+
+<h3 id="pod-cache-list">pod cache list</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod cache list [NAME]
+</code></pre></div></div>
+
+<p>Shows the content of the pods cache as a YAML tree output, organized by pod. If NAME is given, only the caches for that pod will be included in the output.</p>
+
+<h4 id="options-23">Options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–short</td>
+      <td style="text-align: center">Only print the path relative to the cache root.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="inherited-options-43">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pod-cache-clean">pod cache clean</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod cache clean [NAME]
+</code></pre></div></div>
+
+<p>Remove the cache for a given pod, or clear the cache completely.</p>
+
+<p>If there is multiple cache for various versions of the requested pod, you will be asked which one to clean. Use –all to clean them all.</p>
+
+<p>If you do not give a pod NAME, you need to specify the –all flag (this is to avoid cleaning all the cache by mistake).</p>
+
+<p>Options:
+| title | desciption |
+| ——— | :————————————: |
+| –all | Remove all the cached pods without asking. |</p>
+
+<h4 id="inherited-options-44">Inherited options:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th style="text-align: center">desciption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–silent</td>
+      <td style="text-align: center">Show nothing.</td>
+    </tr>
+    <tr>
+      <td>–verbose</td>
+      <td style="text-align: center">Show more debugging information.</td>
+    </tr>
+    <tr>
+      <td>–no-ansi</td>
+      <td style="text-align: center">Show output without ANSI codes.</td>
+    </tr>
+    <tr>
+      <td>–help</td>
+      <td style="text-align: center">Show help banner of specified command.</td>
+    </tr>
+  </tbody>
+</table>
+
+  </section>
+</article>
+
+<section class="read-more">
+    
+  <div class="read-more-item">
+    <span class="read-more-item-dim">下一篇文章</span>
+    <h2 class="post-list__post-title post-title">
+      <a href="/2019/04/Podspec%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/" title="link to Podspec 语法参考">Podspec 语法参考</a>
+    </h2>
+    <div class="post-list__meta">
+      <time
+        datetime="2019-04-16 00:00:00 +0800"
+        class="post-list__meta--date date"
+        >2019-04-16</time
+      >
+    </div>
+  </div>
+  
+</section>
+
+<!-- <section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2019/04/Command-line-API%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/";
+        this.page.identifier = "/2019/04/Command-line-API%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/";
+    };
+
+    var disqus_shortname = 'vno-jekyll';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+ -->
+
+            <section class="footer">
+    <footer>
+        <span class="footer__copyright">本站由 <a href="https://jekyllrb.com">Jekyll</a> 于 2019-04-17 生成。</span>
+        <span class="footer__copyright">  </span>
+        <span class="footer__copyright">本站由 <a href="https://ucself.cn">@ucself</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2019</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>
