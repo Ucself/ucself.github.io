@@ -46,7 +46,8 @@ body {
   body:after {
     clear: both; }
 
-html, body {
+html,
+body {
   height: 100%; }
 
 html {
@@ -71,10 +72,10 @@ a {
   color: #BF1827; }
   a:hover {
     color: #7b0f19;
-    -o-transition: .5s;
-    -ms-transition: .5s;
-    -moz-transition: .5s;
-    -webkit-transition: .5s; }
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s; }
 
 video {
   display: block;
@@ -86,8 +87,8 @@ h3,
 h4,
 h5,
 h5 {
-  margin-top: 1.0em;
-  margin-bottom: .5em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
   font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-weight: lighter;
   color: #333333;
@@ -97,10 +98,10 @@ h1 {
   margin-top: 0;
   font-size: 2.5em;
   line-height: 1.2em;
-  letter-spacing: .05em; }
+  letter-spacing: 0.05em; }
 
 h2 {
-  font-size: 2.0em; }
+  font-size: 2em; }
 
 h3 {
   font-size: 1.6em; }
@@ -134,13 +135,18 @@ blockquote {
   blockquote p:last-child {
     margin-bottom: 0; }
 
-ol, ul {
+ol,
+ul {
   margin: 0 0 1.3em 2.5em; }
-  ol li, ul li {
-    margin: 0 0 .2em 0;
+  ol li,
+  ul li {
+    margin: 0 0 0.2em 0;
     line-height: 1.6em; }
-  ol ol, ol ul, ul ol, ul ul {
-    margin: .1em 0 .2em 2em; }
+  ol ol,
+  ol ul,
+  ul ol,
+  ul ul {
+    margin: 0.1em 0 0.2em 2em; }
 
 ol {
   list-style-type: decimal; }
@@ -149,12 +155,12 @@ ul {
   list-style-type: disc; }
 
 code {
-  padding: .1em .4em;
+  padding: 0.1em 0.4em;
   background: #e8f2fb;
   border: 1px solid #c9e1f6;
   border-radius: 3px;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-  font-size: .9em;
+  font-size: 0.9em;
   vertical-align: bottom;
   word-wrap: break-word; }
 
@@ -165,7 +171,7 @@ pre {
   border: 1px solid #c9e1f6;
   border-radius: 3px;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-  font-size: .9em;
+  font-size: 0.9em;
   font-weight: normal;
   line-height: 1.3em;
   overflow: scroll; }
@@ -177,7 +183,7 @@ pre {
 
 table {
   color: #333333;
-  font-size: .9em;
+  font-size: 0.9em;
   text-align: center;
   line-height: 40px;
   border-spacing: 0;
@@ -193,7 +199,8 @@ thead tr:first-child {
 th {
   font-weight: bold; }
 
-th:first-child, td:first-child {
+th:first-child,
+td:first-child {
   padding: 0 15px 0 20px; }
 
 thead tr:last-child th {
@@ -204,7 +211,7 @@ tbody tr:last-child td {
 
 tbody td {
   border-bottom: 1px solid #DDDDDD;
-  font-size: .85em; }
+  font-size: 0.85em; }
 
 td:last-child {
   padding-right: 10px; }
@@ -213,7 +220,7 @@ td:last-child {
 .time,
 .author,
 .tags {
-  font-size: .8em;
+  font-size: 0.8em;
   color: #c7c7c7; }
   .date a,
   .time a,
@@ -228,7 +235,7 @@ td:last-child {
 
 .excerpt {
   margin: 0;
-  font-size: .9em;
+  font-size: 0.9em;
   color: #999999; }
 
 .intro {
@@ -244,7 +251,7 @@ td:last-child {
   margin: 0 10px;
   position: relative;
   bottom: -15px;
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
@@ -257,7 +264,7 @@ td:last-child {
   background: #BF1827;
   border-radius: 3px;
   text-align: center;
-  color: #FFF; }
+  color: #fff; }
 
 .container {
   position: relative;
@@ -267,8 +274,8 @@ td:last-child {
 
 .content-wrapper {
   z-index: 800;
-  width: 70%;
-  margin-left: 30%; }
+  width: 85%;
+  margin-left: 15%; }
 
 .content-wrapper__inner {
   margin: 0 10%;
@@ -279,12 +286,12 @@ td:last-child {
   display: block;
   padding: 2em 0 0 0;
   border-top: 2px solid #DDDDDD;
-  font-size: .7em;
+  font-size: 0.7em;
   color: #b3b3b3; }
 
 .footer__copyright {
   display: block;
-  margin-bottom: .7em; }
+  margin-bottom: 0.7em; }
   .footer__copyright a {
     color: #a6a6a6;
     text-decoration: underline; }
@@ -294,7 +301,7 @@ td:last-child {
 .avatar,
 .logo {
   border-radius: 50%;
-  border: 3px solid #FFF;
+  border: 3px solid #fff;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3); }
 
 hr {
@@ -382,7 +389,7 @@ hr {
   background-size: cover; }
 
 .panel-cover--collapsed {
-  width: 30%;
+  width: 15%;
   max-width: 700px; }
 
 .panel-cover--overlay {
@@ -421,7 +428,7 @@ hr {
   vertical-align: middle;
   position: relative;
   z-index: 800;
-  padding: 0 60px; }
+  padding: 0 10px; }
 
 .panel-main__content {
   max-width: 620px;
