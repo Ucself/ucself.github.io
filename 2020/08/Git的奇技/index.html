@@ -237,6 +237,7 @@
 <h2 id="目录">目录</h2>
 
 <ul>
+  <li><a href="#git_zsh_常用别名">git_zsh_常用别名</a></li>
   <li><a href="#展示帮助信息">展示帮助信息</a></li>
   <li><a href="#回到远程仓库的状态">回到远程仓库的状态</a></li>
   <li><a href="#重设第一个commit">重设第一个 commit</a></li>
@@ -310,6 +311,148 @@
   <li><a href="#强制推送">强制推送</a></li>
   <li><a href="#联系我">联系我</a></li>
 </ul>
+
+<h2 id="gitzsh常用别名">git<em>zsh</em>常用别名</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">g</span><span class="o">=</span><span class="s1">'git'</span>
+
+<span class="nb">alias </span><span class="nv">ga</span><span class="o">=</span><span class="s1">'git add'</span>
+<span class="nb">alias </span><span class="nv">gaa</span><span class="o">=</span><span class="s1">'git add --all'</span>
+<span class="nb">alias </span><span class="nv">gapa</span><span class="o">=</span><span class="s1">'git add --patch'</span>
+<span class="nb">alias </span><span class="nv">gau</span><span class="o">=</span><span class="s1">'git add --update'</span>
+<span class="nb">alias </span><span class="nv">gap</span><span class="o">=</span><span class="s1">'git apply'</span>
+
+<span class="nb">alias </span><span class="nv">gb</span><span class="o">=</span><span class="s1">'git branch'</span>
+<span class="nb">alias </span><span class="nv">gba</span><span class="o">=</span><span class="s1">'git branch -a'</span>
+<span class="nb">alias </span><span class="nv">gbd</span><span class="o">=</span><span class="s1">'git branch -d'</span>
+<span class="nb">alias </span><span class="nv">gbda</span><span class="o">=</span><span class="s1">'git branch --no-color --merged | command grep -vE "^(\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d'</span>
+<span class="nb">alias </span><span class="nv">gbl</span><span class="o">=</span><span class="s1">'git blame -b -w'</span>
+<span class="nb">alias </span><span class="nv">gbnm</span><span class="o">=</span><span class="s1">'git branch --no-merged'</span>
+<span class="nb">alias </span><span class="nv">gbr</span><span class="o">=</span><span class="s1">'git branch --remote'</span>
+
+<span class="nb">alias </span><span class="nv">gbs</span><span class="o">=</span><span class="s1">'git bisect'</span>
+<span class="nb">alias </span><span class="nv">gbsb</span><span class="o">=</span><span class="s1">'git bisect bad'</span>
+<span class="nb">alias </span><span class="nv">gbsg</span><span class="o">=</span><span class="s1">'git bisect good'</span>
+<span class="nb">alias </span><span class="nv">gbsr</span><span class="o">=</span><span class="s1">'git bisect reset'</span>
+<span class="nb">alias </span><span class="nv">gbss</span><span class="o">=</span><span class="s1">'git bisect start'</span>
+
+<span class="nb">alias </span><span class="nv">gc</span><span class="o">=</span><span class="s1">'git commit -v'</span>
+<span class="nb">alias </span>gc!<span class="o">=</span><span class="s1">'git commit -v --amend'</span>
+<span class="nb">alias </span>gcn!<span class="o">=</span><span class="s1">'git commit -v --no-edit --amend'</span>
+<span class="nb">alias </span><span class="nv">gca</span><span class="o">=</span><span class="s1">'git commit -v -a'</span>
+<span class="nb">alias </span>gca!<span class="o">=</span><span class="s1">'git commit -v -a --amend'</span>
+<span class="nb">alias </span>gcan!<span class="o">=</span><span class="s1">'git commit -v -a --no-edit --amend'</span>
+<span class="nb">alias </span>gcans!<span class="o">=</span><span class="s1">'git commit -v -a -s --no-edit --amend'</span>
+<span class="nb">alias </span><span class="nv">gcam</span><span class="o">=</span><span class="s1">'git commit -a -m'</span>
+<span class="nb">alias </span><span class="nv">gcsm</span><span class="o">=</span><span class="s1">'git commit -s -m'</span>
+
+<span class="nb">alias </span><span class="nv">gcb</span><span class="o">=</span><span class="s1">'git checkout -b'</span>
+<span class="nb">alias </span><span class="nv">gcf</span><span class="o">=</span><span class="s1">'git config --list'</span>
+<span class="nb">alias </span><span class="nv">gcl</span><span class="o">=</span><span class="s1">'git clone --recursive'</span>
+<span class="nb">alias </span><span class="nv">gclean</span><span class="o">=</span><span class="s1">'git clean -fd'</span>
+<span class="nb">alias </span><span class="nv">gpristine</span><span class="o">=</span><span class="s1">'git reset --hard &amp;&amp; git clean -dfx'</span>
+<span class="nb">alias </span><span class="nv">gcm</span><span class="o">=</span><span class="s1">'git checkout master'</span>
+<span class="nb">alias </span><span class="nv">gcd</span><span class="o">=</span><span class="s1">'git checkout develop'</span>
+<span class="nb">alias </span><span class="nv">gcmsg</span><span class="o">=</span><span class="s1">'git commit -m'</span>
+<span class="nb">alias </span><span class="nv">gco</span><span class="o">=</span><span class="s1">'git checkout'</span>
+<span class="nb">alias </span><span class="nv">gcount</span><span class="o">=</span><span class="s1">'git shortlog -sn'</span>
+<span class="nb">alias </span><span class="nv">gcp</span><span class="o">=</span><span class="s1">'git cherry-pick'</span>
+<span class="nb">alias </span><span class="nv">gcpa</span><span class="o">=</span><span class="s1">'git cherry-pick --abort'</span>
+<span class="nb">alias </span><span class="nv">gcpc</span><span class="o">=</span><span class="s1">'git cherry-pick --continue'</span>
+<span class="nb">alias </span><span class="nv">gcs</span><span class="o">=</span><span class="s1">'git commit -S'</span>
+<span class="nb">alias </span><span class="nv">gd</span><span class="o">=</span><span class="s1">'git diff'</span>
+<span class="nb">alias </span><span class="nv">gdca</span><span class="o">=</span><span class="s1">'git diff --cached'</span>
+<span class="nb">alias </span><span class="nv">gdcw</span><span class="o">=</span><span class="s1">'git diff --cached --word-diff'</span>
+<span class="nb">alias </span><span class="nv">gdct</span><span class="o">=</span><span class="s1">'git describe --tags `git rev-list --tags --max-count=1`'</span>
+<span class="nb">alias </span><span class="nv">gdt</span><span class="o">=</span><span class="s1">'git diff-tree --no-commit-id --name-only -r'</span>
+<span class="nb">alias </span><span class="nv">gdw</span><span class="o">=</span><span class="s1">'git diff --word-diff'</span>
+<span class="nb">alias </span><span class="nv">gf</span><span class="o">=</span><span class="s1">'git fetch'</span>
+<span class="nb">alias </span><span class="nv">gfa</span><span class="o">=</span><span class="s1">'git fetch --all --prune'</span>
+<span class="nb">alias </span><span class="nv">gfo</span><span class="o">=</span><span class="s1">'git fetch origin'</span>
+<span class="nb">alias </span><span class="nv">gg</span><span class="o">=</span><span class="s1">'git gui citool'</span>
+<span class="nb">alias </span><span class="nv">gga</span><span class="o">=</span><span class="s1">'git gui citool --amend'</span>
+<span class="nb">alias </span><span class="nv">ggpur</span><span class="o">=</span><span class="s1">'ggu'</span>
+<span class="nb">alias </span><span class="nv">ggpull</span><span class="o">=</span><span class="s1">'git pull origin $(git_current_branch)'</span>
+<span class="nb">alias </span><span class="nv">ggpush</span><span class="o">=</span><span class="s1">'git push origin $(git_current_branch)'</span>
+<span class="nb">alias </span><span class="nv">ggsup</span><span class="o">=</span><span class="s1">'git branch --set-upstream-to=origin/$(git_current_branch)'</span>
+<span class="nb">alias </span><span class="nv">gpsup</span><span class="o">=</span><span class="s1">'git push --set-upstream origin $(git_current_branch)'</span>
+<span class="nb">alias </span><span class="nv">ghh</span><span class="o">=</span><span class="s1">'git help'</span>
+<span class="nb">alias </span><span class="nv">gignore</span><span class="o">=</span><span class="s1">'git update-index --assume-unchanged'</span>
+<span class="nb">alias </span><span class="nv">gignored</span><span class="o">=</span><span class="s1">'git ls-files -v | grep "^[[:lower:]]"'</span>
+<span class="nb">alias </span>git-svn-dcommit-push<span class="o">=</span><span class="s1">'git svn dcommit &amp;&amp; git push github master:svntrunk'</span>
+<span class="nb">alias </span><span class="nv">gk</span><span class="o">=</span><span class="s1">'\gitk --all --branches'</span>
+<span class="nb">alias </span><span class="nv">gke</span><span class="o">=</span><span class="s1">'\gitk --all $(git log -g --pretty=%h)'</span>
+<span class="nb">alias </span><span class="nv">gl</span><span class="o">=</span><span class="s1">'git pull'</span>
+
+<span class="nb">alias </span><span class="nv">glg</span><span class="o">=</span><span class="s1">'git log --stat'</span>
+<span class="nb">alias </span><span class="nv">glgp</span><span class="o">=</span><span class="s1">'git log --stat -p'</span>
+<span class="nb">alias </span><span class="nv">glgg</span><span class="o">=</span><span class="s1">'git log --graph'</span>
+<span class="nb">alias </span><span class="nv">glgga</span><span class="o">=</span><span class="s1">'git log --graph --decorate --all'</span>
+<span class="nb">alias </span><span class="nv">glgm</span><span class="o">=</span><span class="s1">'git log --graph --max-count=10'</span>
+<span class="nb">alias </span><span class="nv">glo</span><span class="o">=</span><span class="s1">'git log --oneline --decorate'</span>
+<span class="nb">alias </span><span class="nv">glol</span><span class="o">=</span><span class="s2">"git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'"</span>
+<span class="nb">alias </span><span class="nv">glod</span><span class="o">=</span><span class="s2">"git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)&lt;%an&gt;%Creset'"</span>
+<span class="nb">alias </span><span class="nv">glods</span><span class="o">=</span><span class="s2">"git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)&lt;%an&gt;%Creset' --date=short"</span>
+<span class="nb">alias </span><span class="nv">glola</span><span class="o">=</span><span class="s2">"git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --all"</span>
+<span class="nb">alias </span><span class="nv">glog</span><span class="o">=</span><span class="s1">'git log --oneline --decorate --graph'</span>
+<span class="nb">alias </span><span class="nv">gloga</span><span class="o">=</span><span class="s1">'git log --oneline --decorate --graph --all'</span>
+<span class="nb">alias </span><span class="nv">glp</span><span class="o">=</span><span class="s2">"_git_log_prettily"</span>
+
+<span class="nb">alias </span><span class="nv">gm</span><span class="o">=</span><span class="s1">'git merge'</span>
+<span class="nb">alias </span><span class="nv">gmom</span><span class="o">=</span><span class="s1">'git merge origin/master'</span>
+<span class="nb">alias </span><span class="nv">gmt</span><span class="o">=</span><span class="s1">'git mergetool --no-prompt'</span>
+<span class="nb">alias </span><span class="nv">gmtvim</span><span class="o">=</span><span class="s1">'git mergetool --no-prompt --tool=vimdiff'</span>
+<span class="nb">alias </span><span class="nv">gmum</span><span class="o">=</span><span class="s1">'git merge upstream/master'</span>
+<span class="nb">alias </span><span class="nv">gma</span><span class="o">=</span><span class="s1">'git merge --abort'</span>
+<span class="nb">alias </span><span class="nv">gp</span><span class="o">=</span><span class="s1">'git push'</span>
+<span class="nb">alias </span><span class="nv">gpd</span><span class="o">=</span><span class="s1">'git push --dry-run'</span>
+<span class="nb">alias </span><span class="nv">gpoat</span><span class="o">=</span><span class="s1">'git push origin --all &amp;&amp; git push origin --tags'</span>
+<span class="nb">alias </span><span class="nv">gpu</span><span class="o">=</span><span class="s1">'git push upstream'</span>
+<span class="nb">alias </span><span class="nv">gpv</span><span class="o">=</span><span class="s1">'git push -v'</span>
+
+<span class="nb">alias </span><span class="nv">gr</span><span class="o">=</span><span class="s1">'git remote'</span>
+<span class="nb">alias </span><span class="nv">gra</span><span class="o">=</span><span class="s1">'git remote add'</span>
+<span class="nb">alias </span><span class="nv">grb</span><span class="o">=</span><span class="s1">'git rebase'</span>
+<span class="nb">alias </span><span class="nv">grba</span><span class="o">=</span><span class="s1">'git rebase --abort'</span>
+<span class="nb">alias </span><span class="nv">grbc</span><span class="o">=</span><span class="s1">'git rebase --continue'</span>
+<span class="nb">alias </span><span class="nv">grbi</span><span class="o">=</span><span class="s1">'git rebase -i'</span>
+<span class="nb">alias </span><span class="nv">grbm</span><span class="o">=</span><span class="s1">'git rebase master'</span>
+<span class="nb">alias </span><span class="nv">grbs</span><span class="o">=</span><span class="s1">'git rebase --skip'</span>
+<span class="nb">alias </span><span class="nv">grh</span><span class="o">=</span><span class="s1">'git reset HEAD'</span>
+<span class="nb">alias </span><span class="nv">grhh</span><span class="o">=</span><span class="s1">'git reset HEAD --hard'</span>
+<span class="nb">alias </span><span class="nv">grmv</span><span class="o">=</span><span class="s1">'git remote rename'</span>
+<span class="nb">alias </span><span class="nv">grrm</span><span class="o">=</span><span class="s1">'git remote remove'</span>
+<span class="nb">alias </span><span class="nv">grset</span><span class="o">=</span><span class="s1">'git remote set-url'</span>
+<span class="nb">alias </span><span class="nv">grt</span><span class="o">=</span><span class="s1">'cd $(git rev-parse --show-toplevel || echo ".")'</span>
+<span class="nb">alias </span><span class="nv">gru</span><span class="o">=</span><span class="s1">'git reset --'</span>
+<span class="nb">alias </span><span class="nv">grup</span><span class="o">=</span><span class="s1">'git remote update'</span>
+<span class="nb">alias </span><span class="nv">grv</span><span class="o">=</span><span class="s1">'git remote -v'</span>
+
+<span class="nb">alias </span><span class="nv">gsb</span><span class="o">=</span><span class="s1">'git status -sb'</span>
+<span class="nb">alias </span><span class="nv">gsd</span><span class="o">=</span><span class="s1">'git svn dcommit'</span>
+<span class="nb">alias </span><span class="nv">gsi</span><span class="o">=</span><span class="s1">'git submodule init'</span>
+<span class="nb">alias </span><span class="nv">gsps</span><span class="o">=</span><span class="s1">'git show --pretty=short --show-signature'</span>
+<span class="nb">alias </span><span class="nv">gsr</span><span class="o">=</span><span class="s1">'git svn rebase'</span>
+<span class="nb">alias </span><span class="nv">gss</span><span class="o">=</span><span class="s1">'git status -s'</span>
+<span class="nb">alias </span><span class="nv">gst</span><span class="o">=</span><span class="s1">'git status'</span>
+<span class="nb">alias </span><span class="nv">gsta</span><span class="o">=</span><span class="s1">'git stash save'</span>
+<span class="nb">alias </span><span class="nv">gstaa</span><span class="o">=</span><span class="s1">'git stash apply'</span>
+<span class="nb">alias </span><span class="nv">gstc</span><span class="o">=</span><span class="s1">'git stash clear'</span>
+<span class="nb">alias </span><span class="nv">gstd</span><span class="o">=</span><span class="s1">'git stash drop'</span>
+<span class="nb">alias </span><span class="nv">gstl</span><span class="o">=</span><span class="s1">'git stash list'</span>
+<span class="nb">alias </span><span class="nv">gstp</span><span class="o">=</span><span class="s1">'git stash pop'</span>
+<span class="nb">alias </span><span class="nv">gsts</span><span class="o">=</span><span class="s1">'git stash show --text'</span>
+<span class="nb">alias </span><span class="nv">gsu</span><span class="o">=</span><span class="s1">'git submodule update'</span>
+<span class="nb">alias </span><span class="nv">gts</span><span class="o">=</span><span class="s1">'git tag -s'</span>
+<span class="nb">alias </span><span class="nv">gtv</span><span class="o">=</span><span class="s1">'git tag | sort -V'</span>
+<span class="nb">alias </span><span class="nv">gunignore</span><span class="o">=</span><span class="s1">'git update-index --no-assume-unchanged'</span>
+<span class="nb">alias </span><span class="nv">gunwip</span><span class="o">=</span><span class="s1">'git log -n 1 | grep -q -c "\-\-wip\-\-" &amp;&amp; git reset HEAD~1'</span>
+<span class="nb">alias </span><span class="nv">gup</span><span class="o">=</span><span class="s1">'git pull --rebase'</span>
+<span class="nb">alias </span><span class="nv">gupv</span><span class="o">=</span><span class="s1">'git pull --rebase -v'</span>
+<span class="nb">alias </span><span class="nv">glum</span><span class="o">=</span><span class="s1">'git pull upstream master'</span>
+<span class="nb">alias </span><span class="nv">gwch</span><span class="o">=</span><span class="s1">'git whatchanged -p --abbrev-commit --pretty=medium'</span>
+<span class="nb">alias </span><span class="nv">gwip</span><span class="o">=</span><span class="s1">'git add -A; git rm $(git ls-files --deleted) 2&gt; /dev/null; git commit --no-verify -m "--wip-- [skip ci]"'</span>
+</code></pre></div></div>
 
 <h2 id="展示帮助信息">展示帮助信息</h2>
 
