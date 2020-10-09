@@ -5,15 +5,13 @@
     <description>嗨，我是ucself，一名大前端开发工程师。</description>
     <link>https://ucself.cn/</link>
     <atom:link href="https://ucself.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Sep 2020 11:44:17 +0800</pubDate>
-    <lastBuildDate>Fri, 04 Sep 2020 11:44:17 +0800</lastBuildDate>
+    <pubDate>Fri, 09 Oct 2020 16:26:29 +0800</pubDate>
+    <lastBuildDate>Fri, 09 Oct 2020 16:26:29 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>研发常用字典</title>
-        <description>&lt;h2 id=&quot;研发常用字典列表&quot;&gt;研发常用字典列表&lt;/h2&gt;
-
-&lt;ul&gt;
+        <description>&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://ucself.github.io/2016/09/Markdown%E8%AF%AD%E6%B3%95/&quot;&gt;Markdown 语法&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://ucself.github.io/2020/08/Git%E7%9A%84%E5%A5%87%E6%8A%80/&quot;&gt;Git 命令&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html&quot;&gt;Flex 布局&lt;/a&gt;&lt;/li&gt;
