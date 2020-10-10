@@ -5,8 +5,8 @@
     <description>嗨，我是ucself，一名大前端开发工程师。</description>
     <link>https://ucself.cn/</link>
     <atom:link href="https://ucself.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 09 Oct 2020 16:26:29 +0800</pubDate>
-    <lastBuildDate>Fri, 09 Oct 2020 16:26:29 +0800</lastBuildDate>
+    <pubDate>Sat, 10 Oct 2020 17:03:03 +0800</pubDate>
+    <lastBuildDate>Sat, 10 Oct 2020 17:03:03 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -18,6 +18,7 @@
   &lt;li&gt;&lt;a href=&quot;https://ts.xcatliu.com/introduction/index.html&quot;&gt;TypeScript 教程&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.dartcn.com/guides/language/language-tour#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84-dart-%E7%A8%8B%E5%BA%8F&quot;&gt;Dart 语法&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://book.flutterchina.club/&quot;&gt;Flutter 教程&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://api.flutter.dev/index.html&quot;&gt;Flutter SDK API&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://es6.ruanyifeng.com/#docs/intro&quot;&gt;ECMAScript 6 语法&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
